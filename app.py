@@ -4275,9 +4275,9 @@ def bets():
     return page("Tracker", body)
 
 
-# ===================== V19.4 COMPLETE REFINEMENT LAYER =====================
+# ===================== V21.8 COMPLETE REFINEMENT LAYER =====================
 CSS += '''
-/* ===== V19.4 COMPLETE REFINEMENT ===== */
+/* ===== V21.8 COMPLETE REFINEMENT ===== */
 .footer::after{content:" · V21.8 advisory cycle · manual approval · no auto-betting"!important;color:rgba(0,200,240,.68)!important}
 .v193-page-note{border:1px solid rgba(0,200,240,.14);background:linear-gradient(145deg,rgba(0,200,240,.055),rgba(3,8,15,.96));border-radius:22px;padding:18px;margin:16px 0;color:var(--muted);font-family:var(--font-mono);font-size:11.5px;line-height:1.6}.v193-page-note b{color:var(--text);font-family:var(--font-display);font-size:18px;letter-spacing:-.04em;display:block;margin-bottom:5px}.v193-guardrail{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.v193-guard-card{border:1px solid rgba(255,255,255,.075);background:var(--v19-glass);border-radius:18px;padding:15px;min-height:108px}.v193-guard-card span,.v193-summary-card span,.compact-pass-row span{display:block;color:var(--muted);font-family:var(--font-mono);font-size:9.2px;text-transform:uppercase;letter-spacing:.105em;font-weight:900}.v193-guard-card b,.v193-summary-card b{display:block;margin-top:8px;font-family:var(--font-display);font-size:21px;letter-spacing:-.055em;line-height:1.02}.v193-guard-card p,.v193-summary-card p{margin-top:7px;color:var(--muted);font-family:var(--font-mono);font-size:10px;line-height:1.45}.v193-guard-card.ok{border-color:rgba(5,232,154,.18);background:linear-gradient(145deg,rgba(5,232,154,.055),rgba(3,8,15,.98))}.v193-guard-card.warn{border-color:rgba(245,200,66,.20);background:linear-gradient(145deg,rgba(245,200,66,.06),rgba(3,8,15,.98))}.v193-guard-card.lock{border-color:rgba(248,75,110,.18);background:linear-gradient(145deg,rgba(248,75,110,.055),rgba(3,8,15,.98))}
 .action-section-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.55fr);gap:14px;align-items:start}.compact-pass-list{display:grid;gap:8px}.compact-pass-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border:1px solid rgba(255,255,255,.06);background:rgba(2,5,9,.48);border-radius:14px;padding:11px 13px}.compact-pass-row b{font-size:13px;letter-spacing:-.025em}.compact-pass-row em{font-style:normal;color:var(--muted);font-family:var(--font-mono);font-size:9.5px}.action-clean-title,.action-clean-bet{overflow-wrap:anywhere}.action-clean-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.reason-box b{overflow-wrap:anywhere}.approval-rail{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.approval-pill{display:inline-flex;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:5px 9px;font-family:var(--font-mono);font-size:9.5px;font-weight:900;text-transform:uppercase}.approval-pill.ready{color:var(--green);background:rgba(5,232,154,.07);border-color:rgba(5,232,154,.22)}.approval-pill.warn{color:var(--yellow);background:rgba(245,200,66,.07);border-color:rgba(245,200,66,.22)}.approval-pill.locked{color:var(--red);background:rgba(248,75,110,.07);border-color:rgba(248,75,110,.22)}
@@ -4486,7 +4486,7 @@ def v193_validation_view():
     except Exception as e:
         return page("Validation Error", f'<div class="panel"><h2>Validation page error</h2><pre>{type(e).__name__}: {e}</pre></div>')
 
-# Flask endpoint overrides for V19.4 route refinements
+# Flask endpoint overrides for V21.8 route refinements
 app.view_functions['index'] = lambda: page("Home", v19_home())
 app.view_functions['dashboard'] = lambda: page("Dashboard", v19_dashboard())
 app.view_functions['bankroll'] = lambda: page("Bankroll", v19_bankroll())
@@ -4497,8 +4497,8 @@ app.view_functions['environment'] = v193_environment_view
 app.view_functions['research'] = v193_research_view
 app.view_functions['validation'] = v193_validation_view
 
-# ---- V19.4 hotfix: safe signal/execution endpoint implementations ----
-# These wrappers prevent Render import-time failures and keep V19.4 features as
+# ---- V21.8 hotfix: safe signal/execution endpoint implementations ----
+# These wrappers prevent Render import-time failures and keep V21.8 features as
 # additive panels on top of the stable V19.3 pages.
 def v194_signal_execution_note():
     return '<section class="v19-panel terminal-section"><div class="v19-section-head" style="margin-top:0"><div><h2>Signal → Execution Intelligence</h2><p>Track one model signal separately from multiple execution fills. Bankroll counts real ticket P/L; validation should count the original model signal once.</p></div><span class="chip">V21.8</span></div><div class="v193-summary-grid"><div class="v193-summary-card primary"><span>Model Signal</span><b>One thesis</b><p>Example: Over 169.5 @ 1.91 from the model.</p></div><div class="v193-summary-card"><span>Execution Fills</span><b>Multiple tickets</b><p>Alternative lines and prices belong to execution quality.</p></div><div class="v193-summary-card warn"><span>Correlation</span><b>Grouped exposure</b><p>Multiple tickets on the same game/total should be grouped for risk.</p></div><div class="v193-summary-card"><span>Bankroll</span><b>Real P/L</b><p>Profit is calculated from actual stake and return.</p></div><div class="v193-summary-card lock"><span>Hermes</span><b>Approval only</b><p>No execution without operator approval.</p></div></div></section>'
@@ -4522,7 +4522,7 @@ def v194_hermes():
 def v194_bets_view():
     return bets() + v194_signal_execution_note()
 
-# V19.4 endpoint overrides
+# V21.8 endpoint overrides
 app.view_functions['bankroll'] = lambda: page("Bankroll", v194_bankroll())
 app.view_functions['actions'] = v194_actions
 app.view_functions['hermes'] = lambda: page("Hermes", v194_hermes())
