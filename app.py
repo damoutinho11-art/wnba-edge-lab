@@ -4756,6 +4756,28 @@ app.view_functions['dashboard'] = lambda: page("Dashboard", v21_8_dashboard())
 app.view_functions['hermes'] = lambda: page("Hermes", v21_8_hermes())
 app.view_functions['validation'] = lambda: page("Validation", v21_8_validation())
 
+# === V21.9 LIVE WEBSITE STATE OVERRIDES START ===
+# Display-only V21.9 route rewire. All state comes from site_state_v21_9.py.
+# Safety: no auto-betting, no formula changes, no staking changes, no threshold changes.
+try:
+    import site_state_v21_9 as _v219_site
+
+    def _v219_page(title, body):
+        return page(title, body)
+
+    app.view_functions['index'] = lambda: _v219_page("Home", _v219_site.render_home())
+    app.view_functions['dashboard'] = lambda: _v219_page("Dashboard", _v219_site.render_dashboard())
+    app.view_functions['actions'] = lambda: _v219_page("Actions", _v219_site.render_actions())
+    app.view_functions['hermes'] = lambda: _v219_page("Hermes", _v219_site.render_hermes())
+    app.view_functions['bets'] = lambda: _v219_page("Bets", _v219_site.render_bets())
+    app.view_functions['bankroll'] = lambda: _v219_page("Bankroll", _v219_site.render_bankroll())
+    app.view_functions['telegram'] = lambda: _v219_page("Telegram", _v219_site.render_telegram())
+    app.view_functions['validation'] = lambda: _v219_page("Validation", _v219_site.render_validation())
+    app.view_functions['menu'] = lambda: _v219_page("Menu", _v219_site.render_menu())
+except Exception as _v219_err:
+    print("V21.9 site state override failed:", repr(_v219_err))
+# === V21.9 LIVE WEBSITE STATE OVERRIDES END ===
+
 if __name__ == "__main__":
     print("Starting WNBA Edge Lab V21.8 advisory dashboard...")
     print("Open http://127.0.0.1:5000")

@@ -1,0 +1,1067 @@
+{
+  "created_at_utc": "2026-05-30T23:13:24+00:00",
+  "root": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN",
+  "files": {
+    "app": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\app.py",
+      "exists": true,
+      "size": 323842,
+      "modified_utc": "2026-05-30T20:40:41+00:00",
+      "sha256_12": "11beb250f929"
+    },
+    "bet_tracker": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\bet_tracker.csv",
+      "exists": true,
+      "size": 8185,
+      "modified_utc": "2026-05-30T22:21:39+00:00",
+      "sha256_12": "c87cd668ebac"
+    },
+    "signal_execution_latest": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\signal_execution_latest_v20.json",
+      "exists": true,
+      "size": 6366,
+      "modified_utc": "2026-05-30T22:23:25+00:00",
+      "sha256_12": "232f9b0945b1"
+    },
+    "signal_execution_groups": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\signal_execution_groups_v20.csv",
+      "exists": true,
+      "size": 12061,
+      "modified_utc": "2026-05-30T22:23:25+00:00",
+      "sha256_12": "d8c3eb75062f"
+    },
+    "signal_execution_summary": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\signal_execution_summary_v20.csv",
+      "exists": true,
+      "size": 496,
+      "modified_utc": "2026-05-30T22:23:25+00:00",
+      "sha256_12": "c462ce3a28c3"
+    },
+    "safe_automation_summary": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\v21_9_safe_automation_summary.json",
+      "exists": true,
+      "size": 25218,
+      "modified_utc": "2026-05-30T22:23:29+00:00",
+      "sha256_12": "9973675a3bdf"
+    },
+    "safe_automation_run_log": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\v21_9_safe_automation_run_log.txt",
+      "exists": true,
+      "size": 5537,
+      "modified_utc": "2026-05-30T22:23:29+00:00",
+      "sha256_12": "26a57cabd4d0"
+    },
+    "manual_market_snapshot": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\manual_market_snapshot_v21_9.csv",
+      "exists": true,
+      "size": 4190,
+      "modified_utc": "2026-05-30T21:56:35+00:00",
+      "sha256_12": "fb80e59a8e14"
+    },
+    "manual_market_review": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\manual_market_review_v21_9.csv",
+      "exists": true,
+      "size": 6509,
+      "modified_utc": "2026-05-30T21:56:36+00:00",
+      "sha256_12": "8a839089874b"
+    },
+    "manual_market_review_summary": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\manual_market_review_summary_v21_9.json",
+      "exists": true,
+      "size": 1093,
+      "modified_utc": "2026-05-30T21:56:36+00:00",
+      "sha256_12": "bad431404539"
+    },
+    "hermes_manual_market_queue": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\hermes_manual_market_queue_v21_9.csv",
+      "exists": true,
+      "size": 2986,
+      "modified_utc": "2026-05-30T21:56:36+00:00",
+      "sha256_12": "f2dc958dc386"
+    },
+    "model_advisory_scores": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_advisory_scores_v21.csv",
+      "exists": true,
+      "size": 978,
+      "modified_utc": "2026-05-30T22:23:28+00:00",
+      "sha256_12": "d54b03126bfc"
+    },
+    "hermes_advisory_queue": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\hermes_advisory_queue_v21.csv",
+      "exists": true,
+      "size": 688,
+      "modified_utc": "2026-05-30T22:23:28+00:00",
+      "sha256_12": "eca5fbe6863e"
+    },
+    "telegram_message": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\telegram_message.txt",
+      "exists": true,
+      "size": 897,
+      "modified_utc": "2026-05-30T19:30:52+00:00",
+      "sha256_12": "bf4b21a5540b"
+    }
+  },
+  "app": {
+    "exists": true,
+    "route_count": 19,
+    "routes": {
+      "/": [
+        "index"
+      ],
+      "/dashboard": [
+        "dashboard"
+      ],
+      "/bankroll": [
+        "bankroll"
+      ],
+      "/actions": [
+        "actions"
+      ],
+      "/stake": [
+        "stake_redirect"
+      ],
+      "/stakes": [
+        "stakes"
+      ],
+      "/menu": [
+        "menu"
+      ],
+      "/rankings": [
+        "rankings"
+      ],
+      "/history": [
+        "history"
+      ],
+      "/telegram": [
+        "telegram"
+      ],
+      "/memory": [
+        "memory"
+      ],
+      "/environment": [
+        "environment"
+      ],
+      "/research": [
+        "research"
+      ],
+      "/intelligence": [
+        "intelligence"
+      ],
+      "/validation": [
+        "validation"
+      ],
+      "/diagnostics": [
+        "diagnostics"
+      ],
+      "/analysis": [
+        "analysis"
+      ],
+      "/hermes": [
+        "hermes"
+      ],
+      "/bets": [
+        "bets"
+      ]
+    },
+    "duplicate_routes": {},
+    "duplicate_function_defs": [
+      "action_board",
+      "actions",
+      "v19_bankroll",
+      "v19_dashboard",
+      "v19_hermes",
+      "v19_home",
+      "v19_menu"
+    ],
+    "stale_marker_counts": {
+      "V21.8 advisory cycle": 3,
+      "Derived market": 2,
+      "telegram_message.txt found": 1,
+      "Run bet_tracker_seed.py first": 1,
+      "NO_LINE": 1
+    },
+    "required_marker_counts": {
+      "V21.9": 0,
+      "manual_market_review_v21_9": 0,
+      "hermes_manual_market_queue_v21_9": 0,
+      "bet_tracker.csv": 1,
+      "signal_execution_latest_v20": 0,
+      "v21_9_safe_automation_summary": 0,
+      "NO_AUTO_BETTING": 0,
+      "MANUAL_APPROVAL_REQUIRED": 1
+    },
+    "expected_source_string_counts_by_route_requirement": {
+      "/": {
+        "bet_tracker.csv": 1,
+        "signal_execution_latest_v20.json": 0,
+        "v21_9_safe_automation_summary.json": 0,
+        "manual_market_review_v21_9.csv": 0,
+        "hermes_manual_market_queue_v21_9.csv": 0
+      },
+      "/dashboard": {
+        "bet_tracker.csv": 1,
+        "signal_execution_latest_v20.json": 0,
+        "v21_9_safe_automation_summary.json": 0,
+        "manual_market_review_v21_9.csv": 0,
+        "hermes_manual_market_queue_v21_9.csv": 0
+      },
+      "/actions": {
+        "bet_tracker.csv": 1,
+        "manual_market_review_v21_9.csv": 0,
+        "hermes_manual_market_queue_v21_9.csv": 0
+      },
+      "/hermes": {
+        "bet_tracker.csv": 1,
+        "signal_execution_latest_v20.json": 0,
+        "hermes_manual_market_queue_v21_9.csv": 0,
+        "v21_9_safe_automation_summary.json": 0
+      },
+      "/bets": {
+        "bet_tracker.csv": 1,
+        "signal_execution_latest_v20.json": 0
+      },
+      "/telegram": {
+        "telegram_message.txt": 3,
+        "bet_tracker.csv": 1,
+        "manual_market_review_v21_9.csv": 0,
+        "hermes_manual_market_queue_v21_9.csv": 0
+      },
+      "/bankroll": {
+        "bet_tracker.csv": 1,
+        "signal_execution_latest_v20.json": 0
+      },
+      "/validation": {
+        "model_result_tracking_summary_v21_9.json": 0,
+        "model_promotion_watchlist_v21_9.csv": 0
+      }
+    }
+  },
+  "bet_tracker": {
+    "exists": true,
+    "rows": 36,
+    "status_counts": {
+      "SETTLED": 32,
+      "OPEN": 4
+    },
+    "open_count": 4,
+    "open_stake": 0.4,
+    "settled_pl_raw_sum": 0.931,
+    "may31_count": 4,
+    "may31_rows_compact": [
+      {
+        "BetID": "BET-00039",
+        "Date": "2026-05-31",
+        "Game": "LA Sparks @ CON Sun",
+        "Market": "Spread",
+        "Direction": "LAS",
+        "Line": "-3.5",
+        "Odds": "1.82",
+        "Stake": "0.10",
+        "Result": "",
+        "Status": "OPEN",
+        "P/L": "",
+        "FinalSignal": "LEAN_SUPPORT",
+        "Notes": "Executed model queue bet; LA Sparks -3.5 at 1.82"
+      },
+      {
+        "BetID": "BET-00040",
+        "Date": "2026-05-31",
+        "Game": "LA Sparks @ CON Sun",
+        "Market": "Moneyline",
+        "Direction": "LAS",
+        "Line": "0",
+        "Odds": "1.83",
+        "Stake": "0.10",
+        "Result": "",
+        "Status": "OPEN",
+        "P/L": "",
+        "FinalSignal": "LEAN_SUPPORT",
+        "Notes": "Executed model queue bet; LA Sparks ML at 1.83"
+      },
+      {
+        "BetID": "BET-00041",
+        "Date": "2026-05-31",
+        "Game": "LV Aces @ GS Valkyries",
+        "Market": "Game Total",
+        "Direction": "OVER",
+        "Line": "169.5",
+        "Odds": "1.90",
+        "Stake": "0.10",
+        "Result": "",
+        "Status": "OPEN",
+        "P/L": "",
+        "FinalSignal": "LEAN_SUPPORT",
+        "Notes": "Executed model queue bet; LV/GSV Over 169.5 at 1.90"
+      },
+      {
+        "BetID": "BET-00042",
+        "Date": "2026-05-31",
+        "Game": "LV Aces @ GS Valkyries",
+        "Market": "Spread",
+        "Direction": "GSV",
+        "Line": "+1.5",
+        "Odds": "1.87",
+        "Stake": "0.10",
+        "Result": "",
+        "Status": "OPEN",
+        "P/L": "",
+        "FinalSignal": "LEAN_SUPPORT",
+        "Notes": "Executed model queue bet; GSV +1.5 at 1.87"
+      }
+    ],
+    "duplicate_bet_keys": {
+      "2026-05-21|GS @ NY|Rebounds|UNDER|8.5|1.8|0.1": [
+        "BET-00001",
+        "BET-00002"
+      ],
+      "2026-05-25|CON @ GS|Rebounds|OVER|4.5|2.15|0.1": [
+        "BET-00020",
+        "BET-00021"
+      ]
+    }
+  },
+  "json_outputs": {
+    "signal_execution_latest": {
+      "updated_at": "2026-05-30T22:23:25+00:00",
+      "summary": {
+        "signal_groups": 27.0,
+        "execution_tickets": 36.0,
+        "correlated_groups": 6.0,
+        "open_groups": 4.0,
+        "settled_groups": 23.0,
+        "total_stake": 3.6,
+        "total_return": 4.131,
+        "net_profit": 0.931,
+        "roi_percent": 25.86,
+        "avg_execution_line_value": -12.53
+      },
+      "latest_groups_count": 10
+    },
+    "safe_automation_summary": {
+      "created_at": "2026-05-30T22:23:29.208292+00:00",
+      "status": "OK",
+      "fetch": {
+        "state": "OK_WITH_WARNINGS",
+        "readiness": {
+          "official_playergamelogs_ready": true,
+          "official_team_dash_ready": true,
+          "official_player_dash_ready": true,
+          "official_teamgamelogs_ready": true,
+          "odds_ready": false,
+          "sportsdataverse_ready": true,
+          "player_props_market_ready": false,
+          "player_props_settlement_ready": true
+        }
+      },
+      "safety": {
+        "auto_betting": false,
+        "formula_replacement": false,
+        "staking_changes": false,
+        "threshold_changes": false,
+        "manual_approval_required": true,
+        "locks": [
+          "ENVIRONMENT_SAMPLE_LOCK",
+          "INJURY_CONFIRMATION_LOCK",
+          "MANUAL_APPROVAL_REQUIRED",
+          "MODEL_SAMPLE_LOCK",
+          "NO_AUTO_BETTING",
+          "NO_FORMULA_REPLACEMENT",
+          "NO_STAKING_CHANGES",
+          "NO_THRESHOLD_CHANGES"
+        ]
+      },
+      "advisory": {
+        "rows": {
+          "base_actions": 3,
+          "advisory_scores": 3,
+          "hermes_advisory_queue": 3,
+          "team_features": 17,
+          "player_features": 337,
+          "market_features": 4,
+          "model_backtest": 12,
+          "validated_model_changes": 7
+        },
+        "labels": {
+          "NEUTRAL": 2,
+          "LEAN_SUPPORT": 1
+        },
+        "risk_flags": {
+          "NO_LINE": 1
+        }
+      }
+    },
+    "manual_market_review_summary": {
+      "created_at_utc": "2026-05-30T21:56:36+00:00",
+      "status": "OK",
+      "version": "v21.9_manual_market_review",
+      "purpose": "Evaluate operator-entered market lines with V21 feature context while Odds API quota is exhausted.",
+      "rows": {
+        "snapshot": 18,
+        "review": 18,
+        "hermes_manual_queue": 8
+      },
+      "label_counts": {
+        "LEAN_SUPPORT": 5,
+        "MANUAL_REVIEW": 3,
+        "NO_PLAY": 10
+      },
+      "safety": {
+        "auto_betting": false,
+        "manual_approval_required": true,
+        "formula_replacement": false,
+        "staking_changes": false,
+        "threshold_changes": false,
+        "note": "Manual market review outputs are advisory-only and must not be treated as executed bets."
+      },
+      "outputs": {
+        "review_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\manual_market_review_v21_9.csv",
+        "summary_json": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\manual_market_review_summary_v21_9.json",
+        "hermes_queue_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\hermes_manual_market_queue_v21_9.csv"
+      }
+    },
+    "model_result_tracking_summary": {
+      "created_at_utc": "2026-05-30T22:23:29.060878+00:00",
+      "rows": {
+        "tracking": 3,
+        "promotion_watchlist": 12,
+        "matched_rows": 2,
+        "known_results": 0,
+        "decided_results": 0,
+        "clv_samples": 2
+      },
+      "gates": {
+        "formula_change_allowed": false,
+        "staking_change_allowed": false,
+        "threshold_change_allowed": false,
+        "auto_betting_allowed": false,
+        "min_sample_for_formula_promotion": 30,
+        "min_sample_for_threshold_review": 50,
+        "current_gate_state": "EVIDENCE_COLLECTION_ONLY"
+      },
+      "result_counts": {
+        "UNKNOWN": 3
+      }
+    }
+  },
+  "csv_outputs": {
+    "bet_tracker": {
+      "exists": true,
+      "rows": 36,
+      "columns": [
+        "BetID",
+        "Date",
+        "League",
+        "Game",
+        "Player",
+        "Market",
+        "Direction",
+        "Line",
+        "Odds",
+        "Stake",
+        "ActualUnits",
+        "Book",
+        "Result",
+        "Status",
+        "Actual",
+        "P/L",
+        "CLV",
+        "CLV_Percent",
+        "OpeningLine",
+        "ClosingLine",
+        "CLV_Points",
+        "Signal",
+        "ModelVersion",
+        "Projection",
+        "Edge",
+        "Confidence",
+        "FinalSignal",
+        "SuggestedUnits",
+        "Notes",
+        "CreatedAt",
+        "UpdatedAt"
+      ]
+    },
+    "signal_execution_groups": {
+      "exists": true,
+      "rows": 27,
+      "columns": [
+        "GroupID",
+        "Date",
+        "Game",
+        "Market",
+        "Side",
+        "ModelSignalID",
+        "ModelSource",
+        "ModelSignal",
+        "ModelLine",
+        "ModelOdds",
+        "ModelProjection",
+        "ModelEdge",
+        "ModelConfidence",
+        "ConfidenceGrade",
+        "ClosingLine",
+        "StrictModelCLVPoints",
+        "ExecutionTickets",
+        "ExecutionType",
+        "ExposureLabel",
+        "ExecutedLines",
+        "ExecutedOdds",
+        "AverageExecutedLine",
+        "BestExecutedLine",
+        "WorstExecutedLine",
+        "AverageExecutedOdds",
+        "AverageExecutionLineValue",
+        "BestExecutionLineValue",
+        "TotalStake",
+        "TotalReturn",
+        "NetProfit",
+        "ROI_Percent",
+        "Status",
+        "Actual",
+        "BetIDs",
+        "HermesNote",
+        "UpdatedAt"
+      ]
+    },
+    "signal_execution_summary": {
+      "exists": true,
+      "rows": 10,
+      "columns": [
+        "Metric",
+        "Value",
+        "UpdatedAt"
+      ]
+    },
+    "manual_market_snapshot": {
+      "exists": true,
+      "rows": 18,
+      "columns": [
+        "created_at_utc",
+        "date",
+        "league",
+        "game",
+        "away_team",
+        "home_team",
+        "market",
+        "side",
+        "line",
+        "odds_decimal",
+        "book",
+        "source",
+        "operator_status",
+        "notes"
+      ]
+    },
+    "manual_market_review": {
+      "exists": true,
+      "rows": 18,
+      "columns": [
+        "created_at_utc",
+        "date",
+        "game",
+        "market",
+        "side",
+        "line",
+        "odds_decimal",
+        "away_team",
+        "home_team",
+        "model_projection",
+        "model_edge",
+        "implied_probability",
+        "model_probability",
+        "probability_edge",
+        "confidence",
+        "advisory_label",
+        "risk_flags",
+        "approval_state",
+        "operator_action",
+        "explanation"
+      ],
+      "sample": [
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LA Sparks @ CON Sun",
+          "market": "moneyline",
+          "side": "LAS",
+          "line": "",
+          "odds_decimal": "1.54",
+          "away_team": "LAS",
+          "home_team": "CON",
+          "model_projection": "13.75",
+          "model_edge": "0.243",
+          "implied_probability": "0.6494",
+          "model_probability": "0.8924",
+          "probability_edge": "0.243",
+          "confidence": "70.0",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for LAS: 13.75; model prob 0.892; implied 0.649; prob edge 0.243."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LA Sparks @ CON Sun",
+          "market": "spread",
+          "side": "LAS",
+          "line": "-3.5",
+          "odds_decimal": "1.86",
+          "away_team": "LAS",
+          "home_team": "CON",
+          "model_projection": "13.75",
+          "model_edge": "10.25",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "66.75",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for LAS: 13.75; spread -3.5; cover edge 10.25."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LV Aces @ GS Valkyries",
+          "market": "moneyline",
+          "side": "GSV",
+          "line": "",
+          "odds_decimal": "1.96",
+          "away_team": "LVA",
+          "home_team": "GSV",
+          "model_projection": "4.8583",
+          "model_edge": "0.1684",
+          "implied_probability": "0.5102",
+          "model_probability": "0.6786",
+          "probability_edge": "0.1684",
+          "confidence": "65.31",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for GSV: 4.86; model prob 0.679; implied 0.510; prob edge 0.168."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LV Aces @ GS Valkyries",
+          "market": "game_total",
+          "side": "OVER",
+          "line": "169.5",
+          "odds_decimal": "1.86",
+          "away_team": "LVA",
+          "home_team": "GSV",
+          "model_projection": "176.3133",
+          "model_edge": "6.8133",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "65.25",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Team-feature total projection 176.31 vs line 169.5; side-adjusted edge 6.81."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LV Aces @ GS Valkyries",
+          "market": "spread",
+          "side": "GSV",
+          "line": "+1.5",
+          "odds_decimal": "1.86",
+          "away_team": "LVA",
+          "home_team": "GSV",
+          "model_projection": "4.8583",
+          "model_edge": "6.3583",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "55.08",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for GSV: 4.86; spread +1.5; cover edge 6.36."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LA Sparks @ CON Sun",
+          "market": "game_total",
+          "side": "UNDER",
+          "line": "167.5",
+          "odds_decimal": "1.86",
+          "away_team": "LAS",
+          "home_team": "CON",
+          "model_projection": "165.0",
+          "model_edge": "2.5",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "48.0",
+          "advisory_label": "MANUAL_REVIEW",
+          "risk_flags": "THIN_POSITIVE_EDGE;MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Team-feature total projection 165.00 vs line 167.5; side-adjusted edge 2.50."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "IND Fever @ POR Fire",
+          "market": "spread",
+          "side": "POR",
+          "line": "+11.5",
+          "odds_decimal": "1.86",
+          "away_team": "IND",
+          "home_team": "POR",
+          "model_projection": "-9.2167",
+          "model_edge": "2.2833",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "32.85",
+          "advisory_label": "MANUAL_REVIEW",
+          "risk_flags": "THIN_POSITIVE_EDGE;MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for POR: -9.22; spread +11.5; cover edge 2.28."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "IND Fever @ POR Fire",
+          "market": "moneyline",
+          "side": "POR",
+          "line": "",
+          "odds_decimal": "5.00",
+          "away_team": "IND",
+          "home_team": "POR",
+          "model_projection": "-9.2167",
+          "model_edge": "-0.005",
+          "implied_probability": "0.2",
+          "model_probability": "0.195",
+          "probability_edge": "-0.005",
+          "confidence": "25.9",
+          "advisory_label": "MANUAL_REVIEW",
+          "risk_flags": "PRICE_EDGE_TOO_SMALL;MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for POR: -9.22; model prob 0.195; implied 0.200; prob edge -0.005."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LA Sparks @ CON Sun",
+          "market": "moneyline",
+          "side": "CON",
+          "line": "",
+          "odds_decimal": "2.40",
+          "away_team": "LAS",
+          "home_team": "CON",
+          "model_projection": "-13.75",
+          "model_edge": "-0.3091",
+          "implied_probability": "0.4167",
+          "model_probability": "0.1076",
+          "probability_edge": "-0.3091",
+          "confidence": "70.0",
+          "advisory_label": "NO_PLAY",
+          "risk_flags": "NEGATIVE_PRICE_EDGE;MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for CON: -13.75; model prob 0.108; implied 0.417; prob edge -0.309."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LV Aces @ GS Valkyries",
+          "market": "moneyline",
+          "side": "LVA",
+          "line": "",
+          "odds_decimal": "1.79",
+          "away_team": "LVA",
+          "home_team": "GSV",
+          "model_projection": "-4.8583",
+          "model_edge": "-0.2373",
+          "implied_probability": "0.5587",
+          "model_probability": "0.3214",
+          "probability_edge": "-0.2373",
+          "confidence": "70.0",
+          "advisory_label": "NO_PLAY",
+          "risk_flags": "NEGATIVE_PRICE_EDGE;MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for LVA: -4.86; model prob 0.321; implied 0.559; prob edge -0.237."
+        }
+      ]
+    },
+    "hermes_manual_market_queue": {
+      "exists": true,
+      "rows": 8,
+      "columns": [
+        "created_at_utc",
+        "date",
+        "game",
+        "market",
+        "side",
+        "line",
+        "odds_decimal",
+        "away_team",
+        "home_team",
+        "model_projection",
+        "model_edge",
+        "implied_probability",
+        "model_probability",
+        "probability_edge",
+        "confidence",
+        "advisory_label",
+        "risk_flags",
+        "approval_state",
+        "operator_action",
+        "explanation"
+      ],
+      "sample": [
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LA Sparks @ CON Sun",
+          "market": "moneyline",
+          "side": "LAS",
+          "line": "",
+          "odds_decimal": "1.54",
+          "away_team": "LAS",
+          "home_team": "CON",
+          "model_projection": "13.75",
+          "model_edge": "0.243",
+          "implied_probability": "0.6494",
+          "model_probability": "0.8924",
+          "probability_edge": "0.243",
+          "confidence": "70.0",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for LAS: 13.75; model prob 0.892; implied 0.649; prob edge 0.243."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LA Sparks @ CON Sun",
+          "market": "spread",
+          "side": "LAS",
+          "line": "-3.5",
+          "odds_decimal": "1.86",
+          "away_team": "LAS",
+          "home_team": "CON",
+          "model_projection": "13.75",
+          "model_edge": "10.25",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "66.75",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for LAS: 13.75; spread -3.5; cover edge 10.25."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LV Aces @ GS Valkyries",
+          "market": "moneyline",
+          "side": "GSV",
+          "line": "",
+          "odds_decimal": "1.96",
+          "away_team": "LVA",
+          "home_team": "GSV",
+          "model_projection": "4.8583",
+          "model_edge": "0.1684",
+          "implied_probability": "0.5102",
+          "model_probability": "0.6786",
+          "probability_edge": "0.1684",
+          "confidence": "65.31",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for GSV: 4.86; model prob 0.679; implied 0.510; prob edge 0.168."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LV Aces @ GS Valkyries",
+          "market": "game_total",
+          "side": "OVER",
+          "line": "169.5",
+          "odds_decimal": "1.86",
+          "away_team": "LVA",
+          "home_team": "GSV",
+          "model_projection": "176.3133",
+          "model_edge": "6.8133",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "65.25",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Team-feature total projection 176.31 vs line 169.5; side-adjusted edge 6.81."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LV Aces @ GS Valkyries",
+          "market": "spread",
+          "side": "GSV",
+          "line": "+1.5",
+          "odds_decimal": "1.86",
+          "away_team": "LVA",
+          "home_team": "GSV",
+          "model_projection": "4.8583",
+          "model_edge": "6.3583",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "55.08",
+          "advisory_label": "LEAN_SUPPORT",
+          "risk_flags": "MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for GSV: 4.86; spread +1.5; cover edge 6.36."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "LA Sparks @ CON Sun",
+          "market": "game_total",
+          "side": "UNDER",
+          "line": "167.5",
+          "odds_decimal": "1.86",
+          "away_team": "LAS",
+          "home_team": "CON",
+          "model_projection": "165.0",
+          "model_edge": "2.5",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "48.0",
+          "advisory_label": "MANUAL_REVIEW",
+          "risk_flags": "THIN_POSITIVE_EDGE;MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Team-feature total projection 165.00 vs line 167.5; side-adjusted edge 2.50."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "IND Fever @ POR Fire",
+          "market": "spread",
+          "side": "POR",
+          "line": "+11.5",
+          "odds_decimal": "1.86",
+          "away_team": "IND",
+          "home_team": "POR",
+          "model_projection": "-9.2167",
+          "model_edge": "2.2833",
+          "implied_probability": "0.5376",
+          "model_probability": "",
+          "probability_edge": "",
+          "confidence": "32.85",
+          "advisory_label": "MANUAL_REVIEW",
+          "risk_flags": "THIN_POSITIVE_EDGE;MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for POR: -9.22; spread +11.5; cover edge 2.28."
+        },
+        {
+          "created_at_utc": "2026-05-30T21:56:36+00:00",
+          "date": "2026-05-31",
+          "game": "IND Fever @ POR Fire",
+          "market": "moneyline",
+          "side": "POR",
+          "line": "",
+          "odds_decimal": "5.00",
+          "away_team": "IND",
+          "home_team": "POR",
+          "model_projection": "-9.2167",
+          "model_edge": "-0.005",
+          "implied_probability": "0.2",
+          "model_probability": "0.195",
+          "probability_edge": "-0.005",
+          "confidence": "25.9",
+          "advisory_label": "MANUAL_REVIEW",
+          "risk_flags": "PRICE_EDGE_TOO_SMALL;MANUAL_APPROVAL_REQUIRED;NO_AUTO_BETTING;NO_FORMULA_REPLACEMENT",
+          "approval_state": "ADVISORY_ONLY_MANUAL_REVIEW",
+          "operator_action": "REVIEW_ONLY_DO_NOT_AUTO_BET",
+          "explanation": "Feature margin projection for POR: -9.22; model prob 0.195; implied 0.200; prob edge -0.005."
+        }
+      ]
+    },
+    "model_advisory_scores": {
+      "exists": true,
+      "rows": 3,
+      "columns": [
+        "created_at_utc",
+        "source",
+        "game",
+        "away_team",
+        "home_team",
+        "side",
+        "line",
+        "projection",
+        "edge",
+        "units",
+        "model_edge_score",
+        "recent_scoring_score",
+        "dashboard_scoring_score",
+        "rotation_concentration_score",
+        "rotation_risk_penalty",
+        "bench_depth_score",
+        "dreb_environment_score",
+        "market_range_penalty",
+        "market_range",
+        "advisory_score",
+        "advisory_label",
+        "risk_flags",
+        "manual_review_priority"
+      ]
+    },
+    "hermes_advisory_queue": {
+      "exists": true,
+      "rows": 3,
+      "columns": [
+        "created_at_utc",
+        "game",
+        "side",
+        "line",
+        "projection",
+        "edge",
+        "units",
+        "advisory_score",
+        "advisory_label",
+        "risk_flags",
+        "manual_review_priority",
+        "approval_state",
+        "message"
+      ]
+    }
+  },
+  "issues": [
+    "app.py has duplicate function definitions; old helper functions may still control output.",
+    "app.py still contains stale labels/strings: V21.8 advisory cycle=3, Derived market=2, telegram_message.txt found=1, Run bet_tracker_seed.py first=1, NO_LINE=1",
+    "app.py does not reference required V21.9 source/marker: V21.9",
+    "app.py does not reference required V21.9 source/marker: manual_market_review_v21_9",
+    "app.py does not reference required V21.9 source/marker: hermes_manual_market_queue_v21_9",
+    "app.py does not reference required V21.9 source/marker: signal_execution_latest_v20",
+    "app.py does not reference required V21.9 source/marker: v21_9_safe_automation_summary",
+    "app.py does not reference required V21.9 source/marker: NO_AUTO_BETTING",
+    "bet_tracker.csv still has duplicate bet keys."
+  ]
+}

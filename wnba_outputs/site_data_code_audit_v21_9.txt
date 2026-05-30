@@ -1,0 +1,158 @@
+WNBA EDGE LAB V21.9 SITE/DATA/CODE AUDIT
+========================================================================
+Created: 2026-05-30T23:13:24+00:00
+Root: C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN
+
+ISSUES
+------------------------------------------------------------------------
+1. app.py has duplicate function definitions; old helper functions may still control output.
+2. app.py still contains stale labels/strings: V21.8 advisory cycle=3, Derived market=2, telegram_message.txt found=1, Run bet_tracker_seed.py first=1, NO_LINE=1
+3. app.py does not reference required V21.9 source/marker: V21.9
+4. app.py does not reference required V21.9 source/marker: manual_market_review_v21_9
+5. app.py does not reference required V21.9 source/marker: hermes_manual_market_queue_v21_9
+6. app.py does not reference required V21.9 source/marker: signal_execution_latest_v20
+7. app.py does not reference required V21.9 source/marker: v21_9_safe_automation_summary
+8. app.py does not reference required V21.9 source/marker: NO_AUTO_BETTING
+9. bet_tracker.csv still has duplicate bet keys.
+
+BET TRACKER
+------------------------------------------------------------------------
+rows=36 open_count=4 open_stake=0.4 settled_pl_raw_sum=0.931 may31_count=4
+  BET-00039 | LA Sparks @ CON Sun | Spread | LAS | -3.5 | 1.82 | 0.10 | OPEN | LEAN_SUPPORT
+  BET-00040 | LA Sparks @ CON Sun | Moneyline | LAS | 0 | 1.83 | 0.10 | OPEN | LEAN_SUPPORT
+  BET-00041 | LV Aces @ GS Valkyries | Game Total | OVER | 169.5 | 1.90 | 0.10 | OPEN | LEAN_SUPPORT
+  BET-00042 | LV Aces @ GS Valkyries | Spread | GSV | +1.5 | 1.87 | 0.10 | OPEN | LEAN_SUPPORT
+
+APP ROUTES / STALE MARKERS
+------------------------------------------------------------------------
+route_count=19
+duplicate_routes={}
+duplicate_function_defs=['action_board', 'actions', 'v19_bankroll', 'v19_dashboard', 'v19_hermes', 'v19_home', 'v19_menu']
+stale_marker_counts={'V21.8 advisory cycle': 3, 'Derived market': 2, 'telegram_message.txt found': 1, 'Run bet_tracker_seed.py first': 1, 'NO_LINE': 1}
+required_marker_counts={'V21.9': 0, 'manual_market_review_v21_9': 0, 'hermes_manual_market_queue_v21_9': 0, 'bet_tracker.csv': 1, 'signal_execution_latest_v20': 0, 'v21_9_safe_automation_summary': 0, 'NO_AUTO_BETTING': 0, 'MANUAL_APPROVAL_REQUIRED': 1}
+
+KEY OUTPUT SUMMARIES
+------------------------------------------------------------------------
+{
+  "signal_execution_latest": {
+    "updated_at": "2026-05-30T22:23:25+00:00",
+    "summary": {
+      "signal_groups": 27.0,
+      "execution_tickets": 36.0,
+      "correlated_groups": 6.0,
+      "open_groups": 4.0,
+      "settled_groups": 23.0,
+      "total_stake": 3.6,
+      "total_return": 4.131,
+      "net_profit": 0.931,
+      "roi_percent": 25.86,
+      "avg_execution_line_value": -12.53
+    },
+    "latest_groups_count": 10
+  },
+  "safe_automation_summary": {
+    "created_at": "2026-05-30T22:23:29.208292+00:00",
+    "status": "OK",
+    "fetch": {
+      "state": "OK_WITH_WARNINGS",
+      "readiness": {
+        "official_playergamelogs_ready": true,
+        "official_team_dash_ready": true,
+        "official_player_dash_ready": true,
+        "official_teamgamelogs_ready": true,
+        "odds_ready": false,
+        "sportsdataverse_ready": true,
+        "player_props_market_ready": false,
+        "player_props_settlement_ready": true
+      }
+    },
+    "safety": {
+      "auto_betting": false,
+      "formula_replacement": false,
+      "staking_changes": false,
+      "threshold_changes": false,
+      "manual_approval_required": true,
+      "locks": [
+        "ENVIRONMENT_SAMPLE_LOCK",
+        "INJURY_CONFIRMATION_LOCK",
+        "MANUAL_APPROVAL_REQUIRED",
+        "MODEL_SAMPLE_LOCK",
+        "NO_AUTO_BETTING",
+        "NO_FORMULA_REPLACEMENT",
+        "NO_STAKING_CHANGES",
+        "NO_THRESHOLD_CHANGES"
+      ]
+    },
+    "advisory": {
+      "rows": {
+        "base_actions": 3,
+        "advisory_scores": 3,
+        "hermes_advisory_queue": 3,
+        "team_features": 17,
+        "player_features": 337,
+        "market_features": 4,
+        "model_backtest": 12,
+        "validated_model_changes": 7
+      },
+      "labels": {
+        "NEUTRAL": 2,
+        "LEAN_SUPPORT": 1
+      },
+      "risk_flags": {
+        "NO_LINE": 1
+      }
+    }
+  },
+  "manual_market_review_summary": {
+    "created_at_utc": "2026-05-30T21:56:36+00:00",
+    "status": "OK",
+    "version": "v21.9_manual_market_review",
+    "purpose": "Evaluate operator-entered market lines with V21 feature context while Odds API quota is exhausted.",
+    "rows": {
+      "snapshot": 18,
+      "review": 18,
+      "hermes_manual_queue": 8
+    },
+    "label_counts": {
+      "LEAN_SUPPORT": 5,
+      "MANUAL_REVIEW": 3,
+      "NO_PLAY": 10
+    },
+    "safety": {
+      "auto_betting": false,
+      "manual_approval_required": true,
+      "formula_replacement": false,
+      "staking_changes": false,
+      "threshold_changes": false,
+      "note": "Manual market review outputs are advisory-only and must not be treated as executed bets."
+    },
+    "outputs": {
+      "review_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\manual_market_review_v21_9.csv",
+      "summary_json": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\manual_market_review_summary_v21_9.json",
+      "hermes_queue_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\hermes_manual_market_queue_v21_9.csv"
+    }
+  },
+  "model_result_tracking_summary": {
+    "created_at_utc": "2026-05-30T22:23:29.060878+00:00",
+    "rows": {
+      "tracking": 3,
+      "promotion_watchlist": 12,
+      "matched_rows": 2,
+      "known_results": 0,
+      "decided_results": 0,
+      "clv_samples": 2
+    },
+    "gates": {
+      "formula_change_allowed": false,
+      "staking_change_allowed": false,
+      "threshold_change_allowed": false,
+      "auto_betting_allowed": false,
+      "min_sample_for_formula_promotion": 30,
+      "min_sample_for_threshold_review": 50,
+      "current_gate_state": "EVIDENCE_COLLECTION_ONLY"
+    },
+    "result_counts": {
+      "UNKNOWN": 3
+    }
+  }
+}
