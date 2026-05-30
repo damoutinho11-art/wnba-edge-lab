@@ -1,20 +1,36 @@
 {
   "version": "v20_signal_execution_bridge",
-  "updated_at": "2026-05-30T21:22:21+00:00",
+  "updated_at": "2026-05-30T21:50:51+00:00",
   "mode": "manual_approval",
   "summary": {
-    "signal_groups": 22.0,
-    "execution_tickets": 27.0,
-    "correlated_groups": 5.0,
+    "signal_groups": 23.0,
+    "execution_tickets": 32.0,
+    "correlated_groups": 6.0,
     "open_groups": 0.0,
-    "settled_groups": 22.0,
-    "total_stake": 2.7,
-    "total_return": 3.081,
-    "net_profit": 0.381,
-    "roi_percent": 14.11,
-    "avg_execution_line_value": -0.159
+    "settled_groups": 23.0,
+    "total_stake": 3.2,
+    "total_return": 4.131,
+    "net_profit": 0.931,
+    "roi_percent": 29.09,
+    "avg_execution_line_value": -7.426
   },
   "latest_groups": [
+    {
+      "group_id": "2026-05-30|LAS SPARKS @ WAS MYSTICS|game_total|OVER",
+      "date": "2026-05-30",
+      "game": "LAS SPARKS @ WAS MYSTICS",
+      "market": "game_total",
+      "side": "OVER",
+      "model_line": 0.0,
+      "executed_lines": "165.5, 166.5, 167.5, 168.5, 168.5",
+      "tickets": 5,
+      "stake": 0.5,
+      "profit": 0.55,
+      "roi_percent": 110.00000000000001,
+      "status": "WON",
+      "exposure_label": "CORRELATED",
+      "hermes_note": "Grouped 5 fills as one OVER game_total thesis. Count bankroll P/L per ticket, but count validation as one model signal. Execution was 167.30 pts worse than model line."
+    },
     {
       "group_id": "2026-05-28|ATL @ MIN|game_total|UNDER",
       "date": "2026-05-28",
@@ -156,22 +172,6 @@
       "profit": 0.09,
       "roi_percent": 89.99999999999999,
       "status": "WON",
-      "exposure_label": "SINGLE",
-      "hermes_note": "Single execution fill. Count as one signal/fill unless manually linked otherwise."
-    },
-    {
-      "group_id": "2026-05-24|LAS @ LV|double_double|NO",
-      "date": "2026-05-24",
-      "game": "LAS @ LV",
-      "market": "double_double",
-      "side": "NO",
-      "model_line": 0.5,
-      "executed_lines": "0.5",
-      "tickets": 1,
-      "stake": 0.1,
-      "profit": -0.1,
-      "roi_percent": -100.0,
-      "status": "LOST",
       "exposure_label": "SINGLE",
       "hermes_note": "Single execution fill. Count as one signal/fill unless manually linked otherwise."
     }
