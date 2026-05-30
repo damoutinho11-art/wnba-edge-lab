@@ -1,0 +1,29 @@
+{
+  "created_at_utc": "2026-05-30T21:56:36+00:00",
+  "status": "OK",
+  "version": "v21.9_manual_market_review",
+  "purpose": "Evaluate operator-entered market lines with V21 feature context while Odds API quota is exhausted.",
+  "rows": {
+    "snapshot": 18,
+    "review": 18,
+    "hermes_manual_queue": 8
+  },
+  "label_counts": {
+    "LEAN_SUPPORT": 5,
+    "MANUAL_REVIEW": 3,
+    "NO_PLAY": 10
+  },
+  "safety": {
+    "auto_betting": false,
+    "manual_approval_required": true,
+    "formula_replacement": false,
+    "staking_changes": false,
+    "threshold_changes": false,
+    "note": "Manual market review outputs are advisory-only and must not be treated as executed bets."
+  },
+  "outputs": {
+    "review_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\manual_market_review_v21_9.csv",
+    "summary_json": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\manual_market_review_summary_v21_9.json",
+    "hermes_queue_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\hermes_manual_market_queue_v21_9.csv"
+  }
+}
