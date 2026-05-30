@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-05-30T21:12:34.459974+00:00",
+  "created_at_utc": "2026-05-30T21:22:23.102816+00:00",
   "status": "OK",
   "version": "v21.9",
   "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
@@ -191,8 +191,8 @@
     "note": "V21.9 tracker creates evidence artifacts only; it does not alter live model behavior."
   },
   "outputs": {
-    "tracking_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_result_tracking_v21_9.csv",
-    "summary_json": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_result_tracking_summary_v21_9.json",
-    "promotion_watchlist_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_promotion_watchlist_v21_9.csv"
+    "tracking_csv": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_result_tracking_v21_9.csv",
+    "summary_json": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_result_tracking_summary_v21_9.json",
+    "promotion_watchlist_csv": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_promotion_watchlist_v21_9.csv"
   }
 }
