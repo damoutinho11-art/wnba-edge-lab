@@ -4665,9 +4665,96 @@ def v21_8_dashboard():
     projection_preview = projection_cards(proj.head(4) if hasattr(proj, 'head') else proj)
     return f'''{v21_8_advisory_panel()}{command_center_hero(proj, stakes)}{v192_command_strip()}<section class="terminal-layout"><div class="terminal-stack">{v192_operator_brief()}<div class="v19-section-head"><div><h2>Top advisory queue</h2><p>V21.8 actions are recommendations only. Operator approval remains mandatory.</p></div><a class="chip" href="/actions">Open Actions</a></div>{_v193_action_cards(display_actions, limit=3)}<details class="panel"><summary style="cursor:pointer;font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-.05em">Projection context preview</summary><p class="muted" style="margin:10px 0 14px">A compact preview only. Use dedicated lab pages for full diagnostic review.</p>{projection_preview}</details></div><aside class="terminal-stack">{operator_guardrails_panel()}{environment_command_panel()}{model_health_panel()}{hermes_activity_feed()}</aside></section>'''
 
+
+
+def _v21_file_table(path, title, limit=12):
+    df = read_csv(path)
+    if df.empty:
+        return f'<div class="v19-panel"><span class="muted">{_v21_clean(title)}</span><div class="missing-smart">No file/rows available yet.</div></div>'
+    return f'<div class="v19-panel"><span class="muted">{_v21_clean(title)}</span>{table(df.head(limit), max_rows=limit)}</div>'
+
+
+def _v21_readiness_rows():
+    s = _v21_summary()
+    readiness = s.get("readiness", {}) or {}
+    if not readiness:
+        readiness = {
+            "official_player_dash_ready": True,
+            "sportsdataverse_ready": True,
+            "odds_ready": False,
+            "player_props_market_ready": False,
+        }
+    rows = []
+    for key, val in readiness.items():
+        label = str(key).replace("_ready", "").replace("_", " ").title()[:32]
+        cls = "ok" if bool(val) else "warn"
+        state = "Ready" if bool(val) else "Guarded"
+        rows.append(f'<div class="hermes-status-row"><b>{_v21_clean(label)}</b><span class="{cls}">{state}</span></div>')
+    return ''.join(rows)
+
+
+def _v21_lock_panel():
+    s = _v21_summary()
+    pills = ''.join(f'<span class="approval-pill locked">{_v21_clean(lock)}</span>' for lock in s.get("locks", []))
+    pills += '<span class="approval-pill locked">NO AUTO-BETTING</span><span class="approval-pill warn">NO FORMULA CHANGES</span><span class="approval-pill warn">NO STAKING CHANGES</span><span class="approval-pill warn">NO THRESHOLD CHANGES</span>'
+    return f"""<section class="v19-panel"><div class="v19-section-head" style="margin-top:0"><div><h2>Safety locks</h2><p>V21.8 remains an advisory/manual-approval system. These locks are display-verified and must remain active.</p></div><span class="chip">Manual</span></div><div class="approval-rail">{pills}</div></section>"""
+
+
+def _v21_advisory_queue_table():
+    queue = read_csv(V21_ADVISORY_QUEUE_CSV)
+    scores = read_csv(V21_ADVISORY_SCORES_CSV)
+    if not queue.empty:
+        df = queue
+        title = "Hermes advisory queue"
+    elif not scores.empty:
+        df = scores
+        title = "Advisory scores"
+    else:
+        return '<div class="v19-panel"><span class="muted">Hermes advisory queue</span><div class="missing-smart">No V21.8 advisory queue rows found yet. Run the advisory cycle to refresh outputs.</div></div>'
+    return f'<div class="v19-panel"><span class="muted">{title}</span>{table(df.head(12), max_rows=12)}</div>'
+
+
+def v21_8_hermes():
+    s = _v21_summary()
+    queue_n = s["advisory_rows"].get("hermes_advisory_queue", 0)
+    approval_n = s.get("approval_queue", 0)
+    return f"""<main class="hermes-product">
+      <section class="hermes-cockpit">
+        <div class="hermes-command-card"><div class="web-eyebrow"><span class="pulse-ring"></span> Hermes · V21.8 Manual Approval</div><h1>Recommend, warn, and wait.</h1><p>Hermes is live as a guarded advisory layer. It may organize signals and risk context, but it cannot execute bets or bypass operator approval.</p><div class="hermes-hero-actions"><a class="btn primary" href="/actions">Review Actions</a><a class="btn" href="/dashboard">V21.8 Dashboard</a><a class="btn" href="/validation">Validation</a></div></div>
+        <div class="terminal-stack"><div class="v19-panel"><span class="muted">Current mode</span><div class="mission-row"><span>Mode</span><b>{_v21_clean(str(s['mode']).replace('_',' ').title())}</b><em>Locked</em></div><div class="mission-row"><span>Approval</span><b>{_v21_clean(approval_n)} pending manual approval</b><em>Human</em></div><div class="mission-row"><span>Queue</span><b>{_v21_clean(queue_n)} advisory rows</b><em>V21.8</em></div></div>{_v21_lock_panel()}</div>
+      </section>
+      {v21_8_advisory_panel()}
+      <section class="v19-grid-2"><div class="v19-panel"><span class="muted">Readiness map</span>{_v21_readiness_rows()}</div>{_v21_advisory_queue_table()}</section>
+      <section class="v19-workflow"><div class="workflow-step"><em>01</em><b>Observe</b><p>Read official WNBA, SportsDataverse, cache, features, and advisory outputs.</p></div><div class="workflow-step"><em>02</em><b>Score</b><p>Create advisory labels such as NEUTRAL or LEAN_SUPPORT without changing formulas.</p></div><div class="workflow-step"><em>03</em><b>Warn</b><p>Surface missing odds, NO_LINE, injury confirmation, and readiness gaps.</p></div><div class="workflow-step"><em>04</em><b>Approve</b><p>Operator approval remains mandatory. No automatic execution exists here.</p></div></section>
+    </main>"""
+
+
+def v21_8_validation():
+    s = _v21_summary()
+    b = s["backtest_rows"]
+    bt_summary = _v21_json(OUTPUT_DIR / "model_backtest_summary_v21.json", {})
+    candidate_status = dict(bt_summary.get("candidate_statuses", {}) or {})
+    stages = dict(bt_summary.get("implementation_stages", {}) or {})
+    if not candidate_status:
+        bt = read_csv(OUTPUT_DIR / "model_backtest_v21.csv")
+        if not bt.empty:
+            norm = normalize(bt)
+            col = first_existing_col(norm, ["candidate_status", "status", "validation_status"])
+            if col:
+                candidate_status = norm[col].astype(str).value_counts().to_dict()
+    return f"""<main class="v19-home">
+      <section class="v19-panel" style="border-color:rgba(5,232,154,.18);background:radial-gradient(circle at 88% 0%,rgba(5,232,154,.08),transparent 36%),var(--v19-glass)"><div class="v19-section-head" style="margin-top:0"><div><h2>V21.8 validation desk</h2><p>Backtest and advisory validation are review inputs only. No formula, staking, or threshold replacement is allowed from this page.</p></div><span class="chip">Backtest only</span></div><div class="v19-grid-4">{_v21_metric('Backtest Rows', b.get('backtest',0), 'V21.2 validation output')}{_v21_metric('Feature Candidates', b.get('feature_candidates',0), 'Candidate features')}{_v21_metric('Validated Changes', b.get('validated_changes',0), 'Manual-review only')}{_v21_metric('Warnings', b.get('warnings',0), 'Review before changes')}</div></section>
+      <section class="v19-grid-2"><div class="v19-panel"><span class="muted">Candidate statuses</span>{_v21_pairs('Status', candidate_status, 'No statuses')}</div><div class="v19-panel"><span class="muted">Implementation stages</span>{_v21_pairs('Stage', stages, 'No stages')}</div></section>
+      <section class="v19-grid-2">{_v21_file_table(OUTPUT_DIR / 'model_backtest_v21.csv', 'Model backtest rows', 10)}{_v21_file_table(OUTPUT_DIR / 'validated_model_changes_v21.csv', 'Validated/manual-review changes', 10)}</section>
+      {_v21_lock_panel()}
+    </main>"""
+
+
 # V21.8 endpoint display overrides. These are presentation-only and do not touch formulas, staking, thresholds, or execution.
 app.view_functions['index'] = lambda: page("Home", v21_8_home())
 app.view_functions['dashboard'] = lambda: page("Dashboard", v21_8_dashboard())
+app.view_functions['hermes'] = lambda: page("Hermes", v21_8_hermes())
+app.view_functions['validation'] = lambda: page("Validation", v21_8_validation())
 
 if __name__ == "__main__":
     print("Starting WNBA Edge Lab V21.8 advisory dashboard...")
