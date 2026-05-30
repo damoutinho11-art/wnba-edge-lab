@@ -1,0 +1,73 @@
+name: WNBA Edge Lab Safe Automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      features:
+        description: "Run enhanced feature fetch/build flags"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+      props:
+        description: "Run props-market fetch flag if ODDS_API_KEY is configured"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+  schedule:
+    # Daily research/model refresh. Betting execution is intentionally excluded.
+    - cron: "17 11 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wnba-edge-lab-safe-automation
+  cancel-in-progress: false
+
+jobs:
+  safe-automation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+      THE_ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+      WNBA_EDGE_LAB_AUTOMATION_MODE: research_model_only
+      AUTO_BETTING_ENABLED: "false"
+      AUTO_BETTING_DISABLED: "true"
+      MANUAL_APPROVAL_REQUIRED: "true"
+      FORMULA_REPLACEMENT_ALLOWED: "false"
+      STAKING_CHANGES_ALLOWED: "false"
+      THRESHOLD_CHANGES_ALLOWED: "false"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Compile automation scripts
+        run: |
+          python -m py_compile run_v21_9_safe_automation_cycle.py
+          python -m py_compile model_result_tracker_v21_9.py
+
+      - name: Run safe automation cycle
+        run: |
+          ARGS=""
+          if [ "${{ github.event.inputs.features }}" = "true" ]; then ARGS="$ARGS --features"; fi
+          if [ "${{ github.event.inputs.props }}" = "true" ]; then ARGS="$ARGS --props"; fi
+          python run_v21_9_safe_automation_cycle.py $ARGS
+
+      - name: Commit refreshed research/model outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wnba_outputs || true
+          git diff --cached --quiet && echo "No output changes to commit" || git commit -m "Automated safe WNBA model refresh"
+          git push
