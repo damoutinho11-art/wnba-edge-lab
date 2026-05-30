@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-05-28 23:21:15",
+  "environment_regime": "LEARNING",
+  "color": "YELLOW",
+  "sample": 6,
+  "avg_clv": -0.583,
+  "avg_chaos": 9.5,
+  "avg_trust": 18.67,
+  "avg_confidence": 50.0,
+  "bucket_shares": {
+    "extreme_over": 16.7,
+    "lean_over": 16.7,
+    "neutral_no_play": 66.7,
+    "chaos": 0.0
+  },
+  "reason": "Sample too small for stable environment classification.",
+  "bucket_breakdown": [
+    {
+      "EnvironmentBucket": "EXTREME OVER ENVIRONMENT",
+      "Sample": 1,
+      "GradedSample": 0,
+      "WinRate": 0.0,
+      "AvgCLV": -1.5,
+      "AvgEdge": 6.52,
+      "AvgConfidence": 73.0,
+      "AvgChaos": 0.0,
+      "AvgTrust": 42.0
+    },
+    {
+      "EnvironmentBucket": "NEUTRAL / NO PLAY",
+      "Sample": 4,
+      "GradedSample": 0,
+      "WinRate": 0.0,
+      "AvgCLV": -0.25,
+      "AvgEdge": 1.12,
+      "AvgConfidence": 44.0,
+      "AvgChaos": 11.8,
+      "AvgTrust": 14.5
+    },
+    {
+      "EnvironmentBucket": "LEAN OVER ENVIRONMENT",
+      "Sample": 1,
+      "GradedSample": 0,
+      "WinRate": 0.0,
+      "AvgCLV": -1.0,
+      "AvgEdge": 5.34,
+      "AvgConfidence": 51.0,
+      "AvgChaos": 10.0,
+      "AvgTrust": 12.0
+    }
+  ],
+  "environment_memory_rows": 3,
+  "core_rule": "Observational only. No automatic formula/staking/betting changes."
+}

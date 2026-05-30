@@ -1,0 +1,3 @@
+rank,game,market,selection,model_line,assumed_odds,projection,edge,confidence,confidence_grade,signal,suggested_units,approval_state,why,risk
+1,LAS @ WAS,OVER 169.0,OVER,169.0,1.91,175.52,6.52,73.0,B,STRONG OVER,0.75,PENDING_MANUAL_APPROVAL,edge 6.5 pts; pace weak; efficiency supports; four factors support; market consensus clean,"Manual approval required. Confirm market line, injuries, and exposure before execution."
+2,PHX @ NYL,OVER 169.5,OVER,169.5,1.91,173.39,3.89,56.0,C,LEAN OVER,0.35,PENDING_MANUAL_APPROVAL,edge 3.9 pts; pace weak; efficiency supports; four factors mixed; market consensus clean,"Manual approval required. Confirm market line, injuries, and exposure before execution."

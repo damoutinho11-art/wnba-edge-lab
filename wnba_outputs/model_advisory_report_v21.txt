@@ -1,0 +1,22 @@
+WNBA EDGE LAB - V21 ADVISORY SCORING REPORT
+==========================================================
+Created: 2026-05-30T19:51:55.450702+00:00
+
+Status: advisory only. No live model formula changed.
+
+Rows scored: 3
+Hermes advisory queue: 3
+
+Label counts:
+- NEUTRAL: 2
+- LEAN_SUPPORT: 1
+
+Top advisory rows:
+- LAS @ WAS | OVER | line=169.0 | score=28.3 | LEAN_SUPPORT | flags=
+- nan | OVER | line=nan | score=19.6 | NEUTRAL | flags=NO_LINE
+- PHX @ NYL | OVER | line=169.5 | score=4.6 | NEUTRAL | flags=
+
+Next validation:
+- Compare advisory_score buckets against actual results and CLV.
+- Keep MANUAL_APPROVAL_REQUIRED and MODEL_SAMPLE_LOCK active.
+- Do not use advisory score to change staking yet.

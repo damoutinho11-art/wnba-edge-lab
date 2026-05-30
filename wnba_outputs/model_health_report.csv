@@ -1,0 +1,2 @@
+RunTimestamp,ModelHealthScore,HealthLabel,HealthColor,AvgCLV,BeatCloseRate,SignalsWithCLV,SignalWinRate,GradedSignals,CLVQualityScore,BeatCloseScore,WinRateScore,RecentFormScore,SampleReliabilityScore,SampleSize,FormulaStatus,SampleWarning,Warning
+2026-05-28 23:21:04,53.1,LEARNING,YELLOW,0.125,30.0,20,60.0,5,52.25,30.0,100,50.0,10.0,20,FROZEN,LOW SAMPLE,Informational only. Do not overreact to small samples.

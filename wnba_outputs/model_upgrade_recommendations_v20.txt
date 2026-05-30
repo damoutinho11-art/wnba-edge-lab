@@ -1,0 +1,46 @@
+WNBA EDGE LAB — V20 MODEL UPGRADE RECOMMENDATIONS
+Generated: 2026-05-30T19:51:53+00:00
+
+Priority 1 — Signal IDs and execution linking
+- Add signal_id to projections_with_stakes.csv, recommended_bets.csv, bet_tracker.csv, signal_tracker files, and Hermes approval queue.
+- Treat model quality as 1 signal, while bankroll quality tracks all execution fills.
+- Add correlation_group and execution_group_id to every ticket.
+
+Priority 2 — CLV coverage and market movement
+- Capture open/current/close totals and odds for every model signal.
+- Track CLV in points and odds separately.
+- Add CLV by signal grade, environment bucket, team pair, and market.
+
+Priority 3 — Injury and minutes features
+- Add injury_status, starter_out_count, questionable_count, minutes_missing_estimate, usage_missing_estimate, and injury_uncertainty_score.
+- Hermes should lock approval when injury uncertainty is high or injury feed is stale.
+
+Priority 4 — Rest/travel and schedule features
+- Add days_rest, back_to_back, third_game_in_four, road_trip_game_number, home_stand, and travel_distance_proxy.
+- Audit totals performance by rest/travel regime.
+
+Priority 5 — Environment validation gate
+- Keep environment advisory while sample is low.
+- Do not increase stake from environment labels until bucket-level graded sample is strong.
+
+Priority 6 — Model formula discipline
+- Do not change staking thresholds or projection formula yet.
+- Build features and audits beside the current model, validate, then promote changes only after evidence.
+
+Current audit watch items:
+- [MEDIUM] Projection Layer / Average confidence: 50.0 -> Improve confidence calibration with injury/minutes/rest/market features.
+- [MEDIUM] Model Health / Health score: 53.1 -> Keep formula frozen while adding audit-only features until sample is reliable.
+- [MEDIUM] Model Health / Sample size: 20 -> Do not promote automation level while model sample is low.
+- [HIGH] CLV / Beat-close rate: 30.0 -> Prioritize CLV improvement before increasing stake aggression.
+- [MEDIUM] CLV / Average CLV points: 0.125 -> Track CLV by market, team, environment, and signal grade.
+- [MEDIUM] Signal Tracker / Open signals: 30 -> Open signals are expected in active slates; ensure they do not pollute graded model quality.
+- [HIGH] Environment / Graded environment sample: 0 -> Keep environment as advisory until graded sample grows.
+- [MEDIUM] Environment / Low-sample buckets: 3 -> Do not let bucket labels increase stake size until validation clears sample gate.
+- [MEDIUM] Environment / Current extreme bucket games: 1 -> Extreme bucket should require extra CLV/injury confirmation before approval.
+- [MEDIUM] Execution / Multi-fill signal groups: 5 -> Multi-fill groups are acceptable when line shopping is intentional; Hermes should flag correlated exposure.
+- [MEDIUM] Execution / Unmatched execution groups: 21 -> Add signal_id/correlation_group to bet tracker so all fills link to model signals.
+- [MEDIUM] Hermes / Approval queue: 2 -> Operator must approve/reject each queued action before Telegram or execution workflow.
+- [MEDIUM] Hermes / Active locks: ENVIRONMENT_SAMPLE_LOCK, INJURY_CONFIRMATION_LOCK, MANUAL_APPROVAL_REQUIRED, MODEL_SAMPLE_LOCK -> Locks should block automation, not dashboard visibility.
+
+Hermes rule:
+- Manual approval remains mandatory. No auto-betting, no auto-Telegram send, no bypassing bankroll/model/environment/injury locks.

@@ -1,0 +1,36 @@
+WNBA EDGE LAB — INSIGHT ENGINE V1.1
+========================================================================
+
+Source used: wnba_outputs/signal_tracker_validation_clean.csv
+
+[MEDIUM] Model health currently LEARNING
+  Latest model health score is 53.1/100 with sample size 20. Formula status remains frozen.
+  Action: Use as context, not as an auto-betting trigger
+
+[VERY LOW] Model is still in learning mode
+  Only 2 tracked validation signals are available. Treat all insights as early-stage and do not change formulas yet.
+  Action: Collect more signals before structural changes
+
+[VERY LOW] Selection = OVER is positive vs baseline
+  OVER produced 100.0% win rate over 1 graded signals, vs baseline 50.0% (+50.0 pts).
+  Action: Promising diagnostic, do not promote to formula yet
+
+[VERY LOW] Selection = UNDER is negative vs baseline
+  UNDER produced 0.0% win rate over 1 graded signals, vs baseline 50.0% (-50.0 pts).
+  Action: Caution flag, inspect before staking
+
+[VERY LOW] PaceDiag = NEUTRAL is negative vs baseline
+  NEUTRAL produced 0.0% win rate over 1 graded signals, vs baseline 50.0% (-50.0 pts).
+  Action: Caution flag, inspect before staking
+
+[VERY LOW] PaceDiag = POSITIVE is positive vs baseline
+  POSITIVE produced 100.0% win rate over 1 graded signals, vs baseline 50.0% (+50.0 pts).
+  Action: Promising diagnostic, do not promote to formula yet
+
+[VERY LOW] OffenseDiag = NEUTRAL is negative vs baseline
+  NEUTRAL produced 0.0% win rate over 1 graded signals, vs baseline 50.0% (-50.0 pts).
+  Action: Caution flag, inspect before staking
+
+[VERY LOW] OffenseDiag = STRONG NEGATIVE is positive vs baseline
+  STRONG NEGATIVE produced 100.0% win rate over 1 graded signals, vs baseline 50.0% (+50.0 pts).
+  Action: Promising diagnostic, do not promote to formula yet

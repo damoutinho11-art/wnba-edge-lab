@@ -1,0 +1,15 @@
+Group,Signals,Wins,Losses,Pushes,WinRate,AvgEdge,AvgCLV,BeatClose,SignalsWithCLV
+Overall,5,3,2,0,60.0,1.65,,0,0
+FinalSignal: PASS,5,3,2,0,60.0,1.65,,0,0
+Selection: OVER,3,3,0,0,100.0,3.07,,0,0
+Selection: UNDER,2,0,2,0,0.0,-0.47,,0,0
+PaceDiag: NEUTRAL,2,0,2,0,0.0,-0.47,,0,0
+PaceDiag: POSITIVE,3,3,0,0,100.0,3.07,,0,0
+OffenseDiag: NEUTRAL,2,0,2,0,0.0,-0.47,,0,0
+OffenseDiag: STRONG NEGATIVE,3,3,0,0,100.0,3.07,,0,0
+EFGDiag: NEUTRAL,3,3,0,0,100.0,3.07,,0,0
+EFGDiag: STRONG NEGATIVE,2,0,2,0,0.0,-0.47,,0,0
+TOVDiag: NEGATIVE,3,3,0,0,100.0,3.07,,0,0
+TOVDiag: POSITIVE,2,0,2,0,0.0,-0.47,,0,0
+OREBDiag: NEGATIVE,2,0,2,0,0.0,-0.47,,0,0
+OREBDiag: STRONG POSITIVE,3,3,0,0,100.0,3.07,,0,0

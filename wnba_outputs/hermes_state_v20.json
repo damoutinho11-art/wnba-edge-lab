@@ -1,0 +1,369 @@
+{
+  "schema_version": "v20.0",
+  "generated_at": "2026-05-30T19:51:52+00:00",
+  "system": {
+    "name": "WNBA Edge Lab",
+    "component": "Hermes State Builder",
+    "mode": "manual_approval",
+    "website_version_target": "v20 model-support"
+  },
+  "mission_brief": {
+    "mode": "REVIEW_QUEUE",
+    "headline": "2 action(s) pending manual approval.",
+    "top_action": {
+      "rank": 1,
+      "game": "LAS @ WAS",
+      "market": "OVER 169.0",
+      "selection": "OVER",
+      "model_line": 169.0,
+      "assumed_odds": 1.91,
+      "projection": 175.52,
+      "edge": 6.52,
+      "confidence": 73.0,
+      "confidence_grade": "B",
+      "signal": "STRONG OVER",
+      "suggested_units": 0.75,
+      "approval_state": "PENDING_MANUAL_APPROVAL",
+      "why": "edge 6.5 pts; pace weak; efficiency supports; four factors support; market consensus clean",
+      "risk": "Manual approval required. Confirm market line, injuries, and exposure before execution."
+    },
+    "priority_warning_count": 0,
+    "warning_count": 7,
+    "model_state": "LEARNING",
+    "environment_regime": "LEARNING",
+    "open_risk_units": 0.0,
+    "net_pl_units": 0.0,
+    "operator_instruction": "Confirm market line, injuries, exposure, and validation before approval.",
+    "hermes_next_step": "Prepare concise mission brief and approval queue; do not execute bets."
+  },
+  "automation": {
+    "mode": "manual_approval",
+    "full_automation": "LOCKED",
+    "telegram_auto_send": "LOCKED",
+    "bet_execution": "LOCKED",
+    "active_locks": [
+      "ENVIRONMENT_SAMPLE_LOCK",
+      "INJURY_CONFIRMATION_LOCK",
+      "MANUAL_APPROVAL_REQUIRED",
+      "MODEL_SAMPLE_LOCK"
+    ],
+    "rule": "Hermes can observe, warn, recommend, and draft. Hermes cannot place/send/execute without explicit human approval."
+  },
+  "bankroll": {
+    "status": "ONLINE",
+    "total_tickets": 27,
+    "signal_groups": 22,
+    "multi_fill_groups": 0,
+    "max_fill_count": 1,
+    "total_staked_units": 2.7,
+    "total_return_units": 3.081,
+    "net_pl_units": 0.0,
+    "roi_percent": 0.0,
+    "open_risk_units": 0.0,
+    "settled_tickets": 27,
+    "wins": 16,
+    "losses": 11,
+    "pushes": 0,
+    "ticket_win_rate": 59.26,
+    "largest_group_stake_units": 0.2,
+    "summary_rows": 10
+  },
+  "model_health": {
+    "status": "ONLINE",
+    "health_label": "LEARNING",
+    "score": 53.1,
+    "avg_clv": 0.125,
+    "beat_close_rate": 30.0,
+    "sample_size": 20,
+    "sample_warning": "LOW SAMPLE",
+    "formula_status": "FROZEN",
+    "warning": "Informational only. Do not overreact to small samples."
+  },
+  "environment": {
+    "status": "ONLINE",
+    "regime": "LEARNING",
+    "reason": "Sample too small for stable environment classification.",
+    "sample": 6,
+    "avg_clv": -0.583,
+    "avg_chaos": 9.5,
+    "avg_trust": 18.67,
+    "bucket_shares": {
+      "extreme_over": 16.7,
+      "lean_over": 16.7,
+      "neutral_no_play": 66.7,
+      "chaos": 0.0
+    },
+    "no_play_share": 66.7,
+    "extreme_over_share": 16.7,
+    "lean_over_share": 16.7,
+    "memory_rows": 3,
+    "validation_rows": 3,
+    "top_bucket_validation": [
+      {
+        "bucket": "NEUTRAL / NO PLAY",
+        "sample": 4,
+        "avg_clv": -0.25,
+        "verdict": "LOW SAMPLE"
+      },
+      {
+        "bucket": "LEAN OVER ENVIRONMENT",
+        "sample": 1,
+        "avg_clv": -1.0,
+        "verdict": "LOW SAMPLE"
+      },
+      {
+        "bucket": "EXTREME OVER ENVIRONMENT",
+        "sample": 1,
+        "avg_clv": -1.5,
+        "verdict": "LOW SAMPLE"
+      }
+    ]
+  },
+  "validation": {
+    "status": "ONLINE",
+    "clv": {
+      "signals_with_clv": 20,
+      "beat_close_rate": 30.0,
+      "avg_clv_points": 0.125,
+      "avg_clv_percent": 0.066
+    },
+    "results": {
+      "signals": 5,
+      "wins": 3,
+      "losses": 2,
+      "pushes": 0,
+      "win_rate": 60.0,
+      "avg_edge": 1.65
+    }
+  },
+  "injuries": {
+    "status": "MISSING",
+    "file_count": 0,
+    "latest_file": null,
+    "notes": "No injury feed available."
+  },
+  "recommended_actions": [
+    {
+      "rank": 1,
+      "game": "LAS @ WAS",
+      "market": "OVER 169.0",
+      "selection": "OVER",
+      "model_line": 169.0,
+      "assumed_odds": 1.91,
+      "projection": 175.52,
+      "edge": 6.52,
+      "confidence": 73.0,
+      "confidence_grade": "B",
+      "signal": "STRONG OVER",
+      "suggested_units": 0.75,
+      "approval_state": "PENDING_MANUAL_APPROVAL",
+      "why": "edge 6.5 pts; pace weak; efficiency supports; four factors support; market consensus clean",
+      "risk": "Manual approval required. Confirm market line, injuries, and exposure before execution."
+    },
+    {
+      "rank": 2,
+      "game": "PHX @ NYL",
+      "market": "OVER 169.5",
+      "selection": "OVER",
+      "model_line": 169.5,
+      "assumed_odds": 1.91,
+      "projection": 173.39,
+      "edge": 3.89,
+      "confidence": 56.0,
+      "confidence_grade": "C",
+      "signal": "LEAN OVER",
+      "suggested_units": 0.35,
+      "approval_state": "PENDING_MANUAL_APPROVAL",
+      "why": "edge 3.9 pts; pace weak; efficiency supports; four factors mixed; market consensus clean",
+      "risk": "Manual approval required. Confirm market line, injuries, and exposure before execution."
+    }
+  ],
+  "pass_no_play_review": [],
+  "approval_queue": {
+    "count": 2,
+    "items": [
+      {
+        "rank": 1,
+        "game": "LAS @ WAS",
+        "market": "OVER 169.0",
+        "selection": "OVER",
+        "model_line": 169.0,
+        "assumed_odds": 1.91,
+        "projection": 175.52,
+        "edge": 6.52,
+        "confidence": 73.0,
+        "confidence_grade": "B",
+        "signal": "STRONG OVER",
+        "suggested_units": 0.75,
+        "approval_state": "PENDING_MANUAL_APPROVAL",
+        "why": "edge 6.5 pts; pace weak; efficiency supports; four factors support; market consensus clean",
+        "risk": "Manual approval required. Confirm market line, injuries, and exposure before execution."
+      },
+      {
+        "rank": 2,
+        "game": "PHX @ NYL",
+        "market": "OVER 169.5",
+        "selection": "OVER",
+        "model_line": 169.5,
+        "assumed_odds": 1.91,
+        "projection": 173.39,
+        "edge": 3.89,
+        "confidence": 56.0,
+        "confidence_grade": "C",
+        "signal": "LEAN OVER",
+        "suggested_units": 0.35,
+        "approval_state": "PENDING_MANUAL_APPROVAL",
+        "why": "edge 3.9 pts; pace weak; efficiency supports; four factors mixed; market consensus clean",
+        "risk": "Manual approval required. Confirm market line, injuries, and exposure before execution."
+      }
+    ],
+    "rule": "Every item requires manual approval before execution or Telegram send."
+  },
+  "warnings": {
+    "count": 7,
+    "high": 0,
+    "medium": 7,
+    "items": [
+      {
+        "severity": "MEDIUM",
+        "category": "model_health",
+        "message": "Model is still in learning/sample-building mode (LEARNING).",
+        "action": "Treat output as informational until sample reliability improves.",
+        "source": "model_health_report.csv"
+      },
+      {
+        "severity": "MEDIUM",
+        "category": "environment",
+        "message": "Environment sample is low (6).",
+        "action": "Use environment labels as context, not as automatic betting rules.",
+        "source": "environment_regime_latest.json"
+      },
+      {
+        "severity": "MEDIUM",
+        "category": "environment",
+        "message": "No-play/neutral share is high (66.7%).",
+        "action": "Require stronger edge and manual review for slate actions.",
+        "source": "environment_regime_latest.json"
+      },
+      {
+        "severity": "MEDIUM",
+        "category": "validation",
+        "message": "CLV sample is low (20 signals).",
+        "action": "Avoid aggressive automation until CLV sample grows.",
+        "source": "signal_clv_summary.csv"
+      },
+      {
+        "severity": "MEDIUM",
+        "category": "validation",
+        "message": "Beat-close rate is only 30.0%.",
+        "action": "Prioritize market/line quality review before scaling stakes.",
+        "source": "signal_clv_summary.csv"
+      },
+      {
+        "severity": "MEDIUM",
+        "category": "validation",
+        "message": "Result sample is low (5 graded signals).",
+        "action": "Keep Hermes in manual approval mode.",
+        "source": "signal_results_summary.csv"
+      },
+      {
+        "severity": "MEDIUM",
+        "category": "injuries",
+        "message": "Injury directory is missing.",
+        "action": "Do not approve actions without injury confirmation.",
+        "source": "wnba_outputs/injuries"
+      }
+    ]
+  },
+  "telegram": {
+    "status": "READY",
+    "exists": true,
+    "characters": 867,
+    "preview": "🏀 WNBA Model v2.3 Signal Quality\nUpdated: 2026-05-28 23:20\n\n⚪ LVA @ DAL — PASS\nLine: 176.5 | Projection: 175.0 | Edge: -1.5\nConfidence: 34/100 (D)\nPace40: 81.0 | PP100: LVA 108.1, DAL 108.0\n\n⚪ IND @ GSV — PASS\nLine: 167.0 | Projection: 169.9 | Edge: +2.9\nConfidence: 41/100 (D)\nPace40: 80.8 | PP100: IND 104.7, GSV 105.5\n\n⚪ MIN @ CHI — PASS\nLine: 170.0 | Projection: 169.2 | Edge: -0.8\nConfidence: 45/100 (C)\nPace40: 81.5 | PP100: MIN 105.3, CHI 102.2\n\n🟢 LAS @ WAS — STRONG OVER\nLine: 169.0 | Project",
+    "rule": "Telegram draft is preparation only; sending requires manual approval."
+  },
+  "file_status": {
+    "projections_with_stakes": {
+      "exists": true,
+      "path": "wnba_outputs\\projections_with_stakes.csv",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 5664
+    },
+    "recommended_bets": {
+      "exists": true,
+      "path": "wnba_outputs\\recommended_bets.csv",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 2274
+    },
+    "model_health_report": {
+      "exists": true,
+      "path": "wnba_outputs\\model_health_report.csv",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 411
+    },
+    "signal_execution_groups": {
+      "exists": true,
+      "path": "wnba_outputs\\signal_execution_groups_v20.csv",
+      "modified_at": "2026-05-30T22:51:52",
+      "size_bytes": 9749
+    },
+    "signal_execution_summary": {
+      "exists": true,
+      "path": "wnba_outputs\\signal_execution_summary_v20.csv",
+      "modified_at": "2026-05-30T22:51:52",
+      "size_bytes": 496
+    },
+    "environment_regime": {
+      "exists": true,
+      "path": "wnba_outputs\\environment_regime_latest.json",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 1295
+    },
+    "environment_memory": {
+      "exists": true,
+      "path": "wnba_outputs\\environment_memory_latest.csv",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 267
+    },
+    "environment_validation": {
+      "exists": true,
+      "path": "wnba_outputs\\environment_validation_summary.csv",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 405
+    },
+    "signal_clv_summary": {
+      "exists": true,
+      "path": "wnba_outputs\\signal_clv_summary.csv",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 1038
+    },
+    "signal_results_summary": {
+      "exists": true,
+      "path": "wnba_outputs\\signal_results_summary.csv",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 678
+    },
+    "bet_tracker": {
+      "exists": true,
+      "path": "bet_tracker.csv",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 5686
+    },
+    "telegram_message": {
+      "exists": true,
+      "path": "wnba_outputs\\telegram_message.txt",
+      "modified_at": "2026-05-30T22:30:52",
+      "size_bytes": 897
+    },
+    "injury_dir": {
+      "exists": false,
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\injuries",
+      "file_count": 0
+    }
+  },
+  "outputs": {
+    "state_json": "wnba_outputs\\hermes_state_v20.json",
+    "warnings_csv": "wnba_outputs\\hermes_warnings_v20.csv",
+    "approval_queue_csv": "wnba_outputs\\hermes_approval_queue_v20.csv"
+  }
+}

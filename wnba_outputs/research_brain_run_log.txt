@@ -1,0 +1,70 @@
+========================================================================
+WNBA EDGE LAB — RESEARCH BRAIN V1.6
+========================================================================
+RunTimestamp: 2026-05-28 23:21:23
+
+SYSTEM RESULTS
+------------------------------------------------------------------------
+[OK] Run full validation pipeline v4.2 | run_full_validation_pipeline_v4_2.py | 22.91s | required
+[OK] Environment bucket engine v1.1 | environment_bucket_engine_v1_1.py | 1.18s | optional
+[OK] Environment memory engine v1 | environment_memory_engine_v1.py | 1.2s | optional
+[OK] Environment validation engine v1 | environment_validation_engine_v1.py | 1.22s | optional
+[OK] Environment regime engine v1 | environment_regime_engine_v1.py | 1.18s | optional
+[OK] Hypothesis registry v1.1 | hypothesis_registry_v1_1.py | 1.21s | optional
+[OK] Hypothesis memory engine v1 | hypothesis_memory_engine_v1.py | 1.43s | optional
+[OK] Persistent memory engine v1.1 | persistent_memory_engine_v1_1.py | 1.22s | optional
+[OK] Memory regime engine v1 | memory_regime_engine_v1.py | 1.19s | optional
+[OK] Signal evolution engine v1.1 | signal_evolution_engine_v1_1.py | 1.17s | optional
+[OK] Meta-learning engine v1 | meta_learning_engine_v1.py | 1.19s | optional
+
+OUTPUT STATUS
+------------------------------------------------------------------------
+OK | wnba_outputs/projections.csv
+OK | wnba_outputs/projections_with_stakes.csv
+OK | wnba_outputs/projections_diagnostics.csv
+OK | wnba_outputs/signal_tracker.csv
+OK | wnba_outputs/signal_tracker_with_clv.csv
+OK | wnba_outputs/signal_tracker_validation_clean.csv
+OK | wnba_outputs/bet_evaluation_summary.csv
+OK | wnba_outputs/model_health_report.csv
+OK | wnba_outputs/model_health_timeline.csv
+OK | wnba_outputs/insight_engine_report.csv
+OK | wnba_outputs/daily_research_snapshot.json
+OK | wnba_outputs/research_snapshot_history.csv
+OK | wnba_outputs/weekly_research_summary.csv
+OK | wnba_outputs/environment_bucket_report.csv
+OK | wnba_outputs/environment_bucket_latest.json
+OK | wnba_outputs/environment_bucket_summary.txt
+OK | wnba_outputs/environment_memory_history.csv
+OK | wnba_outputs/environment_memory_latest.csv
+OK | wnba_outputs/environment_memory_latest.json
+OK | wnba_outputs/environment_memory_summary.txt
+OK | wnba_outputs/environment_validation_report.csv
+OK | wnba_outputs/environment_validation_summary.csv
+OK | wnba_outputs/environment_validation_summary.txt
+OK | wnba_outputs/environment_validation_latest.json
+OK | wnba_outputs/environment_regime_report.csv
+OK | wnba_outputs/environment_regime_latest.json
+OK | wnba_outputs/environment_regime_summary.txt
+OK | wnba_outputs/hypothesis_registry.csv
+OK | wnba_outputs/hypothesis_registry_summary.csv
+OK | wnba_outputs/hypothesis_registry_active.csv
+OK | wnba_outputs/hypothesis_memory_history.csv
+OK | wnba_outputs/hypothesis_memory_latest.csv
+OK | wnba_outputs/hypothesis_memory_latest.json
+OK | wnba_outputs/hypothesis_memory_summary.txt
+OK | wnba_outputs/persistent_memory_log.csv
+OK | wnba_outputs/persistent_health_memory.csv
+OK | wnba_outputs/persistent_signal_memory.csv
+OK | wnba_outputs/persistent_market_memory.csv
+OK | wnba_outputs/memory_regime_report.csv
+OK | wnba_outputs/memory_regime_latest.json
+OK | wnba_outputs/signal_evolution_report.csv
+OK | wnba_outputs/signal_evolution_latest.json
+OK | wnba_outputs/meta_learning_report.csv
+OK | wnba_outputs/meta_learning_latest.json
+
+CORE RULE
+------------------------------------------------------------------------
+No automatic formula/staking changes applied.
+Hermes may run and summarize this brain, but must not alter formulas or stakes.

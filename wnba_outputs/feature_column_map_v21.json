@@ -1,0 +1,479 @@
+{
+  "created_at_utc": "2026-05-30T19:51:51.484363+00:00",
+  "files": {
+    "game_model_features_v21": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\game_model_features_v21.csv",
+      "exists": true,
+      "rows": 6,
+      "columns": [
+        "game",
+        "away_team",
+        "home_team",
+        "created_at_utc",
+        "projection",
+        "edge",
+        "confidence",
+        "event_id",
+        "home_team_market",
+        "away_team_market",
+        "market_total_mean",
+        "market_total_median",
+        "market_total_min",
+        "market_total_max",
+        "market_total_range",
+        "market_total_books",
+        "market_total_rows",
+        "_home_code",
+        "_away_code"
+      ]
+    },
+    "team_features_v21": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\team_features_v21.csv",
+      "exists": true,
+      "rows": 17,
+      "columns": [
+        "team",
+        "created_at_utc",
+        "source_priority",
+        "team_games_official",
+        "team_pts_for_l3",
+        "team_pts_for_l5",
+        "team_pts_for_l10",
+        "team_margin_l3",
+        "team_margin_l5",
+        "team_margin_l10",
+        "team_dreb_pg_official",
+        "team_ast_pg_official",
+        "team_tov_pg_official",
+        "playerlog_team_pts_l3",
+        "playerlog_team_pts_l5",
+        "playerlog_team_pts_l10",
+        "playerlog_team_games",
+        "playerlog_total_minutes_pg",
+        "starter_minutes_concentration",
+        "bench_minutes_share",
+        "team_fga_pg_playerlog",
+        "team_fta_pg_playerlog",
+        "team_3pm_pg_playerlog",
+        "team_ast_pg_playerlog",
+        "team_reb_pg_playerlog",
+        "dash_gp",
+        "dash_wins",
+        "dash_losses",
+        "dash_win_pct",
+        "dash_pts",
+        "dash_plus_minus",
+        "dreb_allowed_rank",
+        "dreb_allowed_blended_dreb_allowed",
+        "dreb_allowed_dreb_allowed_2025",
+        "dreb_allowed_dreb_allowed_2026",
+        "dreb_allowed_signal"
+      ]
+    },
+    "player_features_v21": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\player_features_v21.csv",
+      "exists": true,
+      "rows": 337,
+      "columns": [
+        "team",
+        "player",
+        "created_at_utc",
+        "games",
+        "minutes_avg",
+        "minutes_l3",
+        "minutes_l5",
+        "points_avg",
+        "points_l3",
+        "points_l5",
+        "rebounds_avg",
+        "rebounds_l3",
+        "rebounds_l5",
+        "dreb_avg",
+        "dreb_l3",
+        "dreb_l5",
+        "assists_avg",
+        "assists_l3",
+        "assists_l5",
+        "threes_avg",
+        "threes_l3",
+        "threes_l5",
+        "turnovers_avg",
+        "turnovers_l3",
+        "turnovers_l5",
+        "fga_avg",
+        "fga_l3",
+        "fga_l5",
+        "fta_avg",
+        "fta_l3",
+        "fta_l5",
+        "scoring_dependency",
+        "dash_gp",
+        "dash_w",
+        "dash_l",
+        "dash_w_pct",
+        "dash_min",
+        "dash_pts",
+        "dash_reb",
+        "dash_ast",
+        "dash_plus_minus"
+      ]
+    },
+    "market_features_v21": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\market_features_v21.csv",
+      "exists": true,
+      "rows": 4,
+      "columns": [
+        "event_id",
+        "home_team",
+        "away_team",
+        "market_total_mean",
+        "market_total_median",
+        "market_total_min",
+        "market_total_max",
+        "market_total_range",
+        "market_total_books",
+        "market_total_rows"
+      ]
+    },
+    "model_backtest_v21": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_backtest_v21.csv",
+      "exists": true,
+      "rows": 12,
+      "columns": [
+        "created_at_utc",
+        "candidate",
+        "source_table",
+        "status",
+        "sample_size",
+        "direction",
+        "score",
+        "evidence",
+        "recommendation",
+        "implementation_stage",
+        "approved_for_live_formula",
+        "approved_for_manual_review",
+        "safety_gate",
+        "backtest_ready",
+        "requires_result_dataset"
+      ]
+    },
+    "model_upgrade_recommendations_v21": {
+      "path": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_upgrade_recommendations_v21.csv",
+      "exists": true,
+      "rows": 9,
+      "columns": [
+        "created_at_utc",
+        "priority",
+        "area",
+        "title",
+        "status",
+        "evidence",
+        "recommended_change",
+        "safety_gate",
+        "owner"
+      ]
+    }
+  },
+  "canonical_features": {
+    "game": [
+      {
+        "file": "game_model_features_v21",
+        "column": "game"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "event_id"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "playerlog_team_games"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_games_official"
+      },
+      {
+        "file": "player_features_v21",
+        "column": "games"
+      }
+    ],
+    "projection": [
+      {
+        "file": "game_model_features_v21",
+        "column": "projection"
+      }
+    ],
+    "line": [
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_books"
+      },
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_max"
+      },
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_mean"
+      },
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_median"
+      },
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_min"
+      },
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_range"
+      },
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_rows"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_books"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_max"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_mean"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_median"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_min"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_range"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_rows"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "playerlog_total_minutes_pg"
+      }
+    ],
+    "edge": [
+      {
+        "file": "game_model_features_v21",
+        "column": "edge"
+      }
+    ],
+    "market_total_median": [
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_median"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_median"
+      }
+    ],
+    "market_total_mean": [
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_mean"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_mean"
+      }
+    ],
+    "market_total_range": [
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_range"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_range"
+      }
+    ],
+    "market_total_books": [
+      {
+        "file": "game_model_features_v21",
+        "column": "market_total_books"
+      },
+      {
+        "file": "market_features_v21",
+        "column": "market_total_books"
+      }
+    ],
+    "combined_playerlog_pts_l5": [],
+    "combined_dash_pts": [],
+    "home_starter_minutes_concentration": [],
+    "away_starter_minutes_concentration": [],
+    "home_bench_minutes_share": [],
+    "away_bench_minutes_share": [],
+    "home_dreb_allowed": [],
+    "away_dreb_allowed": [],
+    "execution_pl": [
+      {
+        "file": "model_backtest_v21",
+        "column": "approved_for_live_formula"
+      },
+      {
+        "file": "model_backtest_v21",
+        "column": "approved_for_manual_review"
+      },
+      {
+        "file": "model_backtest_v21",
+        "column": "implementation_stage"
+      },
+      {
+        "file": "model_backtest_v21",
+        "column": "sample_size"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "dash_plus_minus"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "playerlog_team_games"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "playerlog_team_pts_l10"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "playerlog_team_pts_l3"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "playerlog_team_pts_l5"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "playerlog_total_minutes_pg"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_3pm_pg_playerlog"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_ast_pg_official"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_ast_pg_playerlog"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_dreb_pg_official"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_fga_pg_playerlog"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_fta_pg_playerlog"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_pts_for_l10"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_pts_for_l3"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_pts_for_l5"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_reb_pg_playerlog"
+      },
+      {
+        "file": "team_features_v21",
+        "column": "team_tov_pg_official"
+      },
+      {
+        "file": "player_features_v21",
+        "column": "dash_plus_minus"
+      },
+      {
+        "file": "player_features_v21",
+        "column": "player"
+      },
+      {
+        "file": "player_features_v21",
+        "column": "points_l3"
+      },
+      {
+        "file": "player_features_v21",
+        "column": "points_l5"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "severity": "medium",
+      "feature": "combined_playerlog_pts_l5",
+      "message": "No column match found for canonical feature 'combined_playerlog_pts_l5'."
+    },
+    {
+      "severity": "medium",
+      "feature": "combined_dash_pts",
+      "message": "No column match found for canonical feature 'combined_dash_pts'."
+    },
+    {
+      "severity": "medium",
+      "feature": "home_starter_minutes_concentration",
+      "message": "No column match found for canonical feature 'home_starter_minutes_concentration'."
+    },
+    {
+      "severity": "medium",
+      "feature": "away_starter_minutes_concentration",
+      "message": "No column match found for canonical feature 'away_starter_minutes_concentration'."
+    },
+    {
+      "severity": "medium",
+      "feature": "home_dreb_allowed",
+      "message": "No column match found for canonical feature 'home_dreb_allowed'."
+    },
+    {
+      "severity": "medium",
+      "feature": "away_dreb_allowed",
+      "message": "No column match found for canonical feature 'away_dreb_allowed'."
+    },
+    {
+      "severity": "high",
+      "feature": "backtester_candidate_detection",
+      "message": "Backtester expected columns are missing or non-numeric in model_backtest_v21."
+    }
+  ],
+  "backtester_expected_columns": {
+    "present": [],
+    "numeric_present": [],
+    "missing": [
+      "projection_minus_line",
+      "recent_points_vs_line",
+      "combined_dash_pts",
+      "market_total_range",
+      "home_starter_minutes_concentration",
+      "away_starter_minutes_concentration",
+      "home_bench_minutes_share",
+      "away_bench_minutes_share",
+      "home_dreb_allowed_blended_dreb_allowed",
+      "away_dreb_allowed_blended_dreb_allowed",
+      "execution_pl"
+    ]
+  }
+}

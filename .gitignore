@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+*.db-journal
+.git/
+wnba_cache_v21/sportsdataverse/raw/
+wnba_cache_v20/
+wnba_cache_v2/
+wnba_outputs/injuries/raw_*.html

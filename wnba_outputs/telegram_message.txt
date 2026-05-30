@@ -1,0 +1,32 @@
+🏀 WNBA Model v2.3 Signal Quality
+Updated: 2026-05-28 23:20
+
+⚪ LVA @ DAL — PASS
+Line: 176.5 | Projection: 175.0 | Edge: -1.5
+Confidence: 34/100 (D)
+Pace40: 81.0 | PP100: LVA 108.1, DAL 108.0
+
+⚪ IND @ GSV — PASS
+Line: 167.0 | Projection: 169.9 | Edge: +2.9
+Confidence: 41/100 (D)
+Pace40: 80.8 | PP100: IND 104.7, GSV 105.5
+
+⚪ MIN @ CHI — PASS
+Line: 170.0 | Projection: 169.2 | Edge: -0.8
+Confidence: 45/100 (C)
+Pace40: 81.5 | PP100: MIN 105.3, CHI 102.2
+
+🟢 LAS @ WAS — STRONG OVER
+Line: 169.0 | Projection: 175.5 | Edge: +6.5
+Confidence: 73/100 (B)
+Pace40: 80.7 | PP100: LAS 109.6, WAS 107.8
+
+🟡 PHX @ NYL — LEAN OVER
+Line: 169.5 | Projection: 173.4 | Edge: +3.9
+Confidence: 56/100 (C)
+Pace40: 80.5 | PP100: PHX 108.0, NYL 107.6
+
+🟠 ATL @ PDX — WATCHLIST OVER
+Line: 164.5 | Projection: 169.8 | Edge: +5.3
+Confidence: 51/100 (C)
+Pace40: 80.6 | PP100: ATL 106.6, PDX 104.1

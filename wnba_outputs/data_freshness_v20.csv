@@ -1,0 +1,20 @@
+source,layer,state,rows,events,path,fallback_path,error,freshness,season,created_at_utc
+official_playergamelogs_base,official_wnba_mobile,LIVE_FETCH_OK,5407,0,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\mobile_playergamelogs_2025.csv,,,live,2025,2026-05-30T19:51:47.066949+00:00
+official_teamgamelogs_base,official_wnba_mobile,FETCH_FAILED_NO_CACHE,0,0,,,"attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",missing,2025,2026-05-30T19:51:47.066977+00:00
+official_team_dash_base,official_wnba_mobile,LIVE_FETCH_OK,13,0,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\mobile_team_dash_base_2025.csv,,,live,2025,2026-05-30T19:51:47.066986+00:00
+official_player_dash_base,official_wnba_mobile,LIVE_FETCH_OK,182,0,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\mobile_player_dash_base_2025.csv,,,live,2025,2026-05-30T19:51:47.066992+00:00
+official_playergamelogs_base,official_wnba_mobile,LIVE_FETCH_OK,1197,0,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\mobile_playergamelogs_2026.csv,,,live,2026,2026-05-30T19:51:47.066999+00:00
+official_teamgamelogs_base,official_wnba_mobile,FETCH_FAILED_NO_CACHE,0,0,,,"attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",missing,2026,2026-05-30T19:51:47.067004+00:00
+official_team_dash_base,official_wnba_mobile,LIVE_FETCH_OK,15,0,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\mobile_team_dash_base_2026.csv,,,live,2026,2026-05-30T19:51:47.067010+00:00
+official_player_dash_base,official_wnba_mobile,LIVE_FETCH_OK,196,0,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\mobile_player_dash_base_2026.csv,,,live,2026,2026-05-30T19:51:47.067015+00:00
+odds_events,odds_api,FETCH_FAILED_NO_KEY,0,0,,,ODDS_API_KEY/THE_ODDS_API_KEY missing,missing,,2026-05-30T19:51:47.067021+00:00
+odds_totals,odds_api,FETCH_FAILED_NO_KEY,0,0,,,ODDS_API_KEY/THE_ODDS_API_KEY missing,missing,,2026-05-30T19:51:47.067027+00:00
+player_props,odds_api,FETCH_FAILED_NO_KEY,0,0,,,ODDS_API_KEY/THE_ODDS_API_KEY missing,missing,,2026-05-30T19:51:47.067033+00:00
+espn_wnba_schedules,sportsdataverse,LIVE_FETCH_OK,332,3,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\sdv_wnba_schedules.csv,,,live,2026,2026-05-30T19:51:47.067039+00:00
+espn_wnba_team_boxscores,sportsdataverse,LIVE_FETCH_OK,118,3,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\sdv_wnba_team_boxscores.csv,,,live,2026,2026-05-30T19:51:47.067045+00:00
+espn_wnba_player_boxscores,sportsdataverse,LIVE_FETCH_OK,1418,3,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\sdv_wnba_player_boxscores.csv,,,live,2026,2026-05-30T19:51:47.067050+00:00
+espn_wnba_pbp,sportsdataverse,LIVE_FETCH_OK,24591,3,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\sdv_wnba_pbp.csv,,,live,2026,2026-05-30T19:51:47.067056+00:00
+wnba_stats_schedules,sportsdataverse,LIVE_FETCH_OK,118,3,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\sdv_wnba_stats_schedules.csv,,,live,2026,2026-05-30T19:51:47.067061+00:00
+wnba_stats_team_boxscores,sportsdataverse,FETCHED_ASSETS_UNPARSED,0,0,,,Downloaded assets but no parseable table.,unparsed,2026,2026-05-30T19:51:47.067066+00:00
+wnba_stats_player_boxscores,sportsdataverse,FETCHED_ASSETS_UNPARSED,0,0,,,Downloaded assets but no parseable table.,unparsed,2026,2026-05-30T19:51:47.067071+00:00
+wnba_stats_pbp,sportsdataverse,LIVE_FETCH_OK,24307,3,C:\Users\User\Desktop\WNBA_EDGE_LAB_CLEAN\wnba_cache_v21\sdv_wnba_stats_pbp.csv,,,live,2026,2026-05-30T19:51:47.067076+00:00

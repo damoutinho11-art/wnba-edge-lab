@@ -1,0 +1,28 @@
+BetID,Date,League,Game,Player,Market,Direction,Line,Odds,Stake,ActualUnits,Book,Result,Status,Actual,P/L,CLV,CLV_Percent,OpeningLine,ClosingLine,CLV_Points,Signal,ModelVersion,Projection,Edge,Confidence,FinalSignal,SuggestedUnits,Notes,CreatedAt,UpdatedAt
+BET-00001,2026-05-21,WNBA,GS @ NY,Jonquel Jones,Rebounds,UNDER,8.5,1.8,0.1,0.1,,WIN,SETTLED,8.0,0.08,+3.4%,3.4,8.5,,,High Usage Big vs Stingy,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00002,2026-05-21,WNBA,GS @ NY,Breanna Stewart,Rebounds,UNDER,8.5,1.8,0.1,0.1,,LOSS,SETTLED,9.0,-0.1,+10.4%,10.4,8.5,,,High Usage Big vs Stingy,,,,,,,Lost by 0.5,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00003,2026-05-21,WNBA,TOR @ MIN,Natasha Howard,Rebounds,UNDER,7.5,1.83,0.1,0.1,,WIN,SETTLED,6.0,0.083,+0.5%,0.5,7.5,,,High Usage Big vs Stingy,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00004,2026-05-21,WNBA,LA @ PHX,Dearica Hamby,Rebounds,OVER,7.5,1.9,0.1,0.1,,WIN,SETTLED,15.0,0.09,+1.1%,1.1,7.5,,,Wing vs Generous DREB,,,,,,,Dominant — doubled line,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00005,2026-05-21,WNBA,LA @ PHX,Dearica Hamby,PRA,OVER,27.5,2.0,0.1,0.1,,WIN,SETTLED,42.0,0.1,+3.1%,3.1,27.5,,,Wing vs Generous DREB,,,,,,,Crushed it,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00006,2026-05-21,WNBA,LA @ PHX,DeWanna Bonner,Rebounds,OVER,6.5,1.9,0.1,0.1,,LOSS,SETTLED,5.0,-0.1,+1.1%,1.1,6.5,,,Speculative Over,,,,,,,Weak signal,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00007,2026-05-23,WNBA,MIN @ CHI,Kamilla Cardoso,Rebounds,UNDER,10.5,1.76,0.1,0.1,,WIN,SETTLED,7.0,0.076,-12.0%,-12.0,10.5,,,High Usage Big vs Stingy,,,,,,,Bad odds — bet365 short,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00008,2026-05-23,WNBA,MIN @ CHI,Kamilla Cardoso,PRA,UNDER,26.5,1.8,0.1,0.1,,WIN,SETTLED,24.0,0.08,-8.2%,-8.2,26.5,,,High Usage Big vs Stingy,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00009,2026-05-23,WNBA,MIN @ CHI,Kamilla Cardoso,Double Double,NO,0.5,1.9,0.1,0.1,,WIN,SETTLED,0.0,0.09,0%,0.0,0.5,,,High Usage Big vs Stingy,,,,,,,Best value of the three,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00010,2026-05-23,WNBA,CON @ SEA,,Game Total,OVER,165.5,1.87,0.1,0.1,,LOSS,SETTLED,161.0,-0.1,0%,0.0,165.5,,,DREB Generous Total,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00011,2026-05-24,WNBA,TOR @ POR,,Game Total,OVER,173.5,1.9,0.1,0.1,,WIN,SETTLED,179.0,0.09,0%,0.0,173.5,,,DREB Generous Total,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00012,2026-05-24,WNBA,DAL @ NY,,Game Total,UNDER,176.5,1.9,0.1,0.1,,WIN,SETTLED,162.0,0.09,0%,0.0,176.5,,,DREB Stingy Total,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00013,2026-05-24,WNBA,LA @ LV,,Game Total,UNDER,181.5,1.9,0.1,0.1,,LOSS,SETTLED,196.0,-0.1,0%,0.0,181.5,,,DREB Stingy Total,,,,,,,Wilson 15 REB killed it,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00014,2026-05-24,WNBA,LA @ LV,A'ja Wilson,Rebounds,UNDER,8.5,2.15,0.1,0.1,,LOSS,SETTLED,15.0,-0.1,0%,0.0,8.5,,,High Usage Big vs Stingy,,,,,,,MVP went nuclear,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00015,2026-05-24,WNBA,LA @ LV,A'ja Wilson,Double Double,NO,0.5,1.83,0.1,0.1,,LOSS,SETTLED,1.0,-0.1,0%,0.0,0.5,,,High Usage Big vs Stingy,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00016,2026-05-24,WNBA,WSH @ SEA,Shakira Austin,Rebounds,OVER,8.5,2.02,0.1,0.1,,LOSS,SETTLED,4.0,-0.1,0%,0.0,8.5,,,Speculative Over,,,,,,,Weak signal,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00017,2026-05-25,WNBA,CON @ GS,,Game Total,OVER,161.5,1.98,0.1,0.1,,WIN,SETTLED,167.0,0.098,0%,0.0,161.5,,,DREB Generous Total,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00018,2026-05-25,WNBA,POR @ NY,Jonquel Jones,Rebounds,UNDER,8.5,1.66,0.1,0.1,,LOSS,SETTLED,11.0,-0.1,0%,0.0,8.5,,,High Usage Big vs Stingy,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00019,2026-05-25,WNBA,POR @ NY,Breanna Stewart,Rebounds,UNDER,8.5,2.0,0.1,0.1,,WIN,SETTLED,7.0,0.1,0%,0.0,8.5,,,High Usage Big vs Stingy,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00020,2026-05-25,WNBA,CON @ GS,Aaliyah Edwards,Rebounds,OVER,4.5,2.15,0.1,0.1,,WIN,SETTLED,5.0,0.115,0%,0.0,4.5,,,Wing vs Generous DREB,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00021,2026-05-25,WNBA,CON @ GS,Gabby Williams,Rebounds,OVER,4.5,2.15,0.1,0.1,,LOSS,SETTLED,2.0,-0.1,0%,0.0,4.5,,,Wing vs Generous DREB,,,,,,,,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00022,2026-05-25,LPB,Sporting vs Porto,,Game Total,UNDER,161.5,2.15,0.1,0.1,,WIN,SETTLED,161.0,0.115,0%,0.0,161.5,,,Elite DREB Playoff Total,,,,,,,Won by 0.5 — first LPB bet,2026-05-27T20:17:31,2026-05-27T20:17:31
+BET-00023,2026-05-28,WNBA,ATL @ MIN,Angel Reese,Rebounds,UNDER,11.5,2.05,0.1,0.1,,WIN,SETTLED,8.0,0.105,,,11.5,,,High Usage Big vs Stingy,,,,,,,Won: Angel Reese 8 rebounds under 11.5,2026-05-27T20:17:31,2026-05-28T09:58:40
+BET-00024,2026-05-28,WNBA,ATL @ MIN,Angel Reese,Points & Rebounds,UNDER,25.5,1.86,0.1,0.1,,WIN,SETTLED,18.0,0.086,,,25.5,,,High Usage Big vs Stingy,,,,,,,Won: Angel Reese 18 points+rebounds under 25.5,2026-05-27T20:17:31,2026-05-28T09:58:40
+BET-00025,2026-05-28,WNBA,ATL @ MIN,Natasha Howard,Rebounds,UNDER,7.5,1.83,0.1,0.1,,LOSS,SETTLED,8.0,-0.1,,,7.5,,,High Usage Big vs Stingy,,,,,,,Lost by 0.5 rebound: Natasha Howard 8 rebounds under 7.5,2026-05-27T20:17:31,2026-05-28T09:58:40
+BET-00026,2026-05-28,WNBA,WSH @ SEA,Shakira Austin,Rebounds,OVER,7.5,1.83,0.1,0.1,,WIN,SETTLED,13.0,0.083,,,7.5,,,Big vs Generous DREB,,,,,,,Won: Shakira Austin 13 rebounds over 7.5,2026-05-27T20:17:31,2026-05-28T09:58:40
+BET-00027,2026-05-28,WNBA,ATL @ MIN,,Game Total,UNDER,163.5,1.91,0.1,0.1,,LOSS,SETTLED,177.0,-0.1,,,163.5,,,DREB Stingy Total,,,,,,,Lost: ATL @ MIN final total 177 over under 163.5,2026-05-27T20:17:31,2026-05-28T09:58:40

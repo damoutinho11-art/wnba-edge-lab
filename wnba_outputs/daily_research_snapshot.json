@@ -1,0 +1,86 @@
+{
+  "snapshot_date": "2026-05-28",
+  "snapshot_timestamp": "2026-05-28 23:21:09",
+  "model": {
+    "health_score": 53.1,
+    "health_label": "LEARNING",
+    "health_color": "YELLOW",
+    "sample_warning": "LOW SAMPLE",
+    "formula_status": "FROZEN",
+    "sample_size": 20
+  },
+  "clv": {
+    "signals_with_clv": 20,
+    "beat_close_rate": 30.0,
+    "avg_clv_points": 0.125,
+    "avg_clv_percent": 0.066
+  },
+  "results": {
+    "graded_signals": 5,
+    "wins": 3,
+    "losses": 2,
+    "pushes": 0,
+    "win_rate": 60.0
+  },
+  "counts": {
+    "signal_tracker_rows": 35,
+    "signal_clv_rows": 35,
+    "signal_graded_rows": 35,
+    "insight_count": 22
+  },
+  "top_insights": [
+    {
+      "confidence": "MEDIUM",
+      "category": "Model Health",
+      "title": "Model health currently LEARNING",
+      "detail": "Latest model health score is 53.1/100 with sample size 20. Formula status remains frozen.",
+      "sample_size": 20,
+      "effect": 3.1,
+      "action": "Use as context, not as an auto-betting trigger"
+    },
+    {
+      "confidence": "VERY LOW",
+      "category": "Sample Warning",
+      "title": "Model is still in learning mode",
+      "detail": "Only 2 tracked validation signals are available. Treat all insights as early-stage and do not change formulas yet.",
+      "sample_size": 2,
+      "effect": 0.0,
+      "action": "Collect more signals before structural changes"
+    },
+    {
+      "confidence": "VERY LOW",
+      "category": "Diagnostic Results",
+      "title": "Selection = OVER is positive vs baseline",
+      "detail": "OVER produced 100.0% win rate over 1 graded signals, vs baseline 50.0% (+50.0 pts).",
+      "sample_size": 1,
+      "effect": 50.0,
+      "action": "Promising diagnostic, do not promote to formula yet"
+    },
+    {
+      "confidence": "VERY LOW",
+      "category": "Diagnostic Results",
+      "title": "Selection = UNDER is negative vs baseline",
+      "detail": "UNDER produced 0.0% win rate over 1 graded signals, vs baseline 50.0% (-50.0 pts).",
+      "sample_size": 1,
+      "effect": -50.0,
+      "action": "Caution flag, inspect before staking"
+    },
+    {
+      "confidence": "VERY LOW",
+      "category": "Diagnostic Results",
+      "title": "PaceDiag = NEUTRAL is negative vs baseline",
+      "detail": "NEUTRAL produced 0.0% win rate over 1 graded signals, vs baseline 50.0% (-50.0 pts).",
+      "sample_size": 1,
+      "effect": -50.0,
+      "action": "Caution flag, inspect before staking"
+    }
+  ],
+  "status": {
+    "model_run": true,
+    "diagnostics_ready": true,
+    "clv_ready": true,
+    "results_ready": true,
+    "health_ready": true,
+    "insights_ready": true
+  }
+}

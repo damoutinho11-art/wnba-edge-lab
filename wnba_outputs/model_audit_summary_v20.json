@@ -1,0 +1,70 @@
+{
+  "updated_at": "2026-05-30T19:51:53+00:00",
+  "status": "OK",
+  "projection_layer": {
+    "slate_games": 6,
+    "recommended_actions": 2,
+    "pass_count": 3,
+    "avg_abs_edge": 3.4933333333333336,
+    "max_abs_edge": 6.52,
+    "avg_confidence": 50.0,
+    "avg_projection_market_gap": 3.49333333333333,
+    "suggested_total_units": 1.1,
+    "slate_cap_applied_count": 0
+  },
+  "health_validation": {
+    "health_score": 53.1,
+    "health_label": "LEARNING",
+    "avg_clv": 0.125,
+    "beat_close_rate": 30.0,
+    "signal_win_rate": 60.0,
+    "graded_signals": 5,
+    "sample_size": 20
+  },
+  "environment": {
+    "environment_buckets": 3,
+    "environment_total_sample": 6.0,
+    "environment_graded_sample": 0.0,
+    "environment_low_sample_buckets": 3,
+    "current_no_play_games": 4,
+    "current_extreme_bucket_games": 1
+  },
+  "execution": {
+    "execution_groups": 22,
+    "execution_tickets": 27,
+    "execution_net_profit": 0.38099999999999995,
+    "execution_total_stake": 2.7000000000000006,
+    "multi_fill_groups": 5,
+    "unmatched_execution_groups": 21,
+    "correlated_exposure_groups": 5,
+    "avg_execution_roi_percent": 17.545454545454543
+  },
+  "hermes": {
+    "hermes_mode": "manual_approval",
+    "hermes_locks": [
+      "ENVIRONMENT_SAMPLE_LOCK",
+      "INJURY_CONFIRMATION_LOCK",
+      "MANUAL_APPROVAL_REQUIRED",
+      "MODEL_SAMPLE_LOCK"
+    ],
+    "approval_queue_count": 2,
+    "warning_count": 7,
+    "high_warning_count": 0
+  },
+  "audit_rows": 29,
+  "severity_counts": {
+    "LOW": 16,
+    "MEDIUM": 11,
+    "HIGH": 2
+  },
+  "status_counts": {
+    "GOOD": 16,
+    "WATCH": 11,
+    "WEAK": 2
+  },
+  "outputs": {
+    "audit_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_audit_v20.csv",
+    "summary_json": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_audit_summary_v20.json",
+    "recommendations_txt": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_upgrade_recommendations_v20.txt"
+  }
+}

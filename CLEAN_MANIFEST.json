@@ -1,0 +1,22 @@
+{
+  "created_by": "ChatGPT clean-up pass",
+  "version": "V21.8 clean production package",
+  "included_root_scripts": [
+    "app.py",
+    "model_advisory_scoring_v21.py",
+    "model_backtester_v21_2.py",
+    "model_upgrade_recommender_v21.py",
+    "feature_diagnostics_v21.py",
+    "feature_builder_v21.py",
+    "run_v21_8_advisory_cycle.py",
+    "ultimate_fetcher_v21_4_1.py",
+    "signal_execution_bridge_v20_1.py",
+    "hermes_state_builder_v20_1.py",
+    "model_audit_v20.py"
+  ],
+  "excluded": "old app versions, old fetchers, broken backtesters, .git, large raw sportsdataverse cache, duplicate cache archives",
+  "entrypoints": [
+    "app.py",
+    "run_v21_8_advisory_cycle.py"
+  ]
+}

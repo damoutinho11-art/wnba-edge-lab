@@ -1,0 +1,140 @@
+{
+  "created_at": "2026-05-30T22:51:55.557551",
+  "status": "OK",
+  "fetch_state": "OK_WITH_WARNINGS",
+  "fetch_readiness": {
+    "official_playergamelogs_ready": true,
+    "official_team_dash_ready": true,
+    "official_player_dash_ready": true,
+    "official_teamgamelogs_ready": false,
+    "odds_ready": false,
+    "sportsdataverse_ready": true,
+    "player_props_market_ready": false,
+    "player_props_settlement_ready": true
+  },
+  "feature_rows": {
+    "team_features": 17,
+    "player_features": 337,
+    "market_features": 4,
+    "game_model_features": 6,
+    "warnings": 0
+  },
+  "backtest_rows": {
+    "backtest": 12,
+    "feature_candidates": 12,
+    "validated_changes": 7,
+    "warnings": 1
+  },
+  "candidate_status_counts": {
+    "CANDIDATE": 10,
+    "MISSING_OR_INSUFFICIENT": 2
+  },
+  "advisory_rows": {
+    "base_actions": 3,
+    "advisory_scores": 3,
+    "hermes_advisory_queue": 3,
+    "team_features": 17,
+    "player_features": 337,
+    "market_features": 4,
+    "model_backtest": 12,
+    "validated_model_changes": 7
+  },
+  "advisory_labels": {
+    "NEUTRAL": 2,
+    "LEAN_SUPPORT": 1
+  },
+  "advisory_risk_flags": {
+    "NO_LINE": 1
+  },
+  "mode": "manual_approval",
+  "locks": [
+    "ENVIRONMENT_SAMPLE_LOCK",
+    "INJURY_CONFIRMATION_LOCK",
+    "MANUAL_APPROVAL_REQUIRED",
+    "MODEL_SAMPLE_LOCK"
+  ],
+  "approval_queue": 2,
+  "steps": [
+    {
+      "name": "Ultimate Fetcher V21.4.1",
+      "script": "ultimate_fetcher_v21_4_1.py",
+      "ok": true,
+      "seconds": 124.51,
+      "stdout": "========================================================================\n WNBA EDGE LAB - ULTIMATE FETCHER V21.4\n========================================================================\nSeasons: [2025, 2026]\nPriority: official mobile WNBA.com -> Odds API -> SportsDataverse -> cache\nSafety: data only; no formulas/staking/thresholds/betting changed\n\n[1/3] Official WNBA.com mobile/minimal-header fetch\n[2/3] Odds API live markets\n[3/3] SportsDataverse/wehoop historical backfill\n\nOK: Ultimate Fetcher V21.4 complete\nOverall: OK_WITH_WARNINGS\nWarnings: 7 total / 5 high\nReadiness: {'official_playergamelogs_ready': True, 'official_team_dash_ready': True, 'official_player_dash_ready': True, 'official_teamgamelogs_ready': False, 'odds_ready': False, 'sportsdataverse_ready': True, 'player_props_market_ready': False, 'player_props_settlement_ready': True}\nStatus JSON: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\ultimate_fetch_status_v21_4.json\n\n - official_playergamelogs_base 2025: layer=official_wnba_mobile state=LIVE_FETCH_OK rows=5407 events=0 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\mobile_playergamelogs_2025.csv fallback= error=\n - official_teamgamelogs_base 2025: layer=official_wnba_mobile state=FETCH_FAILED_NO_CACHE rows=0 events=0 path= fallback= error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_team_dash_base 2025: layer=official_wnba_mobile state=LIVE_FETCH_OK rows=13 events=0 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\mobile_team_dash_base_2025.csv fallback= error=\n - official_player_dash_base 2025: layer=official_wnba_mobile state=LIVE_FETCH_OK rows=182 events=0 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\mobile_player_dash_base_2025.csv fallback= error=\n - official_playergamelogs_base 2026: layer=official_wnba_mobile state=LIVE_FETCH_OK rows=1197 events=0 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\mobile_playergamelogs_2026.csv fallback= error=\n - official_teamgamelogs_base 2026: layer=official_wnba_mobile state=FETCH_FAILED_NO_CACHE rows=0 events=0 path= fallback= error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_team_dash_base 2026: layer=official_wnba_mobile state=LIVE_FETCH_OK rows=15 events=0 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\mobile_team_dash_base_2026.csv fallback= error=\n - official_player_dash_base 2026: layer=official_wnba_mobile state=LIVE_FETCH_OK rows=196 events=0 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\mobile_player_dash_base_2026.csv fallback= error=\n - odds_events : layer=odds_api state=FETCH_FAILED_NO_KEY rows=0 events=0 path= fallback= error=ODDS_API_KEY/THE_ODDS_API_KEY missing\n - odds_totals : layer=odds_api state=FETCH_FAILED_NO_KEY rows=0 events=0 path= fallback= error=ODDS_API_KEY/THE_ODDS_API_KEY missing\n - player_props : layer=odds_api state=FETCH_FAILED_NO_KEY rows=0 events=0 path= fallback= error=ODDS_API_KEY/THE_ODDS_API_KEY missing\n - espn_wnba_schedules 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=332 events=3 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\sdv_wnba_schedules.csv fallback= error=\n - espn_wnba_team_boxscores 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=118 events=3 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\sdv_wnba_team_boxscores.csv fallback= error=\n - espn_wnba_player_boxscores 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=1418 events=3 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\sdv_wnba_player_boxscores.csv fallback= error=\n - espn_wnba_pbp 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=24591 events=3 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\sdv_wnba_pbp.csv fallback= error=\n - wnba_stats_schedules 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=118 events=3 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\sdv_wnba_stats_schedules.csv fallback= error=\n - wnba_stats_team_boxscores 2026: layer=sportsdataverse state=FETCHED_ASSETS_UNPARSED rows=0 events=0 path= fallback= error=Downloaded assets but no parseable table.\n - wnba_stats_player_boxscores 2026: layer=sportsdataverse state=FETCHED_ASSETS_UNPARSED rows=0 events=0 path= fallback= error=Downloaded assets but no parseable table.\n - wnba_stats_pbp 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=24307 events=3 path=C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_cache_v21\\sdv_wnba_stats_pbp.csv fallback= error=",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "Feature Builder V21",
+      "script": "feature_builder_v21.py",
+      "ok": true,
+      "seconds": 3.58,
+      "stdout": "OK: V21 Feature Builder complete\nTeam features:   C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\team_features_v21.csv\nPlayer features: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\player_features_v21.csv\nMarket features: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\market_features_v21.csv\nGame features:   C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\game_model_features_v21.csv\nRows: teams=17 players=337 market=4 games=6 warnings=0\nNote: advisory only; no projection/staking formula changed",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "Feature Diagnostics V21",
+      "script": "feature_diagnostics_v21.py",
+      "ok": true,
+      "seconds": 0.8,
+      "stdout": "OK: V21 Feature Diagnostics complete\nDiagnostics CSV: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\feature_diagnostics_v21.csv\nColumn map:      C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\feature_column_map_v21.json\nReport:          C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\feature_diagnostics_report_v21.txt\nDiagnosis: 7 total / 1 high\nBacktester expected: {'present': [], 'numeric_present': [], 'missing': ['projection_minus_line', 'recent_points_vs_line', 'combined_dash_pts', 'market_total_range', 'home_starter_minutes_concentration', 'away_starter_minutes_concentration', 'home_bench_minutes_share', 'away_bench_minutes_share', 'home_dreb_allowed_blended_dreb_allowed', 'away_dreb_allowed_blended_dreb_allowed', 'execution_pl']}",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "Signal-to-Execution Bridge",
+      "script": "signal_execution_bridge_v20_1.py",
+      "ok": true,
+      "seconds": 0.75,
+      "stdout": "OK: V20 Signal-to-Execution Bridge complete\nGroups:  C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\signal_execution_groups_v20.csv\nSummary: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\signal_execution_summary_v20.csv\nLatest:  C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\signal_execution_latest_v20.json\nDetected 22 signal/execution groups from 27 tickets.\nNet P/L: \ufffd0.38",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "Hermes State Builder",
+      "script": "hermes_state_builder_v20_1.py",
+      "ok": true,
+      "seconds": 0.66,
+      "stdout": "OK: V20 Hermes State Builder complete\nState:     C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\hermes_state_v20.json\nWarnings:  C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\hermes_warnings_v20.csv\nApprovals: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\hermes_approval_queue_v20.csv\nMode:      manual_approval\nLocks:     ENVIRONMENT_SAMPLE_LOCK, INJURY_CONFIRMATION_LOCK, MANUAL_APPROVAL_REQUIRED, MODEL_SAMPLE_LOCK\nActions:   2 pending manual approval\nWarnings:  7 total / 0 high",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "Model Audit",
+      "script": "model_audit_v20.py",
+      "ok": true,
+      "seconds": 0.64,
+      "stdout": "OK: V20 Model Audit complete\nAudit:   C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_audit_v20.csv\nSummary: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_audit_summary_v20.json\nRecs:    C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_upgrade_recommendations_v20.txt\nRows:    29\nWatch:   2 high / 11 medium\nHealth:  LEARNING score=53.1\nSlate:   6 games / 2 actions\nExec:    22 groups / P/L=0.38099999999999995",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "Model Upgrade Recommender V21",
+      "script": "model_upgrade_recommender_v21.py",
+      "ok": true,
+      "seconds": 0.61,
+      "stdout": "OK: V21 Model Upgrade Recommender complete\nRecommendations: 9\nHermes queue: 9\nCSV:  C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_upgrade_recommendations_v21.csv\nJSON: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_upgrade_recommendations_v21.json\nPlan: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_change_plan_v21.txt\nNote: recommendations only; no formula/staking/threshold changes applied",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "Model Backtester V21.2",
+      "script": "model_backtester_v21_2.py",
+      "ok": true,
+      "seconds": 0.66,
+      "stdout": "OK: V21.2 Model Backtester complete\nBacktest rows: 12\nFeature candidates: 12\nValidated/manual-review changes: 7\nWarnings: 1\nCandidate statuses: {'CANDIDATE': 10, 'MISSING_OR_INSUFFICIENT': 2}\nImplementation stages: {'BACKTEST_ONLY': 2, 'PROP_SCREENING_CANDIDATE': 2, 'ROTATION_CONTEXT': 2, 'DIAGNOSTIC': 2, 'PRIMARY_EDGE_VALIDATION': 1, 'CONFIDENCE_GATE_CANDIDATE': 1, 'PLAYER_CONTEXT': 1, 'MARKET_CONTEXT': 1}\nBacktest CSV: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_backtest_v21.csv\nSummary JSON: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_backtest_summary_v21.json\nNote: validation only; no formula/staking/threshold changes applied",
+      "stderr": "",
+      "returncode": 0
+    },
+    {
+      "name": "Model Advisory Scoring V21",
+      "script": "model_advisory_scoring_v21.py",
+      "ok": true,
+      "seconds": 0.64,
+      "stdout": "OK: V21 Model Advisory Scoring complete\nActions: 3\nAdvisory scores: 3\nHermes advisory queue: 3\nLabels: {'NEUTRAL': 2, 'LEAN_SUPPORT': 1}\nRisk flags: {'NO_LINE': 1}\nScores CSV: C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_advisory_scores_v21.csv\nSummary:    C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_advisory_summary_v21.json\nNote: advisory only; no formula/staking/threshold changes applied",
+      "stderr": "",
+      "returncode": 0
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+EnvironmentBucket,Sample,GradedSample,WinRate,AvgCLV,AvgEdge,AvgConfidence,AvgChaos,AvgTrust,ValidationStates,Verdict
+NEUTRAL / NO PLAY,4,0,0.0,-0.25,1.12,44.0,11.8,14.5,"{""PENDING / UNGRADED"": 4}",LOW SAMPLE
+LEAN OVER ENVIRONMENT,1,0,0.0,-1.0,5.34,51.0,10.0,12.0,"{""PENDING / UNGRADED"": 1}",LOW SAMPLE
+EXTREME OVER ENVIRONMENT,1,0,0.0,-1.5,6.52,73.0,0.0,42.0,"{""PENDING / UNGRADED"": 1}",LOW SAMPLE

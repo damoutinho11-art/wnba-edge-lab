@@ -1,0 +1,61 @@
+{
+  "created_at_utc": "2026-05-30T19:51:51.504138+00:00",
+  "status": "OK",
+  "files": {
+    "game_model_features_v21": {
+      "exists": true,
+      "rows": 6,
+      "columns": 19
+    },
+    "team_features_v21": {
+      "exists": true,
+      "rows": 17,
+      "columns": 36
+    },
+    "player_features_v21": {
+      "exists": true,
+      "rows": 337,
+      "columns": 41
+    },
+    "market_features_v21": {
+      "exists": true,
+      "rows": 4,
+      "columns": 10
+    },
+    "model_backtest_v21": {
+      "exists": true,
+      "rows": 12,
+      "columns": 15
+    },
+    "model_upgrade_recommendations_v21": {
+      "exists": true,
+      "rows": 9,
+      "columns": 9
+    }
+  },
+  "diagnosis_count": 7,
+  "high_diagnosis": 1,
+  "backtester_expected_columns": {
+    "present": [],
+    "numeric_present": [],
+    "missing": [
+      "projection_minus_line",
+      "recent_points_vs_line",
+      "combined_dash_pts",
+      "market_total_range",
+      "home_starter_minutes_concentration",
+      "away_starter_minutes_concentration",
+      "home_bench_minutes_share",
+      "away_bench_minutes_share",
+      "home_dreb_allowed_blended_dreb_allowed",
+      "away_dreb_allowed_blended_dreb_allowed",
+      "execution_pl"
+    ]
+  },
+  "safety": {
+    "formula_changed": false,
+    "staking_changed": false,
+    "thresholds_changed": false,
+    "auto_betting": false
+  }
+}

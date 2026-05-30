@@ -1,0 +1,29 @@
+{
+  "created_at_utc": "2026-05-30T19:51:55.450702+00:00",
+  "status": "OK",
+  "version": "v21",
+  "rows": {
+    "base_actions": 3,
+    "advisory_scores": 3,
+    "hermes_advisory_queue": 3,
+    "team_features": 17,
+    "player_features": 337,
+    "market_features": 4,
+    "model_backtest": 12,
+    "validated_model_changes": 7
+  },
+  "label_counts": {
+    "NEUTRAL": 2,
+    "LEAN_SUPPORT": 1
+  },
+  "risk_flag_counts": {
+    "NO_LINE": 1
+  },
+  "safety": {
+    "formula_changed": false,
+    "staking_changed": false,
+    "thresholds_changed": false,
+    "auto_betting": false,
+    "advisory_only": true
+  }
+}

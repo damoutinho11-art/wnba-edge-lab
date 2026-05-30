@@ -1,0 +1,8 @@
+source,layer,season,state,severity,rows,events,message,fallback_path
+official_teamgamelogs_base,official_wnba_mobile,2025,FETCH_FAILED_NO_CACHE,high,0,0,"attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
+official_teamgamelogs_base,official_wnba_mobile,2026,FETCH_FAILED_NO_CACHE,high,0,0,"attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
+odds_events,odds_api,,FETCH_FAILED_NO_KEY,high,0,0,ODDS_API_KEY/THE_ODDS_API_KEY missing,
+odds_totals,odds_api,,FETCH_FAILED_NO_KEY,high,0,0,ODDS_API_KEY/THE_ODDS_API_KEY missing,
+player_props,odds_api,,FETCH_FAILED_NO_KEY,high,0,0,ODDS_API_KEY/THE_ODDS_API_KEY missing,
+wnba_stats_team_boxscores,sportsdataverse,2026,FETCHED_ASSETS_UNPARSED,medium,0,0,Downloaded assets but no parseable table.,
+wnba_stats_player_boxscores,sportsdataverse,2026,FETCHED_ASSETS_UNPARSED,medium,0,0,Downloaded assets but no parseable table.,

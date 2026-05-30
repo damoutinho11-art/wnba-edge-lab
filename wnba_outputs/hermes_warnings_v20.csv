@@ -1,0 +1,8 @@
+severity,category,message,action,source
+MEDIUM,model_health,Model is still in learning/sample-building mode (LEARNING).,Treat output as informational until sample reliability improves.,model_health_report.csv
+MEDIUM,environment,Environment sample is low (6).,"Use environment labels as context, not as automatic betting rules.",environment_regime_latest.json
+MEDIUM,environment,No-play/neutral share is high (66.7%).,Require stronger edge and manual review for slate actions.,environment_regime_latest.json
+MEDIUM,validation,CLV sample is low (20 signals).,Avoid aggressive automation until CLV sample grows.,signal_clv_summary.csv
+MEDIUM,validation,Beat-close rate is only 30.0%.,Prioritize market/line quality review before scaling stakes.,signal_clv_summary.csv
+MEDIUM,validation,Result sample is low (5 graded signals).,Keep Hermes in manual approval mode.,signal_results_summary.csv
+MEDIUM,injuries,Injury directory is missing.,Do not approve actions without injury confirmation.,wnba_outputs/injuries
