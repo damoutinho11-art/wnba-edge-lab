@@ -257,88 +257,88 @@ def file_state_html(st: Dict[str, Any]) -> str:
     return section("Code/data wiring", "Files the website is using now.", '<div class="v193-summary-grid">' + ''.join(cells) + dup_note + '</div>', "single source")
 
 
-
-
-def route_intro(title: str, subtitle: str, chip: str = "V21.9") -> str:
-    return f"<div class=\"section-head route-intro\"><div><h2>{esc(title)}</h2><p>{esc(subtitle)}</p></div><span class=\"chip green\">{esc(chip)}</span></div>"
-
-
-def executive_kpis(st: Dict[str, Any]) -> str:
-    return '<div class="v193-summary-grid">' + ''.join([
-        card("Open Bets", len(st["open_bets"]), f"{st['open_stake']:.2f}u live exposure", "primary"),
-        card("Settled P/L", money(st["settled_pl"]), f"{st['wins']}W / {st['losses']}L settled", "primary" if st["settled_pl"] >= 0 else "warn"),
-        card("Model Queue", len(st["hermes_queue"] or st["manual_review"]), "manual-market review rows", "primary"),
-        card("Odds API", "QUOTA-SAFE" if not st["safe_fetch"].get("odds_ready") else "READY", "paid calls protected", "warn" if not st["safe_fetch"].get("odds_ready") else "primary"),
-    ]) + '</div>'
-
-
 def render_home() -> str:
     st = load_state()
-    body = route_intro("Command center", "Live operator view: open bets, model queue, bankroll state, and Hermes safety gates.", "manual only")
-    body += executive_kpis(st)
-    body += section("Open bets", "Tickets already placed and waiting for settlement.", open_bets_html(st), "OPEN")
-    body += section("Next model queue", "V21.9 manual-market review rows. Advisory only; no auto-betting.", manual_queue_html(st, 6), "MODEL")
+    body = top_state_strip(st)
+    body += '<div class="section-head"><div><h2>V21.9 live operator state</h2><p>Website now reads bet_tracker, signal execution, safe automation, and manual market queue.</p></div><span class="chip">Manual only</span></div>'
+    body += '<div class="v193-summary-grid">'
+    body += card("Open Bets", len(st["open_bets"]), f"{st['open_stake']:.2f}u exposure", "primary")
+    body += card("Settled P/L", money(st["settled_pl"]), f"{st['wins']}W / {st['losses']}L", "primary" if st["settled_pl"] >= 0 else "warn")
+    body += card("Execution Tickets", st["signal_summary"].get("execution_tickets", len(st["bets"])), "signal bridge")
+    body += card("Manual Queue", len(st["hermes_queue"]), "Hermes V21.9 market queue")
+    body += card("Quota Mode", "ACTIVE" if not st["safe_fetch"].get("odds_ready") else "ODDS READY", "paid calls protected", "warn")
+    body += '</div>'
+    body += section("Open bets you made", "Current OPEN tickets from bet_tracker.csv.", open_bets_html(st), "OPEN")
+    body += section("Model / Hermes queue", "Advisory-only market review; not execution.", manual_queue_html(st, 8), "LEAN SUPPORT")
     body += safety_html(st)
     return body
 
 
 def render_dashboard() -> str:
     st = load_state()
-    body = route_intro("Dashboard", "High-signal KPI board for the current betting/model state.", "V21.9 live")
-    body += executive_kpis(st)
+    body = top_state_strip(st)
+    body += '<div class="section-head"><div><h2>V21.9 Dashboard</h2><p>Live state from the current ledger, execution bridge, safe automation, and manual market review.</p></div><span class="chip">V21.9</span></div>'
     body += '<div class="v193-summary-grid">'
-    body += card("Execution Tickets", st["signal_summary"].get("execution_tickets", len(st["bets"])), "signal bridge")
-    body += card("Signal Groups", st["signal_summary"].get("signal_groups", "—"), "deduped model/execution groups")
-    body += card("Open Groups", st["signal_summary"].get("open_groups", len(st["open_bets"])), "execution bridge")
-    body += card("Formula Gate", st["gates"].get("current_gate_state", "EVIDENCE_COLLECTION_ONLY"), "promotion blocked", "lock")
+    body += card("Open Bets", len(st["open_bets"]), f"{st['open_stake']:.2f}u exposure", "primary")
+    body += card("Pending / Open Groups", st["signal_summary"].get("open_groups", len(st["open_bets"])), "signal bridge")
+    body += card("Settled Groups", st["signal_summary"].get("settled_groups", len(st["settled"])), "signal bridge")
+    body += card("Net P/L", money(st["signal_summary"].get("net_profit", st["settled_pl"])), "signal bridge")
+    body += card("Manual Queue", len(st["hermes_queue"]), str(st["manual_label_counts"] or {}))
+    body += card("Formula Gate", st["gates"].get("current_gate_state", "EVIDENCE_COLLECTION_ONLY"), "no promotion")
     body += '</div>'
-    body += section("Live open exposure", "Current OPEN rows in bet_tracker.csv.", open_bets_html(st), "BET TRACKER")
-    body += section("Hermes model queue", "Sorted by advisory label and model edge.", manual_queue_html(st, 10), "HERMES")
+    body += section("Open bets", "Exactly what is currently marked OPEN.", open_bets_html(st), "bet_tracker.csv")
+    body += section("V21.9 model queue", "Operator-entered market lines evaluated by model context.", manual_queue_html(st, 12), "Hermes")
+    body += safety_html(st)
+    body += file_state_html(st)
     return body
 
 
 def render_actions() -> str:
     st = load_state()
-    body = route_intro("Actions", "Action board split between bets already placed and model-reviewed candidates. This page never executes bets.", "operator review")
-    body += section("Already placed", "Logged OPEN tickets. Use this to avoid duplicates.", open_bets_html(st), "OPEN BETS")
-    body += section("Model-reviewed queue", "Candidate rows from manual market review. Use Hermes/manual approval before any action.", manual_queue_html(st, 18), "ADVISORY")
+    body = top_state_strip(st)
+    body += '<div class="section-head"><div><h2>Actions</h2><p>Today\'s actionable view: open bets already made plus remaining model queue. No auto-execution.</p></div><span class="chip">Manual approval</span></div>'
+    body += section("Open bets already made", "These are not recommendations; these are logged OPEN tickets.", open_bets_html(st), "OPEN")
+    body += section("Model queue / potential actions", "LEAN_SUPPORT and MANUAL_REVIEW rows from V21.9 manual market review.", manual_queue_html(st, 18), "Advisory")
     return body
 
 
 def render_hermes() -> str:
     st = load_state()
-    body = route_intro("Hermes manual approval", "Hermes can queue, warn, and require approval. It cannot place bets or change staking.", "locked")
+    body = top_state_strip(st)
+    body += '<div class="section-head"><div><h2>Hermes · V21.9 Manual Approval</h2><p>Hermes can warn and queue. It cannot place bets.</p></div><span class="chip">Locked</span></div>'
     body += safety_html(st)
-    body += section("Approval queue", "V21.9 manual market queue with labels, edge, confidence, and risk flags.", manual_queue_html(st, 18), "QUEUE")
-    body += section("Open operator bets", "Bets already entered by the operator, shown for exposure context.", open_bets_html(st), "OPEN")
+    body += section("Hermes manual market queue", "Queue built from manual_market_review_v21_9 and marked manual approval required.", manual_queue_html(st, 18), "MANUAL")
+    body += section("Open operator bets", "Bets already entered manually by the operator.", open_bets_html(st), "OPEN")
     return body
 
 
 def render_bets() -> str:
     st = load_state()
-    body = route_intro("Bet ledger", "Clean ledger view from bet_tracker.csv: open tickets, recent settled results, and duplicate watch.", "ledger")
+    body = top_state_strip(st)
+    body += '<div class="section-head"><div><h2>Bets ledger</h2><p>Open and settled tickets from bet_tracker.csv.</p></div><span class="chip">Ledger</span></div>'
     body += '<div class="v193-summary-grid">'
-    body += card("Open Tickets", len(st["open_bets"]), f"{st['open_stake']:.2f}u exposure", "warn" if st["open_bets"] else "primary")
-    body += card("Settled Tickets", len(st["settled"]), f"P/L {money(st['settled_pl'])}", "primary" if st["settled_pl"] >= 0 else "warn")
-    body += card("All Tickets", len(st["bets"]), "bet_tracker.csv")
-    body += card("Duplicate Watch", len(st["duplicates"]), "should stay 0", "warn" if st["duplicates"] else "primary")
+    body += card("Open", len(st["open_bets"]), f"{st['open_stake']:.2f}u")
+    body += card("Settled", len(st["settled"]), f"P/L {money(st['settled_pl'])}")
+    body += card("Total Tickets", len(st["bets"]), "bet_tracker.csv")
+    body += card("Duplicates", len(st["duplicates"]), "audit key watch", "warn" if st["duplicates"] else "primary")
     body += '</div>'
-    body += section("Open tickets", "Pending settlement; this is the source of live exposure.", open_bets_html(st), "OPEN")
-    body += section("Recent settled", "Latest settled tickets for P/L context.", settled_recent_html(st, 12), "SETTLED")
+    body += section("Open bets", "Current pending tickets.", open_bets_html(st), "OPEN")
+    body += section("Recent settled bets", "Recent closed tickets for bankroll context.", settled_recent_html(st), "SETTLED")
     return body
 
 
 def render_bankroll() -> str:
     st = load_state()
-    body = route_intro("Bankroll", "Exposure and P/L dashboard. Stake sizing remains manual; no automated staking changes.", "manual stake")
+    body = top_state_strip(st)
+    body += '<div class="section-head"><div><h2>Bankroll</h2><p>Ticket-level stake, open exposure, and settled P/L.</p></div><span class="chip">Manual Ledger</span></div>'
     body += '<div class="v193-summary-grid">'
     body += card("Open Exposure", f"{st['open_stake']:.2f}u", f"{len(st['open_bets'])} open tickets", "warn" if st["open_bets"] else "primary")
     body += card("Settled P/L", money(st["settled_pl"]), f"{st['wins']}W / {st['losses']}L", "primary" if st["settled_pl"] >= 0 else "warn")
-    body += card("Bridge P/L", money(st["signal_summary"].get("net_profit", st["settled_pl"])), "signal execution bridge")
-    body += card("Total Staked", f"{st['total_stake']:.2f}u", "all tracked tickets")
+    body += card("Bridge P/L", money(st["signal_summary"].get("net_profit", st["settled_pl"])), "signal execution")
+    body += card("Total Stake", f"{st['total_stake']:.2f}u", "all tickets")
     body += '</div>'
-    body += section("Open exposure detail", "Every currently open ticket.", open_bets_html(st), "RISK")
-    body += section("Recent realized P/L", "Recent settled entries.", settled_recent_html(st, 12), "RESULTS")
+    body += section("Open exposure", "Tickets awaiting settlement.", open_bets_html(st), "OPEN")
+    body += section("Recent settled ledger", "Bankroll P/L source.", settled_recent_html(st), "SETTLED")
     return body
 
 
@@ -359,44 +359,35 @@ def render_telegram() -> str:
     for r in (st["hermes_queue"] or st["manual_review"])[:8]:
         lines.append(f"- {pick(r,'advisory_label', default='REVIEW')} | {pick(r,'game')} | {pick(r,'market')} {pick(r,'side')} {pick(r,'line')} @ {pick(r,'odds_decimal','odds')} | edge {pick(r,'model_edge','edge')} | conf {pick(r,'confidence')}")
     text = "\n".join(lines)
-    body = route_intro("Telegram", "Copy-ready operator message generated from V21.9 live state, not legacy telegram_message.txt.", "copy")
-    body += f"<section class=\"panel\"><pre style=\"white-space:pre-wrap;font-family:var(--font-mono);line-height:1.7\">{esc(text)}</pre></section>"
-    return body
+    return f'''<div class="section-head"><div><h2>Telegram message</h2><p>Generated from V21.9 live state, not legacy telegram_message.txt.</p></div><span class="chip">Copy</span></div><section class="panel"><pre style="white-space:pre-wrap;font-family:var(--font-mono);line-height:1.7">{esc(text)}</pre></section>'''
 
 
 def render_validation() -> str:
     st = load_state()
-    body = route_intro("Validation", "Evidence collection and formula-promotion gates. This page validates; it does not change formulas.", "evidence only")
+    body = top_state_strip(st)
+    body += '<div class="section-head"><div><h2>Validation</h2><p>Evidence collection layer and formula-promotion gates.</p></div><span class="chip">Evidence only</span></div>'
     body += '<div class="v193-summary-grid">'
     body += card("Tracking Rows", st["result_rows"].get("tracking", 0), "V21.9 result tracker")
     body += card("Known Results", st["result_rows"].get("known_results", 0), "current advisory rows")
     body += card("CLV Samples", st["result_rows"].get("clv_samples", 0), "current advisory rows")
     body += card("Formula Change", "BLOCKED", st["gates"].get("current_gate_state", "EVIDENCE_COLLECTION_ONLY"), "lock")
     body += '</div>'
-    body += section("Current model queue labels", "Review labels for the manual market slate.", manual_queue_html(st, 18), "QUEUE")
+    body += section("Model queue", "Current market review labels.", manual_queue_html(st, 18), "review")
     body += safety_html(st)
-    body += file_state_html(st)
     return body
 
 
 def render_menu() -> str:
     st = load_state()
     links = [
-        ("Dashboard", "/dashboard", "KPI board and state summary"),
-        ("Actions", "/actions", "Open bets and model-reviewed candidates"),
-        ("Hermes", "/hermes", "Manual approval queue and locks"),
-        ("Bets", "/bets", "Open/settled bet ledger"),
-        ("Bankroll", "/bankroll", "P/L, exposure, stake totals"),
-        ("Telegram", "/telegram", "Copy-ready operator message"),
-        ("Validation", "/validation", "Evidence gates and sample status"),
-        ("Version", "/version", "Deployment marker"),
+        ("Dashboard", "/dashboard", "Live V21.9 state"),
+        ("Actions", "/actions", "Open bets and model queue"),
+        ("Hermes", "/hermes", "Manual approval queue"),
+        ("Bets", "/bets", "Open/settled ledger"),
+        ("Bankroll", "/bankroll", "P/L and exposure"),
+        ("Telegram", "/telegram", "Generated message"),
+        ("Validation", "/validation", "Evidence gates"),
+        ("Diagnostics", "/diagnostics", "Technical outputs"),
     ]
     cards = ''.join(f'<a class="v19-card" href="{href}"><span>V21.9</span><b>{esc(name)}</b><p>{esc(desc)}</p></a>' for name, href, desc in links)
-    body = route_intro("Menu", "Route launcher. Every route reads the same V21.9 state layer.", "live")
-    body += '<div class="v193-summary-grid">'
-    body += card("Open Bets", len(st["open_bets"]), f"{st['open_stake']:.2f}u exposure", "primary")
-    body += card("Settled P/L", money(st["settled_pl"]), "bet tracker", "primary" if st["settled_pl"] >= 0 else "warn")
-    body += card("Queue Rows", len(st["hermes_queue"] or st["manual_review"]), "manual market review")
-    body += '</div>'
-    body += f'<div class="v19-grid-4">{cards}</div>'
-    return body
+    return top_state_strip(st) + f'<div class="section-head"><div><h2>Menu</h2><p>All key routes are wired to the V21.9 state layer.</p></div><span class="chip">Live</span></div><div class="v19-grid-4">{cards}</div>'
