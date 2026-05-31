@@ -280,6 +280,11 @@ def page(title: str, body: str) -> str:
       .nav-links {{ gap:6px; }}
       .nav-pill {{ font-size:12px; padding:8px 10px; }}
     }}
+    .progress-track { height:6px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; }
+    .progress-fill { height:100%; border-radius:999px; background:var(--accent); transition:width .3s ease; }
+    .progress-fill.green { background:var(--good); }
+    .progress-fill.warn { background:var(--warn); }
+    .progress-fill.red { background:var(--bad); }
   </style>
 </head>
 <body>
@@ -304,6 +309,7 @@ def page(title: str, body: str) -> str:
       </aside>
     </section>
     <main>{body}</main>
+    {state.data_freshness_strip() if state else ''}
     <footer>V21.9 live state site · operator interface · {title} · NO_AUTO_BETTING · MANUAL_APPROVAL_REQUIRED</footer>
   </div>
 </body>
@@ -409,6 +415,20 @@ def version():
     </section>
     """
     return page("Version", body)
+
+
+@app.errorhandler(404)
+def not_found(exc):
+    body = """
+    <section class='panel danger-panel'>
+      <div class='section-head'><div><h2>404 — Page not found</h2><p>The requested route does not exist in V21.9.</p></div><span class='chip red'>NOT FOUND</span></div>
+      <div class='approval-rail'>
+        <span class='approval-pill locked'>NO_AUTO_BETTING</span>
+        <span class='approval-pill locked'>MANUAL_APPROVAL_REQUIRED</span>
+      </div>
+    </section>
+    """
+    return page("404", body), 404
 
 
 if __name__ == "__main__":
