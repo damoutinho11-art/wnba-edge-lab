@@ -281,10 +281,22 @@ def page(title: str, body: str) -> str:
       .nav-pill {{ font-size:12px; padding:8px 10px; }}
     }}
     .progress-track {{ height:6px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; }}
-    .progress-fill {{ height:100%; border-radius:999px; background:var(--accent); transition:width .3s ease; }}
+    .progress-fill {{ height:100%; border-radius:999px; background:var(--accent); transition:width .6s ease; }}
     .progress-fill.green {{ background:var(--good); }}
     .progress-fill.warn {{ background:var(--warn); }}
     .progress-fill.red {{ background:var(--bad); }}
+    .progress-bar-item {{ margin:6px 0; }}
+    .progress-bar-labels {{ display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }}
+    .progress-bar-labels span:first-child {{ font-size:12px; color:var(--muted); }}
+    .progress-val {{ font-size:12px; font-weight:800; color:var(--soft); }}
+    .gates-grid {{ margin-top:12px; }}
+    .gates-card {{ grid-column:1/-1; }}
+    .gates-title {{ display:block; font-size:14px; font-weight:800; color:var(--soft); margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid var(--line); }}
+    .data-freshness-strip {{ display:flex; justify-content:flex-end; align-items:center; gap:8px; padding:6px 10px 10px; font-size:12px; color:var(--muted); }}
+    .queue-card {{ transition:.18s ease; }}
+    .queue-card:hover {{ transform:translateY(-2px); border-color:rgba(139,211,255,.42); }}
+    .risk-mini {{ grid-column:span 1; }}
+    .risk-badges {{ display:flex; flex-wrap:wrap; gap:4px; margin-top:4px; }}
   </style>
 </head>
 <body>
