@@ -1,11 +1,11 @@
 {
-  "created_at_utc": "2026-05-30T21:22:20.614400+00:00",
+  "created_at_utc": "2026-05-31T15:59:29.325671+00:00",
   "status": "OK",
   "files": {
     "game_model_features_v21": {
       "exists": true,
       "rows": 6,
-      "columns": 19
+      "columns": 43
     },
     "team_features_v21": {
       "exists": true,
@@ -19,7 +19,7 @@
     },
     "market_features_v21": {
       "exists": true,
-      "rows": 4,
+      "rows": 5,
       "columns": 10
     },
     "model_backtest_v21": {
@@ -33,7 +33,7 @@
       "columns": 9
     }
   },
-  "diagnosis_count": 7,
+  "diagnosis_count": 1,
   "high_diagnosis": 1,
   "backtester_expected_columns": {
     "present": [],

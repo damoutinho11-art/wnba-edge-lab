@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-05-30T21:22:22.072304+00:00",
+  "created_at_utc": "2026-05-31T15:59:30.806360+00:00",
   "status": "OK",
   "rows": {
     "recommendations": 9,
@@ -9,20 +9,20 @@
     "game_model_features_v21": 6,
     "team_features_v21": 17,
     "player_features_v21": 337,
-    "market_features_v21": 4,
-    "signal_execution_groups_v20": 22
+    "market_features_v21": 5,
+    "signal_execution_groups_v20": 27
   },
   "execution": {
-    "groups": 22,
+    "groups": 27,
     "tickets": null,
-    "net_pl": 0.38099999999999995,
-    "avg_group_pl": 0.017318181818181816
+    "net_pl": 0.9309999999999997,
+    "avg_group_pl": 0.034481481481481474
   },
   "fetch_readiness": {
     "official_playergamelogs_ready": true,
     "official_team_dash_ready": true,
     "official_player_dash_ready": true,
-    "official_teamgamelogs_ready": true,
+    "official_teamgamelogs_ready": false,
     "odds_ready": false,
     "sportsdataverse_ready": true,
     "player_props_market_ready": false,
@@ -30,7 +30,7 @@
   },
   "top_priorities": [
     {
-      "created_at_utc": "2026-05-30T21:22:22.068789+00:00",
+      "created_at_utc": "2026-05-31T15:59:30.802898+00:00",
       "priority": 1,
       "area": "data",
       "title": "Promote official WNBA mobile data to primary model source",
@@ -41,7 +41,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-05-30T21:22:22.069911+00:00",
+      "created_at_utc": "2026-05-31T15:59:30.804054+00:00",
       "priority": 1,
       "area": "data",
       "title": "Refresh Odds API key/session before live deployment",
@@ -52,18 +52,18 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-05-30T21:22:22.069897+00:00",
+      "created_at_utc": "2026-05-31T15:59:30.804038+00:00",
       "priority": 1,
       "area": "execution",
       "title": "Separate model signal quality from execution fill quality",
       "status": "READY",
-      "evidence": "Execution groups=22; tickets=None; net P/L=0.38099999999999995.",
+      "evidence": "Execution groups=27; tickets=None; net P/L=0.9309999999999997.",
       "recommended_change": "Keep two scorecards: model recommended line/edge and actual execution fill/CLV. Do not let multiple fills of one signal distort model hit rate.",
       "safety_gate": "Safe: reporting/accounting only.",
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-05-30T21:22:22.069904+00:00",
+      "created_at_utc": "2026-05-31T15:59:30.804045+00:00",
       "priority": 1,
       "area": "hermes",
       "title": "Keep Hermes in manual approval during model upgrade",
@@ -74,12 +74,12 @@
       "owner": "hermes"
     },
     {
-      "created_at_utc": "2026-05-30T21:22:22.068999+00:00",
+      "created_at_utc": "2026-05-31T15:59:30.803137+00:00",
       "priority": 1,
       "area": "market",
       "title": "Add market consensus and line-shopping range to model context",
       "status": "READY",
-      "evidence": "market_features_v21 has 4 events. Average total range=1.375.",
+      "evidence": "market_features_v21 has 5 events. Average total range=0.2.",
       "recommended_change": "Add market_total_median, market_total_range, and market_total_books as non-predictive context gates: avoid overreacting when book range is wide; prioritize best available line versus consensus.",
       "safety_gate": "Safe: context/gating only; do not alter projected total directly until measured.",
       "owner": "model"

@@ -1,12 +1,12 @@
 WNBA EDGE LAB - V21 FEATURE DIAGNOSTICS REPORT
 ============================================================
-Created: 2026-05-30T21:22:20.595878+00:00
+Created: 2026-05-31T15:59:29.306923+00:00
 
 Files:
-- game_model_features_v21: exists=True rows=6 columns=19
+- game_model_features_v21: exists=True rows=6 columns=43
 - team_features_v21: exists=True rows=17 columns=36
 - player_features_v21: exists=True rows=337 columns=41
-- market_features_v21: exists=True rows=4 columns=10
+- market_features_v21: exists=True rows=5 columns=10
 - model_backtest_v21: exists=True rows=12 columns=15
 - model_upgrade_recommendations_v21: exists=True rows=9 columns=9
 
@@ -19,15 +19,15 @@ Canonical feature map:
 - market_total_mean: game_model_features_v21::market_total_mean, market_features_v21::market_total_mean
 - market_total_range: game_model_features_v21::market_total_range, market_features_v21::market_total_range
 - market_total_books: game_model_features_v21::market_total_books, market_features_v21::market_total_books
-- combined_playerlog_pts_l5: MISSING
-- combined_dash_pts: MISSING
-- home_starter_minutes_concentration: MISSING
-- away_starter_minutes_concentration: MISSING
-- home_bench_minutes_share: MISSING
-- away_bench_minutes_share: MISSING
-- home_dreb_allowed: MISSING
-- away_dreb_allowed: MISSING
-- execution_pl: model_backtest_v21::approved_for_live_formula, model_backtest_v21::approved_for_manual_review, model_backtest_v21::implementation_stage, model_backtest_v21::sample_size, team_features_v21::dash_plus_minus
+- combined_playerlog_pts_l5: game_model_features_v21::combined_playerlog_pts_l5
+- combined_dash_pts: game_model_features_v21::combined_dash_pts
+- home_starter_minutes_concentration: game_model_features_v21::home_starter_minutes_concentration
+- away_starter_minutes_concentration: game_model_features_v21::away_starter_minutes_concentration
+- home_bench_minutes_share: game_model_features_v21::home_bench_minutes_share
+- away_bench_minutes_share: game_model_features_v21::away_bench_minutes_share
+- home_dreb_allowed: game_model_features_v21::home_dreb_allowed_blended_dreb_allowed
+- away_dreb_allowed: game_model_features_v21::away_dreb_allowed_blended_dreb_allowed
+- execution_pl: game_model_features_v21::away_dash_plus_minus, game_model_features_v21::away_playerlog_team_pts_l5, game_model_features_v21::away_team_pts_for_l10, game_model_features_v21::away_team_pts_for_l3, game_model_features_v21::away_team_pts_for_l5
 
 Backtester expected columns:
 - present: []
@@ -35,12 +35,6 @@ Backtester expected columns:
 - missing: ['projection_minus_line', 'recent_points_vs_line', 'combined_dash_pts', 'market_total_range', 'home_starter_minutes_concentration', 'away_starter_minutes_concentration', 'home_bench_minutes_share', 'away_bench_minutes_share', 'home_dreb_allowed_blended_dreb_allowed', 'away_dreb_allowed_blended_dreb_allowed', 'execution_pl']
 
 Diagnosis:
-- MEDIUM | combined_playerlog_pts_l5: No column match found for canonical feature 'combined_playerlog_pts_l5'.
-- MEDIUM | combined_dash_pts: No column match found for canonical feature 'combined_dash_pts'.
-- MEDIUM | home_starter_minutes_concentration: No column match found for canonical feature 'home_starter_minutes_concentration'.
-- MEDIUM | away_starter_minutes_concentration: No column match found for canonical feature 'away_starter_minutes_concentration'.
-- MEDIUM | home_dreb_allowed: No column match found for canonical feature 'home_dreb_allowed'.
-- MEDIUM | away_dreb_allowed: No column match found for canonical feature 'away_dreb_allowed'.
 - HIGH | backtester_candidate_detection: Backtester expected columns are missing or non-numeric in model_backtest_v21.
 
 Next recommended patch:

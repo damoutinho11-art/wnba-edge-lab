@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-30T21:22:21+00:00",
+  "updated_at": "2026-05-31T15:59:30+00:00",
   "status": "OK",
   "projection_layer": {
     "slate_games": 6,
@@ -30,14 +30,14 @@
     "current_extreme_bucket_games": 1
   },
   "execution": {
-    "execution_groups": 22,
-    "execution_tickets": 27,
-    "execution_net_profit": 0.38099999999999995,
-    "execution_total_stake": 2.7000000000000006,
-    "multi_fill_groups": 5,
-    "unmatched_execution_groups": 21,
-    "correlated_exposure_groups": 5,
-    "avg_execution_roi_percent": 17.545454545454543
+    "execution_groups": 27,
+    "execution_tickets": 36,
+    "execution_net_profit": 0.9309999999999997,
+    "execution_total_stake": 3.6000000000000005,
+    "multi_fill_groups": 6,
+    "unmatched_execution_groups": 26,
+    "correlated_exposure_groups": 6,
+    "avg_execution_roi_percent": 18.37037037037037
   },
   "hermes": {
     "hermes_mode": "manual_approval",
@@ -53,13 +53,13 @@
   },
   "audit_rows": 29,
   "severity_counts": {
-    "LOW": 16,
-    "MEDIUM": 11,
+    "LOW": 15,
+    "MEDIUM": 12,
     "HIGH": 2
   },
   "status_counts": {
-    "GOOD": 16,
-    "WATCH": 11,
+    "GOOD": 15,
+    "WATCH": 12,
     "WEAK": 2
   },
   "outputs": {
