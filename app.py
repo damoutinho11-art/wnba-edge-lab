@@ -280,11 +280,11 @@ def page(title: str, body: str) -> str:
       .nav-links {{ gap:6px; }}
       .nav-pill {{ font-size:12px; padding:8px 10px; }}
     }}
-    .progress-track { height:6px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; }
-    .progress-fill { height:100%; border-radius:999px; background:var(--accent); transition:width .3s ease; }
-    .progress-fill.green { background:var(--good); }
-    .progress-fill.warn { background:var(--warn); }
-    .progress-fill.red { background:var(--bad); }
+    .progress-track {{ height:6px; border-radius:999px; background:rgba(255,255,255,.08); overflow:hidden; }}
+    .progress-fill {{ height:100%; border-radius:999px; background:var(--accent); transition:width .3s ease; }}
+    .progress-fill.green {{ background:var(--good); }}
+    .progress-fill.warn {{ background:var(--warn); }}
+    .progress-fill.red {{ background:var(--bad); }}
   </style>
 </head>
 <body>

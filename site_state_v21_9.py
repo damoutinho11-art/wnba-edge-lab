@@ -263,7 +263,7 @@ def parse_risk_flags(raw: str) -> str:
         "NEGATIVE_PRICE_EDGE": ("red", "NEG PRICE"),
         "PRICE_EDGE_TOO_SMALL": ("gray", "SMALL EDGE"),
     }
-    flags = [f.strip() for f in raw.split(",") if f.strip()]
+    flags = [f.strip() for f in raw.replace(";", ",").split(",") if f.strip()]
     badges = []
     seen = set()
     for flag in flags:
