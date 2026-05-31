@@ -342,7 +342,6 @@ def manual_queue_html(st: Dict[str, Any], limit: int = 12) -> str:
           <div class="action-clean-head"><div><div class="action-rank-clean">#{i:02d} MODEL QUEUE</div><div class="action-clean-title">{esc(pick(r, 'game'))}</div></div><span class="badge {label_cls}">{esc(label)}</span></div>
           <div class="action-clean-bet">{esc(pick(r, 'market'))} · {esc(pick(r, 'side'))}{(' ' + esc(line)) if line else ''} @ {esc(pick(r, 'odds_decimal', 'odds'))}</div>
           <div class="action-clean-grid"><div class="mini"><span>Edge</span><b>{esc(pick(r, 'model_edge', 'edge'))}</b></div><div class="mini"><span>Confidence</span><b>{esc(pick(r, 'confidence'))}</b></div><div class="mini"><span>Approval</span><b>Manual</b></div><div class="mini" style="grid-column:span 1;"><span>Risk</span><div style="margin-top:4px;">{parse_risk_flags(pick(r, 'risk_flags'))}</div></div></div>
-          <div class="approval-rail"><span class="approval-pill warn">MANUAL_APPROVAL_REQUIRED</span><span class="approval-pill locked">NO_AUTO_BETTING</span></div>
         </div>''')
     return '<div class="action-board">' + ''.join(out) + '</div>'
 
