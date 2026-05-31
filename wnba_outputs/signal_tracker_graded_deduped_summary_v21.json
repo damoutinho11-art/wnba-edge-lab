@@ -1,0 +1,264 @@
+{
+  "generated_at_utc": "2026-05-31T10:36:36.421447+00:00",
+  "source_file": "/mnt/c/Users/User/Desktop/WNBA_EDGE_LAB_CLEAN/wnba_outputs/signal_tracker_graded.csv",
+  "source_rows": 35,
+  "deduped_rows": 28,
+  "dropped_rows": 7,
+  "dedupe_key": [
+    "Game",
+    "Market",
+    "Selection",
+    "LineAtSignal"
+  ],
+  "tiebreaker": "latest RunTimestamp",
+  "duplicate_groups": 7,
+  "groups": [
+    {
+      "key": "ATL @ MIN | Game Total | OVER | 165.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|ATL @ MIN|Game Total|OVER|165.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 02:26:58",
+      "dropped": []
+    },
+    {
+      "key": "ATL @ MIN | Game Total | OVER | 166.0",
+      "total_members": 2,
+      "kept_signal_id": "2026-05-28|WNBA|ATL @ MIN|Game Total|OVER|166.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 00:18:53",
+      "dropped": [
+        {
+          "signal_id": "2026-05-27|WNBA|ATL @ MIN|Game Total|OVER|166.0|v2.4",
+          "run_timestamp": "2026-05-27 23:55:53",
+          "signal_date": "2026-05-27"
+        }
+      ]
+    },
+    {
+      "key": "ATL @ PDX | Game Total | OVER | 164.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|ATL @ PDX|Game Total|OVER|164.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 23:20:56",
+      "dropped": []
+    },
+    {
+      "key": "ATL @ PDX | Game Total | OVER | 165.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|ATL @ PDX|Game Total|OVER|165.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 13:33:53",
+      "dropped": []
+    },
+    {
+      "key": "CON @ PDX | Game Total | OVER | 166.0",
+      "total_members": 2,
+      "kept_signal_id": "2026-05-28|WNBA|CON @ PDX|Game Total|OVER|166.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 02:26:58",
+      "dropped": [
+        {
+          "signal_id": "2026-05-27|WNBA|CON @ PDX|Game Total|OVER|166.0|v2.4",
+          "run_timestamp": "2026-05-27 23:55:53",
+          "signal_date": "2026-05-27"
+        }
+      ]
+    },
+    {
+      "key": "IND @ GSV | Game Total | OVER | 167.0",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|IND @ GSV|Game Total|OVER|167.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 23:20:56",
+      "dropped": []
+    },
+    {
+      "key": "IND @ GSV | Game Total | OVER | 167.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|IND @ GSV|Game Total|OVER|167.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 16:58:06",
+      "dropped": []
+    },
+    {
+      "key": "IND @ GSV | Game Total | OVER | 169.5",
+      "total_members": 2,
+      "kept_signal_id": "2026-05-28|WNBA|IND @ GSV|Game Total|OVER|169.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 02:26:58",
+      "dropped": [
+        {
+          "signal_id": "2026-05-27|WNBA|IND @ GSV|Game Total|OVER|169.5|v2.4",
+          "run_timestamp": "2026-05-27 23:55:53",
+          "signal_date": "2026-05-27"
+        }
+      ]
+    },
+    {
+      "key": "LAS @ WAS | Game Total | OVER | 168.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|LAS @ WAS|Game Total|OVER|168.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 22:13:23",
+      "dropped": []
+    },
+    {
+      "key": "LAS @ WAS | Game Total | OVER | 169.0",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|LAS @ WAS|Game Total|OVER|169.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 23:20:56",
+      "dropped": []
+    },
+    {
+      "key": "LAS @ WAS | Game Total | OVER | 169.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|LAS @ WAS|Game Total|OVER|169.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 20:43:12",
+      "dropped": []
+    },
+    {
+      "key": "LAS @ WAS | Game Total | OVER | 170.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|LAS @ WAS|Game Total|OVER|170.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 13:33:53",
+      "dropped": []
+    },
+    {
+      "key": "LVA @ DAL | Game Total | UNDER | 176.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|LVA @ DAL|Game Total|UNDER|176.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 23:20:56",
+      "dropped": []
+    },
+    {
+      "key": "LVA @ DAL | Game Total | UNDER | 177.0",
+      "total_members": 2,
+      "kept_signal_id": "2026-05-28|WNBA|LVA @ DAL|Game Total|UNDER|177.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 02:26:58",
+      "dropped": [
+        {
+          "signal_id": "2026-05-27|WNBA|LVA @ DAL|Game Total|UNDER|177.0|v2.4",
+          "run_timestamp": "2026-05-27 23:55:53",
+          "signal_date": "2026-05-27"
+        }
+      ]
+    },
+    {
+      "key": "LVA @ DAL | Game Total | UNDER | 177.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|LVA @ DAL|Game Total|UNDER|177.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 14:49:16",
+      "dropped": []
+    },
+    {
+      "key": "LVA @ DAL | Game Total | UNDER | 178.0",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|LVA @ DAL|Game Total|UNDER|178.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 15:27:32",
+      "dropped": []
+    },
+    {
+      "key": "LVA @ DAL | Game Total | UNDER | 178.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|LVA @ DAL|Game Total|UNDER|178.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 20:43:12",
+      "dropped": []
+    },
+    {
+      "key": "MIN @ CHI | Game Total | OVER | 168.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|MIN @ CHI|Game Total|OVER|168.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 16:58:06",
+      "dropped": []
+    },
+    {
+      "key": "MIN @ CHI | Game Total | OVER | 169.0",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|MIN @ CHI|Game Total|OVER|169.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 20:43:12",
+      "dropped": []
+    },
+    {
+      "key": "MIN @ CHI | Game Total | UNDER | 170.0",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|MIN @ CHI|Game Total|UNDER|170.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 23:20:56",
+      "dropped": []
+    },
+    {
+      "key": "PHX @ NYL | Game Total | OVER | 169.0",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|PHX @ NYL|Game Total|OVER|169.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 15:13:25",
+      "dropped": []
+    },
+    {
+      "key": "PHX @ NYL | Game Total | OVER | 169.5",
+      "total_members": 2,
+      "kept_signal_id": "2026-05-28|WNBA|PHX @ NYL|Game Total|OVER|169.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 23:20:56",
+      "dropped": [
+        {
+          "signal_id": "2026-05-27|WNBA|PHX @ NYL|Game Total|OVER|169.5|v2.4",
+          "run_timestamp": "2026-05-27 23:55:53",
+          "signal_date": "2026-05-27"
+        }
+      ]
+    },
+    {
+      "key": "PHX @ NYL | Game Total | OVER | 170.0",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|PHX @ NYL|Game Total|OVER|170.0|v2.4",
+      "kept_run_timestamp": "2026-05-28 02:08:38",
+      "dropped": []
+    },
+    {
+      "key": "PHX @ NYL | Game Total | OVER | 171.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|PHX @ NYL|Game Total|OVER|171.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 13:33:53",
+      "dropped": []
+    },
+    {
+      "key": "PHX @ NYL | Game Total | UNDER | 173.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|PHX @ NYL|Game Total|UNDER|173.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 02:26:58",
+      "dropped": []
+    },
+    {
+      "key": "PHX @ NYL | Game Total | UNDER | 175.5",
+      "total_members": 1,
+      "kept_signal_id": "2026-05-28|WNBA|PHX @ NYL|Game Total|UNDER|175.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 02:20:49",
+      "dropped": []
+    },
+    {
+      "key": "TOR @ CHI | Game Total | UNDER | 172.5",
+      "total_members": 2,
+      "kept_signal_id": "2026-05-28|WNBA|TOR @ CHI|Game Total|UNDER|172.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 02:26:58",
+      "dropped": [
+        {
+          "signal_id": "2026-05-27|WNBA|TOR @ CHI|Game Total|UNDER|172.5|v2.4",
+          "run_timestamp": "2026-05-27 23:55:53",
+          "signal_date": "2026-05-27"
+        }
+      ]
+    },
+    {
+      "key": "WAS @ SEA | Game Total | OVER | 160.5",
+      "total_members": 2,
+      "kept_signal_id": "2026-05-28|WNBA|WAS @ SEA|Game Total|OVER|160.5|v2.4",
+      "kept_run_timestamp": "2026-05-28 02:26:58",
+      "dropped": [
+        {
+          "signal_id": "2026-05-27|WNBA|WAS @ SEA|Game Total|OVER|160.5|v2.4",
+          "run_timestamp": "2026-05-27 23:55:53",
+          "signal_date": "2026-05-27"
+        }
+      ]
+    }
+  ],
+  "dropped_signal_ids": [
+    "2026-05-27|WNBA|ATL @ MIN|Game Total|OVER|166.0|v2.4",
+    "2026-05-27|WNBA|CON @ PDX|Game Total|OVER|166.0|v2.4",
+    "2026-05-27|WNBA|IND @ GSV|Game Total|OVER|169.5|v2.4",
+    "2026-05-27|WNBA|LVA @ DAL|Game Total|UNDER|177.0|v2.4",
+    "2026-05-27|WNBA|PHX @ NYL|Game Total|OVER|169.5|v2.4",
+    "2026-05-27|WNBA|TOR @ CHI|Game Total|UNDER|172.5|v2.4",
+    "2026-05-27|WNBA|WAS @ SEA|Game Total|OVER|160.5|v2.4"
+  ]
+}
