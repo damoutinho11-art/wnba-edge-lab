@@ -511,6 +511,14 @@ def build_game_model_features(team_features: pd.DataFrame, market_features: pd.D
     edge_col = get_col(base, ["edge", "Edge"])
     conf_col = get_col(base, ["confidence", "Confidence"])
 
+    # If no combined game column exists, synthesize from away/home columns.
+    if game_col is None:
+        away_src = get_col(base, ["away", "Away", "AWAY", "away_team"])
+        home_src = get_col(base, ["home", "Home", "HOME", "home_team"])
+        if away_src and home_src:
+            base["_game_text"] = base[away_src].astype(str) + " @ " + base[home_src].astype(str)
+            game_col = "_game_text"
+
     rows = []
     tf = team_features.copy()
     if not tf.empty and "team" in tf.columns:
@@ -519,6 +527,16 @@ def build_game_model_features(team_features: pd.DataFrame, market_features: pd.D
     for _, r in base.iterrows():
         game_txt = str(r[game_col]) if game_col else ""
         away, home = extract_teams_from_game_text(game_txt)
+
+        # Fallback: read team codes directly if extraction from game text failed.
+        if not away or not home:
+            src_away = get_col(base, ["away", "Away", "AWAY", "away_team"])
+            src_home = get_col(base, ["home", "Home", "HOME", "home_team"])
+            if src_away and not away:
+                away = team_code(r.get(src_away))
+            if src_home and not home:
+                home = team_code(r.get(src_home))
+
         row = {"game": game_txt, "away_team": away, "home_team": home, "created_at_utc": now_iso()}
 
         if proj_col:
