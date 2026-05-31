@@ -1,23 +1,24 @@
 {
-  "created_at_utc": "2026-05-30T21:22:22.761787+00:00",
+  "created_at_utc": "2026-05-31T15:33:52.956783+00:00",
   "status": "OK",
   "version": "v21",
   "rows": {
-    "base_actions": 3,
-    "advisory_scores": 3,
-    "hermes_advisory_queue": 3,
+    "base_actions": 9,
+    "advisory_scores": 9,
+    "hermes_advisory_queue": 9,
     "team_features": 17,
     "player_features": 337,
-    "market_features": 4,
+    "market_features": 5,
     "model_backtest": 12,
     "validated_model_changes": 7
   },
   "label_counts": {
-    "NEUTRAL": 2,
+    "NEUTRAL": 8,
     "LEAN_SUPPORT": 1
   },
   "risk_flag_counts": {
-    "NO_LINE": 1
+    "NO_LINE": 7,
+    "LOW_MODEL_EDGE": 1
   },
   "safety": {
     "formula_changed": false,

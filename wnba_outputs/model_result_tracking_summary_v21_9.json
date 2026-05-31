@@ -1,32 +1,33 @@
 {
-  "created_at_utc": "2026-05-30T21:22:23.102816+00:00",
+  "created_at_utc": "2026-05-31T15:33:53.639327+00:00",
   "status": "OK",
   "version": "v21.9",
   "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
   "inputs": {
-    "model_advisory_scores_v21": 3,
+    "model_advisory_scores_v21": 9,
     "model_backtest_v21": 12,
     "signal_tracker_graded": 35,
-    "signal_execution_groups_v20": 22,
+    "signal_execution_groups_v20": 27,
     "hermes_approval_queue_v20": 2
   },
   "rows": {
-    "tracking": 3,
+    "tracking": 9,
     "promotion_watchlist": 12,
-    "matched_rows": 2,
-    "known_results": 0,
-    "decided_results": 0,
-    "clv_samples": 2
+    "matched_rows": 8,
+    "known_results": 1,
+    "decided_results": 1,
+    "clv_samples": 7
   },
   "result_counts": {
-    "UNKNOWN": 3
+    "UNKNOWN": 8,
+    "WON": 1
   },
   "clv": {
-    "avg_points": 0.0,
+    "avg_points": 3.0714,
     "median_points": 0.0,
-    "positive_clv_rate": 0.0,
-    "flat_clv_rate": 1.0,
-    "negative_clv_rate": 0.0
+    "positive_clv_rate": 0.1429,
+    "flat_clv_rate": 0.4286,
+    "negative_clv_rate": 0.4286
   },
   "by_advisory_label": [
     {
@@ -37,22 +38,22 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 28.293,
+      "avg_advisory_score": 25.9715,
       "avg_clv_points": 0.0,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     },
     {
       "group": "NEUTRAL",
-      "rows": 2,
-      "known_results": 0,
-      "won": 0,
+      "rows": 8,
+      "known_results": 1,
+      "won": 1,
       "lost": 0,
       "push": 0,
-      "win_rate_decided": null,
-      "avg_advisory_score": 12.1029,
-      "avg_clv_points": 0.0,
-      "positive_clv_rate": 0.0,
+      "win_rate_decided": 1.0,
+      "avg_advisory_score": 10.9616,
+      "avg_clv_points": 3.5833,
+      "positive_clv_rate": 0.125,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     }
   ],
@@ -65,50 +66,63 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 16.4694,
+      "avg_advisory_score": 15.3087,
       "avg_clv_points": 0.0,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     },
     {
       "group": "NO_LINE",
-      "rows": 1,
+      "rows": 6,
       "known_results": 0,
       "won": 0,
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 19.56,
-      "avg_clv_points": NaN,
-      "positive_clv_rate": null,
+      "avg_advisory_score": 13.4303,
+      "avg_clv_points": -1.25,
+      "positive_clv_rate": 0.0,
+      "sample_gate": "INSUFFICIENT_SAMPLE"
+    },
+    {
+      "group": "NO_LINE, LOW_MODEL_EDGE",
+      "rows": 1,
+      "known_results": 1,
+      "won": 1,
+      "lost": 0,
+      "push": 0,
+      "win_rate_decided": 1.0,
+      "avg_advisory_score": 2.4652,
+      "avg_clv_points": 26.5,
+      "positive_clv_rate": 1.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     }
   ],
   "by_advisory_score_band": [
     {
       "group": "0-9",
-      "rows": 1,
-      "known_results": 0,
-      "won": 0,
+      "rows": 4,
+      "known_results": 1,
+      "won": 1,
       "lost": 0,
       "push": 0,
-      "win_rate_decided": null,
-      "avg_advisory_score": 4.6458,
-      "avg_clv_points": 0.0,
-      "positive_clv_rate": 0.0,
+      "win_rate_decided": 1.0,
+      "avg_advisory_score": 5.0964,
+      "avg_clv_points": 8.0,
+      "positive_clv_rate": 0.25,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     },
     {
       "group": "10-19",
-      "rows": 1,
+      "rows": 4,
       "known_results": 0,
       "won": 0,
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 19.56,
-      "avg_clv_points": NaN,
-      "positive_clv_rate": null,
+      "avg_advisory_score": 16.8268,
+      "avg_clv_points": -0.8333,
+      "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     },
     {
@@ -119,7 +133,7 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 28.293,
+      "avg_advisory_score": 25.9715,
       "avg_clv_points": 0.0,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -139,21 +153,22 @@
   },
   "source_summaries": {
     "advisory_summary_rows": {
-      "base_actions": 3,
-      "advisory_scores": 3,
-      "hermes_advisory_queue": 3,
+      "base_actions": 9,
+      "advisory_scores": 9,
+      "hermes_advisory_queue": 9,
       "team_features": 17,
       "player_features": 337,
-      "market_features": 4,
+      "market_features": 5,
       "model_backtest": 12,
       "validated_model_changes": 7
     },
     "advisory_label_counts": {
-      "NEUTRAL": 2,
+      "NEUTRAL": 8,
       "LEAN_SUPPORT": 1
     },
     "advisory_risk_flag_counts": {
-      "NO_LINE": 1
+      "NO_LINE": 7,
+      "LOW_MODEL_EDGE": 1
     },
     "backtest_rows": {
       "backtest": 12,
@@ -162,8 +177,8 @@
       "warnings": 1
     },
     "candidate_status_counts": {
-      "CANDIDATE": 10,
-      "MISSING_OR_INSUFFICIENT": 2
+      "CANDIDATE": 11,
+      "MISSING_OR_INSUFFICIENT": 1
     },
     "cycle_fetch_readiness": {
       "official_playergamelogs_ready": true,
@@ -191,8 +206,8 @@
     "note": "V21.9 tracker creates evidence artifacts only; it does not alter live model behavior."
   },
   "outputs": {
-    "tracking_csv": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_result_tracking_v21_9.csv",
-    "summary_json": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_result_tracking_summary_v21_9.json",
-    "promotion_watchlist_csv": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_promotion_watchlist_v21_9.csv"
+    "tracking_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_result_tracking_v21_9.csv",
+    "summary_json": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_result_tracking_summary_v21_9.json",
+    "promotion_watchlist_csv": "C:\\Users\\User\\Desktop\\WNBA_EDGE_LAB_CLEAN\\wnba_outputs\\model_promotion_watchlist_v21_9.csv"
   }
 }

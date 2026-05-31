@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-05-31T13:16:11.075220+00:00",
+  "signal_source": "/mnt/c/Users/User/Desktop/WNBA_EDGE_LAB_CLEAN/wnba_outputs/signal_tracker_graded_deduped_v21.csv",
+  "total_signals": 28,
+  "signals_with_closing_line": 0,
+  "signals_missing_closing_line": 28,
+  "closing_line_coverage_pct": 0.0,
+  "unique_games": 10,
+  "result_status_counts": {
+    "OPEN": 25,
+    "GRADED": 3
+  },
+  "closing_line_file": "/mnt/c/Users/User/Desktop/WNBA_EDGE_LAB_CLEAN/wnba_outputs/manual_closing_lines_v21.csv",
+  "closing_line_entries": 0
+}
