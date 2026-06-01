@@ -182,13 +182,52 @@ def build_picks() -> str:
     advisory = read_csv(MODEL_ADVISORY)
     mrt = read_json(MODEL_RESULT_TRACKING_SUMMARY)
     
+    # Filter out non-actionable rows (stale, no-line, invalid, wrong label)
+    def _is_actionable(row):
+        game = resolve_col(row, "game")
+        if not game or game == "n/a":
+            return False
+        flags = resolve_col(row, "risk_flags").upper()
+        if "NO_LINE" in flags:
+            return False
+        label = resolve_col(row, "label").upper()
+        if "LEAN" not in label and "MANUAL" not in label:
+            return False
+        stale_flag = str(row.get("is_stale", "")).strip().lower()
+        if stale_flag in ("true", "1", "yes"):
+            return False
+        created = row.get("created_at_utc", "")
+        if created:
+            try:
+                from datetime import datetime as _dt, timezone as _tz
+                created_clean = created.replace("Z", "+00:00")
+                dt = _dt.fromisoformat(created_clean).replace(tzinfo=_tz.utc)
+                age_hours = (_dt.now(_tz.utc) - dt).total_seconds() / 3600.0
+                if age_hours > 48:
+                    return False
+            except Exception:
+                pass
+        row_date = row.get("date", "")
+        if row_date:
+            try:
+                from datetime import datetime as _dt, timezone as _tz
+                today_utc = _dt.now(_tz.utc).strftime("%Y-%m-%d")
+                if row_date < today_utc:
+                    return False
+            except Exception:
+                pass
+        return True
+
+    actionable = [r for r in advisory if _is_actionable(r)]
+    hidden_count = len(advisory) - len(actionable)
+
     groups = {"LEAN_SUPPORT": [], "MANUAL_REVIEW": [], "NEUTRAL": []}
-    
-    for row in advisory:
+
+    for row in actionable:
         game = resolve_col(row, "game")
         if game == "n/a":
             continue
-            
+
         label = resolve_col(row, "label").upper()
         if "LEAN" in label:
             groups["LEAN_SUPPORT"].append(row)
@@ -198,6 +237,13 @@ def build_picks() -> str:
             groups["NEUTRAL"].append(row)
 
     output = ["📋 Model Picks / Queue:"]
+    if hidden_count > 0:
+        output.append(f"  (Hidden {hidden_count} non-actionable row(s): stale/no-line/invalid)")
+
+    total_actionable = sum(len(g) for g in groups.values())
+    if total_actionable == 0:
+        output.append("  No actionable model picks after freshness/risk filtering.")
+        output.append("  Manual approval required · No auto-betting · No formula changes.")
     for label, group in groups.items():
         if not group: continue
         emoji = {"LEAN_SUPPORT": "🟢", "MANUAL_REVIEW": "🟡", "NEUTRAL": "⚪"}.get(label, "⚪")

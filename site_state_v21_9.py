@@ -19,7 +19,7 @@ import html
 import json
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 ROOT = Path(".")
 OUT = ROOT / "wnba_outputs"
@@ -91,6 +91,67 @@ def status_norm(s: Any) -> str:
 
 def result_norm(s: Any) -> str:
     return str(s or "").strip().upper()
+
+
+def _invalid_game(game: str) -> bool:
+    """Return True if the game field is blank, nan, None, or otherwise invalid."""
+    if not game:
+        return True
+    g = str(game).strip().lower()
+    return g in ("", "nan", "none", "null") or "@" not in g
+
+
+def _is_actionable_queue_row(row: Dict[str, str]) -> Tuple[bool, List[str]]:
+    """Determine whether a queue row should be shown as actionable.
+
+    Returns (is_actionable, list_of_reasons_if_not).
+    Rules: invalid game, NO_LINE flag, stale (>48h), past date, is_stale=true.
+    """
+    reasons: List[str] = []
+
+    # 1. Invalid game
+    game = row.get("game", "")
+    if _invalid_game(game):
+        reasons.append("invalid-game")
+
+    # 2. NO_LINE risk flag
+    flags = row.get("risk_flags", "").upper()
+    if "NO_LINE" in flags:
+        reasons.append("no-line")
+
+    # 3. Stale by created_at_utc (> 48 hours)
+    created = row.get("created_at_utc", "")
+    if created:
+        try:
+            created_clean = created.replace("Z", "+00:00")
+            dt = datetime.fromisoformat(created_clean).replace(tzinfo=timezone.utc)
+            age_hours = (datetime.now(timezone.utc) - dt).total_seconds() / 3600.0
+            if age_hours > 48:
+                reasons.append(f"stale-{age_hours:.0f}h")
+        except Exception:
+            pass
+
+    # 4. Date is before today UTC
+    row_date = row.get("date", "")
+    if row_date:
+        try:
+            today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+            if row_date < today_utc:
+                reasons.append(f"past-date({row_date})")
+        except Exception:
+            pass
+
+    # 5. Explicit is_stale flag
+    stale_flag = str(row.get("is_stale", "")).strip().lower()
+    if stale_flag in ("true", "1", "yes"):
+        reasons.append("is-stale")
+
+    # 6. Actionable labels are only LEAN_SUPPORT or MANUAL_REVIEW
+    label = row.get("advisory_label", "").upper()
+    if label not in ("LEAN_SUPPORT", "MANUAL_REVIEW"):
+        reasons.append(f"label={label[:20]}")
+
+    return (len(reasons) == 0, reasons)
 
 
 def load_state() -> Dict[str, Any]:
@@ -338,13 +399,37 @@ def manual_queue_html(st: Dict[str, Any], limit: int = 12) -> str:
             '<div class="v193-page-note"><b>No V21.9 manual market queue found.</b> '
             "Run manual_market_snapshot_v21_9.py and model_manual_market_review_v21_9.py.</div>"
         )
+    # Separate actionable from non-actionable
+    actionable: List[Dict[str, str]] = []
+    hidden_count = 0
+    hidden_reasons: Dict[str, int] = {}
+    for r in rows:
+        is_ok, reasons = _is_actionable_queue_row(r)
+        if is_ok:
+            actionable.append(r)
+        else:
+            hidden_count += 1
+            for reason in reasons:
+                hidden_reasons[reason] = hidden_reasons.get(reason, 0) + 1
+    if not actionable:
+        hidden_note = ""
+        if hidden_count:
+            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_reasons.items()))
+            hidden_note = (
+                f'<div class="v193-page-note" style="margin-top:8px">'
+                f'<b>No actionable picks.</b> {hidden_count} row(s) hidden: {parts}.</div>'
+            )
+        return (
+            '<div class="v193-page-note"><b>No actionable model queue rows.</b> '
+            "All rows filtered by freshness/risk gates.</div>" + hidden_note
+        )
     def sort_key(r: Dict[str, str]):
         label = pick(r, "advisory_label", default="")
         rank = {"LEAN_SUPPORT": 0, "MANUAL_REVIEW": 1, "NO_PLAY": 2}.get(label, 9)
         return (rank, -num(pick(r, "model_edge", "edge", default="0")))
-    rows = sorted(rows, key=sort_key)[:limit]
+    actionable = sorted(actionable, key=sort_key)[:limit]
     out = []
-    for i, r in enumerate(rows, 1):
+    for i, r in enumerate(actionable, 1):
         label = pick(r, "advisory_label", default="MANUAL_REVIEW")
         label_cls = "green" if label == "LEAN_SUPPORT" else "warn" if label == "MANUAL_REVIEW" else "gray"
         line = pick(r, "line")
@@ -368,6 +453,12 @@ def manual_queue_html(st: Dict[str, Any], limit: int = 12) -> str:
             f'<span>Risk</span>'
             f'<div class="risk-badges">{risk_badges}</div>'
             f"</div></div></div>"
+        )
+    if hidden_count:
+        parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_reasons.items()))
+        out.append(
+            f'<div class="v193-page-note" style="margin-top:8px">'
+            f'<b>Hidden non-actionable rows:</b> {hidden_count} ({parts}).</div>'
         )
     return '<div class="action-board">' + "".join(out) + "</div>"
 
@@ -630,13 +721,35 @@ def render_telegram() -> str:
             f"{pick(r,'FinalSignal','Signal', default='MANUAL')}"
         )
     lines += ["", "MODEL QUEUE:"]
-    for r in (st["hermes_queue"] or st["manual_review"])[:8]:
-        lines.append(
-            f"- {pick(r,'advisory_label', default='REVIEW')} | {pick(r,'game')} | "
-            f"{pick(r,'market')} {pick(r,'side')} {pick(r,'line')} @ "
-            f"{pick(r,'odds_decimal','odds')} | edge {pick(r,'model_edge','edge')} | "
-            f"conf {pick(r,'confidence')}"
-        )
+    raw_queue = st["hermes_queue"] or st["manual_review"]
+    actionable_queue = []
+    hidden_queue_count = 0
+    hidden_queue_reasons: Dict[str, int] = {}
+    for r in raw_queue:
+        is_ok, reasons = _is_actionable_queue_row(r)
+        if is_ok:
+            actionable_queue.append(r)
+        else:
+            hidden_queue_count += 1
+            for reason in reasons:
+                hidden_queue_reasons[reason] = hidden_queue_reasons.get(reason, 0) + 1
+    if not actionable_queue:
+        lines.append("  No actionable model picks after freshness/risk filtering.")
+        if hidden_queue_count:
+            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_queue_reasons.items()))
+            lines.append(f"  Hidden non-actionable rows: {hidden_queue_count} ({parts}).")
+    else:
+        for r in actionable_queue[:8]:
+            lines.append(
+                f"- {pick(r,'advisory_label', default='REVIEW')} | {pick(r,'game')} | "
+                f"{pick(r,'market')} {pick(r,'side')} {pick(r,'line')} @ "
+                f"{pick(r,'odds_decimal','odds')} | edge {pick(r,'model_edge','edge')} | "
+                f"conf {pick(r,'confidence')}"
+            )
+        if hidden_queue_count:
+            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_queue_reasons.items()))
+            lines.append(f"")
+            lines.append(f"Hidden non-actionable rows: {hidden_queue_count} ({parts}).")
     text = "\n".join(lines)
     body = route_intro("Telegram",
         "Copy-ready operator message generated from V21.9 live state, "
