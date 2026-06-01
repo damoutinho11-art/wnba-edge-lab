@@ -1,0 +1,135 @@
+WNBA Edge Lab V21.9 — Bet Timing & CLV Audit Report
+Generated: 2026-06-01T11:50:51.915569+00:00
+Safety: Evidence only. No formula/staking/threshold/betting changes.
+========================================================================
+
+1. OVERALL SETTLED PERFORMANCE
+   Total settled:     38
+   Wins:              23
+   Losses:            15
+   Pushes:            0
+   Win rate:          60.5%
+   Net P/L:           +0.71u
+   Total stake:       3.80u
+   ROI:               +18.71%
+
+2. LINE CLV (CLV_Points)
+   Samples:           38 / 38
+   Average:           -0.45 points
+   Positive:          3
+   Flat:              27
+   Negative:          8
+
+   By market:
+     Points & Rebounds    n=1   avg=1.00     pos=1 flat=0 neg=0
+     Rebounds             n=15  avg=0.07     pos=1 flat=14 neg=0
+     Double Double        n=2   avg=0.00     pos=0 flat=2 neg=0
+     Moneyline            n=1   avg=0.00     pos=0 flat=1 neg=0
+     Spread               n=3   avg=0.00     pos=0 flat=3 neg=0
+     PRA                  n=2   avg=-1.00    pos=0 flat=1 neg=1
+     Game Total           n=10  avg=-1.10    pos=1 flat=5 neg=4
+     Alt Game Total       n=4   avg=-1.50    pos=0 flat=1 neg=3
+
+   By side:
+     GSV    n=2   avg=0.00
+     LAS    n=2   avg=0.00
+     NO     n=2   avg=0.00
+     UNDER  n=15  avg=-0.20
+     OVER   n=17  avg=-0.82
+
+   By date:
+     2026-05-21  n=6   avg=-0.17    total_pl=0.15
+     2026-05-23  n=4   avg=0.00     total_pl=0.15
+     2026-05-24  n=6   avg=-0.33    total_pl=-0.22
+     2026-05-25  n=6   avg=-0.50    total_pl=0.23
+     2026-05-28  n=5   avg=-0.40    total_pl=0.07
+     2026-05-30  n=5   avg=-1.80    total_pl=0.55
+     2026-05-31  n=6   avg=0.00     total_pl=-0.22
+
+3. PRICE CLV (PriceCLV_Percent)
+   Samples with data: 34 / 38
+   Unknown/missing:   4
+   Average (known):   +0.66%
+
+   Result distribution:
+     FLAT                                     5
+     MIXED_LINE_NEGATIVE_PRICE_POSITIVE       4
+     MIXED_LINE_POSITIVE_PRICE_NEGATIVE       3
+     NEGATIVE                                 11
+     POSITIVE                                 11
+     UNKNOWN                                  4
+
+   By market:
+     Moneyline            n=1   avg=+9.46%     pos=1 neg=0
+     Double Double        n=2   avg=+1.00%     pos=1 neg=0
+     Rebounds             n=15  avg=+0.93%     pos=8 neg=7
+     PRA                  n=2   avg=+0.70%     pos=1 neg=1
+     Alt Game Total       n=1   avg=+0.26%     pos=1 neg=0
+     Game Total           n=9   avg=-0.00%     pos=3 neg=3
+     Points & Rebounds    n=1   avg=-0.85%     pos=0 neg=1
+     Spread               n=3   avg=-1.24%     pos=0 neg=2
+
+   By side:
+     LAS    n=2   avg=+3.71%
+     NO     n=2   avg=+1.00%
+     UNDER  n=15  avg=+0.65%
+     OVER   n=13  avg=+0.38%
+     GSV    n=2   avg=-0.84%
+
+   Player props vs game totals:
+     Player props:     avg_price_clv = +0.82% (n=20)
+     Game totals:      avg_price_clv = +0.02% (n=10)
+
+4. PROJECTION EDGE
+   Samples: 5
+   WARNING: n=5 < 30 — insufficient for formula promotion.
+     Result=WIN: n=5 avg_edge=8.22 avg_proj=175.52
+
+5. CONCENTRATION / CORRELATION
+   [same_game] 2026-05-21 GS @ NY  — 2 bets: BET-00001, BET-00002
+   [same_game] 2026-05-21 LA @ PHX  — 3 bets: BET-00004, BET-00005, BET-00006
+   [same_game] 2026-05-23 MIN @ CHI  — 3 bets: BET-00007, BET-00008, BET-00009
+   [same_game] 2026-05-24 LA @ LV  — 3 bets: BET-00013, BET-00014, BET-00015
+   [same_game] 2026-05-25 CON @ GS  — 3 bets: BET-00017, BET-00020, BET-00021
+   [same_game] 2026-05-25 POR @ NY  — 2 bets: BET-00018, BET-00019
+   [same_game] 2026-05-28 ATL @ MIN  — 4 bets: BET-00023, BET-00024, BET-00025, BET-00027
+   [same_game] 2026-05-30 LAS SPARKS @ WAS MYSTICS  — 5 bets: BET-00028, BET-00029, BET-00030, BET-00031, BET-00032
+   [same_game] 2026-05-31 LA Sparks @ CON Sun  — 2 bets: BET-00039, BET-00040
+   [same_game] 2026-05-31 LV Aces @ GS Valkyries  — 4 bets: BET-00041, BET-00042, BET-00043, BET-00044
+   [ladder] 2026-05-30 LAS SPARKS @ WAS MYSTICS  — 4 bets: BET-00028, BET-00029, BET-00030, BET-00032
+   [ladder] 2026-05-31 LV Aces @ GS Valkyries  — 2 bets: BET-00041, BET-00044
+   [same_player] 2026-05-21  Dearica Hamby — 2 bets: BET-00004, BET-00005
+   [same_player] 2026-05-23  Kamilla Cardoso — 3 bets: BET-00007, BET-00008, BET-00009
+   [same_player] 2026-05-24  A'ja Wilson — 2 bets: BET-00014, BET-00015
+   [same_player] 2026-05-28  Angel Reese — 2 bets: BET-00023, BET-00024
+
+6. TIMING READINESS
+   Present:  []
+   Missing:  ['SignalTime', 'EntryTime', 'ClosingTime', 'GameStartTime', 'MinutesBeforeTip']
+   Readiness: 0/5 (0.0%)
+
+   To enable true bet-timing analysis, add these columns to bet_tracker.csv:
+     - SignalTime
+     - EntryTime
+     - ClosingTime
+     - GameStartTime
+     - MinutesBeforeTip
+
+7. SAMPLE GATE
+   Total settled: 38
+   Min for formula promotion: 30 → ELIGIBLE
+   Min for threshold review: 50 → NOT YET
+
+8. RECOMMENDATIONS (evidence-only)
+   - Add SignalTime, EntryTime, ClosingTime, GameStartTime, MinutesBeforeTip
+     columns to bet_tracker.csv for true timing analysis.
+   - With n=38, wait for 0 more settled bets before
+     any formula/staking evaluation.
+   - Continue manual closing-odds capture at entry and game-close for every bet.
+   - Price CLV is roughly balanced — no clear timing edge detected in current sample.
+   - Ladder bets show negative line CLV (price vs line trade-off) — investigate
+     whether higher-line ladder legs offers worse value.
+   - Do NOT change formulas, staking, or thresholds based on this audit alone.
+
+========================================================================
+Outputs: bet_timing_clv_audit_v21_9.csv, bet_timing_clv_summary_v21_9.json, bet_timing_clv_report_v21_9.txt

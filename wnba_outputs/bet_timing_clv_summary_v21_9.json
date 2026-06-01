@@ -1,0 +1,436 @@
+{
+  "created_at_utc": "2026-06-01T11:50:51.909545+00:00",
+  "version": "V21.9",
+  "safety": "Evidence only. No formula/staking/threshold/betting changes.",
+  "overall": {
+    "total_settled": 38,
+    "wins": 23,
+    "losses": 15,
+    "pushes": 0,
+    "win_rate_pct": 60.53,
+    "net_pl": 0.71,
+    "total_stake": 3.8,
+    "roi_pct": 18.71
+  },
+  "line_clv": {
+    "samples_with_data": 38,
+    "avg_points": -0.45,
+    "positive_count": 3,
+    "flat_count": 27,
+    "negative_count": 8,
+    "by_market": {
+      "Points & Rebounds": {
+        "rows": 1,
+        "avg_pts": 1.0,
+        "pos": 1,
+        "zero": 0,
+        "neg": 0
+      },
+      "Rebounds": {
+        "rows": 15,
+        "avg_pts": 0.07,
+        "pos": 1,
+        "zero": 14,
+        "neg": 0
+      },
+      "Double Double": {
+        "rows": 2,
+        "avg_pts": 0.0,
+        "pos": 0,
+        "zero": 2,
+        "neg": 0
+      },
+      "Moneyline": {
+        "rows": 1,
+        "avg_pts": 0.0,
+        "pos": 0,
+        "zero": 1,
+        "neg": 0
+      },
+      "Spread": {
+        "rows": 3,
+        "avg_pts": 0.0,
+        "pos": 0,
+        "zero": 3,
+        "neg": 0
+      },
+      "PRA": {
+        "rows": 2,
+        "avg_pts": -1.0,
+        "pos": 0,
+        "zero": 1,
+        "neg": 1
+      },
+      "Game Total": {
+        "rows": 10,
+        "avg_pts": -1.1,
+        "pos": 1,
+        "zero": 5,
+        "neg": 4
+      },
+      "Alt Game Total": {
+        "rows": 4,
+        "avg_pts": -1.5,
+        "pos": 0,
+        "zero": 1,
+        "neg": 3
+      }
+    },
+    "by_side": {
+      "GSV": {
+        "rows": 2,
+        "avg_pts": 0.0
+      },
+      "LAS": {
+        "rows": 2,
+        "avg_pts": 0.0
+      },
+      "NO": {
+        "rows": 2,
+        "avg_pts": 0.0
+      },
+      "UNDER": {
+        "rows": 15,
+        "avg_pts": -0.2
+      },
+      "OVER": {
+        "rows": 17,
+        "avg_pts": -0.82
+      }
+    },
+    "by_date": {
+      "2026-05-21": {
+        "rows": 6,
+        "avg_pts": -0.17,
+        "total_pl": 0.15
+      },
+      "2026-05-23": {
+        "rows": 4,
+        "avg_pts": 0.0,
+        "total_pl": 0.15
+      },
+      "2026-05-24": {
+        "rows": 6,
+        "avg_pts": -0.33,
+        "total_pl": -0.22
+      },
+      "2026-05-25": {
+        "rows": 6,
+        "avg_pts": -0.5,
+        "total_pl": 0.23
+      },
+      "2026-05-28": {
+        "rows": 5,
+        "avg_pts": -0.4,
+        "total_pl": 0.07
+      },
+      "2026-05-30": {
+        "rows": 5,
+        "avg_pts": -1.8,
+        "total_pl": 0.55
+      },
+      "2026-05-31": {
+        "rows": 6,
+        "avg_pts": 0.0,
+        "total_pl": -0.22
+      }
+    }
+  },
+  "price_clv": {
+    "samples_with_data": 34,
+    "samples_unknown_or_missing": 4,
+    "avg_pct": 0.66,
+    "result_counts": {
+      "POSITIVE": 11,
+      "MIXED_LINE_POSITIVE_PRICE_NEGATIVE": 3,
+      "NEGATIVE": 11,
+      "MIXED_LINE_NEGATIVE_PRICE_POSITIVE": 4,
+      "FLAT": 5,
+      "UNKNOWN": 4
+    },
+    "by_market": {
+      "Moneyline": {
+        "rows": 1,
+        "avg_pct": 9.46,
+        "pos": 1,
+        "neg": 0,
+        "zero": 0
+      },
+      "Double Double": {
+        "rows": 2,
+        "avg_pct": 1.0,
+        "pos": 1,
+        "neg": 0,
+        "zero": 1
+      },
+      "Rebounds": {
+        "rows": 15,
+        "avg_pct": 0.93,
+        "pos": 8,
+        "neg": 7,
+        "zero": 0
+      },
+      "PRA": {
+        "rows": 2,
+        "avg_pct": 0.7,
+        "pos": 1,
+        "neg": 1,
+        "zero": 0
+      },
+      "Alt Game Total": {
+        "rows": 1,
+        "avg_pct": 0.26,
+        "pos": 1,
+        "neg": 0,
+        "zero": 0
+      },
+      "Game Total": {
+        "rows": 9,
+        "avg_pct": -0.0,
+        "pos": 3,
+        "neg": 3,
+        "zero": 3
+      },
+      "Points & Rebounds": {
+        "rows": 1,
+        "avg_pct": -0.85,
+        "pos": 0,
+        "neg": 1,
+        "zero": 0
+      },
+      "Spread": {
+        "rows": 3,
+        "avg_pct": -1.24,
+        "pos": 0,
+        "neg": 2,
+        "zero": 1
+      }
+    },
+    "by_side": {
+      "LAS": {
+        "rows": 2,
+        "avg_pct": 3.71
+      },
+      "NO": {
+        "rows": 2,
+        "avg_pct": 1.0
+      },
+      "UNDER": {
+        "rows": 15,
+        "avg_pct": 0.65
+      },
+      "OVER": {
+        "rows": 13,
+        "avg_pct": 0.38
+      },
+      "GSV": {
+        "rows": 2,
+        "avg_pct": -0.84
+      }
+    },
+    "by_date": {
+      "2026-05-21": {
+        "rows": 6,
+        "avg_pct": 0.54
+      },
+      "2026-05-23": {
+        "rows": 4,
+        "avg_pct": -1.14
+      },
+      "2026-05-24": {
+        "rows": 6,
+        "avg_pct": -0.01
+      },
+      "2026-05-25": {
+        "rows": 6,
+        "avg_pct": 1.52
+      },
+      "2026-05-28": {
+        "rows": 5,
+        "avg_pct": 2.23
+      },
+      "2026-05-30": {
+        "rows": 1,
+        "avg_pct": 0.26
+      },
+      "2026-05-31": {
+        "rows": 6,
+        "avg_pct": 0.54
+      }
+    },
+    "player_props_avg_pct": 0.82,
+    "game_totals_avg_pct": 0.02
+  },
+  "projection_edge": {
+    "samples_with_data": 5,
+    "sample_warning": true,
+    "by_result": {
+      "WIN": {
+        "rows": 5,
+        "avg_edge": 8.22,
+        "avg_proj": 175.52
+      }
+    }
+  },
+  "concentration": [
+    {
+      "type": "same_game",
+      "date": "2026-05-21",
+      "game": "GS @ NY",
+      "bet_count": 2,
+      "bet_ids": "BET-00001, BET-00002",
+      "mkt_total_exposure": "-0.02",
+      "all_same_side": "True"
+    },
+    {
+      "type": "same_game",
+      "date": "2026-05-21",
+      "game": "LA @ PHX",
+      "bet_count": 3,
+      "bet_ids": "BET-00004, BET-00005, BET-00006",
+      "mkt_total_exposure": "0.09",
+      "all_same_side": "True"
+    },
+    {
+      "type": "same_game",
+      "date": "2026-05-23",
+      "game": "MIN @ CHI",
+      "bet_count": 3,
+      "bet_ids": "BET-00007, BET-00008, BET-00009",
+      "mkt_total_exposure": "0.25",
+      "all_same_side": "False"
+    },
+    {
+      "type": "same_game",
+      "date": "2026-05-24",
+      "game": "LA @ LV",
+      "bet_count": 3,
+      "bet_ids": "BET-00013, BET-00014, BET-00015",
+      "mkt_total_exposure": "-0.30",
+      "all_same_side": "False"
+    },
+    {
+      "type": "same_game",
+      "date": "2026-05-25",
+      "game": "CON @ GS",
+      "bet_count": 3,
+      "bet_ids": "BET-00017, BET-00020, BET-00021",
+      "mkt_total_exposure": "0.11",
+      "all_same_side": "True"
+    },
+    {
+      "type": "same_game",
+      "date": "2026-05-25",
+      "game": "POR @ NY",
+      "bet_count": 2,
+      "bet_ids": "BET-00018, BET-00019",
+      "mkt_total_exposure": "0.00",
+      "all_same_side": "True"
+    },
+    {
+      "type": "same_game",
+      "date": "2026-05-28",
+      "game": "ATL @ MIN",
+      "bet_count": 4,
+      "bet_ids": "BET-00023, BET-00024, BET-00025, BET-00027",
+      "mkt_total_exposure": "-0.01",
+      "all_same_side": "True"
+    },
+    {
+      "type": "same_game",
+      "date": "2026-05-30",
+      "game": "LAS SPARKS @ WAS MYSTICS",
+      "bet_count": 5,
+      "bet_ids": "BET-00028, BET-00029, BET-00030, BET-00031, BET-00032",
+      "mkt_total_exposure": "0.55",
+      "all_same_side": "True"
+    },
+    {
+      "type": "same_game",
+      "date": "2026-05-31",
+      "game": "LA Sparks @ CON Sun",
+      "bet_count": 2,
+      "bet_ids": "BET-00039, BET-00040",
+      "mkt_total_exposure": "-0.20",
+      "all_same_side": "True"
+    },
+    {
+      "type": "same_game",
+      "date": "2026-05-31",
+      "game": "LV Aces @ GS Valkyries",
+      "bet_count": 4,
+      "bet_ids": "BET-00041, BET-00042, BET-00043, BET-00044",
+      "mkt_total_exposure": "-0.02",
+      "all_same_side": "False"
+    },
+    {
+      "type": "ladder",
+      "date": "2026-05-30",
+      "game": "LAS SPARKS @ WAS MYSTICS",
+      "market": "Alt Game Total",
+      "direction": "OVER",
+      "bet_count": 4,
+      "lines": "165.5, 166.5, 167.5, 168.5",
+      "bet_ids": "BET-00028, BET-00029, BET-00030, BET-00032"
+    },
+    {
+      "type": "ladder",
+      "date": "2026-05-31",
+      "game": "LV Aces @ GS Valkyries",
+      "market": "Game Total",
+      "direction": "OVER",
+      "bet_count": 2,
+      "lines": "168.5, 168.5",
+      "bet_ids": "BET-00041, BET-00044"
+    },
+    {
+      "type": "same_player",
+      "date": "2026-05-21",
+      "player": "Dearica Hamby",
+      "bet_count": 2,
+      "markets": "Rebounds, PRA",
+      "bet_ids": "BET-00004, BET-00005"
+    },
+    {
+      "type": "same_player",
+      "date": "2026-05-23",
+      "player": "Kamilla Cardoso",
+      "bet_count": 3,
+      "markets": "Rebounds, PRA, Double Double",
+      "bet_ids": "BET-00007, BET-00008, BET-00009"
+    },
+    {
+      "type": "same_player",
+      "date": "2026-05-24",
+      "player": "A'ja Wilson",
+      "bet_count": 2,
+      "markets": "Rebounds, Double Double",
+      "bet_ids": "BET-00014, BET-00015"
+    },
+    {
+      "type": "same_player",
+      "date": "2026-05-28",
+      "player": "Angel Reese",
+      "bet_count": 2,
+      "markets": "Rebounds, Points & Rebounds",
+      "bet_ids": "BET-00023, BET-00024"
+    }
+  ],
+  "timing_readiness": {
+    "columns_present": [],
+    "columns_missing": [
+      "SignalTime",
+      "EntryTime",
+      "ClosingTime",
+      "GameStartTime",
+      "MinutesBeforeTip"
+    ],
+    "readiness_pct": 0.0
+  },
+  "sample_gate": {
+    "total_settled": 38,
+    "min_for_formula_promotion": 30,
+    "can_promote_formula": true,
+    "can_review_thresholds": false
+  }
+}
