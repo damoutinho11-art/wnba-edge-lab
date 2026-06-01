@@ -222,17 +222,35 @@ def main() -> int:
                 "bet_ids": ", ".join(g["BetID"].tolist()),
             })
 
-    # ── 6. Timing readiness ──────────────────────────────────────────
-    timing_cols_needed = [
-        "SignalTime",
-        "EntryTime",
-        "ClosingTime",
-        "GameStartTime",
-        "MinutesBeforeTip",
+    # ── 6. Timing instrumentation ─────────────────────────────────────
+    timing_fields = [
+        "SignalTimeUTC", "EntryTimeUTC", "ClosingTimeUTC",
+        "GameStartTimeUTC", "MinutesBeforeTip", "BetSource", "ApprovalSource",
     ]
-    existing_cols = set(settled.columns)
-    missing_timing = [c for c in timing_cols_needed if c not in existing_cols]
-    present_timing = [c for c in timing_cols_needed if c in existing_cols]
+    timing_present = [c for c in timing_fields if c in settled.columns]
+    timing_missing = [c for c in timing_fields if c not in settled.columns]
+
+    # Count rows with actual timing data
+    has_entry = int(settled["EntryTimeUTC"].notna().sum()) if "EntryTimeUTC" in settled.columns else 0
+    has_gamestart = int(settled["GameStartTimeUTC"].notna().sum()) if "GameStartTimeUTC" in settled.columns else 0
+    has_closing = int(settled["ClosingTimeUTC"].notna().sum()) if "ClosingTimeUTC" in settled.columns else 0
+    has_minutes = int(settled["MinutesBeforeTip"].notna().sum()) if "MinutesBeforeTip" in settled.columns else 0
+
+    # LATE_BET detection: MinutesBeforeTip < 0
+    late_bets = []
+    if "MinutesBeforeTip" in settled.columns and has_minutes > 0:
+        s = pd.to_numeric(settled["MinutesBeforeTip"], errors="coerce")
+        late_mask = s < 0
+        late_bets = settled.loc[late_mask, "BetID"].tolist()
+
+    # BetSource distribution
+    bet_source_counts = Counter()
+    if "BetSource" in settled.columns:
+        bet_source_counts = Counter(settled["BetSource"].fillna("").str.upper())
+
+    timing_readiness_pct = (
+        round(has_entry / total * 100, 1) if total > 0 else 0.0
+    )
 
     # ── 7. Detailed CSV output ────────────────────────────────────────
     detail_rows = []
@@ -259,6 +277,13 @@ def main() -> int:
             "PriceCLV_Result": r.get("PriceCLV_Result", ""),
             "ProjectionAtBet": r.get("ProjectionAtBet", ""),
             "ProjectionEdgeAtBet": r.get("ProjectionEdgeAtBet", ""),
+            "SignalTimeUTC": r.get("SignalTimeUTC", ""),
+            "EntryTimeUTC": r.get("EntryTimeUTC", ""),
+            "ClosingTimeUTC": r.get("ClosingTimeUTC", ""),
+            "GameStartTimeUTC": r.get("GameStartTimeUTC", ""),
+            "MinutesBeforeTip": r.get("MinutesBeforeTip", ""),
+            "BetSource": r.get("BetSource", ""),
+            "ApprovalSource": r.get("ApprovalSource", ""),
             "Notes": r.get("Notes", ""),
         })
 
@@ -307,10 +332,17 @@ def main() -> int:
             "by_result": proj_summary,
         },
         "concentration": concentration[:20],
-        "timing_readiness": {
-            "columns_present": present_timing,
-            "columns_missing": missing_timing,
-            "readiness_pct": round(len(present_timing) / len(timing_cols_needed) * 100, 1),
+        "timing_instrumentation": {
+            "columns_present": timing_present,
+            "columns_missing": timing_missing,
+            "total_settled": total,
+            "with_entry_time_utc": has_entry,
+            "with_game_start_utc": has_gamestart,
+            "with_closing_time_utc": has_closing,
+            "with_minutes_before_tip": has_minutes,
+            "timing_readiness_pct": timing_readiness_pct,
+            "late_bet_betids": late_bets,
+            "bet_source_counts": dict(bet_source_counts),
         },
         "sample_gate": {
             "total_settled": total,
@@ -397,15 +429,25 @@ def main() -> int:
     else:
         L(f"   No concentration detected.")
 
-    # Timing readiness
-    L(f"\n6. TIMING READINESS")
-    L(f"   Present:  {present_timing}")
-    L(f"   Missing:  {missing_timing}")
-    L(f"   Readiness: {len(present_timing)}/{len(timing_cols_needed)} ({round(len(present_timing)/len(timing_cols_needed)*100,1)}%)")
-    if missing_timing:
-        L(f"\n   To enable true bet-timing analysis, add these columns to bet_tracker.csv:")
-        for c in missing_timing:
-            L(f"     - {c}")
+    # Timing instrumentation
+    timing_rows = (
+        f"\n6. TIMING INSTRUMENTATION"
+        f"\n   Columns present:  {len(timing_present)} / {len(timing_fields)}"
+        f"\n   Columns missing:  {timing_missing if timing_missing else 'none'}"
+        f"\n   Total settled:    {total}"
+        f"\n   With EntryTimeUTC:       {has_entry}"
+        f"\n   With GameStartTimeUTC:   {has_gamestart}"
+        f"\n   With ClosingTimeUTC:     {has_closing}"
+        f"\n   With MinutesBeforeTip:   {has_minutes}"
+        f"\n   Timing readiness: {timing_readiness_pct}%"
+    )
+    if late_bets:
+        timing_rows += f"\n   LATE_BET flagged: {late_bets}"
+    if has_entry == 0:
+        timing_rows += (
+            "\n   Status: Timing tracking starts with future bets. All historical rows correct to be blank."
+        )
+    L(timing_rows)
 
     # Sample gate
     L(f"\n7. SAMPLE GATE")

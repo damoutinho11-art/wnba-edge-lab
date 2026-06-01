@@ -1,5 +1,5 @@
 WNBA Edge Lab V21.9 — Bet Timing & CLV Audit Report
-Generated: 2026-06-01T11:50:51.915569+00:00
+Generated: 2026-06-01T12:30:20.304436+00:00
 Safety: Evidence only. No formula/staking/threshold/betting changes.
 ========================================================================
 
@@ -103,17 +103,16 @@ Safety: Evidence only. No formula/staking/threshold/betting changes.
    [same_player] 2026-05-24  A'ja Wilson — 2 bets: BET-00014, BET-00015
    [same_player] 2026-05-28  Angel Reese — 2 bets: BET-00023, BET-00024
 
-6. TIMING READINESS
-   Present:  []
-   Missing:  ['SignalTime', 'EntryTime', 'ClosingTime', 'GameStartTime', 'MinutesBeforeTip']
-   Readiness: 0/5 (0.0%)
-
-   To enable true bet-timing analysis, add these columns to bet_tracker.csv:
-     - SignalTime
-     - EntryTime
-     - ClosingTime
-     - GameStartTime
-     - MinutesBeforeTip
+6. TIMING INSTRUMENTATION
+   Columns present:  7 / 7
+   Columns missing:  none
+   Total settled:    38
+   With EntryTimeUTC:       0
+   With GameStartTimeUTC:   0
+   With ClosingTimeUTC:     0
+   With MinutesBeforeTip:   0
+   Timing readiness: 0.0%
+   Status: Timing tracking starts with future bets. All historical rows correct to be blank.
 
 7. SAMPLE GATE
    Total settled: 38

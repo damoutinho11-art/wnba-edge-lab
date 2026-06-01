@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-01T11:50:51.909545+00:00",
+  "created_at_utc": "2026-06-01T12:30:20.298708+00:00",
   "version": "V21.9",
   "safety": "Evidence only. No formula/staking/threshold/betting changes.",
   "overall": {
@@ -416,16 +416,27 @@
       "bet_ids": "BET-00023, BET-00024"
     }
   ],
-  "timing_readiness": {
-    "columns_present": [],
-    "columns_missing": [
-      "SignalTime",
-      "EntryTime",
-      "ClosingTime",
-      "GameStartTime",
-      "MinutesBeforeTip"
+  "timing_instrumentation": {
+    "columns_present": [
+      "SignalTimeUTC",
+      "EntryTimeUTC",
+      "ClosingTimeUTC",
+      "GameStartTimeUTC",
+      "MinutesBeforeTip",
+      "BetSource",
+      "ApprovalSource"
     ],
-    "readiness_pct": 0.0
+    "columns_missing": [],
+    "total_settled": 38,
+    "with_entry_time_utc": 0,
+    "with_game_start_utc": 0,
+    "with_closing_time_utc": 0,
+    "with_minutes_before_tip": 0,
+    "timing_readiness_pct": 0.0,
+    "late_bet_betids": [],
+    "bet_source_counts": {
+      "": 38
+    }
   },
   "sample_gate": {
     "total_settled": 38,

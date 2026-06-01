@@ -55,6 +55,12 @@ COLUMN_MAP = {
     "confidence": ["confidence", "Confidence", "model_confidence"],
     "label": ["advisory_label", "label", "FinalSignal"],
     "risk_flags": ["risk_flags", "RiskFlags"],
+    # Timing instrumentation — safe aliases; resolves to "" if blank (future bets only)
+    "entry_time": ["EntryTimeUTC"],
+    "game_start": ["GameStartTimeUTC"],
+    "minutes_before": ["MinutesBeforeTip"],
+    "bet_source": ["BetSource"],
+    "approval_source": ["ApprovalSource"],
 }
 
 def resolve_col(row: Dict[str, Any], key: str) -> str:
