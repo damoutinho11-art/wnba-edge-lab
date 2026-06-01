@@ -81,6 +81,45 @@ def _safe_body(renderer_name: str) -> str:
         """
 
 
+def _cumulative_pl_data() -> tuple:
+    """Read bet_tracker.csv and compute cumulative P/L sorted by Date, BetID.
+
+    Returns (labels_json, data_json) as json.dumps() strings ready for inline JS.
+    Read-only. No edits to bet_tracker.csv.
+    """
+    try:
+        import csv as _csv
+        from pathlib import Path as _Path
+        bt_path = _Path(__file__).resolve().parent / "bet_tracker.csv"
+        if not bt_path.exists():
+            return "[]", "[]"
+        with bt_path.open(newline="", encoding="utf-8-sig") as f:
+            rows = list(_csv.DictReader(f))
+        settled_rows = [
+            r for r in rows
+            if r.get("Status", "").strip().upper() in ("SETTLED", "WON", "LOST", "PUSH")
+            and r.get("Result", "").strip().upper() != ""
+        ]
+        settled_rows.sort(key=lambda r: (r.get("Date", ""), r.get("BetID", "")))
+        labels = []
+        cumulative = []
+        running = 0.0
+        for r in settled_rows:
+            bid = r.get("BetID", "?")
+            labels.append(bid)
+            pl_val = r.get("P/L", "")
+            try:
+                running += float(pl_val)
+            except (ValueError, TypeError):
+                pass
+            cumulative.append(round(running, 2))
+        if not cumulative:
+            return "[]", "[]"
+        return json.dumps(labels), json.dumps(cumulative)
+    except Exception:
+        return "[]", "[]"
+
+
 def _nav_html() -> str:
     path = request.path.rstrip("/") or "/"
     links = []
@@ -92,6 +131,8 @@ def _nav_html() -> str:
 
 def page(title: str, body: str) -> str:
     current_path = request.path.rstrip("/") or "/"
+    # Compute cumulative P/L for chart (only rendered on / /dashboard /bankroll /stakes)
+    _cl, _cd = _cumulative_pl_data()
     
     return f"""<!doctype html>
 <html lang='en'>
@@ -493,10 +534,10 @@ def page(title: str, body: str) -> str:
           chartSection.innerHTML = `
             <div class='section-head'>
               <div>
-                <h2>Enterprise Bankroll Trajectory Matrix</h2>
-                <p>Real-time compounding delta tracking & algorithmic efficiency index.</p>
+                <h2>Cumulative P/L</h2>
+                <p>Realized profit/loss in units from bet_tracker.csv.</p>
               </div>
-              <span class='chip green'>Live Data Frame</span>
+              <span class='chip green'>Live Data</span>
             </div>
             <div class='quant-chart-container'>
               <canvas id='bankrollLiveChart' style='max-height: 380px; width: 100%;'></canvas>
@@ -515,16 +556,17 @@ def page(title: str, body: str) -> str:
           cyanGrad.addColorStop(0, 'rgba(0, 229, 255, 0.22)');
           cyanGrad.addColorStop(1, 'rgba(0, 229, 255, 0.00)');
 
-          // High-fidelity programmatic vector generation simulating a professional hedge scale
-          const dataLabels = Array.from({{length: 30}}, (_, i) => `Wnba-E` + (i + 140));
-          const baseBankroll = Array.from({{length: 30}}, (_, i) => 100000 + (Math.sin(i * 0.4) * 4000) + (i * 2200) + (Math.random() * 1500));
+          // Real cumulative P/L from bet_tracker.csv
+          const dataLabels = {_cl};
+          const baseBankroll = {_cd};
+          const totalPL = baseBankroll.length > 0 ? baseBankroll[baseBankroll.length - 1] : 0;
 
           new Chart(ctx, {{
             type: 'line',
             data: {{
               labels: dataLabels,
               datasets: [{{
-                label: 'Compounded Portfolio Value ($)',
+                label: `Cumulative P/L (u) — ${'{'}totalPL.toFixed(2){'}'}u`,
                 data: baseBankroll,
                 borderColor: '#00e5ff',
                 borderWidth: 2.5,
@@ -551,7 +593,7 @@ def page(title: str, body: str) -> str:
                   displayColors: false,
                   callbacks: {{
                     label: function(context) {{
-                      return " Val: $" + context.parsed.y.toLocaleString(undefined, {{minimumFractionDigits: 2, maximumFractionDigits: 2}});
+                      return " P/L: " + context.parsed.y.toFixed(2) + "u";
                     }}
                   }}
                 }}
@@ -566,7 +608,7 @@ def page(title: str, body: str) -> str:
                   ticks: {{
                     color: '#9ca3af',
                     font: {{ family: 'JetBrains Mono', size: 10 }},
-                    callback: function(value) {{ return '$' + (value / 1000) + 'k'; }}
+                    callback: function(value) {{ return value.toFixed(1) + "u"; }}
                   }}
                 }}
               }}
