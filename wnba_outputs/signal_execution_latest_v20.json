@@ -1,18 +1,18 @@
 {
   "version": "v20_signal_execution_bridge",
-  "updated_at": "2026-05-31T15:59:29+00:00",
+  "updated_at": "2026-06-01T08:32:27+00:00",
   "mode": "manual_approval",
   "summary": {
     "signal_groups": 27.0,
-    "execution_tickets": 36.0,
-    "correlated_groups": 6.0,
-    "open_groups": 4.0,
-    "settled_groups": 23.0,
-    "total_stake": 3.6,
-    "total_return": 4.131,
-    "net_profit": 0.931,
-    "roi_percent": 25.86,
-    "avg_execution_line_value": -12.53
+    "execution_tickets": 38.0,
+    "correlated_groups": 8.0,
+    "open_groups": 0.0,
+    "settled_groups": 27.0,
+    "total_stake": 3.8,
+    "total_return": 4.511,
+    "net_profit": 0.711,
+    "roi_percent": 18.71,
+    "avg_execution_line_value": -12.493
   },
   "latest_groups": [
     {
@@ -25,9 +25,9 @@
       "executed_lines": "0",
       "tickets": 1,
       "stake": 0.1,
-      "profit": 0.0,
-      "roi_percent": 0.0,
-      "status": "OPEN",
+      "profit": -0.1,
+      "roi_percent": -100.0,
+      "status": "LOST",
       "exposure_label": "SINGLE",
       "hermes_note": "Single execution fill. Count as one signal/fill unless manually linked otherwise."
     },
@@ -41,9 +41,9 @@
       "executed_lines": "-3.5",
       "tickets": 1,
       "stake": 0.1,
-      "profit": 0.0,
-      "roi_percent": 0.0,
-      "status": "OPEN",
+      "profit": -0.1,
+      "roi_percent": -100.0,
+      "status": "LOST",
       "exposure_label": "SINGLE",
       "hermes_note": "Single execution fill. Count as one signal/fill unless manually linked otherwise."
     },
@@ -54,14 +54,14 @@
       "market": "game_total",
       "side": "OVER",
       "model_line": 0.0,
-      "executed_lines": "169.5",
-      "tickets": 1,
-      "stake": 0.1,
-      "profit": 0.0,
-      "roi_percent": 0.0,
-      "status": "OPEN",
-      "exposure_label": "SINGLE",
-      "hermes_note": "Single execution fill. Count as one signal/fill unless manually linked otherwise."
+      "executed_lines": "168.5, 168.5",
+      "tickets": 2,
+      "stake": 0.2,
+      "profit": 0.18,
+      "roi_percent": 89.99999999999999,
+      "status": "WON",
+      "exposure_label": "CORRELATED",
+      "hermes_note": "Grouped 2 fills as one OVER game_total thesis. Count bankroll P/L per ticket, but count validation as one model signal. Execution was 168.50 pts worse than model line."
     },
     {
       "group_id": "2026-05-31|LV ACES @ GS VALKYRIES|spread|GSV",
@@ -70,14 +70,14 @@
       "market": "spread",
       "side": "GSV",
       "model_line": 0.0,
-      "executed_lines": "1.5",
-      "tickets": 1,
-      "stake": 0.1,
-      "profit": 0.0,
-      "roi_percent": 0.0,
-      "status": "OPEN",
-      "exposure_label": "SINGLE",
-      "hermes_note": "Single execution fill. Count as one signal/fill unless manually linked otherwise."
+      "executed_lines": "1.5, 1.5",
+      "tickets": 2,
+      "stake": 0.2,
+      "profit": -0.2,
+      "roi_percent": -100.0,
+      "status": "LOST",
+      "exposure_label": "CORRELATED",
+      "hermes_note": "Grouped 2 fills as one GSV spread thesis. Count bankroll P/L per ticket, but count validation as one model signal. Execution was 1.50 pts worse than model line."
     },
     {
       "group_id": "2026-05-30|LAS SPARKS @ WAS MYSTICS|game_total|OVER",
@@ -177,8 +177,7 @@
     }
   ],
   "warnings": [
-    "Correlated execution groups detected. Count each group as one model signal for validation.",
-    "Open execution groups exist. Bankroll settlement is not final."
+    "Correlated execution groups detected. Count each group as one model signal for validation."
   ],
   "rules": {
     "model_validation": "count one signal per ModelSignalID/GroupID, not one signal per execution fill",
