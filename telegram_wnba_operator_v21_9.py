@@ -179,10 +179,11 @@ def build_status() -> str:
     return "\n".join(lines)
 
 def build_picks() -> str:
-    advisory = read_csv(MODEL_ADVISORY)
+    # Read from hermes_advisory_queue which has source-level freshness fields.
+    advisory = read_csv(HERMES_ADVISORY)
     mrt = read_json(MODEL_RESULT_TRACKING_SUMMARY)
-    
-    # Filter out non-actionable rows (stale, no-line, invalid, wrong label)
+
+    # Fallback display-layer actionability (used when source field absent).
     def _is_actionable(row):
         game = resolve_col(row, "game")
         if not game or game == "n/a":
@@ -199,10 +200,9 @@ def build_picks() -> str:
         created = row.get("created_at_utc", "")
         if created:
             try:
-                from datetime import datetime as _dt, timezone as _tz
-                created_clean = created.replace("Z", "+00:00")
-                dt = _dt.fromisoformat(created_clean).replace(tzinfo=_tz.utc)
-                age_hours = (_dt.now(_tz.utc) - dt).total_seconds() / 3600.0
+                cc = created.replace("Z", "+00:00")
+                dt = datetime.fromisoformat(cc).replace(tzinfo=timezone.utc)
+                age_hours = (datetime.now(timezone.utc) - dt).total_seconds() / 3600.0
                 if age_hours > 48:
                     return False
             except Exception:
@@ -210,16 +210,40 @@ def build_picks() -> str:
         row_date = row.get("date", "")
         if row_date:
             try:
-                from datetime import datetime as _dt, timezone as _tz
-                today_utc = _dt.now(_tz.utc).strftime("%Y-%m-%d")
+                today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
                 if row_date < today_utc:
                     return False
             except Exception:
                 pass
         return True
 
-    actionable = [r for r in advisory if _is_actionable(r)]
-    hidden_count = len(advisory) - len(actionable)
+    # Primary gate: source-level queue_actionability if present.
+    # Fallback: display-level _is_actionable() for CSVs without the field.
+    NON_ACTIONABLE = {
+        "SCHEDULE_UNVERIFIED_TODAY", "SCHEDULE_UNVERIFIED_FUTURE",
+        "HIDDEN_NO_SCHEDULE", "HIDDEN_NO_LINE", "HIDDEN_STALE",
+        "HIDDEN_INVALID", "HIDDEN_LABEL", "UNKNOWN",
+    }
+    source_actionable = []
+    hidden_actionability: Dict[str, int] = {}
+    fallback_actionable = []
+    for row in advisory:
+        src = str(row.get("queue_actionability", "")).strip().upper()
+        if src:
+            if src == "ACTIONABLE":
+                source_actionable.append(row)
+            else:
+                hidden_actionability[src] = hidden_actionability.get(src, 0) + 1
+        else:
+            # Fallback to display-layer rules.
+            if _is_actionable(row):
+                fallback_actionable.append(row)
+
+    # Prefer source-level classification; fall back if no source data.
+    if source_actionable or hidden_actionability:
+        actionable = source_actionable
+    else:
+        actionable = fallback_actionable
 
     groups = {"LEAN_SUPPORT": [], "MANUAL_REVIEW": [], "NEUTRAL": []}
 
@@ -237,13 +261,18 @@ def build_picks() -> str:
             groups["NEUTRAL"].append(row)
 
     output = ["📋 Model Picks / Queue:"]
-    if hidden_count > 0:
-        output.append(f"  (Hidden {hidden_count} non-actionable row(s): stale/no-line/invalid)")
-
     total_actionable = sum(len(g) for g in groups.values())
     if total_actionable == 0:
-        output.append("  No actionable model picks after freshness/risk filtering.")
+        output.append("  No actionable model picks after source freshness/risk filtering.")
         output.append("  Manual approval required · No auto-betting · No formula changes.")
+    hidden_count_total = len(advisory) - len(actionable)
+    if hidden_count_total > 0:
+        # Report source-level hidden counts if available, else generic count.
+        if hidden_actionability:
+            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_actionability.items()))
+            output.append(f"  Hidden non-actionable rows: {hidden_count_total} ({parts}).")
+        else:
+            output.append(f"  (Hidden {hidden_count_total} non-actionable row(s): stale/no-line/invalid)")
     for label, group in groups.items():
         if not group: continue
         emoji = {"LEAN_SUPPORT": "🟢", "MANUAL_REVIEW": "🟡", "NEUTRAL": "⚪"}.get(label, "⚪")

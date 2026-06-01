@@ -399,22 +399,37 @@ def manual_queue_html(st: Dict[str, Any], limit: int = 12) -> str:
             '<div class="v193-page-note"><b>No V21.9 manual market queue found.</b> '
             "Run manual_market_snapshot_v21_9.py and model_manual_market_review_v21_9.py.</div>"
         )
-    # Separate actionable from non-actionable
+    # Separate actionable from non-actionable.
+    # Primary gate: source-level queue_actionability if present.
+    # Fallback: _is_actionable_queue_row() for rows without the field.
+    NON_ACTIONABLE = {
+        "SCHEDULE_UNVERIFIED_TODAY", "SCHEDULE_UNVERIFIED_FUTURE",
+        "HIDDEN_NO_SCHEDULE", "HIDDEN_NO_LINE", "HIDDEN_STALE",
+        "HIDDEN_INVALID", "HIDDEN_LABEL", "UNKNOWN",
+    }
     actionable: List[Dict[str, str]] = []
     hidden_count = 0
-    hidden_reasons: Dict[str, int] = {}
+    hidden_actionability: Dict[str, int] = {}
     for r in rows:
-        is_ok, reasons = _is_actionable_queue_row(r)
-        if is_ok:
-            actionable.append(r)
+        src_action = str(r.get("queue_actionability", "")).strip().upper()
+        if src_action:
+            if src_action == "ACTIONABLE":
+                actionable.append(r)
+            else:
+                hidden_count += 1
+                hidden_actionability[src_action] = hidden_actionability.get(src_action, 0) + 1
         else:
-            hidden_count += 1
-            for reason in reasons:
-                hidden_reasons[reason] = hidden_reasons.get(reason, 0) + 1
+            # Fallback to display-layer rules when source field missing.
+            is_ok, _ = _is_actionable_queue_row(r)
+            if is_ok:
+                actionable.append(r)
+            else:
+                hidden_count += 1
+                hidden_actionability["display_rules"] = hidden_actionability.get("display_rules", 0) + 1
     if not actionable:
         hidden_note = ""
         if hidden_count:
-            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_reasons.items()))
+            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_actionability.items()))
             hidden_note = (
                 f'<div class="v193-page-note" style="margin-top:8px">'
                 f'<b>No actionable picks.</b> {hidden_count} row(s) hidden: {parts}.</div>'
@@ -455,7 +470,7 @@ def manual_queue_html(st: Dict[str, Any], limit: int = 12) -> str:
             f"</div></div></div>"
         )
     if hidden_count:
-        parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_reasons.items()))
+        parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_actionability.items()))
         out.append(
             f'<div class="v193-page-note" style="margin-top:8px">'
             f'<b>Hidden non-actionable rows:</b> {hidden_count} ({parts}).</div>'
@@ -722,21 +737,35 @@ def render_telegram() -> str:
         )
     lines += ["", "MODEL QUEUE:"]
     raw_queue = st["hermes_queue"] or st["manual_review"]
+    # Use source-level queue_actionability as primary gate.
+    NON_ACTIONABLE = {
+        "SCHEDULE_UNVERIFIED_TODAY", "SCHEDULE_UNVERIFIED_FUTURE",
+        "HIDDEN_NO_SCHEDULE", "HIDDEN_NO_LINE", "HIDDEN_STALE",
+        "HIDDEN_INVALID", "HIDDEN_LABEL", "UNKNOWN",
+    }
     actionable_queue = []
     hidden_queue_count = 0
-    hidden_queue_reasons: Dict[str, int] = {}
+    hidden_actionability: Dict[str, int] = {}
     for r in raw_queue:
-        is_ok, reasons = _is_actionable_queue_row(r)
-        if is_ok:
-            actionable_queue.append(r)
+        src = str(r.get("queue_actionability", "")).strip().upper()
+        if src:
+            if src == "ACTIONABLE":
+                actionable_queue.append(r)
+            else:
+                hidden_queue_count += 1
+                hidden_actionability[src] = hidden_actionability.get(src, 0) + 1
         else:
-            hidden_queue_count += 1
-            for reason in reasons:
-                hidden_queue_reasons[reason] = hidden_queue_reasons.get(reason, 0) + 1
+            # Fallback: display-layer rules.
+            is_ok, _ = _is_actionable_queue_row(r)
+            if is_ok:
+                actionable_queue.append(r)
+            else:
+                hidden_queue_count += 1
+                hidden_actionability["display_rules"] = hidden_actionability.get("display_rules", 0) + 1
     if not actionable_queue:
-        lines.append("  No actionable model picks after freshness/risk filtering.")
+        lines.append("  No actionable model picks after source freshness/risk filtering.")
         if hidden_queue_count:
-            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_queue_reasons.items()))
+            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_actionability.items()))
             lines.append(f"  Hidden non-actionable rows: {hidden_queue_count} ({parts}).")
     else:
         for r in actionable_queue[:8]:
@@ -747,7 +776,7 @@ def render_telegram() -> str:
                 f"conf {pick(r,'confidence')}"
             )
         if hidden_queue_count:
-            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_queue_reasons.items()))
+            parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_actionability.items()))
             lines.append(f"")
             lines.append(f"Hidden non-actionable rows: {hidden_queue_count} ({parts}).")
     text = "\n".join(lines)

@@ -121,6 +121,303 @@ def norm_name(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", str(s).lower()).strip("_")
 
 
+# ── Team normalization for schedule matching ─────────────────────
+
+TEAM_NAME_TO_ABBR: Dict[str, str] = {
+    # Full names → schedule abbreviation
+    "LOS ANGELES SPARKS": "LA", "LA SPARKS": "LA",
+    "LAS VEGAS ACES": "LV", "LV ACES": "LV",
+    "GOLDEN STATE VALKYRIES": "GS", "GS VALKYRIES": "GS",
+    "CONNECTICUT SUN": "CON", "CON SUN": "CON", "CONN SUN": "CON",
+    "ATLANTA DREAM": "ATL",
+    "CHICAGO SKY": "CHI",
+    "DALLAS WINGS": "DAL",
+    "INDIANA FEVER": "IND", "IND FEVER": "IND",
+    "MINNESOTA LYNX": "MIN",
+    "NEW YORK LIBERTY": "NY",
+    "PHOENIX MERCURY": "PHX",
+    "SEATTLE STORM": "SEA",
+    "WASHINGTON MYSTICS": "WSH", "WAS MYSTICS": "WSH",
+    "PORTLAND FIRE": "POR", "POR FIRE": "POR",
+    "TORONTO": "TOR",
+    # Already-abbreviated variants → schedule abbreviation
+    "LAS": "LA", "LVA": "LV", "LVA": "LV",
+    "GSV": "GS",
+    "NYL": "NY",
+    "WAS": "WSH",
+    # Pass-through (already correct)
+    "ATL": "ATL", "CHI": "CHI", "CON": "CON", "DAL": "DAL",
+    "IND": "IND", "MIN": "MIN", "PHX": "PHX", "SEA": "SEA",
+    "TOR": "TOR", "NY": "NY", "LA": "LA", "LV": "LV", "GS": "GS",
+    "POR": "POR", "WSH": "WSH",
+}
+
+
+def normalize_team_token(token: str) -> str:
+    """Normalize a team name/abbreviation token to schedule abbreviation."""
+    if not token:
+        return ""
+    cleaned = token.strip().upper()
+    # Exact match
+    if cleaned in TEAM_NAME_TO_ABBR:
+        return TEAM_NAME_TO_ABBR[cleaned]
+    # Prefix match: try first 3 chars as abbreviation
+    abbr3 = cleaned[:3]
+    if abbr3 in TEAM_NAME_TO_ABBR:
+        return TEAM_NAME_TO_ABBR[abbr3]
+    # Substring match against known names
+    for name, abbr in TEAM_NAME_TO_ABBR.items():
+        if cleaned in name or name in cleaned:
+            return abbr
+    return cleaned[:3] if len(cleaned) >= 3 else cleaned
+
+
+def normalize_game_to_abbr(game_text: str) -> Tuple[str, str]:
+    """Parse queue game text into (away_abbr, home_abbr) for schedule lookup."""
+    if not game_text:
+        return "", ""
+    text = str(game_text).strip()
+    if text.upper() in ("NAN", "NONE", "NULL", ""):
+        return "", ""
+    # Split on @ or vs
+    parts = re.split(r"\s*@\s*|\s+[Vv][Ss]\.?\s*", text, maxsplit=1)
+    if len(parts) != 2:
+        return "", ""
+    away_raw, home_raw = parts[0].strip(), parts[1].strip()
+    return normalize_team_token(away_raw), normalize_team_token(home_raw)
+
+
+_SCHEDULE_INDEX: Optional[Dict[str, str]] = None
+
+
+def _load_schedule_index() -> Dict[str, str]:
+    """Load schedule into a (date + away_abbr + home_abbr) → game_date_time index.
+    Uses raw line parsing to handle multiline boxscore fields.
+    """
+    global _SCHEDULE_INDEX
+    if _SCHEDULE_INDEX is not None:
+        return _SCHEDULE_INDEX
+
+    index: Dict[str, str] = {}
+    sched_path = OUT / "wnba_cache_v21" / "sdv_wnba_schedules.csv"
+    if not sched_path.exists():
+        _SCHEDULE_INDEX = index
+        return index
+
+    try:
+        with sched_path.open(encoding="utf-8-sig") as f:
+            header = f.readline().strip()
+            cols = header.split(",")
+            away_idx = cols.index("away_abbreviation")
+            home_idx = cols.index("home_abbreviation")
+            dt_idx = cols.index("game_date_time")
+            gd_idx = cols.index("game_date")
+            comp_idx = cols.index("status_type_completed")
+
+            buffer = ""
+            for line in f:
+                buffer += line
+                while True:
+                    match = re.search(r"\n(\d{7,})", buffer)
+                    if not match:
+                        break
+                    row_end = match.start()
+                    row_data = buffer[:row_end]
+                    buffer = buffer[row_end + 1 :]
+
+                    parts = []
+                    in_q = False
+                    cur = ""
+                    for ch in row_data:
+                        if ch == '"':
+                            in_q = not in_q
+                        elif ch == "," and not in_q:
+                            parts.append(cur)
+                            cur = ""
+                        else:
+                            cur += ch
+                    parts.append(cur)
+
+                    if len(parts) > max(away_idx, home_idx, dt_idx, comp_idx):
+                        away = parts[away_idx].strip()
+                        home = parts[home_idx].strip()
+                        gdt = parts[dt_idx].strip()
+                        gdate = parts[gd_idx].strip()
+                        completed = parts[comp_idx].strip().lower() in ("true", "1")
+                        if away and home and gdate:
+                            key = f"{gdate}|{away}|{home}"
+                            index[key] = gdt if gdt else ""
+                            index[f"{away}|{home}|{gdate}"] = gdt if gdt else ""
+                            # Also index by completed status
+                            if completed:
+                                index[f"{gdate}|{away}|{home}|completed"] = "true"
+    except Exception:
+        pass
+
+    _SCHEDULE_INDEX = index
+    return index
+
+
+def lookup_game_start_utc(game_text: str, row_date: str = "") -> str:
+    """Look up game start time from schedule. Returns ISO UTC string or ''."""
+    away_abbr, home_abbr = normalize_game_to_abbr(game_text)
+    if not away_abbr or not home_abbr:
+        return ""
+
+    idx = _load_schedule_index()
+
+    # Try with date first
+    if row_date:
+        key = f"{row_date}|{away_abbr}|{home_abbr}"
+        if key in idx:
+            return idx[key]
+
+    # Try all keys matching away+home (most recent date)
+    best = ""
+    for key, val in idx.items():
+        if key.startswith(f"{away_abbr}|{home_abbr}|") and val:
+            if val > best:  # ISO strings compare correctly
+                best = val
+
+    return best
+
+
+def _is_schedule_completed(game_text: str, row_date: str = "") -> bool:
+    """Check if schedule says game is completed."""
+    away_abbr, home_abbr = normalize_game_to_abbr(game_text)
+    if not away_abbr or not home_abbr:
+        return False
+
+    idx = _load_schedule_index()
+    if row_date:
+        key = f"{row_date}|{away_abbr}|{home_abbr}|completed"
+        return idx.get(key) == "true"
+
+    for key, val in idx.items():
+        if val == "true" and f"|{away_abbr}|{home_abbr}|" in key:
+            return True
+    return False
+
+
+def compute_queue_freshness(row: Dict[str, str]) -> Dict[str, str]:
+    """Compute freshness metadata for a queue row. Returns dict of 5 new fields."""
+    reasons: List[str] = []
+    game_start_utc = ""
+
+    # Schedule lookup
+    row_date = row.get("date", "")
+    raw_game = row.get("game", "")
+    away_abbr, home_abbr = normalize_game_to_abbr(raw_game)
+
+    if not away_abbr or not home_abbr:
+        reasons.append("invalid_game")
+    else:
+        game_start_utc = lookup_game_start_utc(raw_game, row_date)
+        if not game_start_utc:
+            # No schedule match — derive fallback from row date or created_at_utc.
+            reasons.append("no_schedule_match")
+            fallback_date = row_date.strip() if row_date else ""
+            if not fallback_date:
+                # Use the date portion of created_at_utc as fallback.
+                created_raw = row.get("created_at_utc", "")
+                if created_raw:
+                    fallback_date = created_raw[:10]  # "YYYY-MM-DD"
+            if fallback_date:
+                today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                if fallback_date < today_utc:
+                    reasons.append("past_date_fallback")
+                    is_stale = True
+                elif fallback_date == today_utc:
+                    reasons.append("date_fallback_today")
+                else:
+                    reasons.append("date_fallback_future")
+            # If no fallback_date at all → stays no_schedule_match only (un-actionable).
+        elif _is_schedule_completed(raw_game, row_date):
+            reasons.append("game_completed")
+
+    # Age
+    signal_age_hours = 0.0
+    created = row.get("created_at_utc", "")
+    if created:
+        try:
+            clean = created.replace("Z", "+00:00")
+            dt = datetime.fromisoformat(clean).replace(tzinfo=timezone.utc)
+            signal_age_hours = round(
+                (datetime.now(timezone.utc) - dt).total_seconds() / 3600.0, 1
+            )
+            if signal_age_hours > 48:
+                reasons.append("age_gt_48h")
+        except Exception:
+            pass
+
+    # Stale determination
+    is_stale = False
+    if signal_age_hours > 48:
+        is_stale = True
+    if game_start_utc:
+        try:
+            clean = game_start_utc.replace("Z", "+00:00")
+            if datetime.now(timezone.utc) >= datetime.fromisoformat(clean):
+                is_stale = True
+                if "game_completed" not in reasons:
+                    reasons.append("game_started")
+        except Exception:
+            pass
+    if "game_completed" in reasons:
+        is_stale = True
+
+    # No line
+    flags = str(row.get("risk_flags", "")).upper()
+    line_val = str(row.get("line", "")).strip()
+    if "NO_LINE" in flags:
+        reasons.append("no_line")
+    if not line_val or line_val.lower() in ("nan", "none"):
+        reasons.append("no_line")
+
+    # Label check
+    label = str(row.get("advisory_label", "")).upper()
+    if label not in ("LEAN_SUPPORT", "MANUAL_REVIEW"):
+        reasons.append(f"non_actionable_label:{label[:20]}")
+
+    # Actionability — strict: ACTIONABLE requires verified game_start_utc.
+    # - invalid_game always hidden.
+    # - no_schedule_match + past_date_fallback → HIDDEN_STALE (is_stale already true).
+    # - no_schedule_match + date_fallback_today → SCHEDULE_UNVERIFIED_TODAY (not actionable).
+    # - no_schedule_match + date_fallback_future → SCHEDULE_UNVERIFIED_FUTURE (not actionable).
+    # - no_schedule_match + no date at all → HIDDEN_NO_SCHEDULE.
+    # - game_start_utc present → allow other checks to pass through to ACTIONABLE.
+    has_date_fallback = any(
+        r in reasons for r in ("past_date_fallback", "date_fallback_today", "date_fallback_future")
+    )
+    if "invalid_game" in reasons:
+        actionability = "HIDDEN_INVALID"
+    elif "past_date_fallback" in reasons:
+        actionability = "HIDDEN_STALE"
+    elif "no_schedule_match" in reasons and not has_date_fallback:
+        actionability = "HIDDEN_NO_SCHEDULE"
+    elif "date_fallback_today" in reasons and not game_start_utc:
+        actionability = "SCHEDULE_UNVERIFIED_TODAY"
+    elif "date_fallback_future" in reasons and not game_start_utc:
+        actionability = "SCHEDULE_UNVERIFIED_FUTURE"
+    elif "no_line" in reasons:
+        actionability = "HIDDEN_NO_LINE"
+    elif is_stale:
+        actionability = "HIDDEN_STALE"
+    elif label not in ("LEAN_SUPPORT", "MANUAL_REVIEW"):
+        actionability = "HIDDEN_LABEL"
+    else:
+        # Reached only when game_start_utc is verified AND all other gates pass.
+        actionability = "ACTIONABLE"
+
+    return {
+        "game_start_utc": game_start_utc,
+        "signal_age_hours": str(signal_age_hours),
+        "is_stale": "true" if is_stale else "false",
+        "freshness_reason": "; ".join(reasons) if reasons else "",
+        "queue_actionability": actionability,
+    }
+
+
 def get_col(df: pd.DataFrame, aliases: List[str]) -> Optional[str]:
     if df.empty:
         return None
@@ -478,18 +775,19 @@ def build_advisory_scores(actions: pd.DataFrame, team_features: pd.DataFrame, ma
 def build_hermes_queue(scores: pd.DataFrame) -> pd.DataFrame:
     if scores.empty:
         return pd.DataFrame(columns=[
-            "created_at_utc",
-            "game",
-            "side",
-            "line",
-            "advisory_score",
-            "advisory_label",
-            "risk_flags",
-            "approval_state",
-            "message",
+            "created_at_utc", "date",
+            "game", "side", "line",
+            "projection", "edge", "units",
+            "advisory_score", "advisory_label", "risk_flags",
+            "manual_review_priority",
+            "game_start_utc", "signal_age_hours",
+            "is_stale", "freshness_reason", "queue_actionability",
+            "approval_state", "message",
         ])
 
     q = scores.copy()
+    # Merge in date from original source if available
+    q["date"] = q["date"] if "date" in q.columns else ""
     q["approval_state"] = "ADVISORY_ONLY_MANUAL_REVIEW"
     q["message"] = q.apply(
         lambda r: (
@@ -499,22 +797,27 @@ def build_hermes_queue(scores: pd.DataFrame) -> pd.DataFrame:
         axis=1,
     )
 
+    # Compute freshness for each row
+    fresh_rows = []
+    for _, row in q.iterrows():
+        row_dict = row.to_dict()
+        fresh = compute_queue_freshness(row_dict)
+        row_dict.update(fresh)
+        fresh_rows.append(row_dict)
+
+    result = pd.DataFrame(fresh_rows)
+
     keep = [
-        "created_at_utc",
-        "game",
-        "side",
-        "line",
-        "projection",
-        "edge",
-        "units",
-        "advisory_score",
-        "advisory_label",
-        "risk_flags",
+        "created_at_utc", "date",
+        "game", "side", "line",
+        "projection", "edge", "units",
+        "advisory_score", "advisory_label", "risk_flags",
         "manual_review_priority",
-        "approval_state",
-        "message",
+        "game_start_utc", "signal_age_hours",
+        "is_stale", "freshness_reason", "queue_actionability",
+        "approval_state", "message",
     ]
-    return q[[c for c in keep if c in q.columns]]
+    return result[[c for c in keep if c in result.columns]]
 
 
 def write_report(scores: pd.DataFrame, summary: Dict[str, Any]) -> None:
