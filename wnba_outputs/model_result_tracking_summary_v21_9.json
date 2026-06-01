@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-01T08:32:31.982206+00:00",
+  "created_at_utc": "2026-06-01T11:43:47.499667+00:00",
   "status": "OK",
   "version": "v21.9",
   "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
@@ -23,10 +23,10 @@
     "WON": 1
   },
   "clv": {
-    "avg_points": 3.0714,
+    "avg_points": -0.7143,
     "median_points": 0.0,
-    "positive_clv_rate": 0.1429,
-    "flat_clv_rate": 0.4286,
+    "positive_clv_rate": 0.0,
+    "flat_clv_rate": 0.5714,
     "negative_clv_rate": 0.4286
   },
   "by_advisory_label": [
@@ -52,8 +52,8 @@
       "push": 0,
       "win_rate_decided": 1.0,
       "avg_advisory_score": 10.9655,
-      "avg_clv_points": 3.5833,
-      "positive_clv_rate": 0.125,
+      "avg_clv_points": -0.8333,
+      "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     }
   ],
@@ -93,8 +93,8 @@
       "push": 0,
       "win_rate_decided": 1.0,
       "avg_advisory_score": 2.4652,
-      "avg_clv_points": 26.5,
-      "positive_clv_rate": 1.0,
+      "avg_clv_points": 0.0,
+      "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     }
   ],
@@ -108,8 +108,8 @@
       "push": 0,
       "win_rate_decided": 1.0,
       "avg_advisory_score": 5.1041,
-      "avg_clv_points": 8.0,
-      "positive_clv_rate": 0.25,
+      "avg_clv_points": -0.8333,
+      "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     },
     {
