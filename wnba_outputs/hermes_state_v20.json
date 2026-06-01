@@ -1,6 +1,6 @@
 {
   "schema_version": "v20.0",
-  "generated_at": "2026-05-31T15:59:30+00:00",
+  "generated_at": "2026-06-01T22:23:37+00:00",
   "system": {
     "name": "WNBA Edge Lab",
     "component": "Hermes State Builder",
@@ -31,7 +31,7 @@
     "warning_count": 7,
     "model_state": "LEARNING",
     "environment_regime": "LEARNING",
-    "open_risk_units": 0.4,
+    "open_risk_units": 0.0,
     "net_pl_units": 0.0,
     "operator_instruction": "Confirm market line, injuries, exposure, and validation before approval.",
     "hermes_next_step": "Prepare concise mission brief and approval queue; do not execute bets."
@@ -51,20 +51,20 @@
   },
   "bankroll": {
     "status": "ONLINE",
-    "total_tickets": 36,
+    "total_tickets": 38,
     "signal_groups": 27,
     "multi_fill_groups": 0,
     "max_fill_count": 1,
-    "total_staked_units": 3.6,
-    "total_return_units": 4.131,
+    "total_staked_units": 3.8,
+    "total_return_units": 4.511,
     "net_pl_units": 0.0,
     "roi_percent": 0.0,
-    "open_risk_units": 0.4,
-    "settled_tickets": 32,
-    "wins": 21,
-    "losses": 11,
+    "open_risk_units": 0.0,
+    "settled_tickets": 38,
+    "wins": 23,
+    "losses": 15,
     "pushes": 0,
-    "ticket_win_rate": 65.62,
+    "ticket_win_rate": 60.53,
     "largest_group_stake_units": 0.5,
     "summary_rows": 10
   },
@@ -286,73 +286,73 @@
     "projections_with_stakes": {
       "exists": true,
       "path": "wnba_outputs/projections_with_stakes.csv",
-      "modified_at": "2026-05-31T15:53:14",
+      "modified_at": "2026-06-01T22:20:21",
       "size_bytes": 5664
     },
     "recommended_bets": {
       "exists": true,
       "path": "wnba_outputs/recommended_bets.csv",
-      "modified_at": "2026-05-31T15:53:14",
+      "modified_at": "2026-06-01T22:20:21",
       "size_bytes": 2274
     },
     "model_health_report": {
       "exists": true,
       "path": "wnba_outputs/model_health_report.csv",
-      "modified_at": "2026-05-31T15:53:14",
+      "modified_at": "2026-06-01T22:20:21",
       "size_bytes": 411
     },
     "signal_execution_groups": {
       "exists": true,
       "path": "wnba_outputs/signal_execution_groups_v20.csv",
-      "modified_at": "2026-05-31T15:59:29",
-      "size_bytes": 12033
+      "modified_at": "2026-06-01T22:23:37",
+      "size_bytes": 12223
     },
     "signal_execution_summary": {
       "exists": true,
       "path": "wnba_outputs/signal_execution_summary_v20.csv",
-      "modified_at": "2026-05-31T15:59:29",
+      "modified_at": "2026-06-01T22:23:37",
       "size_bytes": 485
     },
     "environment_regime": {
       "exists": true,
       "path": "wnba_outputs/environment_regime_latest.json",
-      "modified_at": "2026-05-31T15:53:14",
+      "modified_at": "2026-06-01T22:20:21",
       "size_bytes": 1295
     },
     "environment_memory": {
       "exists": true,
       "path": "wnba_outputs/environment_memory_latest.csv",
-      "modified_at": "2026-05-31T15:53:14",
+      "modified_at": "2026-06-01T22:20:21",
       "size_bytes": 267
     },
     "environment_validation": {
       "exists": true,
       "path": "wnba_outputs/environment_validation_summary.csv",
-      "modified_at": "2026-05-31T15:53:14",
+      "modified_at": "2026-06-01T22:20:21",
       "size_bytes": 405
     },
     "signal_clv_summary": {
       "exists": true,
       "path": "wnba_outputs/signal_clv_summary.csv",
-      "modified_at": "2026-05-31T15:53:14",
+      "modified_at": "2026-06-01T22:20:21",
       "size_bytes": 1038
     },
     "signal_results_summary": {
       "exists": true,
       "path": "wnba_outputs/signal_results_summary.csv",
-      "modified_at": "2026-05-31T15:53:14",
+      "modified_at": "2026-06-01T22:20:21",
       "size_bytes": 678
     },
     "bet_tracker": {
       "exists": true,
       "path": "bet_tracker.csv",
-      "modified_at": "2026-05-31T15:53:14",
-      "size_bytes": 8148
+      "modified_at": "2026-06-01T22:20:20",
+      "size_bytes": 17392
     },
     "telegram_message": {
       "exists": true,
       "path": "wnba_outputs/telegram_message.txt",
-      "modified_at": "2026-05-31T15:53:14",
+      "modified_at": "2026-06-01T22:20:21",
       "size_bytes": 897
     },
     "injury_dir": {

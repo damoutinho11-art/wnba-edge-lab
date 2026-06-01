@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21 MODEL CHANGE PLAN
 ====================================================
-Created: 2026-05-31T15:59:30.806360+00:00
+Created: 2026-06-01T22:23:38.555742+00:00
 
 Safety:
 - No formula changes applied.
@@ -12,7 +12,7 @@ Current evidence:
 - game_model_features_v21: 6 rows
 - team_features_v21: 17 rows
 - player_features_v21: 337 rows
-- market_features_v21: 5 rows
+- market_features_v21: 6 rows
 - signal_execution_groups_v20: 27 rows
 
 Recommended implementation order:
@@ -22,13 +22,8 @@ Evidence: Official player logs/team dash/player dash are ready. Rows: game=6, te
 Change: Use official_mobile_playergamelogs_v21, official_mobile_team_dash_base_v21, and official_mobile_player_dash_base_v21 as primary feature inputs before SportsDataverse fallback.
 Safety gate: Safe: read-only feature input promotion; no formula change until backtest.
 
-P1 | DATA | ACTION_NEEDED | Refresh Odds API key/session before live deployment
-Evidence: Odds totals state: FETCH_FAILED_NO_CACHE error=safe_us_totals: HTTPError: 401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/basketball_wnba/odds?apiKey=ae5dbbafe0a69642df60ef45a7d9c545&regions=us&markets=totals&oddsFormat=decimal&dateFormat=iso | us_all_core: HTTPError: 401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/basketball_wnba/odds?apiKey=ae5dbbafe0a69642df60ef45a7d9c545&regions=us&markets=h2h%2Cspreads%2Ctotals&oddsFormat=decimal&dateFormat=iso | all_regions_totals: HTTPError: 401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/basketball_wnba/odds?apiKey=ae5dbbafe0a69642df60ef45a7d9c545&regions=us%2Cus2%2Ceu%2Cuk&markets=totals&oddsFormat=decimal&dateFormat=iso | all_regions_all_core: HTTPError: 401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/basketball_wnba/odds?apiKey=ae5dbbafe0a69642df60ef45a7d9c545&regions=us%2Cus2%2Ceu%2Cuk&markets=h2h%2Cspreads%2Ctotals&oddsFormat=decimal&dateFormat=iso
-Change: Reset ODDS_API_KEY in current PowerShell session and confirm odds_totals returns LIVE_FETCH_OK before new actions.
-Safety gate: Gate: odds_totals LIVE_FETCH_OK for same-day recommendations.
-
 P1 | EXECUTION | READY | Separate model signal quality from execution fill quality
-Evidence: Execution groups=27; tickets=None; net P/L=0.9309999999999997.
+Evidence: Execution groups=27; tickets=None; net P/L=0.7109999999999997.
 Change: Keep two scorecards: model recommended line/edge and actual execution fill/CLV. Do not let multiple fills of one signal distort model hit rate.
 Safety gate: Safe: reporting/accounting only.
 
@@ -38,7 +33,7 @@ Change: Maintain MANUAL_APPROVAL_REQUIRED and MODEL_SAMPLE_LOCK until V21 backte
 Safety gate: Required: no auto-betting or threshold changes.
 
 P1 | MARKET | READY | Add market consensus and line-shopping range to model context
-Evidence: market_features_v21 has 5 events. Average total range=0.2.
+Evidence: market_features_v21 has 6 events. Average total range=0.5.
 Change: Add market_total_median, market_total_range, and market_total_books as non-predictive context gates: avoid overreacting when book range is wide; prioritize best available line versus consensus.
 Safety gate: Safe: context/gating only; do not alter projected total directly until measured.
 

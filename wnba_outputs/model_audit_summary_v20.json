@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-31T15:59:30+00:00",
+  "updated_at": "2026-06-01T22:23:38+00:00",
   "status": "OK",
   "projection_layer": {
     "slate_games": 6,
@@ -31,13 +31,13 @@
   },
   "execution": {
     "execution_groups": 27,
-    "execution_tickets": 36,
-    "execution_net_profit": 0.9309999999999997,
-    "execution_total_stake": 3.6000000000000005,
-    "multi_fill_groups": 6,
+    "execution_tickets": 38,
+    "execution_net_profit": 0.7109999999999997,
+    "execution_total_stake": 3.8000000000000007,
+    "multi_fill_groups": 8,
     "unmatched_execution_groups": 26,
-    "correlated_exposure_groups": 6,
-    "avg_execution_roi_percent": 18.37037037037037
+    "correlated_exposure_groups": 8,
+    "avg_execution_roi_percent": 10.592592592592593
   },
   "hermes": {
     "hermes_mode": "manual_approval",
@@ -53,13 +53,13 @@
   },
   "audit_rows": 29,
   "severity_counts": {
-    "LOW": 15,
-    "MEDIUM": 12,
+    "LOW": 16,
+    "MEDIUM": 11,
     "HIGH": 2
   },
   "status_counts": {
-    "GOOD": 15,
-    "WATCH": 12,
+    "GOOD": 16,
+    "WATCH": 11,
     "WEAK": 2
   },
   "outputs": {

@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21.2 FORMULA CANDIDATE
 ======================================================
-Created: 2026-05-31T15:59:31.137960+00:00
+Created: 2026-06-01T22:23:38.958190+00:00
 
 Status: NOT APPLIED
 
@@ -18,14 +18,14 @@ Do first:
 
 Candidate table:
 - projection_minus_line | CANDIDATE | PRIMARY_EDGE_VALIDATION | projection_minus_line found in game_model_features_v21.edge; n=6, mean=2.7200, min=-1.5000, max=6.5200, std=3.2571
-- market_total_range | CANDIDATE | CONFIDENCE_GATE_CANDIDATE | market_total_range found in market_features_v21.market_total_range; n=5, mean=0.2000, min=0.0000, max=1.0000, std=0.4472
+- market_total_range | CANDIDATE | CONFIDENCE_GATE_CANDIDATE | market_total_range found in market_features_v21.market_total_range; n=6, mean=0.5000, min=0.0000, max=1.0000, std=0.4472
 - combined_playerlog_pts_l5 | CANDIDATE | BACKTEST_ONLY | combined_playerlog_pts_l5 found in game_model_features_v21.combined_playerlog_pts_l5; n=6, mean=171.2333, min=155.8000, max=182.4000, std=10.7654
 - playerlog_team_pts_l5 | CANDIDATE | BACKTEST_ONLY | playerlog_team_pts_l5 found in team_features_v21.playerlog_team_pts_l5; n=15, mean=84.4133, min=70.4000, max=97.0000, std=7.3085
-- dash_pts | CANDIDATE | BACKTEST_ONLY | dash_pts found in team_features_v21.dash_pts; n=15, mean=85.6267, min=74.7000, max=92.9000, std=5.0345
+- dash_pts | CANDIDATE | BACKTEST_ONLY | dash_pts found in team_features_v21.dash_pts; n=15, mean=85.6067, min=75.6000, max=91.8000, std=4.6001
 - minutes_l5 | CANDIDATE | PROP_SCREENING_CANDIDATE | minutes_l5 found in player_features_v21.minutes_l5; n=337, mean=17.4762, min=0.1000, max=35.2800, std=8.9720
 - dreb_allowed_blend | CANDIDATE | PROP_SCREENING_CANDIDATE | dreb_allowed_blend found in team_features_v21.dreb_allowed_blended_dreb_allowed; n=15, mean=25.0705, min=23.5325, max=27.0263, std=1.2887
 - bench_minutes_share | CANDIDATE | ROTATION_CONTEXT | bench_minutes_share found in team_features_v21.bench_minutes_share; n=15, mean=0.2872, min=0.2255, max=0.3954, std=0.0400
 - starter_minutes_concentration | CANDIDATE | ROTATION_CONTEXT | starter_minutes_concentration found in team_features_v21.starter_minutes_concentration; n=15, mean=0.7128, min=0.6046, max=0.7745, std=0.0400
 - scoring_dependency | CANDIDATE | PLAYER_CONTEXT | scoring_dependency found in player_features_v21.scoring_dependency; n=337, mean=0.0814, min=0.0000, max=0.2765, std=0.0606
-- market_total_median | CANDIDATE | MARKET_CONTEXT | market_total_median found in market_features_v21.market_total_median; n=5, mean=166.4000, min=161.5000, max=170.5000, std=3.7483
+- market_total_median | CANDIDATE | MARKET_CONTEXT | market_total_median found in market_features_v21.market_total_median; n=6, mean=166.0833, min=160.0000, max=176.5000, std=5.6782
 - execution_pl_tracking | MISSING_OR_INSUFFICIENT | DIAGNOSTIC | No numeric execution P/L column detected in signal_execution_groups_v20.

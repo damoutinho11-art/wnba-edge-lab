@@ -1,5 +1,5 @@
 WNBA EDGE LAB — V20 MODEL UPGRADE RECOMMENDATIONS
-Generated: 2026-05-31T15:59:30+00:00
+Generated: 2026-06-01T22:23:38+00:00
 
 Priority 1 — Signal IDs and execution linking
 - Add signal_id to projections_with_stakes.csv, recommended_bets.csv, bet_tracker.csv, signal_tracker files, and Hermes approval queue.
@@ -37,9 +37,8 @@ Current audit watch items:
 - [HIGH] Environment / Graded environment sample: 0 -> Keep environment as advisory until graded sample grows.
 - [MEDIUM] Environment / Low-sample buckets: 3 -> Do not let bucket labels increase stake size until validation clears sample gate.
 - [MEDIUM] Environment / Current extreme bucket games: 1 -> Extreme bucket should require extra CLV/injury confirmation before approval.
-- [MEDIUM] Execution / Multi-fill signal groups: 6 -> Multi-fill groups are acceptable when line shopping is intentional; Hermes should flag correlated exposure.
+- [MEDIUM] Execution / Multi-fill signal groups: 8 -> Multi-fill groups are acceptable when line shopping is intentional; Hermes should flag correlated exposure.
 - [MEDIUM] Execution / Unmatched execution groups: 26 -> Add signal_id/correlation_group to bet tracker so all fills link to model signals.
-- [MEDIUM] Bankroll / Open tracked bets: 4 -> Open bets should feed exposure limits and Hermes approval locks.
 - [MEDIUM] Hermes / Approval queue: 2 -> Operator must approve/reject each queued action before Telegram or execution workflow.
 - [MEDIUM] Hermes / Active locks: ENVIRONMENT_SAMPLE_LOCK, INJURY_CONFIRMATION_LOCK, MANUAL_APPROVAL_REQUIRED, MODEL_SAMPLE_LOCK -> Locks should block automation, not dashboard visibility.
 
