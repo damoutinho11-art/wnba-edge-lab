@@ -617,6 +617,60 @@ def build_base_actions(recommended: pd.DataFrame, projections: pd.DataFrame, her
 
         rows.append(row)
 
+    # ── Merge trusted timing onto line-carrying rows ───────────────
+    # For rows sharing the same (game, side): if one row has a line but no
+    # game_start_utc and another row has game_start_utc, copy the timing
+    # fields onto the line-carrying row.  This eliminates HIDDEN_NO_SCHEDULE
+    # when trusted timing exists upstream but on a separate row (e.g. the
+    # hermes_approval_queue_v20 row has line but no timing, while
+    # recommended_bets has timing but no line).
+    from collections import defaultdict
+    groups: Dict[Tuple[str, str], List[Dict]] = defaultdict(list)
+    for rw in rows:
+        # Use (game, side) as the merge key; normalize side to upper
+        groups[(rw.get("game", ""), rw.get("side", "").upper())].append(rw)
+
+    for key, group_rows in groups.items():
+        if len(group_rows) < 2:
+            continue
+        # Find rows with timing and rows with line-but-no-timing
+        timing_donors = []
+        line_receivers = []
+        for rw in group_rows:
+            has_timing = bool(rw.get("game_start_utc", "").strip()
+                              and rw.get("game_start_utc", "").strip().upper()
+                              not in ("NAN", "NONE", "NULL"))
+            has_line = bool(rw.get("line") and str(rw.get("line", "")).strip()
+                            and str(rw.get("line", "")).strip().lower() != "nan"
+                            and str(rw.get("line", "")).strip() != "")
+            if has_timing:
+                timing_donors.append(rw)
+            if has_line and not has_timing:
+                line_receivers.append(rw)
+        if not timing_donors or not line_receivers:
+            continue
+        # Pick the first donor with the best (non-empty) timing
+        best_donor = None
+        for d in timing_donors:
+            if d.get("game_start_utc", "").strip():
+                best_donor = d
+                break
+        if best_donor is None:
+            best_donor = timing_donors[0]
+        # Copy timing onto each receiver
+        for rcv in line_receivers:
+            if not rcv.get("game_start_utc", "").strip():
+                # Date-compatibility guard: skip if both rows have non-matching dates
+                rcv_date = str(rcv.get("game_date", "")).strip()
+                donor_date = str(best_donor.get("game_date", "")).strip()
+                if rcv_date and donor_date and rcv_date != donor_date:
+                    continue
+                rcv["game_start_utc"] = best_donor.get("game_start_utc", "")
+                rcv["game_date"] = best_donor.get("game_date", "")
+                # Mark as merged so the origin is clear
+                donor_ts = best_donor.get("timing_source", "")
+                rcv["timing_source"] = f"merged:{donor_ts}" if donor_ts else "merged_commence_time"
+
     return pd.DataFrame(rows)
 
 
