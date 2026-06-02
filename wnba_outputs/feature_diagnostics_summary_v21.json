@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-01T22:23:36.895029+00:00",
+  "created_at_utc": "2026-06-02T22:11:04.660262+00:00",
   "status": "OK",
   "files": {
     "game_model_features_v21": {
@@ -29,7 +29,7 @@
     },
     "model_upgrade_recommendations_v21": {
       "exists": true,
-      "rows": 9,
+      "rows": 8,
       "columns": 9
     }
   },

@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-01T22:23:38.555742+00:00",
+  "created_at_utc": "2026-06-02T22:11:06.048708+00:00",
   "status": "OK",
   "rows": {
     "recommendations": 8,
@@ -22,7 +22,7 @@
     "official_playergamelogs_ready": true,
     "official_team_dash_ready": true,
     "official_player_dash_ready": true,
-    "official_teamgamelogs_ready": true,
+    "official_teamgamelogs_ready": false,
     "odds_ready": true,
     "sportsdataverse_ready": true,
     "player_props_market_ready": false,
@@ -30,7 +30,7 @@
   },
   "top_priorities": [
     {
-      "created_at_utc": "2026-06-01T22:23:38.552126+00:00",
+      "created_at_utc": "2026-06-02T22:11:06.045928+00:00",
       "priority": 1,
       "area": "data",
       "title": "Promote official WNBA mobile data to primary model source",
@@ -41,7 +41,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-06-01T22:23:38.553242+00:00",
+      "created_at_utc": "2026-06-02T22:11:06.046812+00:00",
       "priority": 1,
       "area": "execution",
       "title": "Separate model signal quality from execution fill quality",
@@ -52,7 +52,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-06-01T22:23:38.553250+00:00",
+      "created_at_utc": "2026-06-02T22:11:06.046818+00:00",
       "priority": 1,
       "area": "hermes",
       "title": "Keep Hermes in manual approval during model upgrade",
@@ -63,18 +63,18 @@
       "owner": "hermes"
     },
     {
-      "created_at_utc": "2026-06-01T22:23:38.552335+00:00",
+      "created_at_utc": "2026-06-02T22:11:06.046097+00:00",
       "priority": 1,
       "area": "market",
       "title": "Add market consensus and line-shopping range to model context",
       "status": "READY",
-      "evidence": "market_features_v21 has 6 events. Average total range=0.5.",
+      "evidence": "market_features_v21 has 6 events. Average total range=0.8333333333333334.",
       "recommended_change": "Add market_total_median, market_total_range, and market_total_books as non-predictive context gates: avoid overreacting when book range is wide; prioritize best available line versus consensus.",
       "safety_gate": "Safe: context/gating only; do not alter projected total directly until measured.",
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-06-01T22:23:38.552592+00:00",
+      "created_at_utc": "2026-06-02T22:11:06.046300+00:00",
       "priority": 1,
       "area": "projection",
       "title": "Introduce V21 feature audit before changing projected total formula",

@@ -1,20 +1,19 @@
 WNBA EDGE LAB - V21 ADVISORY SCORING REPORT
 ==========================================================
-Created: 2026-06-01T22:23:39.359927+00:00
+Created: 2026-06-02T22:11:06.653283+00:00
 
 Status: advisory only. No live model formula changed.
 
-Rows scored: 9
-Hermes advisory queue: 9
+Rows scored: 8
+Hermes advisory queue: 8
 
 Label counts:
-- NEUTRAL: 8
+- NEUTRAL: 7
 - LEAN_SUPPORT: 1
 
 Top advisory rows:
-- LAS @ WAS | OVER | line=169.0 | score=27.9 | LEAN_SUPPORT | flags=
+- LAS @ WAS | OVER | line=169.0 | score=28.3 | LEAN_SUPPORT | flags=
 - LAS @ WAS | OVER | line=nan | score=19.7 | NEUTRAL | flags=NO_LINE
-- nan | OVER | line=nan | score=19.6 | NEUTRAL | flags=NO_LINE
 - ATL @ PDX | OVER | line=nan | score=16.0 | NEUTRAL | flags=NO_LINE
 - PHX @ NYL | OVER | line=nan | score=12.0 | NEUTRAL | flags=NO_LINE
 - IND @ GSV | OVER | line=nan | score=9.0 | NEUTRAL | flags=NO_LINE

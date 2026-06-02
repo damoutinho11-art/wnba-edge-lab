@@ -1,17 +1,17 @@
 {
-  "created_at_utc": "2026-06-01T22:23:39.782425+00:00",
+  "created_at_utc": "2026-06-02T22:11:06.975555+00:00",
   "status": "OK",
   "version": "v21.9",
   "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
   "inputs": {
-    "model_advisory_scores_v21": 9,
+    "model_advisory_scores_v21": 8,
     "model_backtest_v21": 12,
     "signal_tracker_graded": 35,
     "signal_execution_groups_v20": 27,
     "hermes_approval_queue_v20": 2
   },
   "rows": {
-    "tracking": 9,
+    "tracking": 8,
     "promotion_watchlist": 12,
     "matched_rows": 8,
     "known_results": 1,
@@ -19,7 +19,7 @@
     "clv_samples": 7
   },
   "result_counts": {
-    "UNKNOWN": 8,
+    "UNKNOWN": 7,
     "WON": 1
   },
   "clv": {
@@ -38,20 +38,20 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 27.903,
+      "avg_advisory_score": 28.293,
       "avg_clv_points": 0.0,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     },
     {
       "group": "NEUTRAL",
-      "rows": 8,
+      "rows": 7,
       "known_results": 1,
       "won": 1,
       "lost": 0,
       "push": 0,
       "win_rate_decided": 1.0,
-      "avg_advisory_score": 10.9686,
+      "avg_advisory_score": 9.7413,
       "avg_clv_points": -0.8333,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -66,20 +66,20 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 16.2744,
+      "avg_advisory_score": 16.4694,
       "avg_clv_points": 0.0,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     },
     {
       "group": "NO_LINE",
-      "rows": 6,
+      "rows": 5,
       "known_results": 0,
       "won": 0,
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 13.4397,
+      "avg_advisory_score": 12.2156,
       "avg_clv_points": -1.25,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -114,13 +114,13 @@
     },
     {
       "group": "10-19",
-      "rows": 4,
+      "rows": 3,
       "known_results": 0,
       "won": 0,
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 16.8333,
+      "avg_advisory_score": 15.9244,
       "avg_clv_points": -0.8333,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -133,7 +133,7 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 27.903,
+      "avg_advisory_score": 28.293,
       "avg_clv_points": 0.0,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -153,9 +153,9 @@
   },
   "source_summaries": {
     "advisory_summary_rows": {
-      "base_actions": 9,
-      "advisory_scores": 9,
-      "hermes_advisory_queue": 9,
+      "base_actions": 8,
+      "advisory_scores": 8,
+      "hermes_advisory_queue": 8,
       "team_features": 17,
       "player_features": 337,
       "market_features": 6,
@@ -163,11 +163,11 @@
       "validated_model_changes": 7
     },
     "advisory_label_counts": {
-      "NEUTRAL": 8,
+      "NEUTRAL": 7,
       "LEAN_SUPPORT": 1
     },
     "advisory_risk_flag_counts": {
-      "NO_LINE": 7,
+      "NO_LINE": 6,
       "LOW_MODEL_EDGE": 1
     },
     "backtest_rows": {
