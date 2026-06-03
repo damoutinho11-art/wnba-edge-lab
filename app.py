@@ -27,6 +27,7 @@ NAV_ITEMS = [
     ("Bets", "/bets"),
     ("Bankroll", "/bankroll"),
     ("Telegram", "/telegram"),
+    ("Portfolio", "/portfolio"),
     ("Validation", "/validation"),
     ("Menu", "/menu"),
 ]
@@ -695,6 +696,11 @@ def bankroll():
 @app.route("/telegram")
 def telegram():
     return page("Telemetry Streams", _safe_body("render_telegram"))
+
+
+@app.route("/portfolio")
+def portfolio():
+    return page("Portfolio Risk", _safe_body("render_portfolio_risk"))
 
 
 @app.route("/validation")

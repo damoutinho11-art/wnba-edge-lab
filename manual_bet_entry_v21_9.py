@@ -46,6 +46,7 @@ from typing import Dict, List, Optional, Tuple
 
 ROOT = Path(__file__).resolve().parent
 BET_TRACKER = ROOT / "bet_tracker.csv"
+HERMES_ADVISORY = ROOT / "wnba_outputs" / "hermes_advisory_queue_v21.csv"
 
 REQUIRED_COLUMNS = [
     "BetID",
@@ -298,6 +299,124 @@ def validate(args: argparse.Namespace, rows: List[Dict[str, str]], fieldnames: L
     return len(errors) == 0, errors, warnings
 
 
+
+def _pre_entry_risk_warning(args: argparse.Namespace, rows: List[Dict[str, str]]) -> None:
+    """Display-only pre-entry risk warning. No writes. No enforcement."""
+    print("")
+    print("=" * 60)
+    print("PRE-ENTRY RISK WARNING (display only)")
+    print("=" * 60)
+
+    # Open exposure from tracker
+    open_stake = 0.0
+    open_count = 0
+    same_game_bets: List[Dict[str, str]] = []
+    same_player_bets: List[Dict[str, str]] = []
+    ladder_groups: Dict[tuple, set] = {}
+
+    for r in rows:
+        status = str(r.get("Status", "")).strip().upper()
+        result = str(r.get("Result", "")).strip().upper()
+        pl = str(r.get("P/L", "")).strip()
+
+        # Determine if open
+        is_open = False
+        if status in ("OPEN", "PENDING", "ACTIVE"):
+            is_open = True
+        elif status == "" and not result and pl in ("", "0", "0.0"):
+            is_open = True
+
+        if not is_open:
+            continue
+
+        stake = float(r.get("Stake", "0") or "0")
+        open_stake += stake
+        open_count += 1
+
+        game = r.get("Game", "").strip()
+        player = r.get("Player", "").strip()
+        market = r.get("Market", "").strip()
+        direction = r.get("Direction", "").strip()
+        line = r.get("Line", "").strip()
+
+        # Same-game check
+        if game and args.game and game.upper() == args.game.upper():
+            same_game_bets.append(r)
+
+        # Same-player check
+        if player and args.player and player.upper() == args.player.upper():
+            same_player_bets.append(r)
+
+        # Ladder detection
+        if game and direction and line:
+            key = (game, market, direction)
+            if key not in ladder_groups:
+                ladder_groups[key] = set()
+            ladder_groups[key].add(line)
+
+    ladders = []
+    for (g, m, d), lines in ladder_groups.items():
+        if len(lines) >= 2:
+            ladders.append((g, m, d, sorted(lines)))
+
+    print(f"  Current open exposure: {open_stake:.2f}u ({open_count} open bets)")
+
+    if same_game_bets:
+        print("")
+        print(f"  SAME-GAME OPEN BETS ({len(same_game_bets)}):")
+        for b in same_game_bets:
+            print(f"    {b.get('BetID','')} | {b.get('Market','')} {b.get('Direction','')} "
+                  f"{b.get('Line','')} @ {b.get('Odds','')} | {b.get('Stake','')}u")
+
+    if same_player_bets:
+        print("")
+        print(f"  SAME-PLAYER OPEN BETS ({len(same_player_bets)}):")
+        for b in same_player_bets:
+            print(f"    {b.get('BetID','')} | {b.get('Market','')} {b.get('Direction','')} "
+                  f"{b.get('Line','')} @ {b.get('Odds','')} | {b.get('Stake','')}u")
+
+    if ladders:
+        print("")
+        print(f"  LADDER/ALTERNATE-LINE DETECTED ({len(ladders)}):")
+        for g, m, d, lns in ladders:
+            print(f"    {g} {m} {d} @ {', '.join(lns)}")
+
+    # ACTIONABLE queue check
+    if HERMES_ADVISORY.exists():
+        try:
+            with HERMES_ADVISORY.open(newline="", encoding="utf-8-sig") as f:
+                adv_rows = list(csv.DictReader(f))
+            actionable_same_game = []
+            for r in adv_rows:
+                if str(r.get("queue_actionability", "")).strip().upper() == "ACTIONABLE":
+                    g = r.get("game", "").strip()
+                    if g and args.game and g.upper() == args.game.upper():
+                        actionable_same_game.append(r)
+            if actionable_same_game:
+                print("")
+                print(f"  ACTIONABLE QUEUE ROWS FOR THIS GAME ({len(actionable_same_game)}):")
+                for r in actionable_same_game:
+                    print(f"    {r.get('side','')} {r.get('line','')} | "
+                          f"label={r.get('advisory_label','')} | "
+                          f"units={r.get('units','n/a')}")
+            else:
+                print("")
+                print(f"  ACTIONABLE queue rows for this game: 0")
+        except Exception:
+            print("")
+            print(f"  ACTIONABLE queue check: could not read queue file")
+
+    new_stake = float(str(args.stake).strip() or "0")
+    combined = open_stake + new_stake
+    print("")
+    print(f"  Combined open exposure after entry: {combined:.2f}u")
+    print("")
+    print("  DISPLAY ONLY. Manual approval required.")
+    print("  No auto-betting. No formula/staking/threshold changes.")
+    print("=" * 60)
+    print("")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="WNBA Edge Lab V21.9 — Manual Bet Entry Helper",
@@ -367,6 +486,9 @@ def main() -> int:
     # Generate row
     bid = next_bid(rows)
     row = build_row(args, fieldnames, bid)
+
+    # Pre-entry risk warning (display only, before dry-run or write)
+    _pre_entry_risk_warning(args, rows)
 
     # Dry run
     if args.dry_run:

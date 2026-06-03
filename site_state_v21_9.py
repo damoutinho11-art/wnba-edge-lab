@@ -865,3 +865,462 @@ def render_menu() -> str:
     body += f'<div class="v19-grid-4">{cards}</div>'
     return body
 
+
+# ── Portfolio-risk view helpers ─────────────────────────────────────
+
+HERMES_ADVISORY = OUT / "hermes_advisory_queue_v21.csv"
+
+
+def _market_type(market: str) -> str:
+    """Classify a market string into totals / spreads / moneyline / props / unknown."""
+    if not market:
+        return "unknown"
+    m = market.upper()
+    if "TOTAL" in m:
+        return "totals"
+    if "SPREAD" in m:
+        return "spreads"
+    if "MONEYLINE" in m:
+        return "moneyline"
+    if m in ("", "UNKNOWN", "NAN", "NONE"):
+        return "unknown"
+    return "props"
+
+
+def _open_status(status: str) -> str:
+    """Classify bet Status into OPEN / SETTLED / UNKNOWN_OPEN_STATUS / AMBIGUOUS."""
+    s = str(status).strip().upper()
+    if s in ("OPEN", "PENDING", "ACTIVE"):
+        return "OPEN"
+    if s in ("SETTLED", "WON", "LOST", "PUSH", "CANCELLED", "VOID"):
+        return "SETTLED"
+    if s == "":
+        return "UNKNOWN_OPEN_STATUS"
+    return "AMBIGUOUS"
+
+
+def _settle_marker(b: Dict[str, str]) -> bool:
+    """Return True if a bet_tracker row shows clear settlement evidence."""
+    status = str(b.get("Status", "")).strip().upper()
+    result = str(b.get("Result", "")).strip().upper()
+    pl = str(b.get("P/L", "")).strip()
+    actual = str(b.get("Actual", "")).strip()
+    if status in ("SETTLED", "WON", "LOST", "PUSH", "CANCELLED", "VOID"):
+        return True
+    if result and result not in ("", "NAN", "NONE", "NULL"):
+        return True
+    if pl and pl not in ("", "0", "0.0", "nan", "None"):
+        return True
+    if actual and actual not in ("", "NAN", "NONE", "NULL"):
+        return True
+    return False
+
+
+def _is_open_bet(b: Dict[str, str]) -> str:
+    """Determine if a bet_tracker row should count as open exposure.
+
+    Returns: "OPEN", "UNKNOWN_OPEN_STATUS", or "NOT_OPEN".
+    """
+    settled = _settle_marker(b)
+    if settled:
+        return "NOT_OPEN"
+
+    status = str(b.get("Status", "")).strip()
+    os = _open_status(status)
+    if os == "OPEN":
+        return "OPEN"
+    if os == "UNKNOWN_OPEN_STATUS":
+        return "UNKNOWN_OPEN_STATUS"
+    return "NOT_OPEN"
+
+
+def _detect_ladders(bets: List[Dict[str, str]]) -> List[Dict[str, Any]]:
+    """Detect same-game + same-market-type + same-direction bets at different lines.
+
+    Returns list of ladder dicts with keys: game, market_type, direction, lines, count.
+    """
+    groups: Dict[tuple, List[Dict[str, str]]] = {}
+    for b in bets:
+        game = b.get("Game", "").strip()
+        mtype = _market_type(b.get("Market", ""))
+        direction = b.get("Direction", "").strip()
+        line = b.get("Line", "").strip()
+        if game and line:
+            key = (game, mtype, direction)
+            if key not in groups:
+                groups[key] = []
+            groups[key].append(b)
+
+    ladders = []
+    for (game, mtype, direction), members in groups.items():
+        lines = []
+        seen_lines = set()
+        for b in members:
+            ln = b.get("Line", "").strip()
+            if ln and ln not in seen_lines:
+                lines.append(ln)
+                seen_lines.add(ln)
+        if len(lines) >= 2:
+            ladders.append({
+                "game": game,
+                "market_type": mtype,
+                "direction": direction,
+                "lines": lines,
+                "count": len(members),
+            })
+    return ladders
+
+
+def render_portfolio_risk() -> str:
+    """READ-ONLY daily portfolio-risk view. No writes. No formula changes.
+
+    Reads bet_tracker.csv for open exposure and hermes_advisory_queue_v21.csv
+    for proposed ACTIONABLE exposure. Hidden/non-actionable rows never contribute.
+    """
+    # Load data
+    st = load_state()
+    bets = st["bets"]
+    advisory = read_csv(HERMES_ADVISORY)
+
+    # ── Section 1: Open exposure from bet_tracker.csv ────────────
+    open_bets: List[Dict[str, str]] = []
+    unknown_status_bets: List[Dict[str, str]] = []
+
+    for b in bets:
+        classification = _is_open_bet(b)
+        if classification == "OPEN":
+            open_bets.append(b)
+        elif classification == "UNKNOWN_OPEN_STATUS":
+            unknown_status_bets.append(b)
+
+    open_stake = sum(num(b.get("Stake")) for b in open_bets)
+    unknown_stake = sum(num(b.get("Stake")) for b in unknown_status_bets)
+
+    # Market-type breakdown
+    mtype_totals: Dict[str, float] = {}
+    mtype_counts: Dict[str, int] = {}
+    for b in open_bets:
+        mt = _market_type(b.get("Market", ""))
+        mtype_totals[mt] = mtype_totals.get(mt, 0.0) + num(b.get("Stake"))
+        mtype_counts[mt] = mtype_counts.get(mt, 0) + 1
+
+    # Unique games and players
+    open_games: Dict[str, float] = {}
+    open_players: Dict[str, float] = {}
+    for b in open_bets:
+        g = b.get("Game", "").strip()
+        if g and not _invalid_game(g):
+            open_games[g] = open_games.get(g, 0.0) + num(b.get("Stake"))
+        p = b.get("Player", "").strip()
+        if p:
+            open_players[p] = open_players.get(p, 0.0) + num(b.get("Stake"))
+
+    open_ladders = _detect_ladders(open_bets)
+
+    # ── Section 2: Proposed exposure from ACTIONABLE queue ───────
+    actionable_rows: List[Dict[str, str]] = []
+    hidden_actionability: Dict[str, int] = {}
+    hidden_total = 0
+    for r in advisory:
+        src = str(r.get("queue_actionability", "")).strip().upper()
+        if src == "ACTIONABLE":
+            actionable_rows.append(r)
+        elif src:
+            hidden_actionability[src] = hidden_actionability.get(src, 0) + 1
+            hidden_total += 1
+        else:
+            hidden_actionability["no_actionability_field"] = \
+                hidden_actionability.get("no_actionability_field", 0) + 1
+            hidden_total += 1
+
+    proposed_count = len(actionable_rows)
+    proposed_units = 0.0
+    proposed_units_parseable = True
+    for r in actionable_rows:
+        u = r.get("units", "").strip()
+        if u and u.upper() not in ("NAN", "NONE", "NULL", ""):
+            try:
+                proposed_units += float(u)
+            except (ValueError, TypeError):
+                proposed_units_parseable = False
+
+    # Same-game correlation for proposed (group by game_start_utc + game)
+    proposed_game_groups: Dict[str, Dict[str, Any]] = {}
+    for r in actionable_rows:
+        g = r.get("game", "").strip()
+        gsu = r.get("game_start_utc", "").strip()
+        if gsu and gsu.upper() not in ("NAN", "NONE", "NULL", ""):
+            key = f"{gsu}|{g}"
+            label = "verified"
+        elif g and not _invalid_game(g):
+            key = f"PARTIAL|{g}"
+            label = "partial"
+        else:
+            key = f"UNVERIFIED|{g or 'unknown'}"
+            label = "unverified"
+        if key not in proposed_game_groups:
+            proposed_game_groups[key] = {"rows": [], "label": label}
+        proposed_game_groups[key]["rows"].append(r)
+
+    # Same-player for proposed
+    proposed_has_player = any(
+        r.get("player", "").strip()
+        and r.get("player", "").strip().upper() not in ("", "NAN", "NONE", "NULL")
+        for r in actionable_rows
+    )
+
+    # ── Build HTML ───────────────────────────────────────────────
+    body = route_intro("Portfolio risk",
+        "Daily pre-entry risk view. Open exposure from bet_tracker. "
+        "Proposed exposure from ACTIONABLE queue rows only. "
+        "DISPLAY ONLY · No auto-betting · No formula/staking/threshold changes.",
+        "READ-ONLY")
+
+    # Summary cards
+    total_combined = open_stake + (proposed_units if proposed_units_parseable else 0.0)
+    body += '<div class="v193-summary-grid">'
+    body += card("Open exposure", f"{open_stake:.2f}u",
+                 f"{len(open_bets)} open bet(s)", "primary" if open_bets else "")
+    body += card("Proposed ACTIONABLE",
+                 f"{proposed_units:.2f}u" if proposed_units_parseable else "units unavailable",
+                 f"{proposed_count} row(s)", "warn" if proposed_count else "")
+    body += card("Combined",
+                 f"{total_combined:.2f}u" if proposed_units_parseable
+                 else f"{open_stake:.2f}u + ?",
+                 "open + proposed", "primary")
+    body += card("Hidden non-actionable", str(hidden_total),
+                 "diagnostic only", "gray")
+    body += "</div>"
+
+    # ── Open exposure detail ─────────────────────────────────────
+    open_inner = ""
+    if not open_bets and not unknown_status_bets:
+        open_inner += (
+            '<div class="v193-page-note">'
+            "<b>No open bets found.</b> bet_tracker.csv has no OPEN rows.</div>"
+        )
+    else:
+        if unknown_status_bets:
+            open_inner += (
+                f'<div class="v193-page-note" style="margin-bottom:8px">'
+                f"<b>⚠ {len(unknown_status_bets)} row(s) with blank/unknown status</b> "
+                f"({unknown_stake:.2f}u) — not counted in open exposure. "
+                f"Review Status field in bet_tracker.csv.</div>"
+            )
+
+        # Market concentration
+        open_inner += '<div class="v193-summary-grid" style="margin-bottom:12px;">'
+        for mt_label in ("totals", "spreads", "moneyline", "props", "unknown"):
+            if mt_label in mtype_totals:
+                open_inner += card(
+                    mt_label.title(),
+                    f"{mtype_totals[mt_label]:.2f}u",
+                    f"{mtype_counts[mt_label]} bet(s)",
+                    "primary" if mt_label != "unknown" else "warn"
+                )
+        open_inner += "</div>"
+
+        # By game
+        if open_games:
+            open_inner += '<div class="approval-rail" style="margin:6px 0 10px;">'
+            open_inner += (
+                '<span style="font-size:12px;color:var(--ink-secondary);'
+                'margin-right:8px;">Open games:</span>'
+            )
+            for g, exp in sorted(open_games.items(), key=lambda x: -x[1]):
+                open_inner += f'<span class="chip">{esc(g)} — {exp:.2f}u</span>'
+            open_inner += "</div>"
+
+        # By player
+        if open_players:
+            open_inner += '<div class="approval-rail" style="margin:6px 0 10px;">'
+            open_inner += (
+                '<span style="font-size:12px;color:var(--ink-secondary);'
+                'margin-right:8px;">Open players:</span>'
+            )
+            for p, exp in sorted(open_players.items(), key=lambda x: -x[1]):
+                open_inner += f'<span class="chip warn">{esc(p)} — {exp:.2f}u</span>'
+            open_inner += "</div>"
+
+        # Ladder detection
+        if open_ladders:
+            open_inner += '<div style="margin-top:8px;">'
+            for lad in open_ladders:
+                lines_str = ", ".join(esc(l) for l in lad["lines"])
+                open_inner += (
+                    f'<div class="v193-page-note" '
+                    f'style="border-left:3px solid var(--neon-amber);">'
+                    f'<b>⚠ LADDER:</b> {esc(lad["game"])} {esc(lad["market_type"])} '
+                    f'{esc(lad["direction"])} @ {lines_str} '
+                    f'({lad["count"]} bets)</div>'
+                )
+            open_inner += "</div>"
+
+        # Open bet detail cards
+        if open_bets:
+            open_inner += '<div class="action-board" style="margin-top:10px;">'
+            for b in open_bets:
+                market = b.get("Market", "")
+                direction = b.get("Direction", "")
+                line = b.get("Line", "")
+                odds = b.get("Odds", "")
+                stake = b.get("Stake", "")
+                game = b.get("Game", "")
+                betid = b.get("BetID", "")
+                player = b.get("Player", "")
+                subtitle = f"{market} {direction}" + (f" {line}" if line else "")
+                if player:
+                    subtitle = f"{player} · {subtitle}"
+                open_inner += (
+                    f'<div class="action-clean-card">'
+                    f'<div class="action-clean-head"><div>'
+                    f'<div class="action-rank-clean">{esc(betid)} · OPEN</div>'
+                    f'<div class="action-clean-title">{esc(game)}</div>'
+                    f'</div><span class="badge green">OPEN</span></div>'
+                    f'<div class="action-clean-bet">{esc(subtitle)} @ {esc(odds)}</div>'
+                    f'<div class="action-clean-grid">'
+                    f'<div class="mini"><span>Stake</span><b>{esc(stake)}u</b></div>'
+                    f'<div class="mini"><span>Market</span><b>{esc(market)}</b></div>'
+                    f'</div></div>'
+                )
+            open_inner += "</div>"
+
+    body += section("Current open exposure",
+        "Unsettled bets from bet_tracker.csv. These represent live financial exposure.",
+        open_inner, "OPEN")
+
+    # ── Proposed ACTIONABLE exposure ──────────────────────────────
+    proposed_inner = ""
+    if proposed_count == 0:
+        proposed_inner += (
+            '<div class="v193-page-note">'
+            "<b>No ACTIONABLE queue rows.</b> Proposed exposure = 0. "
+            "Hidden rows are diagnostic only and never contribute.</div>"
+        )
+    else:
+        proposed_inner += (
+            f'<div class="v193-page-note" style="margin-bottom:8px">'
+            f"<b>{proposed_count} ACTIONABLE row(s)</b> — "
+            f'units: {f"{proposed_units:.2f}u" if proposed_units_parseable else "unavailable"}. '
+            "Manual approval required.</div>"
+        )
+
+    # Same-game correlation
+    if proposed_game_groups:
+        proposed_inner += '<div class="approval-rail" style="margin:6px 0 10px;">'
+        proposed_inner += (
+            '<span style="font-size:12px;color:var(--ink-secondary);'
+            'margin-right:8px;">Proposed games:</span>'
+        )
+        for key, info in sorted(proposed_game_groups.items()):
+            rows = info["rows"]
+            label = info["label"]
+            g_display = key.split("|", 1)[-1] if "|" in key else key
+            n = len(rows)
+            chip_cls = ("green" if label == "verified"
+                        else "warn" if label == "partial" else "red")
+            proposed_inner += (
+                f'<span class="chip {chip_cls}">'
+                f'{esc(g_display)} — {n} pick(s) [{label}]</span>'
+            )
+        proposed_inner += "</div>"
+
+    # Same-player
+    if proposed_count > 0:
+        if proposed_has_player:
+            proposed_inner += (
+                '<div class="v193-page-note" style="margin-bottom:8px;">'
+                "Player-level proposed risk: present in ACTIONABLE rows.</div>"
+            )
+        else:
+            proposed_inner += (
+                '<div class="v193-page-note" style="margin-bottom:8px;">'
+                "Player-level proposed risk: unavailable — ACTIONABLE queue has no player fields.</div>"
+            )
+
+    # ACTIONABLE row cards
+    if actionable_rows:
+        proposed_inner += '<div class="action-board" style="margin-top:10px;">'
+        for r in actionable_rows:
+            game = r.get("game", "")
+            side = r.get("side", "")
+            line = r.get("line", "")
+            label = r.get("advisory_label", "REVIEW")
+            gsu = r.get("game_start_utc", "")
+            units_disp = r.get("units", "")
+            edge = r.get("edge", "")
+            risk_badges = parse_risk_flags(r.get("risk_flags", ""))
+            label_cls = ("green" if label == "LEAN_SUPPORT"
+                         else "warn" if label == "MANUAL_REVIEW" else "gray")
+            timing_note = (
+                f" ⏱ {gsu[:16]}"
+                if gsu and gsu.upper() not in ("NAN", "NONE", "NULL", "")
+                else " ⏱ unverified"
+            )
+            proposed_inner += (
+                f'<div class="action-clean-card queue-card">'
+                f'<div class="action-clean-head"><div>'
+                f'<div class="action-rank-clean">MODEL QUEUE</div>'
+                f'<div class="action-clean-title">{esc(game)}{esc(timing_note)}</div>'
+                f'</div><span class="badge {label_cls}">{esc(label)}</span></div>'
+                f'<div class="action-clean-bet">{esc(side)} {esc(line)}</div>'
+                f'<div class="action-clean-grid">'
+                f'<div class="mini"><span>Units</span>'
+                f'<b>{esc(units_disp) if units_disp else "—"}</b></div>'
+                f'<div class="mini"><span>Edge</span>'
+                f'<b>{esc(edge) if edge else "—"}</b></div>'
+                f'<div class="mini risk-mini"><span>Risk</span>'
+                f'<div class="risk-badges">{risk_badges}</div></div>'
+                f'</div></div>'
+            )
+        proposed_inner += "</div>"
+
+    body += section("Proposed ACTIONABLE exposure",
+        "Only queue_actionability=ACTIONABLE rows. Hidden/non-actionable rows never contribute.",
+        proposed_inner, "PROPOSED")
+
+    # ── Hidden / diagnostic ───────────────────────────────────────
+    hidden_inner = ""
+    if hidden_total == 0:
+        hidden_inner += '<div class="v193-page-note">No hidden queue rows.</div>'
+    else:
+        parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_actionability.items()))
+        hidden_inner += (
+            f'<div class="v193-page-note">'
+            f"<b>{hidden_total} hidden non-actionable row(s):</b> {parts}. "
+            "Diagnostic only — not in proposed exposure.</div>"
+        )
+
+    body += section("Hidden / diagnostic queue rows",
+        "Non-actionable rows. Never contribute to proposed exposure.",
+        hidden_inner, "DIAGNOSTIC")
+
+    # ── Daily exposure reference ─────────────────────────────────
+    ref_inner = ""
+    ref_inner += '<div class="v193-summary-grid">'
+    ref_inner += card("Open exposure", f"{open_stake:.2f}u",
+                      f"{len(open_bets)} bet(s)", "primary")
+    ref_inner += card("Proposed ACTIONABLE",
+                      f"{proposed_units:.2f}u" if proposed_units_parseable
+                      else "units unavailable",
+                      f"{proposed_count} row(s)", "warn" if proposed_count else "")
+    ref_inner += card("Combined",
+                      f"{total_combined:.2f}u" if proposed_units_parseable
+                      else f"{open_stake:.2f}u + ?",
+                      "open + proposed", "primary")
+    ref_inner += card("Reference cap", "not configured",
+                      "display only — no enforcement", "gray")
+    ref_inner += "</div>"
+    ref_inner += (
+        '<div class="v193-page-note" style="margin-top:8px;">'
+        "DISPLAY ONLY. No auto-betting. No formula/staking/threshold changes. "
+        "Manual approval always required.</div>"
+    )
+
+    body += section("Daily exposure reference",
+        "Display-only summary. No enforcement. No auto-betting.",
+        ref_inner, "DISPLAY ONLY")
+
+    body += safety_html(st)
+    return body
+

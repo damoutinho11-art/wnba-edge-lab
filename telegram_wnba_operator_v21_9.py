@@ -329,6 +329,8 @@ def build_full_report() -> str:
         "",
         get_open_bets(),
         "",
+        build_portfolio_risk(),
+        "",
         build_picks(),
         "",
         "🔒 Safety Footer:",
@@ -371,8 +373,188 @@ def send_telegram(message: str) -> bool:
             resp.raise_for_status()
         except Exception as e:
             print(f"Chunk failed: {e}")
-            success = False
-    return success
+            return success
+
+
+
+# ── Portfolio-risk summary (READ-ONLY) ─────────────────────────────
+
+PORTFOLIO_NON_ACTIONABLE = {
+    "SCHEDULE_UNVERIFIED_TODAY", "SCHEDULE_UNVERIFIED_FUTURE",
+    "HIDDEN_NO_SCHEDULE", "HIDDEN_NO_LINE", "HIDDEN_STALE",
+    "HIDDEN_INVALID", "HIDDEN_LABEL", "UNKNOWN",
+}
+
+
+def _portfolio_market_type(market: str) -> str:
+    if not market:
+        return "unknown"
+    m = market.upper()
+    if "TOTAL" in m:
+        return "totals"
+    if "SPREAD" in m:
+        return "spreads"
+    if "MONEYLINE" in m:
+        return "moneyline"
+    if m in ("", "UNKNOWN", "NAN", "NONE"):
+        return "unknown"
+    return "props"
+
+
+def _portfolio_open_status(status: str) -> str:
+    s = str(status).strip().upper()
+    if s in ("OPEN", "PENDING", "ACTIVE"):
+        return "OPEN"
+    if s in ("SETTLED", "WON", "LOST", "PUSH", "CANCELLED", "VOID"):
+        return "SETTLED"
+    if s == "":
+        return "UNKNOWN"
+    return "OTHER"
+
+
+def _portfolio_settle_marker(b: Dict[str, str]) -> bool:
+    if _portfolio_open_status(b.get("Status", "")) == "SETTLED":
+        return True
+    result = str(b.get("Result", "")).strip().upper()
+    if result and result not in ("", "NAN", "NONE", "NULL"):
+        return True
+    pl = str(b.get("P/L", "")).strip()
+    if pl and pl not in ("", "0", "0.0", "nan", "None"):
+        return True
+    actual = str(b.get("Actual", "")).strip()
+    if actual and actual not in ("", "NAN", "NONE", "NULL"):
+        return True
+    return False
+
+
+def _is_portfolio_open(b: Dict[str, str]) -> str:
+    if _portfolio_settle_marker(b):
+        return "NOT_OPEN"
+    s = _portfolio_open_status(b.get("Status", ""))
+    if s == "OPEN":
+        return "OPEN"
+    if s == "UNKNOWN":
+        return "UNKNOWN"
+    return "NOT_OPEN"
+
+
+def build_portfolio_risk() -> str:
+    """READ-ONLY portfolio-risk summary for Telegram. No writes. No formula changes."""
+    bets = read_csv(BET_TRACKER)
+    advisory = read_csv(HERMES_ADVISORY)
+
+    open_bets = []
+    unknown_bets = []
+    for b in bets:
+        c = _is_portfolio_open(b)
+        if c == "OPEN":
+            open_bets.append(b)
+        elif c == "UNKNOWN":
+            unknown_bets.append(b)
+
+    open_stake = sum(float(b.get("Stake", "0") or "0") for b in open_bets)
+
+    mtype_totals: Dict[str, float] = {}
+    for b in open_bets:
+        mt = _portfolio_market_type(b.get("Market", ""))
+        mtype_totals[mt] = mtype_totals.get(mt, 0.0) + float(b.get("Stake", "0") or "0")
+
+    actionable = []
+    hidden_counts: Dict[str, int] = {}
+    hidden_total = 0
+    for r in advisory:
+        src = str(r.get("queue_actionability", "")).strip().upper()
+        if src == "ACTIONABLE":
+            actionable.append(r)
+        elif src:
+            hidden_counts[src] = hidden_counts.get(src, 0) + 1
+            hidden_total += 1
+        else:
+            hidden_counts["no_field"] = hidden_counts.get("no_field", 0) + 1
+            hidden_total += 1
+
+    proposed_count = len(actionable)
+    proposed_units = 0.0
+    units_parseable = True
+    for r in actionable:
+        u = r.get("units", "").strip()
+        if u and u.upper() not in ("NAN", "NONE", "NULL", ""):
+            try:
+                proposed_units += float(u)
+            except (ValueError, TypeError):
+                units_parseable = False
+
+    # Ladder detection
+    lad_groups: Dict[tuple, list] = {}
+    for b in open_bets:
+        g = b.get("Game", "").strip()
+        mt = _portfolio_market_type(b.get("Market", ""))
+        d = b.get("Direction", "").strip()
+        ln = b.get("Line", "").strip()
+        if g and ln:
+            key = (g, mt, d)
+            lad_groups.setdefault(key, []).append(ln)
+    ladders = [(g, mt, d, sorted(set(lines))) for (g, mt, d), lines in lad_groups.items()
+               if len(set(lines)) >= 2]
+
+    game_exposure: Dict[str, float] = {}
+    for b in open_bets:
+        g = b.get("Game", "").strip()
+        if g:
+            game_exposure[g] = game_exposure.get(g, 0.0) + float(b.get("Stake", "0") or "0")
+
+    player_exposure: Dict[str, float] = {}
+    for b in open_bets:
+        p = b.get("Player", "").strip()
+        if p:
+            player_exposure[p] = player_exposure.get(p, 0.0) + float(b.get("Stake", "0") or "0")
+
+    out_lines = ["\U0001f3e6 Portfolio Risk:"]
+
+    if not open_bets:
+        out_lines.append("  Open exposure: 0.00u (0 bets)")
+    else:
+        parts = " | ".join(
+            f"{mt.title()} {exp:.2f}u"
+            for mt, exp in sorted(mtype_totals.items(), key=lambda x: -x[1])
+            if exp > 0
+        )
+        out_lines.append(f"  Open exposure: {open_stake:.2f}u ({len(open_bets)} bets)")
+        out_lines.append(f"  Market split: {parts or 'none'}")
+        if game_exposure:
+            game_str = ", ".join(f"{g} {exp:.2f}u" for g, exp in
+                                 sorted(game_exposure.items(), key=lambda x: -x[1]))
+            out_lines.append(f"  Games: {game_str}")
+        if player_exposure:
+            player_str = ", ".join(f"{p} {exp:.2f}u" for p, exp in
+                                   sorted(player_exposure.items(), key=lambda x: -x[1]))
+            out_lines.append(f"  Players: {player_str}")
+
+    if unknown_bets:
+        out_lines.append(f"  \u26a0 {len(unknown_bets)} row(s) with unknown status \u2014 not counted")
+
+    if proposed_count == 0:
+        out_lines.append("  Proposed ACTIONABLE: 0 (0 rows)")
+    else:
+        units_str = f"{proposed_units:.2f}u" if units_parseable else "units unavailable"
+        out_lines.append(f"  Proposed ACTIONABLE: {units_str} ({proposed_count} rows)")
+
+    if hidden_total:
+        hidden_parts = ", ".join(f"{k}: {v}" for k, v in sorted(hidden_counts.items()))
+        out_lines.append(f"  Hidden non-actionable: {hidden_total} ({hidden_parts})")
+
+    if ladders:
+        out_lines.append(f"  \u26a0 Ladders: {len(ladders)} detected")
+        for g, mt, d, lns in ladders:
+            out_lines.append(f"    \u2022 {g} {mt} {d} @ {', '.join(lns)}")
+
+    combined = open_stake + (proposed_units if units_parseable else 0.0)
+    out_lines.append(f"  Combined: {combined:.2f}u open + proposed")
+    out_lines.append("  Reference cap: not configured (display only)")
+    out_lines.append("  Manual approval required \u00b7 No auto-betting \u00b7 No formula changes")
+
+    return "\n".join(out_lines)
+
 
 def main() -> int:
     import argparse
@@ -381,13 +563,16 @@ def main() -> int:
     parser.add_argument("--send", action="store_true")
     parser.add_argument("--update", action="store_true")
     parser.add_argument("--picks", action="store_true")
+    parser.add_argument("--portfolio", action="store_true")
     args = parser.parse_args()
 
     if args.update:
         print("Updating features via safe automation...")
         subprocess.run([sys.executable, str(RUN_SAFE_AUTOMATION), "--features"])
 
-    if args.picks:
+    if args.portfolio:
+        report = build_portfolio_risk()
+    elif args.picks:
         report = build_picks()
     else:
         report = build_full_report()
@@ -397,15 +582,16 @@ def main() -> int:
         print(report)
         print("=== END DRY RUN ===")
         return 0
-    
+
     if args.send:
         if send_telegram(report):
-            print("✅ Sent to Telegram")
+            print("\u2705 Sent to Telegram")
             return 0
         return 1
-    
+
     print("Error: Specify --dry-run or --send")
     return 1
+
 
 if __name__ == "__main__":
     sys.exit(main())
