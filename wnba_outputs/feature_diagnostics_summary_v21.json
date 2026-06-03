@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-02T22:11:04.660262+00:00",
+  "created_at_utc": "2026-06-03T22:13:39.216959+00:00",
   "status": "OK",
   "files": {
     "game_model_features_v21": {
@@ -19,7 +19,7 @@
     },
     "market_features_v21": {
       "exists": true,
-      "rows": 6,
+      "rows": 4,
       "columns": 10
     },
     "model_backtest_v21": {

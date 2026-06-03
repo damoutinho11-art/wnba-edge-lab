@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-02T22:11:06.048708+00:00",
+  "created_at_utc": "2026-06-03T22:13:40.708165+00:00",
   "status": "OK",
   "rows": {
     "recommendations": 8,
@@ -9,7 +9,7 @@
     "game_model_features_v21": 6,
     "team_features_v21": 17,
     "player_features_v21": 337,
-    "market_features_v21": 6,
+    "market_features_v21": 4,
     "signal_execution_groups_v20": 27
   },
   "execution": {
@@ -30,7 +30,7 @@
   },
   "top_priorities": [
     {
-      "created_at_utc": "2026-06-02T22:11:06.045928+00:00",
+      "created_at_utc": "2026-06-03T22:13:40.704430+00:00",
       "priority": 1,
       "area": "data",
       "title": "Promote official WNBA mobile data to primary model source",
@@ -41,7 +41,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-06-02T22:11:06.046812+00:00",
+      "created_at_utc": "2026-06-03T22:13:40.705713+00:00",
       "priority": 1,
       "area": "execution",
       "title": "Separate model signal quality from execution fill quality",
@@ -52,7 +52,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-06-02T22:11:06.046818+00:00",
+      "created_at_utc": "2026-06-03T22:13:40.705720+00:00",
       "priority": 1,
       "area": "hermes",
       "title": "Keep Hermes in manual approval during model upgrade",
@@ -63,18 +63,18 @@
       "owner": "hermes"
     },
     {
-      "created_at_utc": "2026-06-02T22:11:06.046097+00:00",
+      "created_at_utc": "2026-06-03T22:13:40.704656+00:00",
       "priority": 1,
       "area": "market",
       "title": "Add market consensus and line-shopping range to model context",
       "status": "READY",
-      "evidence": "market_features_v21 has 6 events. Average total range=0.8333333333333334.",
+      "evidence": "market_features_v21 has 4 events. Average total range=0.625.",
       "recommended_change": "Add market_total_median, market_total_range, and market_total_books as non-predictive context gates: avoid overreacting when book range is wide; prioritize best available line versus consensus.",
       "safety_gate": "Safe: context/gating only; do not alter projected total directly until measured.",
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-06-02T22:11:06.046300+00:00",
+      "created_at_utc": "2026-06-03T22:13:40.704945+00:00",
       "priority": 1,
       "area": "projection",
       "title": "Introduce V21 feature audit before changing projected total formula",
