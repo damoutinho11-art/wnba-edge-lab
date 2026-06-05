@@ -1,6 +1,6 @@
 {
   "version": "V21.9_SAFE_AUTOMATION",
-  "created_at": "2026-06-04T19:41:38.272987+00:00",
+  "created_at": "2026-06-05T18:29:41.762090+00:00",
   "status": "OK",
   "failed_step": null,
   "automation_scope": "research_model_pipeline_only",
@@ -39,14 +39,14 @@
     "rows": {
       "team_features": 17,
       "player_features": 337,
-      "market_features": 5,
+      "market_features": 7,
       "game_model_features": 6,
       "warnings": 0
     },
     "warnings": 0
   },
   "diagnostics": {
-    "created_at_utc": "2026-06-04T19:41:35.580172+00:00",
+    "created_at_utc": "2026-06-05T18:29:38.883950+00:00",
     "status": "OK",
     "files": {
       "game_model_features_v21": {
@@ -66,7 +66,7 @@
       },
       "market_features_v21": {
         "exists": true,
-        "rows": 5,
+        "rows": 7,
         "columns": 10
       },
       "model_backtest_v21": {
@@ -112,7 +112,7 @@
     "warnings": 7
   },
   "audit": {
-    "updated_at": "2026-06-04T19:41:36+00:00",
+    "updated_at": "2026-06-05T18:29:40+00:00",
     "status": "OK",
     "projection_layer": {
       "slate_games": 6,
@@ -182,7 +182,7 @@
     }
   },
   "backtest": {
-    "created_at_utc": "2026-06-04T19:41:37.448326+00:00",
+    "created_at_utc": "2026-06-05T18:29:40.873986+00:00",
     "status": "OK",
     "version": "v21.2",
     "rows": {
@@ -195,7 +195,7 @@
       "game_model_features_v21": 6,
       "team_features_v21": 17,
       "player_features_v21": 337,
-      "market_features_v21": 5,
+      "market_features_v21": 7,
       "signal_execution_groups_v20": 27
     },
     "candidate_status_counts": {
@@ -237,7 +237,7 @@
       "hermes_advisory_queue": 8,
       "team_features": 17,
       "player_features": 337,
-      "market_features": 5,
+      "market_features": 7,
       "model_backtest": 12,
       "validated_model_changes": 7
     },
@@ -251,7 +251,7 @@
     }
   },
   "result_tracking": {
-    "created_at_utc": "2026-06-04T19:41:38.202539+00:00",
+    "created_at_utc": "2026-06-05T18:29:41.684136+00:00",
     "status": "OK",
     "version": "v21.9",
     "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
@@ -410,7 +410,7 @@
         "hermes_advisory_queue": 8,
         "team_features": 17,
         "player_features": 337,
-        "market_features": 5,
+        "market_features": 7,
         "model_backtest": 12,
         "validated_model_changes": 7
       },
@@ -476,9 +476,9 @@
       "script": "ultimate_fetcher_v21_4_1.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 357.79,
-      "started_at": "2026-06-04T19:35:34.729305+00:00",
-      "stdout_tail": "\n - official_playergamelogs_base 2025: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=5407 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2025.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2025.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_teamgamelogs_base 2025: layer=official_wnba_mobile state=FETCH_FAILED_NO_CACHE rows=0 events=0 path= fallback= error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_team_dash_base 2025: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=13 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2025.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2025.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_player_dash_base 2025: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=182 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2025.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2025.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_playergamelogs_base 2026: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=1197 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2026.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2026.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_teamgamelogs_base 2026: layer=official_wnba_mobile state=FETCH_FAILED_NO_CACHE rows=0 events=0 path= fallback= error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_team_dash_base 2026: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=15 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2026.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2026.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_player_dash_base 2026: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=196 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2026.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2026.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - odds_events : layer=odds_api state=LIVE_FETCH_OK rows=0 events=5 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/odds_events_2026_06_04.json fallback= error=\n - odds_totals : layer=odds_api state=LIVE_FETCH_OK rows=78 events=5 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/odds_totals_latest.csv fallback= error=odds_attempt=safe_us_totals; regions=us; markets=totals\n - player_props : layer=odds_api state=SKIPPED rows=0 events=0 path= fallback= error=Use --props to fetch player props.\n - espn_wnba_schedules 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=332 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_schedules.csv fallback= error=\n - espn_wnba_team_boxscores 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=142 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_team_boxscores.csv fallback= error=\n - espn_wnba_player_boxscores 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=1704 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_player_boxscores.csv fallback= error=\n - espn_wnba_pbp 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=29480 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_pbp.csv fallback= error=\n - wnba_stats_schedules 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=142 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_schedules.csv fallback= error=\n - wnba_stats_team_boxscores 2026: layer=sportsdataverse state=FETCHED_ASSETS_UNPARSED rows=0 events=0 path= fallback= error=Downloaded assets but no parseable table.\n - wnba_stats_player_boxscores 2026: layer=sportsdataverse state=FETCHED_ASSETS_UNPARSED rows=0 events=0 path= fallback= error=Downloaded assets but no parseable table.\n - wnba_stats_pbp 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=24319 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_pbp.csv fallback= error=",
+      "seconds": 351.04,
+      "started_at": "2026-06-05T18:23:44.629119+00:00",
+      "stdout_tail": "\n - official_playergamelogs_base 2025: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=5407 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2025.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2025.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_teamgamelogs_base 2025: layer=official_wnba_mobile state=FETCH_FAILED_NO_CACHE rows=0 events=0 path= fallback= error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_team_dash_base 2025: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=13 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2025.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2025.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_player_dash_base 2025: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=182 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2025.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2025.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_playergamelogs_base 2026: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=1197 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2026.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2026.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_teamgamelogs_base 2026: layer=official_wnba_mobile state=FETCH_FAILED_NO_CACHE rows=0 events=0 path= fallback= error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_team_dash_base 2026: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=15 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2026.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2026.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - official_player_dash_base 2026: layer=official_wnba_mobile state=CACHE_FALLBACK_USED rows=196 events=0 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2026.csv fallback=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2026.csv error=attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20\n - odds_events : layer=odds_api state=LIVE_FETCH_OK rows=0 events=7 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/odds_events_2026_06_05.json fallback= error=\n - odds_totals : layer=odds_api state=LIVE_FETCH_OK rows=86 events=7 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/odds_totals_latest.csv fallback= error=odds_attempt=safe_us_totals; regions=us; markets=totals\n - player_props : layer=odds_api state=SKIPPED rows=0 events=0 path= fallback= error=Use --props to fetch player props.\n - espn_wnba_schedules 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=332 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_schedules.csv fallback= error=\n - espn_wnba_team_boxscores 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=146 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_team_boxscores.csv fallback= error=\n - espn_wnba_player_boxscores 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=1752 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_player_boxscores.csv fallback= error=\n - espn_wnba_pbp 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=30282 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_pbp.csv fallback= error=\n - wnba_stats_schedules 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=146 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_schedules.csv fallback= error=\n - wnba_stats_team_boxscores 2026: layer=sportsdataverse state=FETCHED_ASSETS_UNPARSED rows=0 events=0 path= fallback= error=Downloaded assets but no parseable table.\n - wnba_stats_player_boxscores 2026: layer=sportsdataverse state=FETCHED_ASSETS_UNPARSED rows=0 events=0 path= fallback= error=Downloaded assets but no parseable table.\n - wnba_stats_pbp 2026: layer=sportsdataverse state=LIVE_FETCH_OK rows=24321 events=3 path=/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_pbp.csv fallback= error=",
       "stderr_tail": ""
     },
     {
@@ -487,9 +487,9 @@
       "script": "feature_builder_v21.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 2.68,
-      "started_at": "2026-06-04T19:41:32.520545+00:00",
-      "stdout_tail": "OK: V21 Feature Builder complete\nTeam features:   /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/team_features_v21.csv\nPlayer features: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/player_features_v21.csv\nMarket features: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/market_features_v21.csv\nGame features:   /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/game_model_features_v21.csv\nRows: teams=17 players=337 market=5 games=6 warnings=0\nNote: advisory only; no projection/staking formula changed",
+      "seconds": 2.81,
+      "started_at": "2026-06-05T18:29:35.672904+00:00",
+      "stdout_tail": "OK: V21 Feature Builder complete\nTeam features:   /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/team_features_v21.csv\nPlayer features: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/player_features_v21.csv\nMarket features: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/market_features_v21.csv\nGame features:   /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/game_model_features_v21.csv\nRows: teams=17 players=337 market=7 games=6 warnings=0\nNote: advisory only; no projection/staking formula changed",
       "stderr_tail": ""
     },
     {
@@ -498,8 +498,8 @@
       "script": "feature_diagnostics_v21.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 0.43,
-      "started_at": "2026-06-04T19:41:35.199617+00:00",
+      "seconds": 0.46,
+      "started_at": "2026-06-05T18:29:38.484271+00:00",
       "stdout_tail": "OK: V21 Feature Diagnostics complete\nDiagnostics CSV: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/feature_diagnostics_v21.csv\nColumn map:      /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/feature_column_map_v21.json\nReport:          /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/feature_diagnostics_report_v21.txt\nDiagnosis: 1 total / 1 high\nBacktester expected: {'present': [], 'numeric_present': [], 'missing': ['projection_minus_line', 'recent_points_vs_line', 'combined_dash_pts', 'market_total_range', 'home_starter_minutes_concentration', 'away_starter_minutes_concentration', 'home_bench_minutes_share', 'away_bench_minutes_share', 'home_dreb_allowed_blended_dreb_allowed', 'away_dreb_allowed_blended_dreb_allowed', 'execution_pl']}",
       "stderr_tail": ""
     },
@@ -509,8 +509,8 @@
       "script": "signal_execution_bridge_v20_1.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 0.48,
-      "started_at": "2026-06-04T19:41:35.629807+00:00",
+      "seconds": 0.5,
+      "started_at": "2026-06-05T18:29:38.946194+00:00",
       "stdout_tail": "OK: V20 Signal-to-Execution Bridge complete\nGroups:  /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/signal_execution_groups_v20.csv\nSummary: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/signal_execution_summary_v20.csv\nLatest:  /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/signal_execution_latest_v20.json\nDetected 27 signal/execution groups from 38 tickets.\nNet P/L: \u20ac0.71",
       "stderr_tail": ""
     },
@@ -520,8 +520,8 @@
       "script": "hermes_state_builder_v20_1.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 0.35,
-      "started_at": "2026-06-04T19:41:36.111613+00:00",
+      "seconds": 0.37,
+      "started_at": "2026-06-05T18:29:39.451280+00:00",
       "stdout_tail": "OK: V20 Hermes State Builder complete\nState:     /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/hermes_state_v20.json\nWarnings:  /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/hermes_warnings_v20.csv\nApprovals: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/hermes_approval_queue_v20.csv\nMode:      manual_approval\nLocks:     ENVIRONMENT_SAMPLE_LOCK, INJURY_CONFIRMATION_LOCK, MANUAL_APPROVAL_REQUIRED, MODEL_SAMPLE_LOCK\nActions:   2 pending manual approval\nWarnings:  7 total / 0 high",
       "stderr_tail": ""
     },
@@ -531,8 +531,8 @@
       "script": "model_audit_v20.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 0.35,
-      "started_at": "2026-06-04T19:41:36.463861+00:00",
+      "seconds": 0.38,
+      "started_at": "2026-06-05T18:29:39.824615+00:00",
       "stdout_tail": "OK: V20 Model Audit complete\nAudit:   /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_audit_v20.csv\nSummary: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_audit_summary_v20.json\nRecs:    /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_upgrade_recommendations_v20.txt\nRows:    29\nWatch:   2 high / 11 medium\nHealth:  LEARNING score=53.1\nSlate:   6 games / 2 actions\nExec:    27 groups / P/L=0.7109999999999997",
       "stderr_tail": ""
     },
@@ -542,8 +542,8 @@
       "script": "model_upgrade_recommender_v21.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 0.34,
-      "started_at": "2026-06-04T19:41:36.815779+00:00",
+      "seconds": 0.36,
+      "started_at": "2026-06-05T18:29:40.201554+00:00",
       "stdout_tail": "OK: V21 Model Upgrade Recommender complete\nRecommendations: 8\nHermes queue: 8\nCSV:  /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_upgrade_recommendations_v21.csv\nJSON: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_upgrade_recommendations_v21.json\nPlan: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_change_plan_v21.txt\nNote: recommendations only; no formula/staking/threshold changes applied",
       "stderr_tail": ""
     },
@@ -553,8 +553,8 @@
       "script": "model_backtester_v21_2.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 0.34,
-      "started_at": "2026-06-04T19:41:37.155784+00:00",
+      "seconds": 0.37,
+      "started_at": "2026-06-05T18:29:40.563734+00:00",
       "stdout_tail": "OK: V21.2 Model Backtester complete\nBacktest rows: 12\nFeature candidates: 12\nValidated/manual-review changes: 7\nWarnings: 1\nCandidate statuses: {'CANDIDATE': 11, 'MISSING_OR_INSUFFICIENT': 1}\nImplementation stages: {'BACKTEST_ONLY': 3, 'PROP_SCREENING_CANDIDATE': 2, 'ROTATION_CONTEXT': 2, 'PRIMARY_EDGE_VALIDATION': 1, 'CONFIDENCE_GATE_CANDIDATE': 1, 'PLAYER_CONTEXT': 1, 'MARKET_CONTEXT': 1, 'DIAGNOSTIC': 1}\nBacktest CSV: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_backtest_v21.csv\nSummary JSON: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_backtest_summary_v21.json\nNote: validation only; no formula/staking/threshold changes applied",
       "stderr_tail": ""
     },
@@ -564,8 +564,8 @@
       "script": "model_advisory_scoring_v21.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 0.38,
-      "started_at": "2026-06-04T19:41:37.496051+00:00",
+      "seconds": 0.41,
+      "started_at": "2026-06-05T18:29:40.937544+00:00",
       "stdout_tail": "OK: V21 Model Advisory Scoring complete\nActions: 8\nAdvisory scores: 8\nHermes advisory queue: 8\nLabels: {'NEUTRAL': 7, 'LEAN_SUPPORT': 1}\nRisk flags: {'NO_LINE': 6, 'LOW_MODEL_EDGE': 1}\nScores CSV: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_advisory_scores_v21.csv\nSummary:    /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_advisory_summary_v21.json\nNote: advisory only; no formula/staking/threshold changes applied",
       "stderr_tail": ""
     },
@@ -575,8 +575,8 @@
       "script": "model_result_tracker_v21_9.py",
       "ok": true,
       "returncode": 0,
-      "seconds": 0.4,
-      "started_at": "2026-06-04T19:41:37.876461+00:00",
+      "seconds": 0.41,
+      "started_at": "2026-06-05T18:29:41.346923+00:00",
       "stdout_tail": "OK: V21.9 Model Result Tracker complete\nTracking rows: 8\nMatched rows: 8\nKnown results: 1\nCLV samples: 7\nPromotion watchlist rows: 12\nResult counts: {'UNKNOWN': 7, 'WON': 1}\nPromotion states: {'WATCH_ONLY': 12}\nCSV: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_result_tracking_v21_9.csv\nSummary: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_result_tracking_summary_v21_9.json\nWatchlist: /home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_promotion_watchlist_v21_9.csv\nNote: evidence only; no formula/staking/threshold/auto-betting changes applied",
       "stderr_tail": ""
     }

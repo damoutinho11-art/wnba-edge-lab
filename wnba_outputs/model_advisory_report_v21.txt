@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21 ADVISORY SCORING REPORT
 ==========================================================
-Created: 2026-06-04T19:41:37.826359+00:00
+Created: 2026-06-05T18:29:41.284402+00:00
 
 Status: advisory only. No live model formula changed.
 

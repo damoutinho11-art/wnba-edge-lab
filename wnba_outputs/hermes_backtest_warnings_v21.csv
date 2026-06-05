@@ -1,2 +1,2 @@
 created_at_utc,severity,source,message
-2026-06-04T19:41:37.444369+00:00,medium,model_backtester_v21_2,1 candidates missing or insufficient. See model_backtest_v21.csv.
+2026-06-05T18:29:40.869561+00:00,medium,model_backtester_v21_2,1 candidates missing or insufficient. See model_backtest_v21.csv.
