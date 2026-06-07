@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-06T16:01:07.030027+00:00",
+  "created_at_utc": "2026-06-07T16:03:52.241195+00:00",
   "files": {
     "game_model_features_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/game_model_features_v21.csv",
@@ -145,7 +145,7 @@
     "market_features_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/market_features_v21.csv",
       "exists": true,
-      "rows": 6,
+      "rows": 5,
       "columns": [
         "event_id",
         "home_team",
