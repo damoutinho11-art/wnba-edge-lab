@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-09T18:42:50.053370+00:00",
+  "created_at_utc": "2026-06-10T14:36:42.730197+00:00",
   "status": "OK",
   "version": "v21.9",
   "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
