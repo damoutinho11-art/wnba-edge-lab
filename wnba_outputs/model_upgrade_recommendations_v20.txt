@@ -1,5 +1,5 @@
 WNBA EDGE LAB — V20 MODEL UPGRADE RECOMMENDATIONS
-Generated: 2026-06-10T14:36:41+00:00
+Generated: 2026-06-11T15:02:29+00:00
 
 Priority 1 — Signal IDs and execution linking
 - Add signal_id to projections_with_stakes.csv, recommended_bets.csv, bet_tracker.csv, signal_tracker files, and Hermes approval queue.
