@@ -163,6 +163,37 @@ def first_existing(paths: List[Path]) -> Optional[Path]:
     return None
 
 
+def _load_teamgamelogs_output_fallback(season: int) -> pd.DataFrame:
+    """
+    Attempt to read the combined mobile teamgamelogs output and filter it
+    for the requested season using exact equality and normalized strings.
+    Returns a DataFrame if usable, else empty.
+    """
+    combined_path = OUT / "official_mobile_teamgamelogs_v21.csv"
+    if not combined_path.exists() or combined_path.stat().st_size == 0:
+        return pd.DataFrame()
+
+    try:
+        df = pd.read_csv(combined_path, low_memory=False)
+        df = normalize_cols(df)
+
+        # Exact equality on SeasonFetched (stripped)
+        if "SeasonFetched" in df.columns:
+            mask = df["SeasonFetched"].astype(str).str.strip() == str(season)
+            df = df.loc[mask].copy()
+
+        # Exact equality on SEASON_ID (stripped) if column exists
+        if not df.empty and "SEASON_ID" in df.columns:
+            expected_id = {2025: 22025, 2026: 22026}.get(season)
+            if expected_id is not None:
+                df = df[df["SEASON_ID"].astype(str).str.strip() == str(expected_id)].copy()
+
+        return df
+    except Exception:
+        # Any failure means we cannot safely use the fallback
+        return pd.DataFrame()
+
+
 # --------------------------
 # Official WNBA mobile API
 # --------------------------
@@ -257,6 +288,23 @@ def official_fetch_table(source: str, endpoint: str, params: Dict[str, Any], sea
             return SourceRecord(source, "official_wnba_mobile", "CACHE_FALLBACK_USED", rows=len(df), path=str(out_path if out_path.exists() else fp), fallback_path=str(fp), error=err, freshness="cached", season=str(season)), df
         except Exception as e:
             return SourceRecord(source, "official_wnba_mobile", "FETCH_FAILED_BAD_CACHE", error=f"{err}; cache read failed {type(e).__name__}: {e}", freshness="missing", season=str(season)), pd.DataFrame()
+
+    # NEW: Teamgamelogs-specific output fallback (only after existing cache fallback fails)
+    if source == "official_teamgamelogs_base":
+        fallback_df = _load_teamgamelogs_output_fallback(season)
+        if not fallback_df.empty:
+            # Return in-memory fallback, do NOT write to per-season cache
+            fb_rec = SourceRecord(
+                source, "official_wnba_mobile", "OUTPUT_FALLBACK_USED",
+                rows=len(fallback_df),
+                path=str(out_path),  # keep path for record consistency
+                fallback_path=str(OUT / "official_mobile_teamgamelogs_v21.csv"),
+                error=err,  # preserve original live-fetch error if any
+                freshness="cached",
+                season=str(season)
+            )
+            return fb_rec, fallback_df
+        # else: filtered output fallback empty -> continue to final failure path
 
     return SourceRecord(source, "official_wnba_mobile", "FETCH_FAILED_NO_CACHE", error=err or "empty response", freshness="missing", season=str(season)), pd.DataFrame()
 
@@ -780,6 +828,8 @@ def build_warnings(records: List[SourceRecord]) -> pd.DataFrame:
             sev = "info"
         elif r.state == "CACHE_FALLBACK_USED":
             sev = "low"
+        elif r.state == "OUTPUT_FALLBACK_USED":
+            sev = "low"
         elif r.state in {"FETCHED_EMPTY", "FETCHED_ASSETS_UNPARSED"}:
             sev = "medium"
         else:
@@ -802,7 +852,7 @@ def write_health(records: List[SourceRecord], seasons: List[int]) -> None:
         if df.empty:
             return False
         m = df[df["source"] == source]["state"].astype(str)
-        return any(x in {"LIVE_FETCH_OK", "CACHE_FALLBACK_USED"} for x in m)
+        return any(x in {"LIVE_FETCH_OK", "CACHE_FALLBACK_USED", "OUTPUT_FALLBACK_USED"} for x in m)
 
     status = {
         "created_at_utc": now_iso(),
