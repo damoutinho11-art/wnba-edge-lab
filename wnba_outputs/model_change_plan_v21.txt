@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21 MODEL CHANGE PLAN
 ====================================================
-Created: 2026-06-11T15:02:30.011106+00:00
+Created: 2026-06-12T14:25:40.859827+00:00
 
 Safety:
 - No formula changes applied.
@@ -33,7 +33,7 @@ Change: Maintain MANUAL_APPROVAL_REQUIRED and MODEL_SAMPLE_LOCK until V21 backte
 Safety gate: Required: no auto-betting or threshold changes.
 
 P1 | MARKET | READY | Add market consensus and line-shopping range to model context
-Evidence: market_features_v21 has 6 events. Average total range=0.8333333333333334.
+Evidence: market_features_v21 has 6 events. Average total range=0.5.
 Change: Add market_total_median, market_total_range, and market_total_books as non-predictive context gates: avoid overreacting when book range is wide; prioritize best available line versus consensus.
 Safety gate: Safe: context/gating only; do not alter projected total directly until measured.
 

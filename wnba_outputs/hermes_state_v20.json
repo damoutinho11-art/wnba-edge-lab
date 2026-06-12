@@ -1,6 +1,6 @@
 {
   "schema_version": "v20.0",
-  "generated_at": "2026-06-11T15:02:29+00:00",
+  "generated_at": "2026-06-12T14:25:40+00:00",
   "system": {
     "name": "WNBA Edge Lab",
     "component": "Hermes State Builder",
@@ -286,73 +286,73 @@
     "projections_with_stakes": {
       "exists": true,
       "path": "wnba_outputs/projections_with_stakes.csv",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 5664
     },
     "recommended_bets": {
       "exists": true,
       "path": "wnba_outputs/recommended_bets.csv",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 2274
     },
     "model_health_report": {
       "exists": true,
       "path": "wnba_outputs/model_health_report.csv",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 411
     },
     "signal_execution_groups": {
       "exists": true,
       "path": "wnba_outputs/signal_execution_groups_v20.csv",
-      "modified_at": "2026-06-11T15:02:28",
+      "modified_at": "2026-06-12T14:25:39",
       "size_bytes": 12223
     },
     "signal_execution_summary": {
       "exists": true,
       "path": "wnba_outputs/signal_execution_summary_v20.csv",
-      "modified_at": "2026-06-11T15:02:28",
+      "modified_at": "2026-06-12T14:25:39",
       "size_bytes": 485
     },
     "environment_regime": {
       "exists": true,
       "path": "wnba_outputs/environment_regime_latest.json",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 1295
     },
     "environment_memory": {
       "exists": true,
       "path": "wnba_outputs/environment_memory_latest.csv",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 267
     },
     "environment_validation": {
       "exists": true,
       "path": "wnba_outputs/environment_validation_summary.csv",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 405
     },
     "signal_clv_summary": {
       "exists": true,
       "path": "wnba_outputs/signal_clv_summary.csv",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 1038
     },
     "signal_results_summary": {
       "exists": true,
       "path": "wnba_outputs/signal_results_summary.csv",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 678
     },
     "bet_tracker": {
       "exists": true,
       "path": "bet_tracker.csv",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 17392
     },
     "telegram_message": {
       "exists": true,
       "path": "wnba_outputs/telegram_message.txt",
-      "modified_at": "2026-06-11T14:56:17",
+      "modified_at": "2026-06-12T14:19:32",
       "size_bytes": 897
     },
     "injury_dir": {
