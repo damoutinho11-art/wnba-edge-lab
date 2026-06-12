@@ -484,6 +484,94 @@ def build_market_features(odds: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def _build_base_from_market(market_features: pd.DataFrame) -> pd.DataFrame:
+    """Build a base DataFrame from market_features (fresh odds) when projections/recs are empty."""
+    if market_features.empty:
+        return pd.DataFrame()
+    mf = market_features.copy()
+    home_col = get_col(mf, ["home_team"])
+    away_col = get_col(mf, ["away_team"])
+    line_col = get_col(mf, ["market_total_mean", "market_total_median", "market_total_min", "market_total_max"])
+    if not home_col or not away_col or not line_col:
+        return pd.DataFrame()
+    # Use team codes for game text so extract_teams_from_game_text works
+    away_code = mf[away_col].apply(team_code)
+    home_code = mf[home_col].apply(team_code)
+    mf["_game_code"] = away_code + " @ " + home_code
+    base = pd.DataFrame()
+    base["game"] = mf["_game_code"]
+    base["away_team"] = away_code
+    base["home_team"] = home_code
+    base["line"] = mf[line_col]
+    base["_source"] = "market_features"
+    return base
+
+
+def _augment_base_with_market_games(base: pd.DataFrame, market_features: pd.DataFrame) -> pd.DataFrame:
+    """Add games from market_features that aren't already in base."""
+    if market_features.empty or base.empty:
+        return base
+    mf = market_features.copy()
+    home_col = get_col(mf, ["home_team"])
+    away_col = get_col(mf, ["away_team"])
+    if not home_col or not away_col:
+        return base
+    # Use team codes for game text
+    away_code = mf[away_col].apply(team_code)
+    home_code = mf[home_col].apply(team_code)
+    mf["_game_code"] = away_code + " @ " + home_code
+
+    # Get existing games from base (use code format for comparison)
+    game_col = get_col(base, ["game", "matchup", "GAME", "Matchup"])
+    if game_col is None:
+        # Try to find away/home columns that might have codes
+        away_src = get_col(base, ["away", "Away", "AWAY", "away_team", "away_team_code"])
+        home_src = get_col(base, ["home", "Home", "HOME", "home_team", "home_team_code"])
+        if away_src and home_src:
+            base = base.copy()
+            base["_game_code"] = base[away_src].astype(str) + " @ " + base[home_src].astype(str)
+            game_col = "_game_code"
+        else:
+            # Fallback: use game column if it exists in code format
+            game_col = get_col(base, ["game", "matchup", "GAME", "Matchup"])
+            if game_col is None:
+                return base
+
+    existing_games = set()
+    for _, r in base.iterrows():
+        game_txt = str(r.get(game_col, "") if game_col else "")
+        if game_txt:
+            existing_games.add(game_txt.strip())
+
+    # Add missing games
+    new_rows = []
+    line_col = get_col(mf, ["market_total_mean", "market_total_median", "market_total_min", "market_total_max"])
+    for _, r in mf.iterrows():
+        game_txt = str(r.get("_game_code", "")).strip()
+        if game_txt and game_txt not in existing_games:
+            # Extract team codes from the game code (format: "AWAY @ HOME")
+            parts = game_txt.split(" @ ")
+            if len(parts) == 2:
+                new_row = {"game": game_txt, "_source": "market_features"}
+                new_row["away_team"] = parts[0].strip()
+                new_row["home_team"] = parts[1].strip()
+                if line_col:
+                    # Find the matching row in mf to get the line
+                    # We need to find the original row for this game
+                    mask = (mf["_game_code"] == game_txt)
+                    if mask.any():
+                        line_val = mf.loc[mask, line_col].iloc[0] if line_col in mf.columns else None
+                        if line_val is not None:
+                            new_row["line"] = line_val
+                new_rows.append(new_row)
+                existing_games.add(game_txt)
+
+    if new_rows:
+        new_df = pd.DataFrame(new_rows)
+        base = pd.concat([base, new_df], ignore_index=True, sort=False)
+    return base
+
+
 def extract_teams_from_game_text(text: str) -> Tuple[str, str]:
     if pd.isna(text):
         return "", ""
@@ -503,7 +591,14 @@ def build_game_model_features(team_features: pd.DataFrame, market_features: pd.D
     # Start from projections if available, else recommended bets.
     base = projections.copy() if not projections.empty else recs.copy()
     if base.empty:
-        return pd.DataFrame()
+        # No projections/recs - try to build from market_features (fresh odds)
+        base = _build_base_from_market(market_features)
+        if base.empty:
+            return pd.DataFrame()
+
+    # Also add any fresh games from market_features that aren't in base
+    # This ensures current/future slate from fresh odds is included even if projections are stale
+    base = _augment_base_with_market_games(base, market_features)
 
     game_col = get_col(base, ["game", "matchup", "GAME", "Matchup"])
     proj_col = get_col(base, ["projection", "projected_total", "model_total", "Projection"])
