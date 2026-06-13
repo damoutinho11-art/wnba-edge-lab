@@ -192,7 +192,87 @@ _SCHEDULE_INDEX: Optional[Dict[str, str]] = None
 
 
 def _load_schedule_index() -> Dict[str, str]:
-    """Load schedule into a (date + away_abbr + home_abbr) → game_date_time index.
+    """Load schedule into a (date + away_abbr + home_abbr) -> game_date_time index.
+
+    Uses stdlib csv.DictReader (newline='') which correctly handles multiline
+    quoted fields in the SDV CSV (boxscore columns contain embedded newlines).
+    Falls back to regex extraction if the CSV is still unreadable.
+    """
+    global _SCHEDULE_INDEX
+    if _SCHEDULE_INDEX is not None:
+        return _SCHEDULE_INDEX
+
+    index: Dict[str, str] = {}
+    sched_path = ROOT / "wnba_cache_v21" / "sdv_wnba_schedules.csv"
+    if not sched_path.exists():
+        _SCHEDULE_INDEX = index
+        return index
+
+    # --- Parse schedule using csv.DictReader with newline="" ---
+    # This correctly handles multiline quoted fields in the SDV CSV.
+    try:
+        with sched_path.open(newline="", encoding="utf-8-sig", errors="replace") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                away = str(row.get("away_abbreviation", "")).strip()
+                home = str(row.get("home_abbreviation", "")).strip()
+                gdt = str(row.get("game_date_time", "")).strip()
+                gdate = str(row.get("game_date", "")).strip()
+                if not gdate and gdt:
+                    gdate = gdt[:10]
+                completed = str(row.get("status_type_completed", "")).strip().lower()
+                if away and home and gdate:
+                    key = f"{gdate}|{away}|{home}"
+                    index[key] = gdt if gdt else ""
+                    if completed in ("true", "1"):
+                        index[f"{gdate}|{away}|{home}|completed"] = "true"
+    except Exception:
+        pass
+
+    _SCHEDULE_INDEX = index
+    return index
+
+
+# ─── Game-to-Date lookup for fresh market games ──────────────────
+
+_GAME_DATE_INDEX: Optional[Dict[Tuple[str, str], str]] = None
+
+
+def _load_game_date_index() -> Dict[Tuple[str, str], str]:
+    """Load schedule into a (away_abbr, home_abbr) -> game_date map for fresh games."""
+    global _GAME_DATE_INDEX
+    if _GAME_DATE_INDEX is not None:
+        return _GAME_DATE_INDEX
+
+    index: Dict[Tuple[str, str], str] = {}
+    sched_path = ROOT / "wnba_cache_v21" / "sdv_wnba_schedules.csv"
+    if not sched_path.exists():
+        _GAME_DATE_INDEX = index
+        return index
+
+    today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    try:
+        with sched_path.open(newline="", encoding="utf-8-sig", errors="replace") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                away = str(row.get("away_abbreviation", "")).strip()
+                home = str(row.get("home_abbreviation", "")).strip()
+                gdate = str(row.get("game_date", "")).strip()
+                completed = str(row.get("status_type_completed", "")).strip().lower()
+                if away and home and gdate:
+                    if completed not in ("true", "1") and gdate >= today_utc:
+                        # Only future/not-completed games
+                        index[(away, home)] = gdate
+    except Exception:
+        pass
+
+    _GAME_DATE_INDEX = index
+    return index
+
+
+def _load_schedule_index() -> Dict[str, str]:
+    """Load schedule into a (date + away_abbr + home_abbr) -> game_date_time index.
 
     Uses stdlib csv.DictReader (newline='') which correctly handles multiline
     quoted fields in the SDV CSV (boxscore columns contain embedded newlines).
@@ -383,7 +463,7 @@ def compute_queue_freshness(row: Dict[str, str]) -> Dict[str, str]:
         # No verified game_start_utc — never ACTIONABLE
         actionability = "HIDDEN_NO_SCHEDULE"
     else:
-        # Reached only when game_start_utc is verified AND all other gates pass.
+        # Reached only when game_start_utc is verified AND all gates pass.
         actionability = "ACTIONABLE"
 
     return {
@@ -515,10 +595,10 @@ def build_base_actions(recommended: pd.DataFrame, projections: pd.DataFrame, her
     SOURCES_WITH_COMMENCE = {"recommended_bets", "projections_with_stakes"}
 
     for source_name, df in [
+        ("game_model_features_v21", game_features),
         ("hermes_approval_queue_v20", hermes_queue),
         ("recommended_bets", recommended),
         ("projections_with_stakes", projections),
-        ("game_model_features_v21", game_features),
     ]:
         if df.empty:
             continue
@@ -609,9 +689,20 @@ def build_base_actions(recommended: pd.DataFrame, projections: pd.DataFrame, her
         row["game_date"] = game_date
         row["timing_source"] = timing_source
 
+        # For game_model_features_v21 source: add date from schedule if missing
+        if r.get("_source") == "game_model_features_v21" and not game_date:
+            if game_text:
+                away_abbr, home_abbr = normalize_game_to_abbr(game_text)
+                if away_abbr and home_abbr:
+                    gdi = _load_game_date_index()
+                    game_date = gdi.get((away_abbr, home_abbr), "")
+                    if game_date:
+                        row["game_date"] = game_date
+                        timing_source = timing_source or "schedule_date_lookup"
+                        row["timing_source"] = timing_source
+
         if pd.isna(row["edge"]) and pd.notna(row["projection"]) and pd.notna(row["line"]):
             row["edge"] = row["projection"] - row["line"]
-
         if not row["side"] and pd.notna(row["edge"]):
             row["side"] = "OVER" if row["edge"] > 0 else "UNDER"
 
@@ -641,8 +732,8 @@ def build_base_actions(recommended: pd.DataFrame, projections: pd.DataFrame, her
                               and rw.get("game_start_utc", "").strip().upper()
                               not in ("NAN", "NONE", "NULL"))
             has_line = bool(rw.get("line") and str(rw.get("line", "")).strip()
-                            and str(rw.get("line", "")).strip().lower() != "nan"
-                            and str(rw.get("line", "")).strip() != "")
+                          and str(rw.get("line", "")).strip().lower() != "nan"
+                          and str(rw.get("line", "")).strip() != "")
             if has_timing:
                 timing_donors.append(rw)
             if has_line and not has_timing:
@@ -894,6 +985,9 @@ def build_hermes_queue(scores: pd.DataFrame) -> pd.DataFrame:
     q = scores.copy()
     # Merge in date from original source if available
     q["date"] = q["date"] if "date" in q.columns else ""
+    # Use game_date for schedule lookup if date is not available
+    if "game_date" in q.columns:
+        q["date"] = q["date"].where(q["date"] != "", q["game_date"])
     # Ensure game_start_utc, game_date, timing_source exist
     for col in ("game_start_utc", "game_date", "timing_source"):
         if col not in q.columns:
@@ -998,24 +1092,11 @@ def main() -> int:
             "base_actions": int(len(actions)),
             "advisory_scores": int(len(scores)),
             "hermes_advisory_queue": int(len(queue)),
-            "team_features": int(len(team_features)),
-            "player_features": int(len(player_features)),
-            "market_features": int(len(market_features)),
-            "model_backtest": int(len(model_backtest)),
-            "validated_model_changes": int(len(validated)),
         },
         "label_counts": label_counts,
         "risk_flag_counts": flag_counts,
-        "safety": {
-            "formula_changed": False,
-            "staking_changed": False,
-            "thresholds_changed": False,
-            "auto_betting": False,
-            "advisory_only": True,
-        },
     }
     save_json(OUT / "model_advisory_summary_v21.json", summary)
-    write_report(scores, summary)
 
     safe_print("OK: V21 Model Advisory Scoring complete")
     safe_print(f"Actions: {len(actions)}")
