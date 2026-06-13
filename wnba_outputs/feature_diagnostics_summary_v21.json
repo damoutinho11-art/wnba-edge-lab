@@ -1,11 +1,11 @@
 {
-  "created_at_utc": "2026-06-12T14:25:39.395735+00:00",
+  "created_at_utc": "2026-06-13T13:05:12.264906+00:00",
   "status": "OK",
   "files": {
     "game_model_features_v21": {
       "exists": true,
-      "rows": 6,
-      "columns": 43
+      "rows": 12,
+      "columns": 45
     },
     "team_features_v21": {
       "exists": true,

@@ -1,30 +1,18 @@
 {
-  "created_at_utc": "2026-06-12T14:25:41.568601+00:00",
+  "created_at_utc": "2026-06-13T13:05:14.508238+00:00",
   "status": "OK",
   "version": "v21",
   "rows": {
-    "base_actions": 8,
-    "advisory_scores": 8,
-    "hermes_advisory_queue": 8,
-    "team_features": 17,
-    "player_features": 337,
-    "market_features": 6,
-    "model_backtest": 12,
-    "validated_model_changes": 7
+    "base_actions": 15,
+    "advisory_scores": 15,
+    "hermes_advisory_queue": 15
   },
   "label_counts": {
-    "NEUTRAL": 7,
-    "LEAN_SUPPORT": 1
+    "NEUTRAL": 15
   },
   "risk_flag_counts": {
-    "NO_LINE": 6,
-    "LOW_MODEL_EDGE": 1
-  },
-  "safety": {
-    "formula_changed": false,
-    "staking_changed": false,
-    "thresholds_changed": false,
-    "auto_betting": false,
-    "advisory_only": true
+    "NO_LINE": 9,
+    "LOW_MODEL_EDGE": 7,
+    "NO_SIDE": 6
   }
 }

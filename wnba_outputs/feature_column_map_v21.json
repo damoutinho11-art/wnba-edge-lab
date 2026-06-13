@@ -1,16 +1,17 @@
 {
-  "created_at_utc": "2026-06-12T14:25:39.376469+00:00",
+  "created_at_utc": "2026-06-13T13:05:12.246234+00:00",
   "files": {
     "game_model_features_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/game_model_features_v21.csv",
       "exists": true,
-      "rows": 6,
+      "rows": 12,
       "columns": [
         "game",
         "away_team",
         "home_team",
         "created_at_utc",
         "projection",
+        "line",
         "edge",
         "confidence",
         "away_team_pts_for_l3",
@@ -37,6 +38,7 @@
         "home_dreb_allowed_rank",
         "combined_playerlog_pts_l5",
         "combined_dash_pts",
+        "projection_minus_line",
         "event_id",
         "home_team_market",
         "away_team_market",
@@ -230,31 +232,7 @@
     "line": [
       {
         "file": "game_model_features_v21",
-        "column": "market_total_books"
-      },
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_max"
-      },
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_mean"
-      },
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_median"
-      },
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_min"
-      },
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_range"
-      },
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_rows"
+        "column": "line"
       },
       {
         "file": "market_features_v21",
@@ -293,6 +271,10 @@
       {
         "file": "game_model_features_v21",
         "column": "edge"
+      },
+      {
+        "file": "game_model_features_v21",
+        "column": "projection_minus_line"
       }
     ],
     "market_total_median": [
@@ -427,6 +409,10 @@
       {
         "file": "game_model_features_v21",
         "column": "home_team_pts_for_l5"
+      },
+      {
+        "file": "game_model_features_v21",
+        "column": "projection_minus_line"
       },
       {
         "file": "model_backtest_v21",
