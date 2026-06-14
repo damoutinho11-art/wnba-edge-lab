@@ -1,81 +1,77 @@
 event_id,sport_key,commence_time,home_team,away_team,bookmaker_key,bookmaker,last_update,market,name,price,point
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Over,1.88,170.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Under,1.94,170.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Over,1.91,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Under,1.91,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,mybookieag,MyBookie.ag,2026-06-13T13:03:42Z,totals,Over,1.91,171.0
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,mybookieag,MyBookie.ag,2026-06-13T13:03:42Z,totals,Under,1.91,171.0
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,betrivers,BetRivers,2026-06-13T13:04:46Z,totals,Over,1.88,170.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,betrivers,BetRivers,2026-06-13T13:04:46Z,totals,Under,1.92,170.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,betmgm,BetMGM,2026-06-13T13:04:08Z,totals,Over,1.91,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,betmgm,BetMGM,2026-06-13T13:04:08Z,totals,Under,1.91,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,lowvig,LowVig.ag,2026-06-13T13:04:09Z,totals,Over,1.93,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,lowvig,LowVig.ag,2026-06-13T13:04:09Z,totals,Under,1.93,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,betonlineag,BetOnline.ag,2026-06-13T13:03:55Z,totals,Over,1.91,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,betonlineag,BetOnline.ag,2026-06-13T13:03:55Z,totals,Under,1.91,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,bovada,Bovada,2026-06-13T13:02:55Z,totals,Over,1.95,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,bovada,Bovada,2026-06-13T13:02:55Z,totals,Under,1.87,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,betus,BetUS,2026-06-13T13:04:34Z,totals,Over,1.91,171.5
-5bd596e423be0c73cc633d354e6dd1f8,basketball_wnba,2026-06-13T22:00:00Z,Connecticut Sun,Indiana Fever,betus,BetUS,2026-06-13T13:04:34Z,totals,Under,1.91,171.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Over,1.91,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Under,1.91,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Over,1.95,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Under,1.87,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,mybookieag,MyBookie.ag,2026-06-13T13:03:42Z,totals,Over,1.91,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,mybookieag,MyBookie.ag,2026-06-13T13:03:42Z,totals,Under,1.91,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,betrivers,BetRivers,2026-06-13T13:04:46Z,totals,Over,1.91,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,betrivers,BetRivers,2026-06-13T13:04:46Z,totals,Under,1.88,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,betmgm,BetMGM,2026-06-13T13:04:08Z,totals,Over,1.91,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,betmgm,BetMGM,2026-06-13T13:04:08Z,totals,Under,1.91,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,lowvig,LowVig.ag,2026-06-13T13:04:09Z,totals,Over,1.95,175.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,lowvig,LowVig.ag,2026-06-13T13:04:09Z,totals,Under,1.9,175.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,betonlineag,BetOnline.ag,2026-06-13T13:03:55Z,totals,Over,1.93,175.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,betonlineag,BetOnline.ag,2026-06-13T13:03:55Z,totals,Under,1.88,175.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,bovada,Bovada,2026-06-13T13:02:55Z,totals,Over,1.91,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,bovada,Bovada,2026-06-13T13:02:55Z,totals,Under,1.91,174.5
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,betus,BetUS,2026-06-13T13:04:34Z,totals,Over,1.91,175.0
-f4ec19e95ad55b1005cb7886af22b58d,basketball_wnba,2026-06-14T00:00:00Z,Las Vegas Aces,Minnesota Lynx,betus,BetUS,2026-06-13T13:04:34Z,totals,Under,1.91,175.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Over,1.94,170.5
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Under,1.88,170.5
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,mybookieag,MyBookie.ag,2026-06-13T13:03:42Z,totals,Over,1.91,170.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,mybookieag,MyBookie.ag,2026-06-13T13:03:42Z,totals,Under,1.91,170.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Over,1.91,170.5
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Under,1.91,170.5
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,betrivers,BetRivers,2026-06-13T13:04:46Z,totals,Over,1.89,171.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,betrivers,BetRivers,2026-06-13T13:04:46Z,totals,Under,1.89,171.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,betmgm,BetMGM,2026-06-13T13:04:08Z,totals,Over,1.95,170.5
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,betmgm,BetMGM,2026-06-13T13:04:08Z,totals,Under,1.87,170.5
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,lowvig,LowVig.ag,2026-06-13T13:04:09Z,totals,Over,1.97,170.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,lowvig,LowVig.ag,2026-06-13T13:04:09Z,totals,Under,1.88,170.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,betonlineag,BetOnline.ag,2026-06-13T13:03:55Z,totals,Over,1.95,170.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,betonlineag,BetOnline.ag,2026-06-13T13:03:55Z,totals,Under,1.87,170.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,bovada,Bovada,2026-06-13T13:02:55Z,totals,Over,1.95,170.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,bovada,Bovada,2026-06-13T13:02:55Z,totals,Under,1.87,170.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,betus,BetUS,2026-06-13T13:04:34Z,totals,Over,1.91,170.0
-096d1159a4e6b505f8915f4435e42a4a,basketball_wnba,2026-06-14T00:30:00Z,Portland Fire,Dallas Wings,betus,BetUS,2026-06-13T13:04:34Z,totals,Under,1.91,170.0
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Over,1.94,177.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Under,1.88,177.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,mybookieag,MyBookie.ag,2026-06-13T13:03:42Z,totals,Over,1.91,177.0
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,mybookieag,MyBookie.ag,2026-06-13T13:03:42Z,totals,Under,1.91,177.0
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Over,1.91,176.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Under,1.91,176.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,betrivers,BetRivers,2026-06-13T13:04:46Z,totals,Over,1.88,177.0
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,betrivers,BetRivers,2026-06-13T13:04:46Z,totals,Under,1.91,177.0
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,betmgm,BetMGM,2026-06-13T13:04:08Z,totals,Over,1.91,176.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,betmgm,BetMGM,2026-06-13T13:04:08Z,totals,Under,1.91,176.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,lowvig,LowVig.ag,2026-06-13T13:04:09Z,totals,Over,1.97,176.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,lowvig,LowVig.ag,2026-06-13T13:04:09Z,totals,Under,1.88,176.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,betonlineag,BetOnline.ag,2026-06-13T13:03:55Z,totals,Over,1.95,176.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,betonlineag,BetOnline.ag,2026-06-13T13:03:55Z,totals,Under,1.87,176.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,bovada,Bovada,2026-06-13T13:02:55Z,totals,Over,1.91,177.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,bovada,Bovada,2026-06-13T13:02:55Z,totals,Under,1.91,177.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,betus,BetUS,2026-06-13T13:04:34Z,totals,Over,1.91,177.5
-2460c3f96c0544953ffbc6f0e4f0b2a0,basketball_wnba,2026-06-14T02:00:00Z,Phoenix Mercury,Los Angeles Sparks,betus,BetUS,2026-06-13T13:04:34Z,totals,Under,1.91,177.5
-ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Over,1.91,173.5
-ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Under,1.91,173.5
-ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Over,1.91,173.5
-ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Under,1.91,173.5
-e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Over,1.95,166.5
-e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,fanduel,FanDuel,2026-06-13T13:04:48Z,totals,Under,1.87,166.5
-e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Over,1.91,166.5
-e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,draftkings,DraftKings,2026-06-13T13:04:48Z,totals,Under,1.91,166.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Over,1.88,171.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Under,1.94,171.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Over,1.91,172.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Under,1.91,172.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Over,1.93,172.0
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Under,1.93,172.0
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Over,1.91,172.0
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Under,1.91,172.0
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,bovada,Bovada,2026-06-14T13:09:49Z,totals,Over,1.91,171.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,bovada,Bovada,2026-06-14T13:09:49Z,totals,Under,1.91,171.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Over,1.91,172.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Under,1.88,172.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,betus,BetUS,2026-06-14T13:09:09Z,totals,Over,1.91,172.0
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,betus,BetUS,2026-06-14T13:09:09Z,totals,Under,1.91,172.0
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,betmgm,BetMGM,2026-06-14T13:09:46Z,totals,Over,1.91,172.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,betmgm,BetMGM,2026-06-14T13:09:46Z,totals,Under,1.85,172.5
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,mybookieag,MyBookie.ag,2026-06-14T13:08:32Z,totals,Over,1.91,172.0
+ef6e6195405e8ce6f69cfbe8c0c27643,basketball_wnba,2026-06-14T19:00:00Z,Toronto Tempo,Atlanta Dream,mybookieag,MyBookie.ag,2026-06-14T13:08:32Z,totals,Under,1.91,172.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Over,1.85,165.5
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Under,1.96,165.5
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,mybookieag,MyBookie.ag,2026-06-14T13:08:32Z,totals,Over,1.91,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,mybookieag,MyBookie.ag,2026-06-14T13:08:32Z,totals,Under,1.91,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Over,1.87,165.5
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Under,1.95,165.5
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Over,1.88,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Under,1.97,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Over,1.87,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Under,1.95,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,bovada,Bovada,2026-06-14T13:09:49Z,totals,Over,1.91,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,bovada,Bovada,2026-06-14T13:09:49Z,totals,Under,1.91,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Over,1.88,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Under,1.92,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,betus,BetUS,2026-06-14T13:09:09Z,totals,Over,1.91,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,betus,BetUS,2026-06-14T13:09:09Z,totals,Under,1.91,166.0
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,betmgm,BetMGM,2026-06-14T13:09:46Z,totals,Over,1.87,165.5
+e46471a6dec6e2d9fe85e6b039a375fd,basketball_wnba,2026-06-14T19:00:00Z,New York Liberty,Washington Mystics,betmgm,BetMGM,2026-06-14T13:09:46Z,totals,Under,1.95,165.5
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Over,1.95,178.5
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Under,1.87,178.5
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Over,1.91,178.5
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Under,1.91,178.5
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Over,1.89,178.5
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Under,1.89,178.5
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Over,1.93,178.0
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Under,1.93,178.0
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Over,1.91,178.0
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Under,1.91,178.0
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,bovada,Bovada,2026-06-14T13:09:49Z,totals,Over,1.91,178.0
+48a77a86231262a69de75394ce6a32b1,basketball_wnba,2026-06-16T00:00:00Z,Dallas Wings,Las Vegas Aces,bovada,Bovada,2026-06-14T13:09:49Z,totals,Under,1.91,178.0
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Over,1.93,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Under,1.89,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,mybookieag,MyBookie.ag,2026-06-14T13:08:32Z,totals,Over,1.91,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,mybookieag,MyBookie.ag,2026-06-14T13:08:32Z,totals,Under,1.91,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Over,1.91,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Under,1.91,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Over,1.87,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Under,1.93,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Over,1.93,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Under,1.93,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Over,1.91,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Under,1.91,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,bovada,Bovada,2026-06-14T13:09:49Z,totals,Over,1.91,169.5
+98f03fd7c10f0659cf6e9a6934569117,basketball_wnba,2026-06-16T00:00:00Z,Minnesota Lynx,Portland Fire,bovada,Bovada,2026-06-14T13:09:49Z,totals,Under,1.91,169.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Over,1.91,172.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Under,1.91,172.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Over,1.91,171.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Under,1.91,171.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Over,1.89,171.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,betrivers,BetRivers,2026-06-14T13:09:46Z,totals,Under,1.91,171.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Over,1.93,172.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,lowvig,LowVig.ag,2026-06-14T13:09:22Z,totals,Under,1.93,172.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Over,1.91,172.5
+ef890098ab6d1e8942fa9165ed700cfc,basketball_wnba,2026-06-16T02:10:00Z,Golden State Valkyries,Los Angeles Sparks,betonlineag,BetOnline.ag,2026-06-14T13:07:55Z,totals,Under,1.91,172.5
+9780eccfd20a25f065ad97860c066c0c,basketball_wnba,2026-06-16T23:10:00Z,Indiana Fever,Toronto Tempo,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Over,1.91,174.5
+9780eccfd20a25f065ad97860c066c0c,basketball_wnba,2026-06-16T23:10:00Z,Indiana Fever,Toronto Tempo,draftkings,DraftKings,2026-06-14T13:08:44Z,totals,Under,1.91,174.5
+9780eccfd20a25f065ad97860c066c0c,basketball_wnba,2026-06-16T23:10:00Z,Indiana Fever,Toronto Tempo,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Over,1.88,175.5
+9780eccfd20a25f065ad97860c066c0c,basketball_wnba,2026-06-16T23:10:00Z,Indiana Fever,Toronto Tempo,fanduel,FanDuel,2026-06-14T13:10:00Z,totals,Under,1.94,175.5
