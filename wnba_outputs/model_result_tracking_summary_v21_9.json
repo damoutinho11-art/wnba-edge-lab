@@ -1,17 +1,17 @@
 {
-  "created_at_utc": "2026-06-21T13:25:00.632202+00:00",
+  "created_at_utc": "2026-06-22T16:08:23.013036+00:00",
   "status": "OK",
   "version": "v21.9",
   "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
   "inputs": {
-    "model_advisory_scores_v21": 17,
+    "model_advisory_scores_v21": 16,
     "model_backtest_v21": 12,
     "signal_tracker_graded": 35,
     "signal_execution_groups_v20": 27,
     "hermes_approval_queue_v20": 2
   },
   "rows": {
-    "tracking": 17,
+    "tracking": 16,
     "promotion_watchlist": 12,
     "matched_rows": 8,
     "known_results": 1,
@@ -19,7 +19,7 @@
     "clv_samples": 7
   },
   "result_counts": {
-    "UNKNOWN": 16,
+    "UNKNOWN": 15,
     "WON": 1
   },
   "clv": {
@@ -32,13 +32,13 @@
   "by_advisory_label": [
     {
       "group": "NEUTRAL",
-      "rows": 17,
+      "rows": 16,
       "known_results": 1,
       "won": 1,
       "lost": 0,
       "push": 0,
       "win_rate_decided": 1.0,
-      "avg_advisory_score": 5.879,
+      "avg_advisory_score": 6.0481,
       "avg_clv_points": -0.9286,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -73,26 +73,26 @@
     },
     {
       "group": "NO_SIDE, LOW_MODEL_EDGE",
-      "rows": 7,
+      "rows": 3,
       "known_results": 0,
       "won": 0,
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 0.1458,
+      "avg_advisory_score": 0.1499,
       "avg_clv_points": NaN,
       "positive_clv_rate": null,
       "sample_gate": "INSUFFICIENT_SAMPLE"
     },
     {
       "group": "NO_SIDE, WIDE_MARKET_RANGE, LOW_MODEL_EDGE",
-      "rows": 1,
+      "rows": 4,
       "known_results": 0,
       "won": 0,
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": -0.8539,
+      "avg_advisory_score": -0.8641,
       "avg_clv_points": NaN,
       "positive_clv_rate": null,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -101,13 +101,13 @@
   "by_advisory_score_band": [
     {
       "group": "0-9",
-      "rows": 12,
+      "rows": 11,
       "known_results": 1,
       "won": 1,
       "lost": 0,
       "push": 0,
       "win_rate_decided": 1.0,
-      "avg_advisory_score": 1.703,
+      "avg_advisory_score": 1.5694,
       "avg_clv_points": -1.25,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -140,18 +140,18 @@
   },
   "source_summaries": {
     "advisory_summary_rows": {
-      "base_actions": 17,
-      "advisory_scores": 17,
-      "hermes_advisory_queue": 17
+      "base_actions": 16,
+      "advisory_scores": 16,
+      "hermes_advisory_queue": 16
     },
     "advisory_label_counts": {
-      "NEUTRAL": 17
+      "NEUTRAL": 16
     },
     "advisory_risk_flag_counts": {
       "NO_LINE": 9,
-      "LOW_MODEL_EDGE": 9,
-      "NO_SIDE": 8,
-      "WIDE_MARKET_RANGE": 1
+      "LOW_MODEL_EDGE": 8,
+      "NO_SIDE": 7,
+      "WIDE_MARKET_RANGE": 4
     },
     "backtest_rows": {
       "backtest": 12,

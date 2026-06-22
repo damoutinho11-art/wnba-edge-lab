@@ -1,10 +1,10 @@
 {
-  "created_at_utc": "2026-06-21T13:24:57.883591+00:00",
+  "created_at_utc": "2026-06-22T16:08:20.263071+00:00",
   "files": {
     "game_model_features_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/game_model_features_v21.csv",
       "exists": true,
-      "rows": 14,
+      "rows": 13,
       "columns": [
         "game",
         "away_team",
@@ -147,7 +147,7 @@
     "market_features_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/market_features_v21.csv",
       "exists": true,
-      "rows": 8,
+      "rows": 7,
       "columns": [
         "event_id",
         "home_team",
