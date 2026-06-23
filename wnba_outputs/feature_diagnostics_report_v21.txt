@@ -1,12 +1,12 @@
 WNBA EDGE LAB - V21 FEATURE DIAGNOSTICS REPORT
 ============================================================
-Created: 2026-06-22T16:08:20.263071+00:00
+Created: 2026-06-23T13:53:53.047322+00:00
 
 Files:
-- game_model_features_v21: exists=True rows=13 columns=45
+- game_model_features_v21: exists=True rows=12 columns=45
 - team_features_v21: exists=True rows=17 columns=36
 - player_features_v21: exists=True rows=337 columns=41
-- market_features_v21: exists=True rows=7 columns=10
+- market_features_v21: exists=True rows=6 columns=10
 - model_backtest_v21: exists=True rows=12 columns=15
 - model_upgrade_recommendations_v21: exists=True rows=8 columns=9
 
