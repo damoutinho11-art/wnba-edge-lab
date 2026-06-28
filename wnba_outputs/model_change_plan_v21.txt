@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21 MODEL CHANGE PLAN
 ====================================================
-Created: 2026-06-27T12:44:46.211287+00:00
+Created: 2026-06-28T12:50:27.579607+00:00
 
 Safety:
 - No formula changes applied.
@@ -11,14 +11,14 @@ Safety:
 Current evidence:
 - game_model_features_v21: 11 rows
 - team_features_v21: 17 rows
-- player_features_v21: 345 rows
+- player_features_v21: 337 rows
 - market_features_v21: 5 rows
 - signal_execution_groups_v20: 27 rows
 
 Recommended implementation order:
 
 P1 | DATA | READY | Promote official WNBA mobile data to primary model source
-Evidence: Official player logs/team dash/player dash are ready. Rows: game=11, team=17, player=345.
+Evidence: Official player logs/team dash/player dash are ready. Rows: game=11, team=17, player=337.
 Change: Use official_mobile_playergamelogs_v21, official_mobile_team_dash_base_v21, and official_mobile_player_dash_base_v21 as primary feature inputs before SportsDataverse fallback.
 Safety gate: Safe: read-only feature input promotion; no formula change until backtest.
 
@@ -33,7 +33,7 @@ Change: Maintain MANUAL_APPROVAL_REQUIRED and MODEL_SAMPLE_LOCK until V21 backte
 Safety gate: Required: no auto-betting or threshold changes.
 
 P1 | MARKET | READY | Add market consensus and line-shopping range to model context
-Evidence: market_features_v21 has 5 events. Average total range=0.7.
+Evidence: market_features_v21 has 5 events. Average total range=0.4.
 Change: Add market_total_median, market_total_range, and market_total_books as non-predictive context gates: avoid overreacting when book range is wide; prioritize best available line versus consensus.
 Safety gate: Safe: context/gating only; do not alter projected total directly until measured.
 
@@ -48,12 +48,12 @@ Change: Create a team environment score using recent playerlog_team_pts_l5, dash
 Safety gate: Gate: compare against closing totals and results for at least 30-50 games before live weight.
 
 P2 | PLAYER | READY | Use player concentration for totals and future props
-Evidence: player_features_v21 rows=345; high scoring-dependency players=7.
+Evidence: player_features_v21 rows=337; high scoring-dependency players=7.
 Change: Build team concentration features: top scorer dependency, starter minutes concentration, and bench share. For props, require player market data plus settlement readiness.
 Safety gate: Gate: player props remain manual/research until --props returns live market rows.
 
 P2 | REBOUNDING | READY | Promote blended DREB allowed as first validated matchup feature
-Evidence: DREB allowed blend exists for 15 teams; range=23.52631578947368-26.981818181818184.
+Evidence: DREB allowed blend exists for 15 teams; range=23.53246753246753-27.02626262626263.
 Change: Use blended DREB allowed as a matchup pressure feature for rebound props and totals environment. Keep weight advisory until historical validation.
 Safety gate: Gate: validate against player rebound prop outcomes before auto-use.
 
