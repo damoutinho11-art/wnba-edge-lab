@@ -1,6 +1,7 @@
 event_id,home_team,away_team,market_total_mean,market_total_median,market_total_min,market_total_max,market_total_range,market_total_books,market_total_rows
-75a6b68701084a0dcfc9c2a18a6b3f3a,Chicago Sky,Las Vegas Aces,179.11111111111111,179.5,178.5,179.5,1.0,9,18
-83f0a57af90439fdbb978c025e2d0bd2,Golden State Valkyries,New York Liberty,163.5,163.5,163.5,163.5,0.0,9,18
-a11fe7954fde6bc459c54dae86c6fc54,Washington Mystics,Portland Fire,166.94444444444446,167.0,166.5,167.5,1.0,9,18
-c72d086a53d7b9b49f1daaf8754bd4e9,New York Liberty,Las Vegas Aces,174.5,174.5,174.5,174.5,0.0,7,14
-fd3f57e3db87c4c1fa74f6bcdaed649d,Dallas Wings,Minnesota Lynx,177.5,177.5,177.5,177.5,0.0,9,18
+352c810f6bdc04f8b6e8ad28a69160f6,Connecticut Sun,Dallas Wings,169.875,169.5,169.5,170.5,1.0,8,16
+aca4e4541c1ca0a63e1b763e72c4b724,Washington Mystics,Atlanta Dream,165.0,165.0,164.5,165.5,1.0,8,16
+ad4e7aa7f2e07f90f7bf254d71ef6f37,Phoenix Mercury,Seattle Storm,167.25,167.5,166.5,167.5,1.0,8,16
+c72d086a53d7b9b49f1daaf8754bd4e9,New York Liberty,Las Vegas Aces,174.11111111111111,174.0,173.5,174.5,1.0,9,18
+eb6f53f248f70b4841769705a8ef055d,New York Liberty,Minnesota Lynx,171.5,171.5,171.5,171.5,0.0,4,8
+f784500c59f1f83757bec7c0ef787879,Las Vegas Aces,Indiana Fever,181.5,181.5,181.5,181.5,0.0,1,2
