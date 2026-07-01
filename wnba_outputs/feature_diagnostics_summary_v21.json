@@ -1,10 +1,10 @@
 {
-  "created_at_utc": "2026-06-30T13:22:35.564038+00:00",
+  "created_at_utc": "2026-07-01T13:47:25.886137+00:00",
   "status": "OK",
   "files": {
     "game_model_features_v21": {
       "exists": true,
-      "rows": 13,
+      "rows": 12,
       "columns": 45
     },
     "team_features_v21": {
@@ -19,7 +19,7 @@
     },
     "market_features_v21": {
       "exists": true,
-      "rows": 7,
+      "rows": 6,
       "columns": 10
     },
     "model_backtest_v21": {

@@ -1,17 +1,17 @@
 {
-  "created_at_utc": "2026-06-30T13:22:38.209603+00:00",
+  "created_at_utc": "2026-07-01T13:47:27.715286+00:00",
   "status": "OK",
   "version": "v21.9",
   "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
   "inputs": {
-    "model_advisory_scores_v21": 16,
+    "model_advisory_scores_v21": 15,
     "model_backtest_v21": 12,
     "signal_tracker_graded": 35,
     "signal_execution_groups_v20": 27,
     "hermes_approval_queue_v20": 2
   },
   "rows": {
-    "tracking": 16,
+    "tracking": 15,
     "promotion_watchlist": 12,
     "matched_rows": 8,
     "known_results": 1,
@@ -19,7 +19,7 @@
     "clv_samples": 7
   },
   "result_counts": {
-    "UNKNOWN": 15,
+    "UNKNOWN": 14,
     "WON": 1
   },
   "clv": {
@@ -32,13 +32,13 @@
   "by_advisory_label": [
     {
       "group": "NEUTRAL",
-      "rows": 16,
+      "rows": 15,
       "known_results": 1,
       "won": 1,
       "lost": 0,
       "push": 0,
       "win_rate_decided": 1.0,
-      "avg_advisory_score": 6.3007,
+      "avg_advisory_score": 6.7111,
       "avg_clv_points": -0.9286,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -73,13 +73,13 @@
     },
     {
       "group": "NO_SIDE, LOW_MODEL_EDGE",
-      "rows": 7,
+      "rows": 6,
       "known_results": 0,
       "won": 0,
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 0.148,
+      "avg_advisory_score": 0.1485,
       "avg_clv_points": NaN,
       "positive_clv_rate": null,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -88,13 +88,13 @@
   "by_advisory_score_band": [
     {
       "group": "0-9",
-      "rows": 11,
+      "rows": 10,
       "known_results": 1,
       "won": 1,
       "lost": 0,
       "push": 0,
       "win_rate_decided": 1.0,
-      "avg_advisory_score": 1.9369,
+      "avg_advisory_score": 2.1161,
       "avg_clv_points": -1.25,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -127,17 +127,17 @@
   },
   "source_summaries": {
     "advisory_summary_rows": {
-      "base_actions": 16,
-      "advisory_scores": 16,
-      "hermes_advisory_queue": 16
+      "base_actions": 15,
+      "advisory_scores": 15,
+      "hermes_advisory_queue": 15
     },
     "advisory_label_counts": {
-      "NEUTRAL": 16
+      "NEUTRAL": 15
     },
     "advisory_risk_flag_counts": {
       "NO_LINE": 9,
-      "LOW_MODEL_EDGE": 8,
-      "NO_SIDE": 7
+      "LOW_MODEL_EDGE": 7,
+      "NO_SIDE": 6
     },
     "backtest_rows": {
       "backtest": 12,
