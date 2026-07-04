@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-07-03T13:15:35.799707+00:00",
+  "created_at_utc": "2026-07-04T12:41:45.339690+00:00",
   "version": "v21.4",
   "seasons": [
     2025,
@@ -7,52 +7,53 @@
   ],
   "overall_state": "OK",
   "state_counts": {
-    "LIVE_FETCH_OK": 14,
-    "CACHE_FALLBACK_USED": 2,
+    "LIVE_FETCH_OK": 8,
+    "CACHE_FALLBACK_USED": 6,
+    "OUTPUT_FALLBACK_USED": 2,
     "FETCHED_ASSETS_UNPARSED": 2,
     "SKIPPED": 1
   },
-  "warnings_count": 5,
+  "warnings_count": 11,
   "warnings_high": 0,
   "records": [
     {
       "source": "official_playergamelogs_base",
       "layer": "official_wnba_mobile",
-      "state": "LIVE_FETCH_OK",
+      "state": "CACHE_FALLBACK_USED",
       "rows": 5407,
       "events": 0,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2025.csv",
-      "fallback_path": "",
-      "error": "",
-      "freshness": "live",
+      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_playergamelogs_2025.csv",
+      "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
+      "freshness": "cached",
       "season": "2025",
-      "created_at_utc": "2026-07-03T13:15:35.800538+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340274+00:00"
     },
     {
       "source": "official_teamgamelogs_base",
       "layer": "official_wnba_mobile",
-      "state": "LIVE_FETCH_OK",
+      "state": "OUTPUT_FALLBACK_USED",
       "rows": 572,
       "events": 0,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_teamgamelogs_2025.csv",
-      "fallback_path": "",
-      "error": "",
-      "freshness": "live",
+      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/official_mobile_teamgamelogs_v21.csv",
+      "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
+      "freshness": "cached",
       "season": "2025",
-      "created_at_utc": "2026-07-03T13:15:35.800558+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340284+00:00"
     },
     {
       "source": "official_team_dash_base",
       "layer": "official_wnba_mobile",
-      "state": "LIVE_FETCH_OK",
+      "state": "CACHE_FALLBACK_USED",
       "rows": 13,
       "events": 0,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2025.csv",
-      "fallback_path": "",
-      "error": "",
-      "freshness": "live",
+      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2025.csv",
+      "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
+      "freshness": "cached",
       "season": "2025",
-      "created_at_utc": "2026-07-03T13:15:35.800572+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340292+00:00"
     },
     {
       "source": "official_player_dash_base",
@@ -65,7 +66,7 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2025",
-      "created_at_utc": "2026-07-03T13:15:35.800585+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340298+00:00"
     },
     {
       "source": "official_playergamelogs_base",
@@ -78,72 +79,72 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800597+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340305+00:00"
     },
     {
       "source": "official_teamgamelogs_base",
       "layer": "official_wnba_mobile",
-      "state": "LIVE_FETCH_OK",
+      "state": "OUTPUT_FALLBACK_USED",
       "rows": 294,
       "events": 0,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_teamgamelogs_2026.csv",
-      "fallback_path": "",
-      "error": "",
-      "freshness": "live",
+      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/official_mobile_teamgamelogs_v21.csv",
+      "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
+      "freshness": "cached",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800610+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340311+00:00"
     },
     {
       "source": "official_team_dash_base",
       "layer": "official_wnba_mobile",
-      "state": "LIVE_FETCH_OK",
+      "state": "CACHE_FALLBACK_USED",
       "rows": 15,
       "events": 0,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2026.csv",
-      "fallback_path": "",
-      "error": "",
-      "freshness": "live",
+      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_team_dash_base_2026.csv",
+      "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
+      "freshness": "cached",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800623+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340318+00:00"
     },
     {
       "source": "official_player_dash_base",
       "layer": "official_wnba_mobile",
-      "state": "LIVE_FETCH_OK",
-      "rows": 209,
+      "state": "CACHE_FALLBACK_USED",
+      "rows": 196,
       "events": 0,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2026.csv",
-      "fallback_path": "",
-      "error": "",
-      "freshness": "live",
+      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/mobile_player_dash_base_2026.csv",
+      "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
+      "freshness": "cached",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800636+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340324+00:00"
     },
     {
       "source": "odds_events",
       "layer": "odds_api",
       "state": "LIVE_FETCH_OK",
       "rows": 0,
-      "events": 5,
-      "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/odds_events_2026_07_03.json",
+      "events": 4,
+      "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/odds_events_2026_07_04.json",
       "fallback_path": "",
       "error": "",
       "freshness": "live",
       "season": "",
-      "created_at_utc": "2026-07-03T13:15:35.800649+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340331+00:00"
     },
     {
       "source": "odds_totals",
       "layer": "odds_api",
       "state": "LIVE_FETCH_OK",
-      "rows": 56,
-      "events": 5,
+      "rows": 50,
+      "events": 4,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/odds_totals_latest.csv",
       "fallback_path": "",
       "error": "odds_attempt=safe_us_totals; regions=us; markets=totals",
       "freshness": "live",
       "season": "",
-      "created_at_utc": "2026-07-03T13:15:35.800662+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340337+00:00"
     },
     {
       "source": "player_props",
@@ -156,72 +157,72 @@
       "error": "Use --props to fetch player props.",
       "freshness": "skipped",
       "season": "",
-      "created_at_utc": "2026-07-03T13:15:35.800674+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340344+00:00"
     },
     {
       "source": "espn_wnba_schedules",
       "layer": "sportsdataverse",
       "state": "LIVE_FETCH_OK",
-      "rows": 332,
+      "rows": 328,
       "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_schedules.csv",
       "fallback_path": "",
       "error": "",
       "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800687+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340350+00:00"
     },
     {
       "source": "espn_wnba_team_boxscores",
       "layer": "sportsdataverse",
       "state": "LIVE_FETCH_OK",
-      "rows": 296,
+      "rows": 300,
       "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_team_boxscores.csv",
       "fallback_path": "",
       "error": "",
       "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800699+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340357+00:00"
     },
     {
       "source": "espn_wnba_player_boxscores",
       "layer": "sportsdataverse",
       "state": "LIVE_FETCH_OK",
-      "rows": 3572,
+      "rows": 3613,
       "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_player_boxscores.csv",
       "fallback_path": "",
       "error": "",
       "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800712+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340363+00:00"
     },
     {
       "source": "espn_wnba_pbp",
       "layer": "sportsdataverse",
       "state": "LIVE_FETCH_OK",
-      "rows": 61496,
+      "rows": 62294,
       "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_pbp.csv",
       "fallback_path": "",
       "error": "",
       "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800725+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340369+00:00"
     },
     {
       "source": "wnba_stats_schedules",
       "layer": "sportsdataverse",
       "state": "LIVE_FETCH_OK",
-      "rows": 280,
+      "rows": 298,
       "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_schedules.csv",
       "fallback_path": "",
       "error": "",
       "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800738+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340376+00:00"
     },
     {
       "source": "wnba_stats_team_boxscores",
@@ -234,7 +235,7 @@
       "error": "Downloaded assets but no parseable table.",
       "freshness": "unparsed",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800750+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340382+00:00"
     },
     {
       "source": "wnba_stats_player_boxscores",
@@ -247,20 +248,20 @@
       "error": "Downloaded assets but no parseable table.",
       "freshness": "unparsed",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800762+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340389+00:00"
     },
     {
       "source": "wnba_stats_pbp",
       "layer": "sportsdataverse",
       "state": "LIVE_FETCH_OK",
-      "rows": 57353,
+      "rows": 59180,
       "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_pbp.csv",
       "fallback_path": "",
       "error": "",
       "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-07-03T13:15:35.800775+00:00"
+      "created_at_utc": "2026-07-04T12:41:45.340395+00:00"
     }
   ],
   "readiness": {
