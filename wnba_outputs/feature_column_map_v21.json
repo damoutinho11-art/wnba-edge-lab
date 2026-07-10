@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-07-09T13:59:55.848512+00:00",
+  "created_at_utc": "2026-07-10T13:25:45.586978+00:00",
   "files": {
     "game_model_features_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/game_model_features_v21.csv",
@@ -99,7 +99,7 @@
     "player_features_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/player_features_v21.csv",
       "exists": true,
-      "rows": 348,
+      "rows": 337,
       "columns": [
         "team",
         "player",
