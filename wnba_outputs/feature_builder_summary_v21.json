@@ -1,12 +1,12 @@
 {
-  "created_at_utc": "2026-07-15T12:49:49.207329+00:00",
+  "created_at_utc": "2026-07-16T12:58:40.368745+00:00",
   "status": "OK",
   "version": "v21",
   "rows": {
     "team_features": 17,
     "player_features": 337,
-    "market_features": 5,
-    "game_model_features": 11,
+    "market_features": 6,
+    "game_model_features": 12,
     "warnings": 0
   },
   "inputs": {
@@ -15,10 +15,10 @@
     "official_mobile_team_dash_base_v21": 28,
     "official_mobile_player_dash_base_v21": 378,
     "official_mobile_dreb_allowed_rankings_v21": 15,
-    "odds_totals_latest_v21": 74,
-    "sdv_wnba_team_boxscores": 358,
-    "sdv_wnba_player_boxscores": 4309,
-    "sdv_wnba_pbp": 73840,
+    "odds_totals_latest_v21": 76,
+    "sdv_wnba_team_boxscores": 364,
+    "sdv_wnba_player_boxscores": 4383,
+    "sdv_wnba_pbp": 75045,
     "projections_with_stakes": 6,
     "recommended_bets": 2
   },

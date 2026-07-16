@@ -1,6 +1,7 @@
 event_id,home_team,away_team,market_total_mean,market_total_median,market_total_min,market_total_max,market_total_range,market_total_books,market_total_rows
-00a997433337939ebda3beb882a1e2db,Washington Mystics,Portland Fire,165.7,165.5,165.5,166.0,0.5,5,10
-4db11d33553fba68fc607aaf009071aa,Minnesota Lynx,Los Angeles Sparks,182.66666666666666,182.5,182.5,183.5,1.0,9,18
-51f9e00bb8d7debd5a922a21f0736e36,Dallas Wings,New York Liberty,175.5,175.5,175.5,175.5,0.0,5,10
-8eace0d4309db9d618e7ba857166324b,Indiana Fever,Golden State Valkyries,167.5,167.5,167.5,167.5,0.0,9,18
-dd23179c4373849ae1da8476ec21def3,Chicago Sky,Seattle Storm,171.11111111111111,171.0,170.5,171.5,1.0,9,18
+00a997433337939ebda3beb882a1e2db,Washington Mystics,Portland Fire,163.38888888888889,163.5,162.5,163.5,1.0,9,18
+02c8aae5b168305c60aa6f9c66f443d1,Phoenix Mercury,Connecticut Sun,163.3,163.5,162.5,163.5,1.0,5,10
+034012f210532a879b3d1ab5de8306e6,Indiana Fever,Seattle Storm,173.5,173.5,173.5,173.5,0.0,5,10
+4a1af047b50cc335d69665ae9b499206,Chicago Sky,Los Angeles Sparks,183.3,183.5,182.5,183.5,1.0,5,10
+51f9e00bb8d7debd5a922a21f0736e36,Dallas Wings,New York Liberty,177.38888888888889,177.5,176.5,177.5,1.0,9,18
+571b28ddb7c28b45b2925d493d2085c8,Toronto Tempo,Atlanta Dream,181.7,181.5,181.5,182.5,1.0,5,10
