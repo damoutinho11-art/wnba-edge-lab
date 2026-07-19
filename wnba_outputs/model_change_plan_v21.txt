@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21 MODEL CHANGE PLAN
 ====================================================
-Created: 2026-07-18T12:12:24.276316+00:00
+Created: 2026-07-19T12:13:09.177337+00:00
 
 Safety:
 - No formula changes applied.
@@ -9,16 +9,16 @@ Safety:
 - No auto-betting enabled.
 
 Current evidence:
-- game_model_features_v21: 11 rows
+- game_model_features_v21: 13 rows
 - team_features_v21: 17 rows
 - player_features_v21: 337 rows
-- market_features_v21: 5 rows
+- market_features_v21: 7 rows
 - signal_execution_groups_v20: 27 rows
 
 Recommended implementation order:
 
 P1 | DATA | READY | Promote official WNBA mobile data to primary model source
-Evidence: Official player logs/team dash/player dash are ready. Rows: game=11, team=17, player=337.
+Evidence: Official player logs/team dash/player dash are ready. Rows: game=13, team=17, player=337.
 Change: Use official_mobile_playergamelogs_v21, official_mobile_team_dash_base_v21, and official_mobile_player_dash_base_v21 as primary feature inputs before SportsDataverse fallback.
 Safety gate: Safe: read-only feature input promotion; no formula change until backtest.
 
@@ -33,12 +33,12 @@ Change: Maintain MANUAL_APPROVAL_REQUIRED and MODEL_SAMPLE_LOCK until V21 backte
 Safety gate: Required: no auto-betting or threshold changes.
 
 P1 | MARKET | READY | Add market consensus and line-shopping range to model context
-Evidence: market_features_v21 has 5 events. Average total range=1.3.
+Evidence: market_features_v21 has 7 events. Average total range=1.0.
 Change: Add market_total_median, market_total_range, and market_total_books as non-predictive context gates: avoid overreacting when book range is wide; prioritize best available line versus consensus.
 Safety gate: Safe: context/gating only; do not alter projected total directly until measured.
 
 P1 | PROJECTION | READY | Introduce V21 feature audit before changing projected total formula
-Evidence: game_model_features_v21 has 11 games; usable projection/line edge rows=0; avg abs edge=n/a.
+Evidence: game_model_features_v21 has 13 games; usable projection/line edge rows=0; avg abs edge=n/a.
 Change: Run a correlation/backtest layer that compares projection_minus_line against result, CLV, and execution P/L before applying any formula weights.
 Safety gate: Gate: no formula change until backtest sample is large enough and audit improves.
 
