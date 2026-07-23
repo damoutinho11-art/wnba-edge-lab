@@ -1,15 +1,15 @@
 {
-  "created_at_utc": "2026-07-22T12:53:14.813808+00:00",
+  "created_at_utc": "2026-07-23T12:55:55.023150+00:00",
   "status": "OK",
   "rows": {
     "recommendations": 8,
     "hermes_queue": 8
   },
   "data_rows": {
-    "game_model_features_v21": 12,
+    "game_model_features_v21": 13,
     "team_features_v21": 17,
     "player_features_v21": 337,
-    "market_features_v21": 6,
+    "market_features_v21": 7,
     "signal_execution_groups_v20": 27
   },
   "execution": {
@@ -30,18 +30,18 @@
   },
   "top_priorities": [
     {
-      "created_at_utc": "2026-07-22T12:53:14.810455+00:00",
+      "created_at_utc": "2026-07-23T12:55:55.019251+00:00",
       "priority": 1,
       "area": "data",
       "title": "Promote official WNBA mobile data to primary model source",
       "status": "READY",
-      "evidence": "Official player logs/team dash/player dash are ready. Rows: game=12, team=17, player=337.",
+      "evidence": "Official player logs/team dash/player dash are ready. Rows: game=13, team=17, player=337.",
       "recommended_change": "Use official_mobile_playergamelogs_v21, official_mobile_team_dash_base_v21, and official_mobile_player_dash_base_v21 as primary feature inputs before SportsDataverse fallback.",
       "safety_gate": "Safe: read-only feature input promotion; no formula change until backtest.",
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-07-22T12:53:14.811485+00:00",
+      "created_at_utc": "2026-07-23T12:55:55.020564+00:00",
       "priority": 1,
       "area": "execution",
       "title": "Separate model signal quality from execution fill quality",
@@ -52,7 +52,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-07-22T12:53:14.811491+00:00",
+      "created_at_utc": "2026-07-23T12:55:55.020571+00:00",
       "priority": 1,
       "area": "hermes",
       "title": "Keep Hermes in manual approval during model upgrade",
@@ -63,23 +63,23 @@
       "owner": "hermes"
     },
     {
-      "created_at_utc": "2026-07-22T12:53:14.810680+00:00",
+      "created_at_utc": "2026-07-23T12:55:55.019527+00:00",
       "priority": 1,
       "area": "market",
       "title": "Add market consensus and line-shopping range to model context",
       "status": "READY",
-      "evidence": "market_features_v21 has 6 events. Average total range=1.3333333333333333.",
+      "evidence": "market_features_v21 has 7 events. Average total range=0.7142857142857143.",
       "recommended_change": "Add market_total_median, market_total_range, and market_total_books as non-predictive context gates: avoid overreacting when book range is wide; prioritize best available line versus consensus.",
       "safety_gate": "Safe: context/gating only; do not alter projected total directly until measured.",
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-07-22T12:53:14.810856+00:00",
+      "created_at_utc": "2026-07-23T12:55:55.019752+00:00",
       "priority": 1,
       "area": "projection",
       "title": "Introduce V21 feature audit before changing projected total formula",
       "status": "READY",
-      "evidence": "game_model_features_v21 has 12 games; usable projection/line edge rows=0; avg abs edge=n/a.",
+      "evidence": "game_model_features_v21 has 13 games; usable projection/line edge rows=0; avg abs edge=n/a.",
       "recommended_change": "Run a correlation/backtest layer that compares projection_minus_line against result, CLV, and execution P/L before applying any formula weights.",
       "safety_gate": "Gate: no formula change until backtest sample is large enough and audit improves.",
       "owner": "model"
