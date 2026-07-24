@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-07-23T12:55:55.827108+00:00",
+  "created_at_utc": "2026-07-24T12:52:53.882441+00:00",
   "status": "OK",
   "version": "v21",
   "rows": {
@@ -12,7 +12,8 @@
   },
   "risk_flag_counts": {
     "NO_LINE": 9,
-    "LOW_MODEL_EDGE": 8,
-    "NO_SIDE": 7
+    "NO_SIDE": 7,
+    "WIDE_MARKET_RANGE": 1,
+    "LOW_MODEL_EDGE": 8
   }
 }
