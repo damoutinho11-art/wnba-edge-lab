@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-07-24T12:52:53.054507+00:00",
+  "created_at_utc": "2026-07-25T12:16:36.727010+00:00",
   "status": "OK",
   "rows": {
     "recommendations": 8,
@@ -30,7 +30,7 @@
   },
   "top_priorities": [
     {
-      "created_at_utc": "2026-07-24T12:52:53.050481+00:00",
+      "created_at_utc": "2026-07-25T12:16:36.723626+00:00",
       "priority": 1,
       "area": "data",
       "title": "Promote official WNBA mobile data to primary model source",
@@ -41,7 +41,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-07-24T12:52:53.051812+00:00",
+      "created_at_utc": "2026-07-25T12:16:36.724689+00:00",
       "priority": 1,
       "area": "execution",
       "title": "Separate model signal quality from execution fill quality",
@@ -52,7 +52,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-07-24T12:52:53.051819+00:00",
+      "created_at_utc": "2026-07-25T12:16:36.724696+00:00",
       "priority": 1,
       "area": "hermes",
       "title": "Keep Hermes in manual approval during model upgrade",
@@ -63,18 +63,18 @@
       "owner": "hermes"
     },
     {
-      "created_at_utc": "2026-07-24T12:52:53.050732+00:00",
+      "created_at_utc": "2026-07-25T12:16:36.723836+00:00",
       "priority": 1,
       "area": "market",
       "title": "Add market consensus and line-shopping range to model context",
       "status": "READY",
-      "evidence": "market_features_v21 has 7 events. Average total range=1.0714285714285714.",
+      "evidence": "market_features_v21 has 7 events. Average total range=0.5714285714285714.",
       "recommended_change": "Add market_total_median, market_total_range, and market_total_books as non-predictive context gates: avoid overreacting when book range is wide; prioritize best available line versus consensus.",
       "safety_gate": "Safe: context/gating only; do not alter projected total directly until measured.",
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-07-24T12:52:53.050951+00:00",
+      "created_at_utc": "2026-07-25T12:16:36.724009+00:00",
       "priority": 1,
       "area": "projection",
       "title": "Introduce V21 feature audit before changing projected total formula",
