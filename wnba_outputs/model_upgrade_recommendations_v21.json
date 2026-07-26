@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-07-25T12:16:36.727010+00:00",
+  "created_at_utc": "2026-07-26T12:18:17.387842+00:00",
   "status": "OK",
   "rows": {
     "recommendations": 8,
@@ -8,7 +8,7 @@
   "data_rows": {
     "game_model_features_v21": 13,
     "team_features_v21": 17,
-    "player_features_v21": 337,
+    "player_features_v21": 353,
     "market_features_v21": 7,
     "signal_execution_groups_v20": 27
   },
@@ -30,18 +30,18 @@
   },
   "top_priorities": [
     {
-      "created_at_utc": "2026-07-25T12:16:36.723626+00:00",
+      "created_at_utc": "2026-07-26T12:18:17.384495+00:00",
       "priority": 1,
       "area": "data",
       "title": "Promote official WNBA mobile data to primary model source",
       "status": "READY",
-      "evidence": "Official player logs/team dash/player dash are ready. Rows: game=13, team=17, player=337.",
+      "evidence": "Official player logs/team dash/player dash are ready. Rows: game=13, team=17, player=353.",
       "recommended_change": "Use official_mobile_playergamelogs_v21, official_mobile_team_dash_base_v21, and official_mobile_player_dash_base_v21 as primary feature inputs before SportsDataverse fallback.",
       "safety_gate": "Safe: read-only feature input promotion; no formula change until backtest.",
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-07-25T12:16:36.724689+00:00",
+      "created_at_utc": "2026-07-26T12:18:17.385537+00:00",
       "priority": 1,
       "area": "execution",
       "title": "Separate model signal quality from execution fill quality",
@@ -52,7 +52,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-07-25T12:16:36.724696+00:00",
+      "created_at_utc": "2026-07-26T12:18:17.385544+00:00",
       "priority": 1,
       "area": "hermes",
       "title": "Keep Hermes in manual approval during model upgrade",
@@ -63,7 +63,7 @@
       "owner": "hermes"
     },
     {
-      "created_at_utc": "2026-07-25T12:16:36.723836+00:00",
+      "created_at_utc": "2026-07-26T12:18:17.384704+00:00",
       "priority": 1,
       "area": "market",
       "title": "Add market consensus and line-shopping range to model context",
@@ -74,7 +74,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-07-25T12:16:36.724009+00:00",
+      "created_at_utc": "2026-07-26T12:18:17.384883+00:00",
       "priority": 1,
       "area": "projection",
       "title": "Introduce V21 feature audit before changing projected total formula",
