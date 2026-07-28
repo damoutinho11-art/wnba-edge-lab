@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-07-27T13:50:46.683732+00:00",
+  "created_at_utc": "2026-07-28T13:08:56.263520+00:00",
   "status": "OK",
   "version": "v21",
   "rows": {
@@ -15,7 +15,7 @@
     "official_mobile_team_dash_base_v21": 28,
     "official_mobile_player_dash_base_v21": 378,
     "official_mobile_dreb_allowed_rankings_v21": 15,
-    "odds_totals_latest_v21": 122,
+    "odds_totals_latest_v21": 126,
     "sdv_wnba_team_boxscores": 408,
     "sdv_wnba_player_boxscores": 4908,
     "sdv_wnba_pbp": 84009,
