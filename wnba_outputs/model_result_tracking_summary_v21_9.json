@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-08-05T13:08:55.828652+00:00",
+  "created_at_utc": "2026-08-06T13:09:24.896526+00:00",
   "status": "OK",
   "version": "v21.9",
   "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
@@ -38,7 +38,7 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": 1.0,
-      "avg_advisory_score": 6.4472,
+      "avg_advisory_score": 6.5727,
       "avg_clv_points": -0.9286,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -79,7 +79,7 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 0.1563,
+      "avg_advisory_score": 0.1463,
       "avg_clv_points": NaN,
       "positive_clv_rate": null,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -92,7 +92,7 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": -1.8467,
+      "avg_advisory_score": -0.8857,
       "avg_clv_points": NaN,
       "positive_clv_rate": null,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -107,7 +107,7 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": 1.0,
-      "avg_advisory_score": 1.7202,
+      "avg_advisory_score": 1.9084,
       "avg_clv_points": -1.25,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
