@@ -1,19 +1,19 @@
 {
-  "created_at_utc": "2026-08-09T11:52:46.853666+00:00",
+  "created_at_utc": "2026-08-10T12:06:26.587714+00:00",
   "status": "OK",
   "version": "v21",
   "rows": {
-    "base_actions": 15,
-    "advisory_scores": 15,
-    "hermes_advisory_queue": 15
+    "base_actions": 14,
+    "advisory_scores": 14,
+    "hermes_advisory_queue": 14
   },
   "label_counts": {
-    "NEUTRAL": 15
+    "NEUTRAL": 14
   },
   "risk_flag_counts": {
     "NO_LINE": 9,
-    "LOW_MODEL_EDGE": 7,
-    "NO_SIDE": 6,
+    "LOW_MODEL_EDGE": 6,
+    "NO_SIDE": 5,
     "WIDE_MARKET_RANGE": 1
   }
 }
