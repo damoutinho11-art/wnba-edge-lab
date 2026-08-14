@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-08-13T12:04:09.381057+00:00",
+  "created_at_utc": "2026-08-14T12:04:56.770720+00:00",
   "status": "OK",
   "version": "v21.2",
   "rows": {
@@ -9,7 +9,7 @@
     "warnings": 2
   },
   "inputs": {
-    "game_model_features_v21": 11,
+    "game_model_features_v21": 10,
     "team_features_v21": 17,
     "player_features_v21": 337,
     "market_features_v21": 5,
