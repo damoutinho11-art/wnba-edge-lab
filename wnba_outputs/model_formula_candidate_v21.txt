@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21.2 FORMULA CANDIDATE
 ======================================================
-Created: 2026-08-14T12:04:56.769923+00:00
+Created: 2026-08-15T11:36:07.029377+00:00
 
 Status: NOT APPLIED
 
@@ -17,15 +17,15 @@ Do first:
 4. Do not change projection formula until projection_minus_line is populated and graded.
 
 Candidate table:
-- market_total_range | CANDIDATE | CONFIDENCE_GATE_CANDIDATE | market_total_range found in market_features_v21.market_total_range; n=5, mean=1.4000, min=1.0000, max=2.0000, std=0.5477
-- combined_playerlog_pts_l5 | CANDIDATE | BACKTEST_ONLY | combined_playerlog_pts_l5 found in game_model_features_v21.combined_playerlog_pts_l5; n=9, mean=170.6222, min=146.2000, max=182.4000, std=13.1983
-- playerlog_team_pts_l5 | CANDIDATE | BACKTEST_ONLY | playerlog_team_pts_l5 found in team_features_v21.playerlog_team_pts_l5; n=15, mean=84.4133, min=70.4000, max=97.0000, std=7.3085
-- dash_pts | CANDIDATE | BACKTEST_ONLY | dash_pts found in team_features_v21.dash_pts; n=15, mean=85.6267, min=74.7000, max=92.9000, std=5.0345
-- minutes_l5 | CANDIDATE | PROP_SCREENING_CANDIDATE | minutes_l5 found in player_features_v21.minutes_l5; n=337, mean=17.4762, min=0.1000, max=35.2800, std=8.9720
-- dreb_allowed_blend | CANDIDATE | PROP_SCREENING_CANDIDATE | dreb_allowed_blend found in team_features_v21.dreb_allowed_blended_dreb_allowed; n=15, mean=25.0705, min=23.5325, max=27.0263, std=1.2887
-- bench_minutes_share | CANDIDATE | ROTATION_CONTEXT | bench_minutes_share found in team_features_v21.bench_minutes_share; n=15, mean=0.2872, min=0.2255, max=0.3954, std=0.0400
-- starter_minutes_concentration | CANDIDATE | ROTATION_CONTEXT | starter_minutes_concentration found in team_features_v21.starter_minutes_concentration; n=15, mean=0.7128, min=0.6046, max=0.7745, std=0.0400
-- scoring_dependency | CANDIDATE | PLAYER_CONTEXT | scoring_dependency found in player_features_v21.scoring_dependency; n=337, mean=0.0814, min=0.0000, max=0.2765, std=0.0606
-- market_total_median | CANDIDATE | MARKET_CONTEXT | market_total_median found in market_features_v21.market_total_median; n=5, mean=180.0000, min=174.5000, max=187.0000, std=4.9497
+- market_total_range | CANDIDATE | CONFIDENCE_GATE_CANDIDATE | market_total_range found in market_features_v21.market_total_range; n=6, mean=0.7500, min=0.0000, max=2.0000, std=0.8803
+- combined_playerlog_pts_l5 | CANDIDATE | BACKTEST_ONLY | combined_playerlog_pts_l5 found in game_model_features_v21.combined_playerlog_pts_l5; n=10, mean=179.1000, min=169.0000, max=189.2000, std=7.3920
+- playerlog_team_pts_l5 | CANDIDATE | BACKTEST_ONLY | playerlog_team_pts_l5 found in team_features_v21.playerlog_team_pts_l5; n=15, mean=88.4000, min=75.8000, max=95.6000, std=5.5780
+- dash_pts | CANDIDATE | BACKTEST_ONLY | dash_pts found in team_features_v21.dash_pts; n=15, mean=87.4533, min=79.3000, max=96.3000, std=4.4873
+- minutes_l5 | CANDIDATE | PROP_SCREENING_CANDIDATE | minutes_l5 found in player_features_v21.minutes_l5; n=362, mean=16.6763, min=0.1000, max=35.5000, std=9.2937
+- dreb_allowed_blend | CANDIDATE | PROP_SCREENING_CANDIDATE | dreb_allowed_blend found in team_features_v21.dreb_allowed_blended_dreb_allowed; n=15, mean=25.1166, min=23.9751, max=26.9152, std=1.0106
+- starter_minutes_concentration | CANDIDATE | ROTATION_CONTEXT | starter_minutes_concentration found in team_features_v21.starter_minutes_concentration; n=15, mean=0.7151, min=0.6453, max=0.7726, std=0.0333
+- bench_minutes_share | CANDIDATE | ROTATION_CONTEXT | bench_minutes_share found in team_features_v21.bench_minutes_share; n=15, mean=0.2849, min=0.2274, max=0.3547, std=0.0333
+- scoring_dependency | CANDIDATE | PLAYER_CONTEXT | scoring_dependency found in player_features_v21.scoring_dependency; n=362, mean=0.0796, min=0.0000, max=0.2803, std=0.0598
+- market_total_median | CANDIDATE | MARKET_CONTEXT | market_total_median found in market_features_v21.market_total_median; n=6, mean=178.3333, min=171.5000, max=188.5000, std=6.6156
 - projection_minus_line | MISSING_OR_INSUFFICIENT | DIAGNOSTIC | projection_minus_line not usable. Matched column=projection_minus_line; numeric rows=0.
 - execution_pl_tracking | MISSING_OR_INSUFFICIENT | DIAGNOSTIC | No numeric execution P/L column detected in signal_execution_groups_v20.
