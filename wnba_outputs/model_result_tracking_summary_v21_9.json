@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-09-02T15:13:35.335993+00:00",
+  "created_at_utc": "2026-09-03T15:07:16.235943+00:00",
   "status": "OK",
   "version": "v21.9",
   "purpose": "Validate advisory scores, labels, risk flags, and candidates against results/CLV before any formula change.",
@@ -38,7 +38,7 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": 1.0,
-      "avg_advisory_score": 5.8103,
+      "avg_advisory_score": 5.9279,
       "avg_clv_points": -0.9286,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -73,26 +73,13 @@
     },
     {
       "group": "NO_SIDE, LOW_MODEL_EDGE",
-      "rows": 7,
+      "rows": 8,
       "known_results": 0,
       "won": 0,
       "lost": 0,
       "push": 0,
       "win_rate_decided": null,
-      "avg_advisory_score": 0.1427,
-      "avg_clv_points": NaN,
-      "positive_clv_rate": null,
-      "sample_gate": "INSUFFICIENT_SAMPLE"
-    },
-    {
-      "group": "NO_SIDE, WIDE_MARKET_RANGE, LOW_MODEL_EDGE",
-      "rows": 1,
-      "known_results": 0,
-      "won": 0,
-      "lost": 0,
-      "push": 0,
-      "win_rate_decided": null,
-      "avg_advisory_score": -2.0,
+      "avg_advisory_score": 0.1249,
       "avg_clv_points": NaN,
       "positive_clv_rate": null,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -107,7 +94,7 @@
       "lost": 0,
       "push": 0,
       "win_rate_decided": 1.0,
-      "avg_advisory_score": 1.6057,
+      "avg_advisory_score": 1.7724,
       "avg_clv_points": -1.25,
       "positive_clv_rate": 0.0,
       "sample_gate": "INSUFFICIENT_SAMPLE"
@@ -150,8 +137,7 @@
     "advisory_risk_flag_counts": {
       "NO_LINE": 9,
       "LOW_MODEL_EDGE": 9,
-      "NO_SIDE": 8,
-      "WIDE_MARKET_RANGE": 1
+      "NO_SIDE": 8
     },
     "backtest_rows": {
       "backtest": 12,

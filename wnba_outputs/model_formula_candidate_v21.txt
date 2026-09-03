@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21.2 FORMULA CANDIDATE
 ======================================================
-Created: 2026-09-02T15:13:34.465696+00:00
+Created: 2026-09-03T15:07:15.618050+00:00
 
 Status: NOT APPLIED
 
@@ -17,7 +17,7 @@ Do first:
 4. Do not change projection formula until projection_minus_line is populated and graded.
 
 Candidate table:
-- market_total_range | CANDIDATE | CONFIDENCE_GATE_CANDIDATE | market_total_range found in market_features_v21.market_total_range; n=8, mean=0.6250, min=0.0000, max=2.0000, std=0.7440
+- market_total_range | CANDIDATE | CONFIDENCE_GATE_CANDIDATE | market_total_range found in market_features_v21.market_total_range; n=8, mean=0.5000, min=0.0000, max=1.0000, std=0.5345
 - combined_playerlog_pts_l5 | CANDIDATE | BACKTEST_ONLY | combined_playerlog_pts_l5 found in game_model_features_v21.combined_playerlog_pts_l5; n=12, mean=170.9833, min=154.2000, max=186.2000, std=10.8646
 - playerlog_team_pts_l5 | CANDIDATE | BACKTEST_ONLY | playerlog_team_pts_l5 found in team_features_v21.playerlog_team_pts_l5; n=15, mean=84.4133, min=70.4000, max=97.0000, std=7.3085
 - dash_pts | CANDIDATE | BACKTEST_ONLY | dash_pts found in team_features_v21.dash_pts; n=15, mean=85.6267, min=74.7000, max=92.9000, std=5.0345
