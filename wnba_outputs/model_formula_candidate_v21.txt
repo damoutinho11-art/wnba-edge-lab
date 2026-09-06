@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21.2 FORMULA CANDIDATE
 ======================================================
-Created: 2026-09-05T13:59:06.807407+00:00
+Created: 2026-09-06T14:18:45.687429+00:00
 
 Status: NOT APPLIED
 
@@ -26,6 +26,6 @@ Candidate table:
 - bench_minutes_share | CANDIDATE | ROTATION_CONTEXT | bench_minutes_share found in team_features_v21.bench_minutes_share; n=15, mean=0.2872, min=0.2255, max=0.3954, std=0.0400
 - starter_minutes_concentration | CANDIDATE | ROTATION_CONTEXT | starter_minutes_concentration found in team_features_v21.starter_minutes_concentration; n=15, mean=0.7128, min=0.6046, max=0.7745, std=0.0400
 - scoring_dependency | CANDIDATE | PLAYER_CONTEXT | scoring_dependency found in player_features_v21.scoring_dependency; n=337, mean=0.0814, min=0.0000, max=0.2765, std=0.0606
-- market_total_median | CANDIDATE | MARKET_CONTEXT | market_total_median found in market_features_v21.market_total_median; n=8, mean=174.0625, min=161.5000, max=189.5000, std=8.2784
+- market_total_median | CANDIDATE | MARKET_CONTEXT | market_total_median found in market_features_v21.market_total_median; n=8, mean=174.0000, min=161.5000, max=189.5000, std=8.3152
 - projection_minus_line | MISSING_OR_INSUFFICIENT | DIAGNOSTIC | projection_minus_line not usable. Matched column=projection_minus_line; numeric rows=0.
 - execution_pl_tracking | MISSING_OR_INSUFFICIENT | DIAGNOSTIC | No numeric execution P/L column detected in signal_execution_groups_v20.
