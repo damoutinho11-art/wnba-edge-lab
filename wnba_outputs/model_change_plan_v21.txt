@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21 MODEL CHANGE PLAN
 ====================================================
-Created: 2026-09-12T14:16:52.408182+00:00
+Created: 2026-09-13T15:01:46.576441+00:00
 
 Safety:
 - No formula changes applied.
