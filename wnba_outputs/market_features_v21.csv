@@ -1,5 +1,5 @@
 event_id,home_team,away_team,market_total_mean,market_total_median,market_total_min,market_total_max,market_total_range,market_total_books,market_total_rows
-1fd95269363baafb356ca2e2140f5726,Atlanta Dream,Washington Mystics,163.6875,163.5,163.0,164.5,1.5,8,16
-4a5f7b77830bdea66bedfe80560e7082,Minnesota Lynx,New York Liberty,172.6875,172.5,172.5,173.5,1.0,8,16
-8ed9b8e2a5129eb2939c6e2b53c3a580,Golden State Valkyries,Dallas Wings,154.4375,154.5,154.0,154.5,0.5,8,16
-a0ce9e6bd1e1c5eedac84fa0e0c2d5d6,Las Vegas Aces,Indiana Fever,181.6875,181.5,181.5,182.5,1.0,8,16
+2e0dc047f09840084e34e02f5d39b8fb,Washington Mystics,Atlanta Dream,164.5,164.5,164.5,164.5,0.0,8,16
+9c267dad149001fe5eccdf229290ec13,Dallas Wings,Golden State Valkyries,155.75,155.75,155.5,156.0,0.5,8,16
+e664a4a91ee3581675f74695e9b7e8e6,Indiana Fever,Las Vegas Aces,183.22222222222223,183.0,183.0,183.5,0.5,9,18
+eca9a911020f3960d13599af0595d164,New York Liberty,Minnesota Lynx,172.38888888888889,172.5,172.0,173.5,1.5,9,18
