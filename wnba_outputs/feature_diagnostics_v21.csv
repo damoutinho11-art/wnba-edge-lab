@@ -1,157 +1,157 @@
 created_at_utc,file,column,normalized_column,rows,non_null,nulls,numeric_non_null,numeric_mean,numeric_min,numeric_max,sample_values
-2026-10-04T15:54:47.854469+00:00,game_model_features_v21,game,game,8,2,6,0,,,,LVA @ GSV; NYL @ ATL
-2026-10-04T15:54:47.855832+00:00,game_model_features_v21,away_team,away_team,8,8,0,0,,,,LVA; IND; MIN
-2026-10-04T15:54:47.856626+00:00,game_model_features_v21,home_team,home_team,8,8,0,0,,,,DAL; GSV; CHI
-2026-10-04T15:54:47.857407+00:00,game_model_features_v21,created_at_utc,created_at_utc,8,8,0,0,,,,2026-10-04T15:54:47.497898+00:00; 2026-10-04T15:54:47.498328+00:00; 2026-10-04T15:54:47.498684+00:00
-2026-10-04T15:54:47.858157+00:00,game_model_features_v21,projection,projection,8,6,2,6,172.13666666666668,169.18,175.52,175.0; 169.89; 169.18
-2026-10-04T15:54:47.859072+00:00,game_model_features_v21,line,line,8,2,6,2,166.5625,160.125,173.0,160.125; 173.0
-2026-10-04T15:54:47.859890+00:00,game_model_features_v21,edge,edge,8,6,2,6,2.72,-1.5,6.52,-1.5; 2.89; -0.82
-2026-10-04T15:54:47.860695+00:00,game_model_features_v21,confidence,confidence,8,6,2,6,50.0,34.0,73.0,34.0; 41.0; 45.0
-2026-10-04T15:54:47.861510+00:00,game_model_features_v21,away_team_pts_for_l3,away_team_pts_for_l3,8,8,0,8,89.25,80.33333333333333,108.66666666666669,94.0; 108.66666666666669; 80.33333333333333
-2026-10-04T15:54:47.862273+00:00,game_model_features_v21,away_team_pts_for_l5,away_team_pts_for_l5,8,8,0,8,89.125,82.0,102.4,90.2; 102.4; 82.0
-2026-10-04T15:54:47.862977+00:00,game_model_features_v21,away_team_pts_for_l10,away_team_pts_for_l10,8,8,0,8,88.875,80.7,98.5,86.4; 98.5; 88.6
-2026-10-04T15:54:47.863650+00:00,game_model_features_v21,away_team_margin_l5,away_team_margin_l5,8,8,0,8,3.6500000000000004,-2.4,8.6,6.6; 7.2; 0.8
-2026-10-04T15:54:47.864387+00:00,game_model_features_v21,away_playerlog_team_pts_l5,away_playerlog_team_pts_l5,8,8,0,8,87.825,75.8,97.0,93.2; 91.8; 87.8
-2026-10-04T15:54:47.865106+00:00,game_model_features_v21,away_starter_minutes_concentration,away_starter_minutes_concentration,8,8,0,8,0.7323930270940178,0.6869807263848201,0.7745172141582181,0.7205171673679649; 0.7211576636189743; 0.743221783041188
-2026-10-04T15:54:47.865814+00:00,game_model_features_v21,away_bench_minutes_share,away_bench_minutes_share,8,8,0,8,0.26760697290598223,0.2254827858417818,0.3130192736151799,0.279482832632035; 0.2788423363810258; 0.256778216958812
-2026-10-04T15:54:47.866487+00:00,game_model_features_v21,away_dash_pts,away_dash_pts,8,7,1,7,89.34285714285714,83.9,92.9,91.0; 92.9; 88.4
-2026-10-04T15:54:47.867277+00:00,game_model_features_v21,away_dash_plus_minus,away_dash_plus_minus,8,7,1,7,3.4,-3.1,9.3,2.4; 5.4; 9.3
-2026-10-04T15:54:47.868078+00:00,game_model_features_v21,away_dreb_allowed_blended_dreb_allowed,away_dreb_allowed_blended_dreb_allowed,8,8,0,8,24.923421717171713,23.53246753246753,26.98989898989899,26.09025974025974; 24.79025974025974; 23.704545454545453
-2026-10-04T15:54:47.868747+00:00,game_model_features_v21,away_dreb_allowed_rank,away_dreb_allowed_rank,8,8,0,8,8.625,2.0,15.0,5.0; 8.0; 12.0
-2026-10-04T15:54:47.869447+00:00,game_model_features_v21,home_team_pts_for_l3,home_team_pts_for_l3,8,8,0,8,84.91666666666667,79.0,95.0,95.0; 84.66666666666667; 79.0
-2026-10-04T15:54:47.870163+00:00,game_model_features_v21,home_team_pts_for_l5,home_team_pts_for_l5,8,8,0,8,85.6,80.6,94.6,89.2; 80.8; 80.6
-2026-10-04T15:54:47.870853+00:00,game_model_features_v21,home_team_pts_for_l10,home_team_pts_for_l10,8,8,0,8,86.61250000000001,81.7,94.6,88.5; 81.7; 82.5
-2026-10-04T15:54:47.871517+00:00,game_model_features_v21,home_team_margin_l5,home_team_margin_l5,8,8,0,8,5.025,-7.6,14.4,12.8; 14.4; -7.6
-2026-10-04T15:54:47.872220+00:00,game_model_features_v21,home_playerlog_team_pts_l5,home_playerlog_team_pts_l5,8,8,0,8,82.675,75.8,89.2,89.2; 83.8; 82.4
-2026-10-04T15:54:47.872907+00:00,game_model_features_v21,home_starter_minutes_concentration,home_starter_minutes_concentration,8,8,0,8,0.7032885895816348,0.6045510141038569,0.767690036472564,0.7231420636748725; 0.6986862770826151; 0.7061453953670802
-2026-10-04T15:54:47.873588+00:00,game_model_features_v21,home_bench_minutes_share,home_bench_minutes_share,8,8,0,8,0.2967114104183653,0.2323099635274361,0.3954489858961432,0.2768579363251274; 0.3013137229173849; 0.2938546046329197
-2026-10-04T15:54:47.874277+00:00,game_model_features_v21,home_dash_pts,home_dash_pts,8,7,1,7,85.48571428571428,82.8,88.9,88.9; 86.4; 82.8
-2026-10-04T15:54:47.875029+00:00,game_model_features_v21,home_dash_plus_minus,home_dash_plus_minus,8,7,1,7,3.0142857142857147,-3.7,8.4,4.1; 8.4; -3.5
-2026-10-04T15:54:47.875760+00:00,game_model_features_v21,home_dreb_allowed_blended_dreb_allowed,home_dreb_allowed_blended_dreb_allowed,8,8,0,8,24.871744227994228,23.53246753246753,26.21818181818182,26.03181818181818; 25.61753246753247; 26.21818181818182
-2026-10-04T15:54:47.876472+00:00,game_model_features_v21,home_dreb_allowed_rank,home_dreb_allowed_rank,8,8,0,8,9.0,3.0,15.0,6.0; 7.0; 3.0
-2026-10-04T15:54:47.877168+00:00,game_model_features_v21,combined_playerlog_pts_l5,combined_playerlog_pts_l5,8,8,0,8,170.5,155.8,182.4,182.4; 175.6; 170.2
-2026-10-04T15:54:47.877867+00:00,game_model_features_v21,combined_dash_pts,combined_dash_pts,8,6,2,6,175.55000000000004,170.5,179.9,179.9; 179.3; 171.2
-2026-10-04T15:54:47.878587+00:00,game_model_features_v21,projection_minus_line,projection_minus_line,8,0,8,0,,,,
-2026-10-04T15:54:47.879267+00:00,game_model_features_v21,event_id,event_id,8,2,6,0,,,,20925a36b67b16ad3ab7e3e508f04057; b9425fe89f25de73a858e88be2dd535e
-2026-10-04T15:54:47.880002+00:00,game_model_features_v21,home_team_market,home_team_market,8,2,6,0,,,,Golden State Valkyries; Atlanta Dream
-2026-10-04T15:54:47.880687+00:00,game_model_features_v21,away_team_market,away_team_market,8,2,6,0,,,,Las Vegas Aces; New York Liberty
-2026-10-04T15:54:47.881394+00:00,game_model_features_v21,market_total_mean,market_total_mean,8,2,6,2,166.5625,160.125,173.0,160.125; 173.0
-2026-10-04T15:54:47.882124+00:00,game_model_features_v21,market_total_median,market_total_median,8,2,6,2,166.625,160.25,173.0,160.25; 173.0
-2026-10-04T15:54:47.882853+00:00,game_model_features_v21,market_total_min,market_total_min,8,2,6,2,166.0,159.5,172.5,159.5; 172.5
-2026-10-04T15:54:47.883593+00:00,game_model_features_v21,market_total_max,market_total_max,8,2,6,2,167.0,160.5,173.5,160.5; 173.5
-2026-10-04T15:54:47.884318+00:00,game_model_features_v21,market_total_range,market_total_range,8,2,6,2,1.0,1.0,1.0,1.0; 1.0
-2026-10-04T15:54:47.885063+00:00,game_model_features_v21,market_total_books,market_total_books,8,2,6,2,8.0,8.0,8.0,8.0; 8.0
-2026-10-04T15:54:47.885795+00:00,game_model_features_v21,market_total_rows,market_total_rows,8,2,6,2,16.0,16.0,16.0,16.0; 16.0
-2026-10-04T15:54:47.886524+00:00,game_model_features_v21,_home_code,home_code,8,2,6,0,,,,GSV; ATL
-2026-10-04T15:54:47.887272+00:00,game_model_features_v21,_away_code,away_code,8,2,6,0,,,,LVA; NYL
-2026-10-04T15:54:47.888070+00:00,team_features_v21,team,team,17,17,0,0,,,,ATL; CHI; CON
-2026-10-04T15:54:47.888758+00:00,team_features_v21,created_at_utc,created_at_utc,17,17,0,0,,,,2026-10-04T15:54:44.709760+00:00; 2026-10-04T15:54:44.747057+00:00; 2026-10-04T15:54:44.782659+00:00
-2026-10-04T15:54:47.889478+00:00,team_features_v21,source_priority,source_priority,17,17,0,0,,,,official_mobile_first; official_mobile_first; official_mobile_first
-2026-10-04T15:54:47.890129+00:00,team_features_v21,team_games_official,team_games_official,17,17,0,17,68.94117647058823,0.0,84.0,84; 84; 84
-2026-10-04T15:54:47.890904+00:00,team_features_v21,team_pts_for_l3,team_pts_for_l3,17,15,2,15,84.88888888888889,73.33333333333333,108.66666666666669,83.33333333333333; 79.0; 75.33333333333333
-2026-10-04T15:54:47.891627+00:00,team_features_v21,team_pts_for_l5,team_pts_for_l5,17,15,2,15,85.28,76.0,102.4,94.6; 80.6; 76.2
-2026-10-04T15:54:47.892375+00:00,team_features_v21,team_pts_for_l10,team_pts_for_l10,17,15,2,15,86.3,76.3,98.5,94.6; 82.5; 76.3
-2026-10-04T15:54:47.893148+00:00,team_features_v21,team_margin_l3,team_margin_l3,17,15,2,15,0.5111111111111108,-23.666666666666668,22.0,-1.0; -16.0; -23.666666666666668
-2026-10-04T15:54:47.893893+00:00,team_features_v21,team_margin_l5,team_margin_l5,17,15,2,15,0.22666666666666674,-14.8,14.4,8.6; -7.6; -14.8
-2026-10-04T15:54:47.894608+00:00,team_features_v21,team_margin_l10,team_margin_l10,17,15,2,15,-0.12666666666666693,-12.8,11.3,9.6; -6.2; -12.8
-2026-10-04T15:54:47.895351+00:00,team_features_v21,team_dreb_pg_official,team_dreb_pg_official,17,15,2,15,25.029126984126986,22.325,26.98809523809524,26.23809523809524; 25.547619047619047; 23.297619047619047
-2026-10-04T15:54:47.896133+00:00,team_features_v21,team_ast_pg_official,team_ast_pg_official,17,15,2,15,20.44555555555556,18.166666666666668,22.55952380952381,21.25; 20.33333333333333; 18.166666666666668
-2026-10-04T15:54:47.896899+00:00,team_features_v21,team_tov_pg_official,team_tov_pg_official,17,15,2,15,13.967460317460318,12.61904761904762,15.571428571428571,13.214285714285714; 15.19047619047619; 14.19047619047619
-2026-10-04T15:54:47.897609+00:00,team_features_v21,playerlog_team_pts_l3,playerlog_team_pts_l3,17,15,2,15,82.77777777777779,63.333333333333336,96.66666666666669,83.0; 79.0; 63.333333333333336
-2026-10-04T15:54:47.898377+00:00,team_features_v21,playerlog_team_pts_l5,playerlog_team_pts_l5,17,15,2,15,84.41333333333333,70.4,97.0,83.8; 82.4; 70.4
-2026-10-04T15:54:47.899114+00:00,team_features_v21,playerlog_team_pts_l10,playerlog_team_pts_l10,17,15,2,15,84.4488888888889,74.4,92.4,86.6; 80.9; 74.4
-2026-10-04T15:54:47.899868+00:00,team_features_v21,playerlog_team_games,playerlog_team_games,17,15,2,15,46.13333333333333,9.0,53.0,51.0; 52.0; 53.0
-2026-10-04T15:54:47.900692+00:00,team_features_v21,playerlog_total_minutes_pg,playerlog_total_minutes_pg,17,15,2,15,200.5662836639252,200.0111111111111,201.52745098039216,200.5176470588235; 200.0519230769231; 200.5358490566038
-2026-10-04T15:54:47.901453+00:00,team_features_v21,starter_minutes_concentration,starter_minutes_concentration,17,15,2,15,0.7127780537008637,0.6045510141038569,0.7745172141582181,0.767690036472564; 0.7061453953670802; 0.6874812878962604
-2026-10-04T15:54:47.902215+00:00,team_features_v21,bench_minutes_share,bench_minutes_share,17,15,2,15,0.2872219462991365,0.2254827858417818,0.3954489858961432,0.2323099635274361; 0.2938546046329197; 0.3125187121037394
-2026-10-04T15:54:47.902972+00:00,team_features_v21,team_fga_pg_playerlog,team_fga_pg_playerlog,17,15,2,15,67.17152657224798,63.64705882352941,71.09615384615384,67.88235294117646; 66.5576923076923; 67.43396226415095
-2026-10-04T15:54:47.903716+00:00,team_features_v21,team_fta_pg_playerlog,team_fta_pg_playerlog,17,15,2,15,19.216508090092997,16.403846153846153,25.55555555555556,19.11764705882353; 18.442307692307693; 18.471698113207548
-2026-10-04T15:54:47.904477+00:00,team_features_v21,team_3pm_pg_playerlog,team_3pm_pg_playerlog,17,15,2,15,8.318518834723053,5.588235294117647,10.22222222222222,9.392156862745098; 6.538461538461538; 6.0
-2026-10-04T15:54:47.905241+00:00,team_features_v21,team_ast_pg_playerlog,team_ast_pg_playerlog,17,15,2,15,19.982267565952363,17.471698113207548,22.98076923076923,21.19607843137255; 19.307692307692307; 17.471698113207548
-2026-10-04T15:54:47.906012+00:00,team_features_v21,team_reb_pg_playerlog,team_reb_pg_playerlog,17,15,2,15,33.29231227727343,27.33333333333333,36.72549019607843,36.72549019607843; 35.34615384615385; 32.15094339622642
-2026-10-04T15:54:47.906729+00:00,team_features_v21,dash_gp,dash_gp,17,15,2,15,8.0,7.0,9.0,7.0; 8.0; 9.0
-2026-10-04T15:54:47.907468+00:00,team_features_v21,dash_wins,dash_wins,17,15,2,15,4.0,1.0,6.0,5.0; 3.0; 1.0
-2026-10-04T15:54:47.908232+00:00,team_features_v21,dash_losses,dash_losses,17,15,2,15,4.0,2.0,8.0,2.0; 5.0; 8.0
-2026-10-04T15:54:47.908975+00:00,team_features_v21,dash_win_pct,dash_win_pct,17,15,2,15,0.5102666666666666,0.111,0.75,0.714; 0.375; 0.111
-2026-10-04T15:54:47.909680+00:00,team_features_v21,dash_pts,dash_pts,17,15,2,15,85.62666666666668,74.7,92.9,83.9; 82.8; 74.7
-2026-10-04T15:54:47.910436+00:00,team_features_v21,dash_plus_minus,dash_plus_minus,17,15,2,15,0.27333333333333326,-14.2,9.3,4.1; -3.5; -14.2
-2026-10-04T15:54:47.911203+00:00,team_features_v21,dreb_allowed_rank,dreb_allowed_rank,17,15,2,15,8.0,1.0,15.0,15.0; 3.0; 4.0
-2026-10-04T15:54:47.911955+00:00,team_features_v21,dreb_allowed_blended_dreb_allowed,dreb_allowed_blended_dreb_allowed,17,15,2,15,25.070461760461757,23.53246753246753,27.02626262626263,23.53246753246753; 26.21818181818182; 26.193939393939395
-2026-10-04T15:54:47.912671+00:00,team_features_v21,dreb_allowed_dreb_allowed_2025,dreb_allowed_dreb_allowed_2025,17,13,4,13,25.52622377622378,23.863636363636363,27.63636363636364,24.363636363636363; 23.863636363636363; 26.545454545454547
-2026-10-04T15:54:47.913456+00:00,team_features_v21,dreb_allowed_dreb_allowed_2026,dreb_allowed_dreb_allowed_2026,17,15,2,15,24.69206349206349,21.571428571428573,29.75,22.285714285714285; 29.75; 25.666666666666668
-2026-10-04T15:54:47.914255+00:00,team_features_v21,dreb_allowed_signal,dreb_allowed_signal,17,9,8,0,,,,UNDER; OVER; OVER
-2026-10-04T15:54:47.915260+00:00,player_features_v21,team,team,337,337,0,0,,,,ATL; ATL; ATL
-2026-10-04T15:54:47.916199+00:00,player_features_v21,player,player,337,337,0,0,,,,Aaliyah Nye; Allisha Gray; Angel Reese
-2026-10-04T15:54:47.917142+00:00,player_features_v21,created_at_utc,created_at_utc,337,337,0,0,,,,2026-10-04T15:54:45.244438+00:00; 2026-10-04T15:54:45.251518+00:00; 2026-10-04T15:54:45.258524+00:00
-2026-10-04T15:54:47.917818+00:00,player_features_v21,games,games,337,337,0,337,19.596439169139465,1.0,53.0,5; 49; 7
-2026-10-04T15:54:47.918552+00:00,player_features_v21,minutes_avg,minutes_avg,337,337,0,337,17.548631498295567,0.1,35.08979591836735,1.2; 34.381632653061224; 31.2
-2026-10-04T15:54:47.919548+00:00,player_features_v21,minutes_l3,minutes_l3,337,337,0,337,17.35316518298714,0.1,35.666666666666664,1.1666666666666667; 32.266666666666666; 30.466666666666665
-2026-10-04T15:54:47.920514+00:00,player_features_v21,minutes_l5,minutes_l5,337,337,0,337,17.476186943620178,0.1,35.28,1.2; 33.58; 30.44
-2026-10-04T15:54:47.921416+00:00,player_features_v21,points_avg,points_avg,337,337,0,337,6.736399420791786,0.0,23.5531914893617,0.0; 18.693877551020407; 13.142857142857142
-2026-10-04T15:54:47.922345+00:00,player_features_v21,points_l3,points_l3,337,337,0,337,6.590009891196834,0.0,27.33333333333333,0.0; 17.333333333333332; 15.0
-2026-10-04T15:54:47.923279+00:00,player_features_v21,points_l5,points_l5,337,337,0,337,6.687932739861522,0.0,26.8,0.0; 18.6; 13.8
-2026-10-04T15:54:47.924111+00:00,player_features_v21,rebounds_avg,rebounds_avg,337,337,0,337,2.818412387523215,0.0,12.566666666666666,0.0; 5.142857142857143; 11.0
-2026-10-04T15:54:47.925046+00:00,player_features_v21,rebounds_l3,rebounds_l3,337,337,0,337,2.7576656775469828,0.0,14.333333333333334,0.0; 1.3333333333333333; 10.0
-2026-10-04T15:54:47.925969+00:00,player_features_v21,rebounds_l5,rebounds_l5,337,337,0,337,2.782591493570722,0.0,14.2,0.0; 3.4; 9.4
-2026-10-04T15:54:47.926823+00:00,player_features_v21,dreb_avg,dreb_avg,337,337,0,337,2.1027528513612093,0.0,8.5,0.0; 4.326530612244898; 5.571428571428571
-2026-10-04T15:54:47.927707+00:00,player_features_v21,dreb_l3,dreb_l3,337,337,0,337,2.052917903066271,0.0,10.0,0.0; 1.3333333333333333; 5.333333333333333
-2026-10-04T15:54:47.928650+00:00,player_features_v21,dreb_l5,dreb_l5,337,337,0,337,2.0767556874381796,0.0,10.2,0.0; 3.0; 5.2
-2026-10-04T15:54:47.929462+00:00,player_features_v21,assists_avg,assists_avg,337,337,0,337,1.7279534294361891,0.0,8.958333333333334,0.2; 3.183673469387755; 3.2857142857142856
-2026-10-04T15:54:47.930387+00:00,player_features_v21,assists_l3,assists_l3,337,337,0,337,1.7289812067260137,0.0,9.0,0.3333333333333333; 1.3333333333333333; 4.666666666666667
-2026-10-04T15:54:47.931305+00:00,player_features_v21,assists_l5,assists_l5,337,337,0,337,1.725519287833828,0.0,8.8,0.2; 1.2; 3.8
-2026-10-04T15:54:47.932112+00:00,player_features_v21,threes_avg,threes_avg,337,337,0,337,0.6680574602842674,0.0,3.076923076923077,0.0; 2.326530612244898; 0.0
-2026-10-04T15:54:47.933025+00:00,player_features_v21,threes_l3,threes_l3,337,337,0,337,0.6607319485657764,0.0,4.666666666666667,0.0; 3.333333333333333; 0.0
-2026-10-04T15:54:47.933908+00:00,player_features_v21,threes_l5,threes_l5,337,337,0,337,0.6535608308605341,0.0,3.2,0.0; 2.2; 0.0
-2026-10-04T15:54:47.934694+00:00,player_features_v21,turnovers_avg,turnovers_avg,337,337,0,337,1.1910961891575425,0.0,5.105263157894737,0.0; 1.7959183673469388; 4.285714285714286
-2026-10-04T15:54:47.935669+00:00,player_features_v21,turnovers_l3,turnovers_l3,337,337,0,337,1.1810089020771513,0.0,5.333333333333333,0.0; 2.333333333333333; 3.0
-2026-10-04T15:54:47.936585+00:00,player_features_v21,turnovers_l5,turnovers_l5,337,337,0,337,1.181305637982196,0.0,5.2,0.0; 2.0; 4.4
-2026-10-04T15:54:47.937450+00:00,player_features_v21,fga_avg,fga_avg,337,337,0,337,5.596241063217724,0.0,16.51063829787234,0.2; 13.346938775510203; 10.857142857142858
-2026-10-04T15:54:47.938484+00:00,player_features_v21,fga_l3,fga_l3,337,337,0,337,5.449060336300692,0.0,18.666666666666668,0.3333333333333333; 12.666666666666666; 12.666666666666666
-2026-10-04T15:54:47.939424+00:00,player_features_v21,fga_l5,fga_l5,337,337,0,337,5.497082096933729,0.0,17.8,0.2; 14.0; 11.4
-2026-10-04T15:54:47.940268+00:00,player_features_v21,fta_avg,fta_avg,337,337,0,337,1.6171499840430235,0.0,8.0,0.0; 5.428571428571429; 5.857142857142857
-2026-10-04T15:54:47.941188+00:00,player_features_v21,fta_l3,fta_l3,337,337,0,337,1.6033630069238376,0.0,10.333333333333334,0.0; 3.0; 7.0
-2026-10-04T15:54:47.942091+00:00,player_features_v21,fta_l5,fta_l5,337,337,0,337,1.6340257171117705,0.0,8.2,0.0; 4.4; 6.2
-2026-10-04T15:54:47.942919+00:00,player_features_v21,scoring_dependency,scoring_dependency,337,337,0,337,0.0814191019564288,0.0,0.2765488868654442,0.0; 0.2231703023705297; 0.1569087039132686
-2026-10-04T15:54:47.943931+00:00,player_features_v21,dash_gp,dash_gp,337,309,28,309,13.809061488673139,1.0,44.0,5.0; 7.0; 7.0
-2026-10-04T15:54:47.944798+00:00,player_features_v21,dash_w,dash_w,337,309,28,309,6.818770226537217,0.0,34.0,3.0; 5.0; 5.0
-2026-10-04T15:54:47.945643+00:00,player_features_v21,dash_l,dash_l,337,309,28,309,6.990291262135922,0.0,34.0,2.0; 2.0; 2.0
-2026-10-04T15:54:47.946494+00:00,player_features_v21,dash_w_pct,dash_w_pct,337,309,28,309,0.500294498381877,0.0,1.0,0.6; 0.714; 0.714
-2026-10-04T15:54:47.947401+00:00,player_features_v21,dash_min,dash_min,337,309,28,309,17.91779935275081,0.1,35.6,1.2; 33.5; 31.2
-2026-10-04T15:54:47.948325+00:00,player_features_v21,dash_pts,dash_pts,337,309,28,309,7.039482200647249,0.0,26.8,0.0; 20.4; 13.1
-2026-10-04T15:54:47.949218+00:00,player_features_v21,dash_reb,dash_reb,337,309,28,309,2.8763754045307444,0.0,12.6,0.0; 4.1; 11.0
-2026-10-04T15:54:47.950073+00:00,player_features_v21,dash_ast,dash_ast,337,309,28,309,1.7831715210355987,0.0,8.5,0.2; 1.3; 3.3
-2026-10-04T15:54:47.950963+00:00,player_features_v21,dash_plus_minus,dash_plus_minus,337,309,28,309,-0.6181229773462782,-22.0,13.0,0.4; 7.6; 0.4
-2026-10-04T15:54:47.951902+00:00,market_features_v21,event_id,event_id,2,2,0,0,,,,20925a36b67b16ad3ab7e3e508f04057; b9425fe89f25de73a858e88be2dd535e
-2026-10-04T15:54:47.952566+00:00,market_features_v21,home_team,home_team,2,2,0,0,,,,Golden State Valkyries; Atlanta Dream
-2026-10-04T15:54:47.953254+00:00,market_features_v21,away_team,away_team,2,2,0,0,,,,Las Vegas Aces; New York Liberty
-2026-10-04T15:54:47.953907+00:00,market_features_v21,market_total_mean,market_total_mean,2,2,0,2,166.5625,160.125,173.0,160.125; 173.0
-2026-10-04T15:54:47.954571+00:00,market_features_v21,market_total_median,market_total_median,2,2,0,2,166.625,160.25,173.0,160.25; 173.0
-2026-10-04T15:54:47.955250+00:00,market_features_v21,market_total_min,market_total_min,2,2,0,2,166.0,159.5,172.5,159.5; 172.5
-2026-10-04T15:54:47.955952+00:00,market_features_v21,market_total_max,market_total_max,2,2,0,2,167.0,160.5,173.5,160.5; 173.5
-2026-10-04T15:54:47.956617+00:00,market_features_v21,market_total_range,market_total_range,2,2,0,2,1.0,1.0,1.0,1.0; 1.0
-2026-10-04T15:54:47.957286+00:00,market_features_v21,market_total_books,market_total_books,2,2,0,2,8.0,8.0,8.0,8; 8
-2026-10-04T15:54:47.957957+00:00,market_features_v21,market_total_rows,market_total_rows,2,2,0,2,16.0,16.0,16.0,16; 16
-2026-10-04T15:54:47.958667+00:00,model_backtest_v21,created_at_utc,created_at_utc,12,12,0,0,,,,2026-10-03T15:15:24.830661+00:00; 2026-10-03T15:15:24.834966+00:00; 2026-10-03T15:15:24.831624+00:00
-2026-10-04T15:54:47.959338+00:00,model_backtest_v21,candidate,candidate,12,12,0,0,,,,market_total_range; combined_playerlog_pts_l5; playerlog_team_pts_l5
-2026-10-04T15:54:47.959992+00:00,model_backtest_v21,source_table,source_table,12,12,0,0,,,,market_features_v21; game_model_features_v21; team_features_v21
-2026-10-04T15:54:47.960684+00:00,model_backtest_v21,status,status,12,12,0,0,,,,CANDIDATE; CANDIDATE; CANDIDATE
-2026-10-04T15:54:47.961315+00:00,model_backtest_v21,sample_size,sample_size,12,12,0,12,63.416666666666664,0.0,337.0,2; 8; 15
-2026-10-04T15:54:47.961979+00:00,model_backtest_v21,direction,direction,12,12,0,0,,,,higher_range_lowers_confidence; higher_combined_recent_points_supports_over; higher_recent_team_points_supports_over_environment
-2026-10-04T15:54:47.962603+00:00,model_backtest_v21,score,score,12,12,0,12,9.402615743480645,0.0,20.61566671940818,14.142135623730953; 20.61566671940818; 14.616989462689672
-2026-10-04T15:54:47.963339+00:00,model_backtest_v21,evidence,evidence,12,12,0,0,,,,"market_total_range found in market_features_v21.market_total_range; n=2, mean=0.5000, min=0.0000, max=1.0000, std=0.7071; combined_playerlog_pts_l5 found in game_model_features_v21.combined_playerlog_pts_l5; n=8, mean=170.5000, min=155.8000, max=182.4000, std=10.3078; playerlog_team_pts_l5 found in "
-2026-10-04T15:54:47.963996+00:00,model_backtest_v21,recommendation,recommendation,12,12,0,0,,,,"Use as a confidence/risk gate: wide book disagreement lowers confidence, not projection.; Combined recent team scoring candidate for totals environment.; Use as capped recent form environment candidate. Do not let recent scoring dominate baseline."
-2026-10-04T15:54:47.964625+00:00,model_backtest_v21,implementation_stage,implementation_stage,12,12,0,0,,,,CONFIDENCE_GATE_CANDIDATE; BACKTEST_ONLY; BACKTEST_ONLY
-2026-10-04T15:54:47.965267+00:00,model_backtest_v21,approved_for_live_formula,approved_for_live_formula,12,12,0,12,0.0,0.0,0.0,False; False; False
-2026-10-04T15:54:47.965933+00:00,model_backtest_v21,approved_for_manual_review,approved_for_manual_review,12,12,0,12,1.0,1.0,1.0,True; True; True
-2026-10-04T15:54:47.966590+00:00,model_backtest_v21,safety_gate,safety_gate,12,12,0,0,,,,Manual review only. Do not apply live formula weight until validated against graded results and CLV.; Manual review only. Do not apply live formula weight until validated against graded results and CLV.; Manual review only. Do not apply live formula weight until validated against graded results and 
-2026-10-04T15:54:47.967232+00:00,model_backtest_v21,backtest_ready,backtest_ready,12,12,0,12,0.8333333333333334,0.0,1.0,True; True; True
-2026-10-04T15:54:47.967894+00:00,model_backtest_v21,requires_result_dataset,requires_result_dataset,12,12,0,12,0.3333333333333333,0.0,1.0,True; True; True
-2026-10-04T15:54:47.968648+00:00,model_upgrade_recommendations_v21,created_at_utc,created_at_utc,8,8,0,0,,,,2026-10-03T15:15:24.501044+00:00; 2026-10-03T15:15:24.502302+00:00; 2026-10-03T15:15:24.502313+00:00
-2026-10-04T15:54:47.969294+00:00,model_upgrade_recommendations_v21,priority,priority,8,8,0,8,1.375,1.0,2.0,1; 1; 1
-2026-10-04T15:54:47.969970+00:00,model_upgrade_recommendations_v21,area,area,8,8,0,0,,,,data; execution; hermes
-2026-10-04T15:54:47.970616+00:00,model_upgrade_recommendations_v21,title,title,8,8,0,0,,,,Promote official WNBA mobile data to primary model source; Separate model signal quality from execution fill quality; Keep Hermes in manual approval during model upgrade
-2026-10-04T15:54:47.971277+00:00,model_upgrade_recommendations_v21,status,status,8,8,0,0,,,,READY; READY; REQUIRED
-2026-10-04T15:54:47.971936+00:00,model_upgrade_recommendations_v21,evidence,evidence,8,8,0,0,,,,"Official player logs/team dash/player dash are ready. Rows: game=8, team=17, player=337.; Execution groups=27; tickets=None; net P/L=0.7109999999999997.; Active locks: ['ENVIRONMENT_SAMPLE_LOCK', 'INJURY_CONFIRMATION_LOCK', 'MANUAL_APPROVAL_REQUIRED', 'MODEL_SAMPLE_LOCK']"
-2026-10-04T15:54:47.972558+00:00,model_upgrade_recommendations_v21,recommended_change,recommended_change,8,8,0,0,,,,"Use official_mobile_playergamelogs_v21, official_mobile_team_dash_base_v21, and official_mobile_player_dash_base_v21 as primary feature inputs before SportsDataverse fallback.; Keep two scorecards: model recommended line/edge and actual execution fill/CLV. Do not let multiple fills of one signal dis"
-2026-10-04T15:54:47.973235+00:00,model_upgrade_recommendations_v21,safety_gate,safety_gate,8,8,0,0,,,,Safe: read-only feature input promotion; no formula change until backtest.; Safe: reporting/accounting only.; Required: no auto-betting or threshold changes.
-2026-10-04T15:54:47.973898+00:00,model_upgrade_recommendations_v21,owner,owner,8,8,0,0,,,,model; model; hermes
+2026-10-06T17:14:26.090319+00:00,game_model_features_v21,game,game,8,2,6,0,,,,NYL @ ATL; LVA @ GSV
+2026-10-06T17:14:26.091396+00:00,game_model_features_v21,away_team,away_team,8,8,0,0,,,,LVA; IND; MIN
+2026-10-06T17:14:26.091818+00:00,game_model_features_v21,home_team,home_team,8,8,0,0,,,,DAL; GSV; CHI
+2026-10-06T17:14:26.092166+00:00,game_model_features_v21,created_at_utc,created_at_utc,8,8,0,0,,,,2026-10-06T17:14:25.772930+00:00; 2026-10-06T17:14:25.773178+00:00; 2026-10-06T17:14:25.773344+00:00
+2026-10-06T17:14:26.092484+00:00,game_model_features_v21,projection,projection,8,6,2,6,172.13666666666668,169.18,175.52,175.0; 169.89; 169.18
+2026-10-06T17:14:26.092952+00:00,game_model_features_v21,line,line,8,2,6,2,163.83333333333331,157.16666666666666,170.5,170.5; 157.16666666666666
+2026-10-06T17:14:26.093305+00:00,game_model_features_v21,edge,edge,8,6,2,6,2.72,-1.5,6.52,-1.5; 2.89; -0.82
+2026-10-06T17:14:26.093667+00:00,game_model_features_v21,confidence,confidence,8,6,2,6,50.0,34.0,73.0,34.0; 41.0; 45.0
+2026-10-06T17:14:26.094010+00:00,game_model_features_v21,away_team_pts_for_l3,away_team_pts_for_l3,8,8,0,8,88.58333333333334,79.66666666666667,95.66666666666669,95.66666666666669; 79.66666666666667; 88.0
+2026-10-06T17:14:26.094309+00:00,game_model_features_v21,away_team_pts_for_l5,away_team_pts_for_l5,8,8,0,8,91.19999999999999,85.2,98.8,98.8; 90.6; 85.2
+2026-10-06T17:14:26.094650+00:00,game_model_features_v21,away_team_pts_for_l10,away_team_pts_for_l10,8,8,0,8,89.61250000000001,82.7,95.7,93.5; 94.9; 84.0
+2026-10-06T17:14:26.094929+00:00,game_model_features_v21,away_team_margin_l5,away_team_margin_l5,8,8,0,8,9.75,-1.4,21.2,21.2; 4.2; -1.4
+2026-10-06T17:14:26.095213+00:00,game_model_features_v21,away_playerlog_team_pts_l5,away_playerlog_team_pts_l5,8,8,0,8,91.19999999999999,85.2,98.8,98.8; 90.6; 85.2
+2026-10-06T17:14:26.095513+00:00,game_model_features_v21,away_starter_minutes_concentration,away_starter_minutes_concentration,8,8,0,8,0.7324121389017166,0.698976112761208,0.7741869422600636,0.7303193327018426; 0.7132274406325115; 0.7457856463448794
+2026-10-06T17:14:26.095791+00:00,game_model_features_v21,away_bench_minutes_share,away_bench_minutes_share,8,8,0,8,0.2675878610982834,0.2258130577399364,0.301023887238792,0.2696806672981575; 0.2867725593674886; 0.2542143536551206
+2026-10-06T17:14:26.096128+00:00,game_model_features_v21,away_dash_pts,away_dash_pts,8,7,1,7,91.10000000000001,87.0,96.0,91.5; 96.0; 90.8
+2026-10-06T17:14:26.096497+00:00,game_model_features_v21,away_dash_plus_minus,away_dash_plus_minus,8,7,1,7,4.271428571428571,-4.3,7.2,5.7; 5.5; 7.2
+2026-10-06T17:14:26.096805+00:00,game_model_features_v21,away_dreb_allowed_blended_dreb_allowed,away_dreb_allowed_blended_dreb_allowed,8,8,0,8,25.164204545454545,24.14090909090909,26.581818181818186,25.80454545454545; 24.25; 24.14090909090909
+2026-10-06T17:14:26.097088+00:00,game_model_features_v21,away_dreb_allowed_rank,away_dreb_allowed_rank,8,8,0,8,8.375,2.0,14.0,5.0; 13.0; 14.0
+2026-10-06T17:14:26.097389+00:00,game_model_features_v21,home_team_pts_for_l3,home_team_pts_for_l3,8,8,0,8,85.625,76.0,94.66666666666669,92.0; 76.0; 90.33333333333331
+2026-10-06T17:14:26.097672+00:00,game_model_features_v21,home_team_pts_for_l5,home_team_pts_for_l5,8,8,0,8,86.325,79.2,95.2,94.0; 79.2; 83.4
+2026-10-06T17:14:26.097940+00:00,game_model_features_v21,home_team_pts_for_l10,home_team_pts_for_l10,8,8,0,8,86.01249999999999,78.0,95.7,90.6; 78.0; 83.6
+2026-10-06T17:14:26.098204+00:00,game_model_features_v21,home_team_margin_l5,home_team_margin_l5,8,8,0,8,5.6,-14.0,21.2,12.4; 7.8; -14.0
+2026-10-06T17:14:26.098548+00:00,game_model_features_v21,home_playerlog_team_pts_l5,home_playerlog_team_pts_l5,8,8,0,8,86.325,79.2,95.2,94.0; 79.2; 83.4
+2026-10-06T17:14:26.098832+00:00,game_model_features_v21,home_starter_minutes_concentration,home_starter_minutes_concentration,8,8,0,8,0.7018820913855595,0.6511504959431303,0.7741869422600636,0.7301976685335038; 0.6785928786504775; 0.6843934556649173
+2026-10-06T17:14:26.099106+00:00,game_model_features_v21,home_bench_minutes_share,home_bench_minutes_share,8,8,0,8,0.29811790861444054,0.2258130577399364,0.3488495040568696,0.2698023314664961; 0.3214071213495226; 0.3156065443350827
+2026-10-06T17:14:26.099402+00:00,game_model_features_v21,home_dash_pts,home_dash_pts,8,7,1,7,86.5,82.2,91.3,89.4; 82.2; 86.8
+2026-10-06T17:14:26.099732+00:00,game_model_features_v21,home_dash_plus_minus,home_dash_plus_minus,8,7,1,7,3.6571428571428575,-3.9,7.0,4.1; 7.0; -3.9
+2026-10-06T17:14:26.100027+00:00,game_model_features_v21,home_dreb_allowed_blended_dreb_allowed,home_dreb_allowed_blended_dreb_allowed,8,8,0,8,24.836931818181817,23.93181818181818,25.85,25.85; 24.85909090909091; 25.481818181818184
+2026-10-06T17:14:26.100299+00:00,game_model_features_v21,home_dreb_allowed_rank,home_dreb_allowed_rank,8,8,0,8,9.5,4.0,15.0,4.0; 9.0; 6.0
+2026-10-06T17:14:26.100581+00:00,game_model_features_v21,combined_playerlog_pts_l5,combined_playerlog_pts_l5,8,8,0,8,177.525,168.60000000000002,192.8,192.8; 169.8; 168.60000000000002
+2026-10-06T17:14:26.100851+00:00,game_model_features_v21,combined_dash_pts,combined_dash_pts,8,6,2,6,177.05000000000004,171.0,180.9,180.9; 178.2; 177.6
+2026-10-06T17:14:26.101145+00:00,game_model_features_v21,projection_minus_line,projection_minus_line,8,0,8,0,,,,
+2026-10-06T17:14:26.101442+00:00,game_model_features_v21,event_id,event_id,8,2,6,0,,,,6608125b38823d94d6eef41f1717d86c; 67cfb783c5290b2ff1c47303c87e9cf1
+2026-10-06T17:14:26.101741+00:00,game_model_features_v21,home_team_market,home_team_market,8,2,6,0,,,,Atlanta Dream; Golden State Valkyries
+2026-10-06T17:14:26.102022+00:00,game_model_features_v21,away_team_market,away_team_market,8,2,6,0,,,,New York Liberty; Las Vegas Aces
+2026-10-06T17:14:26.102288+00:00,game_model_features_v21,market_total_mean,market_total_mean,8,2,6,2,163.83333333333331,157.16666666666666,170.5,170.5; 157.16666666666666
+2026-10-06T17:14:26.102622+00:00,game_model_features_v21,market_total_median,market_total_median,8,2,6,2,163.75,157.0,170.5,170.5; 157.0
+2026-10-06T17:14:26.102914+00:00,game_model_features_v21,market_total_min,market_total_min,8,2,6,2,163.5,156.5,170.5,170.5; 156.5
+2026-10-06T17:14:26.103200+00:00,game_model_features_v21,market_total_max,market_total_max,8,2,6,2,164.0,157.5,170.5,170.5; 157.5
+2026-10-06T17:14:26.103503+00:00,game_model_features_v21,market_total_range,market_total_range,8,2,6,2,0.5,0.0,1.0,0.0; 1.0
+2026-10-06T17:14:26.103783+00:00,game_model_features_v21,market_total_books,market_total_books,8,2,6,2,9.0,9.0,9.0,9.0; 9.0
+2026-10-06T17:14:26.104062+00:00,game_model_features_v21,market_total_rows,market_total_rows,8,2,6,2,18.0,18.0,18.0,18.0; 18.0
+2026-10-06T17:14:26.104367+00:00,game_model_features_v21,_home_code,home_code,8,2,6,0,,,,ATL; GSV
+2026-10-06T17:14:26.104651+00:00,game_model_features_v21,_away_code,away_code,8,2,6,0,,,,NYL; LVA
+2026-10-06T17:14:26.105004+00:00,team_features_v21,team,team,17,17,0,0,,,,ATL; CHI; CON
+2026-10-06T17:14:26.105282+00:00,team_features_v21,created_at_utc,created_at_utc,17,17,0,0,,,,2026-10-06T17:14:23.898536+00:00; 2026-10-06T17:14:23.924789+00:00; 2026-10-06T17:14:23.949387+00:00
+2026-10-06T17:14:26.105605+00:00,team_features_v21,source_priority,source_priority,17,17,0,0,,,,official_mobile_first; official_mobile_first; official_mobile_first
+2026-10-06T17:14:26.105860+00:00,team_features_v21,team_games_official,team_games_official,17,17,0,17,72.47058823529412,0.0,88.0,88; 88; 88
+2026-10-06T17:14:26.106235+00:00,team_features_v21,team_pts_for_l3,team_pts_for_l3,17,15,2,15,85.33333333333333,75.0,95.66666666666669,94.66666666666669; 90.33333333333331; 84.33333333333333
+2026-10-06T17:14:26.106566+00:00,team_features_v21,team_pts_for_l5,team_pts_for_l5,17,15,2,15,86.0,75.2,98.8,95.2; 83.4; 76.6
+2026-10-06T17:14:26.106864+00:00,team_features_v21,team_pts_for_l10,team_pts_for_l10,17,15,2,15,85.80666666666666,77.1,95.7,95.7; 83.6; 77.1
+2026-10-06T17:14:26.107152+00:00,team_features_v21,team_margin_l3,team_margin_l3,17,15,2,15,-0.35555555555555557,-21.0,18.0,18.0; -7.0; -2.6666666666666665
+2026-10-06T17:14:26.107457+00:00,team_features_v21,team_margin_l5,team_margin_l5,17,15,2,15,0.45333333333333337,-22.6,21.2,21.2; -14.0; -15.6
+2026-10-06T17:14:26.107753+00:00,team_features_v21,team_margin_l10,team_margin_l10,17,15,2,15,0.12666666666666657,-16.3,15.6,15.6; -8.7; -14.9
+2026-10-06T17:14:26.108056+00:00,team_features_v21,team_dreb_pg_official,team_dreb_pg_official,17,15,2,15,25.06590909090909,22.272727272727277,27.15909090909091,26.329545454545453; 25.5; 23.420454545454547
+2026-10-06T17:14:26.108371+00:00,team_features_v21,team_ast_pg_official,team_ast_pg_official,17,15,2,15,20.470454545454547,18.227272727272727,22.59090909090909,21.431818181818183; 20.443181818181817; 18.227272727272727
+2026-10-06T17:14:26.108667+00:00,team_features_v21,team_tov_pg_official,team_tov_pg_official,17,15,2,15,13.968181818181817,12.613636363636363,15.375,12.965909090909092; 15.136363636363637; 14.272727272727272
+2026-10-06T17:14:26.108953+00:00,team_features_v21,playerlog_team_pts_l3,playerlog_team_pts_l3,17,15,2,15,85.33333333333333,75.0,95.66666666666669,94.66666666666669; 90.33333333333331; 84.33333333333333
+2026-10-06T17:14:26.109244+00:00,team_features_v21,playerlog_team_pts_l5,playerlog_team_pts_l5,17,15,2,15,86.0,75.2,98.8,95.2; 83.4; 76.6
+2026-10-06T17:14:26.109548+00:00,team_features_v21,playerlog_team_pts_l10,playerlog_team_pts_l10,17,15,2,15,85.80666666666666,77.1,95.7,95.7; 83.6; 77.1
+2026-10-06T17:14:26.109841+00:00,team_features_v21,playerlog_team_games,playerlog_team_games,17,15,2,15,82.13333333333334,44.0,88.0,88.0; 88.0; 88.0
+2026-10-06T17:14:26.110132+00:00,team_features_v21,playerlog_total_minutes_pg,playerlog_total_minutes_pg,17,15,2,15,200.96363636363634,200.3431818181818,202.8931818181818,200.59772727272727; 200.6136363636364; 200.63181818181815
+2026-10-06T17:14:26.110436+00:00,team_features_v21,starter_minutes_concentration,starter_minutes_concentration,17,15,2,15,0.7123668247708016,0.6511504959431303,0.7741869422600636,0.7741869422600636; 0.6843934556649173; 0.6797668757723204
+2026-10-06T17:14:26.110731+00:00,team_features_v21,bench_minutes_share,bench_minutes_share,17,15,2,15,0.2876331752291984,0.2258130577399364,0.3488495040568696,0.2258130577399364; 0.3156065443350827; 0.3202331242276796
+2026-10-06T17:14:26.111034+00:00,team_features_v21,team_fga_pg_playerlog,team_fga_pg_playerlog,17,15,2,15,68.0439393939394,64.60227272727273,71.22727272727273,69.63636363636364; 67.9090909090909; 67.79545454545455
+2026-10-06T17:14:26.111329+00:00,team_features_v21,team_fta_pg_playerlog,team_fta_pg_playerlog,17,15,2,15,19.59393939393939,16.71590909090909,22.772727272727277,21.522727272727277; 19.852272727272727; 19.477272727272727
+2026-10-06T17:14:26.111640+00:00,team_features_v21,team_3pm_pg_playerlog,team_3pm_pg_playerlog,17,15,2,15,8.543939393939393,5.977272727272728,10.227272727272728,9.261363636363637; 7.0; 6.045454545454546
+2026-10-06T17:14:26.111943+00:00,team_features_v21,team_ast_pg_playerlog,team_ast_pg_playerlog,17,15,2,15,20.470454545454547,18.227272727272727,22.59090909090909,21.431818181818183; 20.443181818181817; 18.227272727272727
+2026-10-06T17:14:26.112239+00:00,team_features_v21,team_reb_pg_playerlog,team_reb_pg_playerlog,17,15,2,15,33.53560606060606,30.227272727272727,36.07954545454545,36.07954545454545; 34.22727272727273; 32.22727272727273
+2026-10-06T17:14:26.112548+00:00,team_features_v21,dash_gp,dash_gp,17,15,2,15,44.0,44.0,44.0,44.0; 44.0; 44.0
+2026-10-06T17:14:26.112838+00:00,team_features_v21,dash_wins,dash_wins,17,15,2,15,22.0,8.0,33.0,30.0; 16.0; 11.0
+2026-10-06T17:14:26.113125+00:00,team_features_v21,dash_losses,dash_losses,17,15,2,15,22.0,11.0,36.0,14.0; 28.0; 33.0
+2026-10-06T17:14:26.113423+00:00,team_features_v21,dash_win_pct,dash_win_pct,17,15,2,15,0.5000666666666667,0.182,0.75,0.682; 0.364; 0.25
+2026-10-06T17:14:26.113715+00:00,team_features_v21,dash_pts,dash_pts,17,15,2,15,87.06666666666666,78.9,96.0,91.3; 86.8; 78.9
+2026-10-06T17:14:26.113997+00:00,team_features_v21,dash_plus_minus,dash_plus_minus,17,15,2,15,2.516505522483688e-16,-9.2,7.2,6.9; -3.9; -9.2
+2026-10-06T17:14:26.114279+00:00,team_features_v21,dreb_allowed_rank,dreb_allowed_rank,17,15,2,15,8.0,1.0,15.0,11.0; 6.0; 3.0
+2026-10-06T17:14:26.114575+00:00,team_features_v21,dreb_allowed_blended_dreb_allowed,dreb_allowed_blended_dreb_allowed,17,15,2,15,25.235454545454548,23.93181818181818,27.27272727272728,24.49090909090909; 25.481818181818184; 26.309090909090912
+2026-10-06T17:14:26.114866+00:00,team_features_v21,dreb_allowed_dreb_allowed_2025,dreb_allowed_dreb_allowed_2025,17,13,4,13,25.52622377622378,23.863636363636363,27.63636363636364,24.363636363636363; 23.863636363636363; 26.545454545454547
+2026-10-06T17:14:26.115157+00:00,team_features_v21,dreb_allowed_dreb_allowed_2026,dreb_allowed_dreb_allowed_2026,17,15,2,15,24.972727272727273,22.363636363636363,27.90909090909091,24.681818181818183; 27.90909090909091; 25.954545454545453
+2026-10-06T17:14:26.115492+00:00,team_features_v21,dreb_allowed_signal,dreb_allowed_signal,17,9,8,0,,,,OVER; OVER; UNDER
+2026-10-06T17:14:26.116007+00:00,player_features_v21,team,team,384,384,0,0,,,,ATL; ATL; ATL
+2026-10-06T17:14:26.116448+00:00,player_features_v21,player,player,384,384,0,0,,,,Aaliyah Nye; Allisha Gray; Amy Okonkwo
+2026-10-06T17:14:26.116866+00:00,player_features_v21,created_at_utc,created_at_utc,384,384,0,0,,,,2026-10-06T17:14:24.293132+00:00; 2026-10-06T17:14:24.297609+00:00; 2026-10-06T17:14:24.301551+00:00
+2026-10-06T17:14:26.117147+00:00,player_features_v21,games,games,384,384,0,384,31.234375,1.0,88.0,19; 86; 1
+2026-10-06T17:14:26.117480+00:00,player_features_v21,minutes_avg,minutes_avg,384,384,0,384,16.92408171963058,0.1,34.94545454545455,2.2421052631578946; 33.5406976744186; 1.3
+2026-10-06T17:14:26.117937+00:00,player_features_v21,minutes_l3,minutes_l3,384,384,0,384,16.807118055555556,0.1,35.36666666666667,4.666666666666667; 31.03333333333333; 1.3
+2026-10-06T17:14:26.118389+00:00,player_features_v21,minutes_l5,minutes_l5,384,384,0,384,16.800668402777777,0.1,33.980000000000004,4.38; 30.06; 1.3
+2026-10-06T17:14:26.118782+00:00,player_features_v21,points_avg,points_avg,384,384,0,384,6.612501745794941,0.0,24.814814814814813,0.7368421052631579; 18.72093023255814; 1.0
+2026-10-06T17:14:26.119209+00:00,player_features_v21,points_l3,points_l3,384,384,0,384,6.483072916666667,0.0,28.0,1.0; 18.33333333333333; 1.0
+2026-10-06T17:14:26.119627+00:00,player_features_v21,points_l5,points_l5,384,384,0,384,6.6077256944444445,0.0,28.2,1.8; 17.6; 1.0
+2026-10-06T17:14:26.119987+00:00,player_features_v21,rebounds_avg,rebounds_avg,384,384,0,384,2.7178546671621935,0.0,12.566666666666666,0.1578947368421052; 4.3604651162790695; 1.0
+2026-10-06T17:14:26.120425+00:00,player_features_v21,rebounds_l3,rebounds_l3,384,384,0,384,2.749131944444444,0.0,14.333333333333334,0.3333333333333333; 3.333333333333333; 1.0
+2026-10-06T17:14:26.120852+00:00,player_features_v21,rebounds_l5,rebounds_l5,384,384,0,384,2.723046875,0.0,14.2,0.6; 5.4; 1.0
+2026-10-06T17:14:26.121212+00:00,player_features_v21,dreb_avg,dreb_avg,384,384,0,384,2.0217150412367784,0.0,8.466666666666667,0.1578947368421052; 3.5930232558139537; 1.0
+2026-10-06T17:14:26.121640+00:00,player_features_v21,dreb_l3,dreb_l3,384,384,0,384,2.05078125,0.0,9.333333333333334,0.3333333333333333; 3.0; 1.0
+2026-10-06T17:14:26.122044+00:00,player_features_v21,dreb_l5,dreb_l5,384,384,0,384,2.0493489583333333,0.0,9.0,0.6; 4.8; 1.0
+2026-10-06T17:14:26.122406+00:00,player_features_v21,assists_avg,assists_avg,384,384,0,384,1.6522580085667897,0.0,8.82716049382716,0.1578947368421052; 3.058139534883721; 0.0
+2026-10-06T17:14:26.122832+00:00,player_features_v21,assists_l3,assists_l3,384,384,0,384,1.6436631944444446,0.0,10.666666666666666,0.0; 3.0; 0.0
+2026-10-06T17:14:26.123230+00:00,player_features_v21,assists_l5,assists_l5,384,384,0,384,1.679861111111111,0.0,10.0,0.2; 3.0; 0.0
+2026-10-06T17:14:26.123582+00:00,player_features_v21,threes_avg,threes_avg,384,384,0,384,0.6940854992255897,0.0,3.28125,0.1578947368421052; 2.081395348837209; 0.0
+2026-10-06T17:14:26.124001+00:00,player_features_v21,threes_l3,threes_l3,384,384,0,384,0.657986111111111,0.0,5.0,0.3333333333333333; 2.0; 0.0
+2026-10-06T17:14:26.124401+00:00,player_features_v21,threes_l5,threes_l5,384,384,0,384,0.6914930555555555,0.0,3.6,0.4; 2.4; 0.0
+2026-10-06T17:14:26.124741+00:00,player_features_v21,turnovers_avg,turnovers_avg,384,384,0,384,1.1212035646413159,0.0,4.69811320754717,0.1052631578947368; 1.627906976744186; 0.0
+2026-10-06T17:14:26.125172+00:00,player_features_v21,turnovers_l3,turnovers_l3,384,384,0,384,1.0694444444444444,0.0,4.666666666666667,0.3333333333333333; 1.3333333333333333; 0.0
+2026-10-06T17:14:26.125591+00:00,player_features_v21,turnovers_l5,turnovers_l5,384,384,0,384,1.0858940972222222,0.0,4.4,0.2; 1.2; 0.0
+2026-10-06T17:14:26.125984+00:00,player_features_v21,fga_avg,fga_avg,384,384,0,384,5.460681811944156,0.0,16.97530864197531,0.631578947368421; 13.395348837209305; 1.0
+2026-10-06T17:14:26.126423+00:00,player_features_v21,fga_l3,fga_l3,384,384,0,384,5.480034722222221,0.0,19.0,1.3333333333333333; 10.666666666666666; 1.0
+2026-10-06T17:14:26.126830+00:00,player_features_v21,fga_l5,fga_l5,384,384,0,384,5.481944444444444,0.0,19.2,1.2; 11.4; 1.0
+2026-10-06T17:14:26.127252+00:00,player_features_v21,fta_avg,fta_avg,384,384,0,384,1.5554205525209917,0.0,7.567901234567901,0.1578947368421052; 5.476744186046512; 2.0
+2026-10-06T17:14:26.127695+00:00,player_features_v21,fta_l3,fta_l3,384,384,0,384,1.5026041666666667,0.0,10.333333333333334,0.0; 5.0; 2.0
+2026-10-06T17:14:26.128083+00:00,player_features_v21,fta_l5,fta_l5,384,384,0,384,1.5343315972222225,0.0,8.8,0.6; 4.0; 2.0
+2026-10-06T17:14:26.128435+00:00,player_features_v21,scoring_dependency,scoring_dependency,384,384,0,384,0.0785123605808909,0.0,0.2811927466556901,0.0069682788213867; 0.2153982825986271; 0.0111111111111111
+2026-10-06T17:14:26.128885+00:00,player_features_v21,dash_gp,dash_gp,384,342,42,342,27.549707602339183,1.0,44.0,44.0; 43.0; 9.0
+2026-10-06T17:14:26.129301+00:00,player_features_v21,dash_w,dash_w,384,342,42,342,13.660818713450292,0.0,34.0,30.0; 30.0; 7.0
+2026-10-06T17:14:26.129682+00:00,player_features_v21,dash_l,dash_l,384,342,42,342,13.88888888888889,0.0,36.0,14.0; 13.0; 2.0
+2026-10-06T17:14:26.130038+00:00,player_features_v21,dash_w_pct,dash_w_pct,384,342,42,342,0.4981900584795322,0.0,1.0,0.682; 0.698; 0.778
+2026-10-06T17:14:26.130435+00:00,player_features_v21,dash_min,dash_min,384,342,42,342,17.299122807017543,0.1,35.1,32.6; 31.0; 16.9
+2026-10-06T17:14:26.130818+00:00,player_features_v21,dash_pts,dash_pts,384,342,42,342,6.941520467836257,0.0,26.2,19.0; 16.4; 8.2
+2026-10-06T17:14:26.131190+00:00,player_features_v21,dash_reb,dash_reb,384,342,42,342,2.8125730994152045,0.0,12.6,3.5; 12.1; 5.6
+2026-10-06T17:14:26.131563+00:00,player_features_v21,dash_ast,dash_ast,384,342,42,342,1.7198830409356722,0.0,8.5,2.6; 2.8; 2.0
+2026-10-06T17:14:26.131917+00:00,player_features_v21,dash_plus_minus,dash_plus_minus,384,342,42,342,-0.691812865497076,-22.0,13.0,7.8; 7.1; 1.8
+2026-10-06T17:14:26.132374+00:00,market_features_v21,event_id,event_id,2,2,0,0,,,,6608125b38823d94d6eef41f1717d86c; 67cfb783c5290b2ff1c47303c87e9cf1
+2026-10-06T17:14:26.132658+00:00,market_features_v21,home_team,home_team,2,2,0,0,,,,Atlanta Dream; Golden State Valkyries
+2026-10-06T17:14:26.132914+00:00,market_features_v21,away_team,away_team,2,2,0,0,,,,New York Liberty; Las Vegas Aces
+2026-10-06T17:14:26.133178+00:00,market_features_v21,market_total_mean,market_total_mean,2,2,0,2,163.83333333333331,157.16666666666666,170.5,170.5; 157.16666666666666
+2026-10-06T17:14:26.133495+00:00,market_features_v21,market_total_median,market_total_median,2,2,0,2,163.75,157.0,170.5,170.5; 157.0
+2026-10-06T17:14:26.133769+00:00,market_features_v21,market_total_min,market_total_min,2,2,0,2,163.5,156.5,170.5,170.5; 156.5
+2026-10-06T17:14:26.134033+00:00,market_features_v21,market_total_max,market_total_max,2,2,0,2,164.0,157.5,170.5,170.5; 157.5
+2026-10-06T17:14:26.134307+00:00,market_features_v21,market_total_range,market_total_range,2,2,0,2,0.5,0.0,1.0,0.0; 1.0
+2026-10-06T17:14:26.134605+00:00,market_features_v21,market_total_books,market_total_books,2,2,0,2,9.0,9.0,9.0,9; 9
+2026-10-06T17:14:26.134901+00:00,market_features_v21,market_total_rows,market_total_rows,2,2,0,2,18.0,18.0,18.0,18; 18
+2026-10-06T17:14:26.135228+00:00,model_backtest_v21,created_at_utc,created_at_utc,12,12,0,0,,,,2026-10-04T15:54:49.888244+00:00; 2026-10-04T15:54:49.892687+00:00; 2026-10-04T15:54:49.889237+00:00
+2026-10-06T17:14:26.135529+00:00,model_backtest_v21,candidate,candidate,12,12,0,0,,,,market_total_range; combined_playerlog_pts_l5; playerlog_team_pts_l5
+2026-10-06T17:14:26.135787+00:00,model_backtest_v21,source_table,source_table,12,12,0,0,,,,market_features_v21; game_model_features_v21; team_features_v21
+2026-10-06T17:14:26.136047+00:00,model_backtest_v21,status,status,12,12,0,0,,,,CANDIDATE; CANDIDATE; CANDIDATE
+2026-10-06T17:14:26.136294+00:00,model_backtest_v21,sample_size,sample_size,12,12,0,12,63.416666666666664,0.0,337.0,2; 8; 15
+2026-10-06T17:14:26.136578+00:00,model_backtest_v21,direction,direction,12,12,0,0,,,,higher_range_lowers_confidence; higher_combined_recent_points_supports_over; higher_recent_team_points_supports_over_environment
+2026-10-06T17:14:26.136830+00:00,model_backtest_v21,score,score,12,12,0,12,8.35163194866056,0.0,20.61566671940818,1.0; 20.61566671940818; 14.616989462689672
+2026-10-06T17:14:26.137125+00:00,model_backtest_v21,evidence,evidence,12,12,0,0,,,,"market_total_range found in market_features_v21.market_total_range; n=2, mean=1.0000, min=1.0000, max=1.0000, std=0.0000; combined_playerlog_pts_l5 found in game_model_features_v21.combined_playerlog_pts_l5; n=8, mean=170.5000, min=155.8000, max=182.4000, std=10.3078; playerlog_team_pts_l5 found in "
+2026-10-06T17:14:26.137402+00:00,model_backtest_v21,recommendation,recommendation,12,12,0,0,,,,"Use as a confidence/risk gate: wide book disagreement lowers confidence, not projection.; Combined recent team scoring candidate for totals environment.; Use as capped recent form environment candidate. Do not let recent scoring dominate baseline."
+2026-10-06T17:14:26.137677+00:00,model_backtest_v21,implementation_stage,implementation_stage,12,12,0,0,,,,CONFIDENCE_GATE_CANDIDATE; BACKTEST_ONLY; BACKTEST_ONLY
+2026-10-06T17:14:26.137938+00:00,model_backtest_v21,approved_for_live_formula,approved_for_live_formula,12,12,0,12,0.0,0.0,0.0,False; False; False
+2026-10-06T17:14:26.138218+00:00,model_backtest_v21,approved_for_manual_review,approved_for_manual_review,12,12,0,12,1.0,1.0,1.0,True; True; True
+2026-10-06T17:14:26.138497+00:00,model_backtest_v21,safety_gate,safety_gate,12,12,0,0,,,,Manual review only. Do not apply live formula weight until validated against graded results and CLV.; Manual review only. Do not apply live formula weight until validated against graded results and CLV.; Manual review only. Do not apply live formula weight until validated against graded results and 
+2026-10-06T17:14:26.138748+00:00,model_backtest_v21,backtest_ready,backtest_ready,12,12,0,12,0.8333333333333334,0.0,1.0,True; True; True
+2026-10-06T17:14:26.138998+00:00,model_backtest_v21,requires_result_dataset,requires_result_dataset,12,12,0,12,0.3333333333333333,0.0,1.0,True; True; True
+2026-10-06T17:14:26.139306+00:00,model_upgrade_recommendations_v21,created_at_utc,created_at_utc,8,8,0,0,,,,2026-10-04T15:54:49.556472+00:00; 2026-10-04T15:54:49.557741+00:00; 2026-10-04T15:54:49.557753+00:00
+2026-10-06T17:14:26.139573+00:00,model_upgrade_recommendations_v21,priority,priority,8,8,0,8,1.375,1.0,2.0,1; 1; 1
+2026-10-06T17:14:26.139843+00:00,model_upgrade_recommendations_v21,area,area,8,8,0,0,,,,data; execution; hermes
+2026-10-06T17:14:26.140102+00:00,model_upgrade_recommendations_v21,title,title,8,8,0,0,,,,Promote official WNBA mobile data to primary model source; Separate model signal quality from execution fill quality; Keep Hermes in manual approval during model upgrade
+2026-10-06T17:14:26.140366+00:00,model_upgrade_recommendations_v21,status,status,8,8,0,0,,,,READY; READY; REQUIRED
+2026-10-06T17:14:26.140623+00:00,model_upgrade_recommendations_v21,evidence,evidence,8,8,0,0,,,,"Official player logs/team dash/player dash are ready. Rows: game=8, team=17, player=337.; Execution groups=27; tickets=None; net P/L=0.7109999999999997.; Active locks: ['ENVIRONMENT_SAMPLE_LOCK', 'INJURY_CONFIRMATION_LOCK', 'MANUAL_APPROVAL_REQUIRED', 'MODEL_SAMPLE_LOCK']"
+2026-10-06T17:14:26.140882+00:00,model_upgrade_recommendations_v21,recommended_change,recommended_change,8,8,0,0,,,,"Use official_mobile_playergamelogs_v21, official_mobile_team_dash_base_v21, and official_mobile_player_dash_base_v21 as primary feature inputs before SportsDataverse fallback.; Keep two scorecards: model recommended line/edge and actual execution fill/CLV. Do not let multiple fills of one signal dis"
+2026-10-06T17:14:26.141137+00:00,model_upgrade_recommendations_v21,safety_gate,safety_gate,8,8,0,0,,,,Safe: read-only feature input promotion; no formula change until backtest.; Safe: reporting/accounting only.; Required: no auto-betting or threshold changes.
+2026-10-06T17:14:26.141400+00:00,model_upgrade_recommendations_v21,owner,owner,8,8,0,0,,,,model; model; hermes
