@@ -1,3 +1,3 @@
 event_id,home_team,away_team,market_total_mean,market_total_median,market_total_min,market_total_max,market_total_range,market_total_books,market_total_rows
-3a63e90ff835f691f1c2b4df7d0c9dde,Las Vegas Aces,Golden State Valkyries,156.61111111111111,156.5,156.5,157.5,1.0,9,18
-52fcce919d102e7494783ae0e74ae5b5,New York Liberty,Atlanta Dream,172.5,172.5,172.5,172.5,0.0,9,18
+3a63e90ff835f691f1c2b4df7d0c9dde,Las Vegas Aces,Golden State Valkyries,156.375,156.5,156.0,156.5,0.5,8,16
+52fcce919d102e7494783ae0e74ae5b5,New York Liberty,Atlanta Dream,170.625,170.5,170.5,171.5,1.0,8,16
