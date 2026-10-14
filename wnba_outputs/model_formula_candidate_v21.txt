@@ -1,6 +1,6 @@
 WNBA EDGE LAB - V21.2 FORMULA CANDIDATE
 ======================================================
-Created: 2026-10-13T18:26:43.584572+00:00
+Created: 2026-10-14T15:56:25.965258+00:00
 
 Status: NOT APPLIED
 
