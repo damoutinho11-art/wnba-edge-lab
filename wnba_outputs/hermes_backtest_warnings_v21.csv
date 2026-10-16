@@ -1,3 +1,3 @@
 created_at_utc,severity,source,message
-2026-10-15T15:42:53.022835+00:00,medium,model_backtester_v21_2,2 candidates missing or insufficient. See model_backtest_v21.csv.
-2026-10-15T15:42:53.023160+00:00,medium,model_backtester_v21_2,Primary projection edge candidate is not populated. Feature builder likely needs projection/line preservation patch.
+2026-10-16T15:29:13.200114+00:00,medium,model_backtester_v21_2,2 candidates missing or insufficient. See model_backtest_v21.csv.
+2026-10-16T15:29:13.200413+00:00,medium,model_backtester_v21_2,Primary projection edge candidate is not populated. Feature builder likely needs projection/line preservation patch.
