@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-10-16T15:29:12.875568+00:00",
+  "created_at_utc": "2026-10-17T14:19:31.451417+00:00",
   "status": "OK",
   "rows": {
     "recommendations": 8,
@@ -30,7 +30,7 @@
   },
   "top_priorities": [
     {
-      "created_at_utc": "2026-10-16T15:29:12.872447+00:00",
+      "created_at_utc": "2026-10-17T14:19:31.448766+00:00",
       "priority": 1,
       "area": "data",
       "title": "Promote official WNBA mobile data to primary model source",
@@ -41,7 +41,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-10-16T15:29:12.873422+00:00",
+      "created_at_utc": "2026-10-17T14:19:31.449594+00:00",
       "priority": 1,
       "area": "execution",
       "title": "Separate model signal quality from execution fill quality",
@@ -52,7 +52,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-10-16T15:29:12.873429+00:00",
+      "created_at_utc": "2026-10-17T14:19:31.449599+00:00",
       "priority": 1,
       "area": "hermes",
       "title": "Keep Hermes in manual approval during model upgrade",
@@ -63,7 +63,7 @@
       "owner": "hermes"
     },
     {
-      "created_at_utc": "2026-10-16T15:29:12.872646+00:00",
+      "created_at_utc": "2026-10-17T14:19:31.448948+00:00",
       "priority": 1,
       "area": "market",
       "title": "Add market consensus and line-shopping range to model context",
@@ -74,7 +74,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-10-16T15:29:12.872803+00:00",
+      "created_at_utc": "2026-10-17T14:19:31.449083+00:00",
       "priority": 1,
       "area": "projection",
       "title": "Introduce V21 feature audit before changing projected total formula",
