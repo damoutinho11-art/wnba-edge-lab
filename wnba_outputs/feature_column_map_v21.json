@@ -1,17 +1,16 @@
 {
-  "created_at_utc": "2026-10-31T16:13:52.816644+00:00",
+  "created_at_utc": "2026-11-01T17:14:17.904518+00:00",
   "files": {
     "game_model_features_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/game_model_features_v21.csv",
       "exists": true,
-      "rows": 7,
+      "rows": 6,
       "columns": [
         "game",
         "away_team",
         "home_team",
         "created_at_utc",
         "projection",
-        "line",
         "edge",
         "confidence",
         "away_team_pts_for_l3",
@@ -37,20 +36,7 @@
         "home_dreb_allowed_blended_dreb_allowed",
         "home_dreb_allowed_rank",
         "combined_playerlog_pts_l5",
-        "combined_dash_pts",
-        "projection_minus_line",
-        "event_id",
-        "home_team_market",
-        "away_team_market",
-        "market_total_mean",
-        "market_total_median",
-        "market_total_min",
-        "market_total_max",
-        "market_total_range",
-        "market_total_books",
-        "market_total_rows",
-        "_home_code",
-        "_away_code"
+        "combined_dash_pts"
       ]
     },
     "team_features_v21": {
@@ -147,19 +133,8 @@
     "market_features_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/market_features_v21.csv",
       "exists": true,
-      "rows": 1,
-      "columns": [
-        "event_id",
-        "home_team",
-        "away_team",
-        "market_total_mean",
-        "market_total_median",
-        "market_total_min",
-        "market_total_max",
-        "market_total_range",
-        "market_total_books",
-        "market_total_rows"
-      ]
+      "rows": 0,
+      "columns": []
     },
     "model_backtest_v21": {
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_outputs/model_backtest_v21.csv",
@@ -207,10 +182,6 @@
         "column": "game"
       },
       {
-        "file": "market_features_v21",
-        "column": "event_id"
-      },
-      {
         "file": "team_features_v21",
         "column": "playerlog_team_games"
       },
@@ -231,38 +202,6 @@
     ],
     "line": [
       {
-        "file": "game_model_features_v21",
-        "column": "line"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_books"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_max"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_mean"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_median"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_min"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_range"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_rows"
-      },
-      {
         "file": "team_features_v21",
         "column": "playerlog_total_minutes_pg"
       }
@@ -271,52 +210,12 @@
       {
         "file": "game_model_features_v21",
         "column": "edge"
-      },
-      {
-        "file": "game_model_features_v21",
-        "column": "projection_minus_line"
       }
     ],
-    "market_total_median": [
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_median"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_median"
-      }
-    ],
-    "market_total_mean": [
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_mean"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_mean"
-      }
-    ],
-    "market_total_range": [
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_range"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_range"
-      }
-    ],
-    "market_total_books": [
-      {
-        "file": "game_model_features_v21",
-        "column": "market_total_books"
-      },
-      {
-        "file": "market_features_v21",
-        "column": "market_total_books"
-      }
-    ],
+    "market_total_median": [],
+    "market_total_mean": [],
+    "market_total_range": [],
+    "market_total_books": [],
     "combined_playerlog_pts_l5": [
       {
         "file": "game_model_features_v21",
@@ -409,10 +308,6 @@
       {
         "file": "game_model_features_v21",
         "column": "home_team_pts_for_l5"
-      },
-      {
-        "file": "game_model_features_v21",
-        "column": "projection_minus_line"
       },
       {
         "file": "model_backtest_v21",
@@ -517,6 +412,16 @@
     ]
   },
   "diagnosis": [
+    {
+      "severity": "medium",
+      "feature": "market_total_median",
+      "message": "No column match found for canonical feature 'market_total_median'."
+    },
+    {
+      "severity": "medium",
+      "feature": "market_total_range",
+      "message": "No column match found for canonical feature 'market_total_range'."
+    },
     {
       "severity": "high",
       "feature": "backtester_candidate_detection",

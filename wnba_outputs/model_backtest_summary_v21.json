@@ -1,32 +1,31 @@
 {
-  "created_at_utc": "2026-10-31T16:13:54.698889+00:00",
+  "created_at_utc": "2026-11-01T17:14:19.768930+00:00",
   "status": "OK",
   "version": "v21.2",
   "rows": {
     "backtest": 12,
     "feature_candidates": 12,
-    "validated_changes": 7,
-    "warnings": 2
+    "validated_changes": 5,
+    "warnings": 1
   },
   "inputs": {
-    "game_model_features_v21": 7,
+    "game_model_features_v21": 6,
     "team_features_v21": 17,
     "player_features_v21": 337,
-    "market_features_v21": 1,
+    "market_features_v21": 0,
     "signal_execution_groups_v20": 27
   },
   "candidate_status_counts": {
-    "CANDIDATE": 10,
-    "MISSING_OR_INSUFFICIENT": 2
+    "CANDIDATE": 9,
+    "MISSING_OR_INSUFFICIENT": 3
   },
   "implementation_stage_counts": {
     "BACKTEST_ONLY": 3,
+    "DIAGNOSTIC": 3,
     "PROP_SCREENING_CANDIDATE": 2,
     "ROTATION_CONTEXT": 2,
-    "DIAGNOSTIC": 2,
-    "CONFIDENCE_GATE_CANDIDATE": 1,
-    "PLAYER_CONTEXT": 1,
-    "MARKET_CONTEXT": 1
+    "PRIMARY_EDGE_VALIDATION": 1,
+    "PLAYER_CONTEXT": 1
   },
   "fetch_readiness": {
     "official_playergamelogs_ready": true,
