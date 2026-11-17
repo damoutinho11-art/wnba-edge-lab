@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-11-16T21:09:41.294201+00:00",
+  "created_at_utc": "2026-11-17T19:59:09.493705+00:00",
   "status": "OK",
   "rows": {
     "recommendations": 8,
@@ -30,7 +30,7 @@
   },
   "top_priorities": [
     {
-      "created_at_utc": "2026-11-16T21:09:41.290753+00:00",
+      "created_at_utc": "2026-11-17T19:59:09.491862+00:00",
       "priority": 1,
       "area": "data",
       "title": "Promote official WNBA mobile data to primary model source",
@@ -41,7 +41,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-11-16T21:09:41.291755+00:00",
+      "created_at_utc": "2026-11-17T19:59:09.492385+00:00",
       "priority": 1,
       "area": "execution",
       "title": "Separate model signal quality from execution fill quality",
@@ -52,7 +52,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-11-16T21:09:41.291762+00:00",
+      "created_at_utc": "2026-11-17T19:59:09.492389+00:00",
       "priority": 1,
       "area": "hermes",
       "title": "Keep Hermes in manual approval during model upgrade",
@@ -63,7 +63,7 @@
       "owner": "hermes"
     },
     {
-      "created_at_utc": "2026-11-16T21:09:41.290775+00:00",
+      "created_at_utc": "2026-11-17T19:59:09.491880+00:00",
       "priority": 1,
       "area": "market",
       "title": "Market feature table missing",
@@ -74,7 +74,7 @@
       "owner": "model"
     },
     {
-      "created_at_utc": "2026-11-16T21:09:41.291037+00:00",
+      "created_at_utc": "2026-11-17T19:59:09.492028+00:00",
       "priority": 1,
       "area": "projection",
       "title": "Introduce V21 feature audit before changing projected total formula",
