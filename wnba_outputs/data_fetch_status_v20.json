@@ -1,20 +1,19 @@
 {
-  "created_at_utc": "2026-11-25T20:34:59.374840+00:00",
+  "created_at_utc": "2026-11-26T20:19:00.891803+00:00",
   "version": "v21.4",
   "seasons": [
     2025,
     2026
   ],
-  "overall_state": "OK_WITH_WARNINGS",
+  "overall_state": "OK",
   "state_counts": {
-    "CACHE_FALLBACK_USED": 12,
+    "LIVE_FETCH_OK": 10,
+    "CACHE_FALLBACK_USED": 6,
     "OUTPUT_FALLBACK_USED": 2,
-    "LIVE_FETCH_OK": 2,
-    "FETCH_FAILED_NO_CACHE": 2,
     "SKIPPED": 1
   },
-  "warnings_count": 17,
-  "warnings_high": 2,
+  "warnings_count": 9,
+  "warnings_high": 0,
   "records": [
     {
       "source": "official_playergamelogs_base",
@@ -27,7 +26,7 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2025",
-      "created_at_utc": "2026-11-25T20:34:59.375486+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892582+00:00"
     },
     {
       "source": "official_teamgamelogs_base",
@@ -40,7 +39,7 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2025",
-      "created_at_utc": "2026-11-25T20:34:59.375501+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892602+00:00"
     },
     {
       "source": "official_team_dash_base",
@@ -53,7 +52,7 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2025",
-      "created_at_utc": "2026-11-25T20:34:59.375510+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892616+00:00"
     },
     {
       "source": "official_player_dash_base",
@@ -66,7 +65,7 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2025",
-      "created_at_utc": "2026-11-25T20:34:59.375519+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892629+00:00"
     },
     {
       "source": "official_playergamelogs_base",
@@ -79,7 +78,7 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375528+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892641+00:00"
     },
     {
       "source": "official_teamgamelogs_base",
@@ -92,7 +91,7 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375537+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892653+00:00"
     },
     {
       "source": "official_team_dash_base",
@@ -105,7 +104,7 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375544+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892665+00:00"
     },
     {
       "source": "official_player_dash_base",
@@ -118,7 +117,7 @@
       "error": "attempt 1: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20) | attempt 2: ReadTimeout: HTTPSConnectionPool(host='stats.wnba.com', port=443): Read timed out. (read timeout=20)",
       "freshness": "cached",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375553+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892679+00:00"
     },
     {
       "source": "odds_events",
@@ -126,12 +125,12 @@
       "state": "LIVE_FETCH_OK",
       "rows": 0,
       "events": 0,
-      "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/odds_events_2026_11_25.json",
+      "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/odds_events_2026_11_26.json",
       "fallback_path": "",
       "error": "",
       "freshness": "live",
       "season": "",
-      "created_at_utc": "2026-11-25T20:34:59.375561+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892691+00:00"
     },
     {
       "source": "odds_totals",
@@ -144,7 +143,7 @@
       "error": "odds_attempt=safe_us_totals; regions=us; markets=totals",
       "freshness": "live",
       "season": "",
-      "created_at_utc": "2026-11-25T20:34:59.375569+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892703+00:00"
     },
     {
       "source": "player_props",
@@ -157,111 +156,111 @@
       "error": "Use --props to fetch player props.",
       "freshness": "skipped",
       "season": "",
-      "created_at_utc": "2026-11-25T20:34:59.375578+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892717+00:00"
     },
     {
       "source": "espn_wnba_schedules",
       "layer": "sportsdataverse",
-      "state": "CACHE_FALLBACK_USED",
-      "rows": 332,
-      "events": 0,
+      "state": "LIVE_FETCH_OK",
+      "rows": 356,
+      "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_schedules.csv",
-      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_schedules.csv",
-      "error": "HTTPError: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/tags/espn_wnba_schedules",
-      "freshness": "cached",
+      "fallback_path": "",
+      "error": "",
+      "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375586+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892730+00:00"
     },
     {
       "source": "espn_wnba_team_boxscores",
       "layer": "sportsdataverse",
-      "state": "CACHE_FALLBACK_USED",
-      "rows": 118,
-      "events": 0,
+      "state": "LIVE_FETCH_OK",
+      "rows": 708,
+      "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_team_boxscores.csv",
-      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_team_boxscores.csv",
-      "error": "HTTPError: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/tags/espn_wnba_team_boxscores",
-      "freshness": "cached",
+      "fallback_path": "",
+      "error": "",
+      "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375594+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892743+00:00"
     },
     {
       "source": "espn_wnba_player_boxscores",
       "layer": "sportsdataverse",
-      "state": "CACHE_FALLBACK_USED",
-      "rows": 1418,
-      "events": 0,
+      "state": "LIVE_FETCH_OK",
+      "rows": 8593,
+      "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_player_boxscores.csv",
-      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_player_boxscores.csv",
-      "error": "HTTPError: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/tags/espn_wnba_player_boxscores",
-      "freshness": "cached",
+      "fallback_path": "",
+      "error": "",
+      "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375602+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892755+00:00"
     },
     {
       "source": "espn_wnba_pbp",
       "layer": "sportsdataverse",
-      "state": "CACHE_FALLBACK_USED",
-      "rows": 24591,
-      "events": 0,
+      "state": "LIVE_FETCH_OK",
+      "rows": 144409,
+      "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_pbp.csv",
-      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_pbp.csv",
-      "error": "HTTPError: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/tags/espn_wnba_pbp",
-      "freshness": "cached",
+      "fallback_path": "",
+      "error": "",
+      "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375610+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892768+00:00"
     },
     {
       "source": "wnba_stats_schedules",
       "layer": "sportsdataverse",
-      "state": "CACHE_FALLBACK_USED",
-      "rows": 118,
-      "events": 0,
+      "state": "LIVE_FETCH_OK",
+      "rows": 5067,
+      "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_schedules.csv",
-      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_schedules.csv",
-      "error": "HTTPError: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/tags/wnba_stats_schedules",
-      "freshness": "cached",
+      "fallback_path": "",
+      "error": "",
+      "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375619+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892780+00:00"
     },
     {
       "source": "wnba_stats_team_boxscores",
       "layer": "sportsdataverse",
-      "state": "FETCH_FAILED_NO_CACHE",
-      "rows": 0,
-      "events": 0,
-      "path": "",
+      "state": "LIVE_FETCH_OK",
+      "rows": 704,
+      "events": 3,
+      "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_team_boxscores.csv",
       "fallback_path": "",
-      "error": "HTTPError: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/tags/wnba_stats_team_boxscores",
-      "freshness": "missing",
+      "error": "",
+      "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375626+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892793+00:00"
     },
     {
       "source": "wnba_stats_player_boxscores",
       "layer": "sportsdataverse",
-      "state": "FETCH_FAILED_NO_CACHE",
-      "rows": 0,
-      "events": 0,
-      "path": "",
+      "state": "LIVE_FETCH_OK",
+      "rows": 8539,
+      "events": 3,
+      "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_player_boxscores.csv",
       "fallback_path": "",
-      "error": "HTTPError: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/tags/wnba_stats_player_boxscores",
-      "freshness": "missing",
+      "error": "",
+      "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375634+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892805+00:00"
     },
     {
       "source": "wnba_stats_pbp",
       "layer": "sportsdataverse",
-      "state": "CACHE_FALLBACK_USED",
-      "rows": 24307,
-      "events": 0,
+      "state": "LIVE_FETCH_OK",
+      "rows": 299842,
+      "events": 3,
       "path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_pbp.csv",
-      "fallback_path": "/home/runner/work/wnba-edge-lab/wnba-edge-lab/wnba_cache_v21/sdv_wnba_stats_pbp.csv",
-      "error": "HTTPError: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/sportsdataverse/sportsdataverse-data/releases/tags/wnba_stats_pbp",
-      "freshness": "cached",
+      "fallback_path": "",
+      "error": "",
+      "freshness": "live",
       "season": "2026",
-      "created_at_utc": "2026-11-25T20:34:59.375642+00:00"
+      "created_at_utc": "2026-11-26T20:19:00.892818+00:00"
     }
   ],
   "readiness": {
